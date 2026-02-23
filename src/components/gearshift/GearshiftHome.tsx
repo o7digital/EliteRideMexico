@@ -29,29 +29,6 @@ type Step = {
 	alt: string;
 };
 
-const brands = ['Audi', 'Porsche', 'BMW', 'Mercedes Benz', 'Ferrari'];
-
-const pageLinks = [
-	{ label: 'Home', href: '/' },
-	{ label: 'About us', href: '/about' },
-	{ label: 'Our Fleet', href: '/our-fleet' },
-	{ label: 'Contact Us', href: '/contact' },
-	{ label: 'Cars Template', href: 'https://gearshifttemplate.webflow.io/cars/porsche-cayenne-coupe' },
-	{ label: 'Car Types Template', href: 'https://gearshifttemplate.webflow.io/car-types/convertible' },
-	{ label: 'Car Locations Template', href: 'https://gearshifttemplate.webflow.io/locations/palm-jumeirah' },
-	{ label: 'Car Brands Template', href: 'https://gearshifttemplate.webflow.io/car-brands/mercedes-benz' },
-	{ label: 'Features Template', href: 'https://gearshifttemplate.webflow.io/features/bluetooth-audio' }
-];
-
-const utilityLinks = [
-	{ label: 'Password Protected', href: 'https://gearshifttemplate.webflow.io/401' },
-	{ label: '404 Not Found', href: 'https://gearshifttemplate.webflow.io/404' },
-	{ label: 'Style Guide', href: '/style-guide' },
-	{ label: 'Licenses', href: '/licenses' },
-	{ label: 'Changelog', href: '/changelog' },
-	{ label: 'Instructions', href: '/instructions' }
-];
-
 const cars: Car[] = [
 	{
 		name: 'Porsche Cayenne Coupe',
@@ -303,13 +280,9 @@ const metrics = [
 
 export default function GearshiftHome() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isBrandsOpen, setIsBrandsOpen] = useState(false);
-	const [isPagesOpen, setIsPagesOpen] = useState(false);
 
 	const closeMenus = () => {
 		setIsMenuOpen(false);
-		setIsBrandsOpen(false);
-		setIsPagesOpen(false);
 	};
 
 	return (
@@ -336,61 +309,13 @@ export default function GearshiftHome() {
 										</li>
 										<li className="nav-list-item">
 											<a href="/our-fleet" className="nav-link" onClick={closeMenus}>
-												Our Fleet
+												Our Fllet
 											</a>
 										</li>
 										<li className="nav-list-item">
-											<div className={`nav-dropdown w-dropdown ${isBrandsOpen ? 'w--open' : ''}`}>
-												<button
-													type="button"
-													className={`nav-dropdown-toggle w-dropdown-toggle ${isBrandsOpen ? 'w--open' : ''}`}
-													onClick={() => setIsBrandsOpen((prev) => !prev)}
-													aria-expanded={isBrandsOpen}
-												>
-													<div className="nav-link">Car Brands</div>
-													<div className="nav-dropdown-icon w-icon-dropdown-toggle" />
-												</button>
-												<nav className={`nav-dropdown-list w-dropdown-list ${isBrandsOpen ? 'w--open' : ''}`}>
-													<div className="brands-collection-list">
-														{brands.map((brand) => (
-															<a key={brand} href={`/car-brands/${brand.toLowerCase().replace(/\s+/g, '-')}`} className="nav-dropdown-link" onClick={closeMenus}>
-																{brand}
-															</a>
-														))}
-													</div>
-												</nav>
-											</div>
-										</li>
-										<li className="nav-list-item">
-											<div className={`nav-dropdown w-dropdown ${isPagesOpen ? 'w--open' : ''}`}>
-												<button
-													type="button"
-													className={`nav-dropdown-toggle w-dropdown-toggle ${isPagesOpen ? 'w--open' : ''}`}
-													onClick={() => setIsPagesOpen((prev) => !prev)}
-													aria-expanded={isPagesOpen}
-												>
-													<div className="nav-link">Pages</div>
-													<div className="nav-dropdown-icon w-icon-dropdown-toggle" />
-												</button>
-												<nav className={`nav-dropdown-list pages-dropdown-list w-dropdown-list ${isPagesOpen ? 'w--open' : ''}`}>
-													<div className="nav-list-wrapper">
-														<h4 className="nav-dropdown-heading">Pages</h4>
-														{pageLinks.map((link) => (
-															<a key={link.label} href={link.href} className="nav-dropdown-link" onClick={closeMenus}>
-																{link.label}
-															</a>
-														))}
-													</div>
-													<div className="nav-list-wrapper">
-														<h4 className="nav-dropdown-heading">Utility Pages</h4>
-														{utilityLinks.map((link) => (
-															<a key={link.label} href={link.href} className="nav-dropdown-link" onClick={closeMenus}>
-																{link.label}
-															</a>
-														))}
-													</div>
-												</nav>
-											</div>
+											<a href="/services" className="nav-link" onClick={closeMenus}>
+												Services
+											</a>
 										</li>
 										<li className="nav-list-item">
 											<a href="/contact" className="nav-link" onClick={closeMenus}>
@@ -592,52 +517,31 @@ export default function GearshiftHome() {
 										Home
 									</a>
 									<a href="/about" className="footer-nav-link">
-										About Us
+										About
 									</a>
 									<a href="/our-fleet" className="footer-nav-link">
-										Our Fleet
+										Our Fllet
+									</a>
+									<a href="/services" className="footer-nav-link">
+										Services
 									</a>
 									<a href="/contact" className="footer-nav-link">
 										Contact Us
 									</a>
 								</div>
 								<div className="footer-links-wrapper">
-									<h2 className="heading">Template Pages</h2>
-									<a href="https://gearshifttemplate.webflow.io/cars/porsche-cayenne-coupe" className="footer-nav-link">
-										Cars Template
+									<h2 className="heading">Legal</h2>
+									<a href="/privacy-notice" className="footer-nav-link">
+										Privacy Notice
 									</a>
-									<a href="https://gearshifttemplate.webflow.io/car-types/convertible" className="footer-nav-link">
-										Car Types Template
+									<a href="/cancelation" className="footer-nav-link">
+										Cancelation
 									</a>
-									<a href="https://gearshifttemplate.webflow.io/locations/palm-jumeirah" className="footer-nav-link">
-										Car Locations Template
+									<a href="/refunds" className="footer-nav-link">
+										Refunds
 									</a>
-									<a href="https://gearshifttemplate.webflow.io/car-brands/mercedes-benz" className="footer-nav-link">
-										Car Brands Template
-									</a>
-									<a href="https://gearshifttemplate.webflow.io/features/bluetooth-audio" className="footer-nav-link">
-										Features Template
-									</a>
-								</div>
-								<div className="footer-links-wrapper">
-									<h2 className="heading">Utility Pages</h2>
-									<a href="https://gearshifttemplate.webflow.io/401" className="footer-nav-link">
-										Password Protected
-									</a>
-									<a href="https://gearshifttemplate.webflow.io/404" className="footer-nav-link">
-										404 Not Found
-									</a>
-									<a href="/style-guide" className="footer-nav-link">
-										Style Guide
-									</a>
-									<a href="/licenses" className="footer-nav-link">
-										Licenses
-									</a>
-									<a href="/changelog" className="footer-nav-link">
-										Changelog
-									</a>
-									<a href="/instructions" className="footer-nav-link">
-										Instructions
+									<a href="/taxes" className="footer-nav-link">
+										Taxes
 									</a>
 								</div>
 								<div className="footer-links-wrapper">
@@ -654,14 +558,21 @@ export default function GearshiftHome() {
 											rel="noreferrer"
 											className="footer-nav-link"
 										>
-											123 Avenida Presidente Mazarik, Lomas de Chapultepec, 11500 CDMX, Mexico
+											Goldsmith 250
 										</a>
 								</div>
 							</div>
-							<div className="divider" />
-								<div className="copyright-info-wrapper">
-									<div className="footer-copyright-text">Copyright Eite Ride Mexico</div>
-								</div>
+								<div className="divider" />
+									<div className="copyright-info-wrapper">
+										<a
+											href="https://www.o7digital.com/en/index-digital-agency"
+											target="_blank"
+											rel="noreferrer"
+											className="footer-copyright-text"
+										>
+											Copyright Eite Ride Mexico 2026 - made by o7Digital
+										</a>
+									</div>
 						</div>
 					</div>
 				</div>
