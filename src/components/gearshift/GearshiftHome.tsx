@@ -309,7 +309,7 @@ export default function GearshiftHome() {
 										</li>
 										<li className="nav-list-item">
 											<a href="/our-fleet" className="nav-link" onClick={closeMenus}>
-												Our Fllet
+												Our Fleet
 											</a>
 										</li>
 										<li className="nav-list-item">
