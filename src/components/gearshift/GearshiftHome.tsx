@@ -191,27 +191,32 @@ const cars: Car[] = [
 
 const locations: Location[] = [
 	{
-		name: 'Palm Jumeirah',
-		href: '/locations/palm-jumeirah',
+		name: 'Mexico City',
+		href: '/locations/mexico-city',
 		image:
 			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf853_palm-jumeirah.jpg'
 	},
 	{
-		name: 'JBR',
-		href: '/locations/jbr',
+		name: 'Puerto Vallarta',
+		href: '/locations/puerto-vallarta',
 		image: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf852_JBR.jpg'
 	},
 	{
-		name: 'Downtown Dubai',
-		href: '/locations/downtown-dubai',
+		name: 'Guadalajara',
+		href: '/locations/guadalajara',
 		image:
 			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf851_downtown-dubai.jpg'
 	},
 	{
-		name: 'Dubai Marina',
-		href: '/locations/dubai-marina',
+		name: 'Ixtapa Zihuatanejo',
+		href: '/locations/ixtapa-zihuatanejo',
 		image:
 			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf850_dubai-marina.jpg'
+	},
+	{
+		name: 'Cancun',
+		href: '/locations/cancun',
+		image: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf852_JBR.jpg'
 	}
 ];
 
@@ -401,9 +406,9 @@ export default function GearshiftHome() {
 						<div className="header-section-wrapper">
 							<div className="header-content-wrapper">
 									<div className="header-text-wrapper">
-										<h1 className="header-text">
-											We cover Blinded Vehicles Mexico Airports to Town with Drivers with Elite Ride Mexico Rentals.
-										</h1>
+											<h1 className="header-text">
+												We cover Blinded Vehicles Mexico Airports to Town with Drivers <span className="brand-span">Elite Ride Mexico</span> Rentals.
+											</h1>
 										<div className="primary-text">
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
 											efficitur.
