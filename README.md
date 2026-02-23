@@ -1,0 +1,3 @@
+# EliteRideMexico
+
+Initial repository setup.
