@@ -8,6 +8,8 @@
 	justify-content: center;
 	width: 44px;
 	height: 44px;
+	flex-direction: column;
+	cursor: pointer;
 }
 
 /* Car Cards Alignment */
