@@ -97,9 +97,10 @@
 
 .header-section {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5) 100%, #fff), url('/slider/gemini-bmw.png') !important;
-	background-position: 0 0, 50% 50% !important;
-	background-size: auto, cover !important;
+	background-position: 0 0, 56% 52% !important;
+	background-size: auto, 92% !important;
 	background-repeat: repeat, no-repeat !important;
+	background-color: #0b0b0b;
 }
 
 .whatsapp-footer-button {
@@ -210,6 +211,11 @@
 	.menu-button.w-nav-button {
 		width: 40px;
 		height: 40px;
+	}
+
+	.header-section {
+		background-position: 0 0, 52% 50% !important;
+		background-size: auto, cover !important;
 	}
 
 	.brand-logo-text {
