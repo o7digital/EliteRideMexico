@@ -29,9 +29,6 @@ type Step = {
 	alt: string;
 };
 
-const logoUrl =
-	'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/670c127ebfda26ab4b18882f_logo.svg';
-
 const brands = ['Audi', 'Porsche', 'BMW', 'Mercedes Benz', 'Ferrari'];
 
 const pageLinks = [
@@ -299,9 +296,9 @@ export default function GearshiftHome() {
 					<div className="navbar w-nav">
 						<div className="content-wrapper">
 							<div className="navbar-wrapper">
-								<a href="/" aria-current="page" className="brand w-nav-brand w--current" onClick={closeMenus}>
-									<img src={logoUrl} loading="lazy" alt="Elire Ride Mexico Logo" className="brand-logo" />
-								</a>
+									<a href="/" aria-current="page" className="brand w-nav-brand w--current" onClick={closeMenus}>
+										<span className="brand-logo-text">ELITE RIDE MEXICO</span>
+									</a>
 								<nav role="navigation" className={`nav-menu-wrapper w-nav-menu ${isMenuOpen ? 'w--open' : ''}`}>
 									<ul role="list" className="nav-menu w-list-unstyled">
 										<li className="nav-list-item">
@@ -405,7 +402,7 @@ export default function GearshiftHome() {
 							<div className="header-content-wrapper">
 								<div className="header-text-wrapper">
 										<h1 className="header-text">
-											Explore the Road Ahead with <span className="brand-span">Elire Ride Mexico</span> Rentals
+											Explore the Road Ahead with <span className="brand-span">Elite Ride Mexico</span> Rentals
 										</h1>
 									<div className="primary-text">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
@@ -524,10 +521,10 @@ export default function GearshiftHome() {
 					<div className="content-wrapper">
 						<div className="footer-content-wrapper">
 							<div className="footer-top-content">
-								<div className="footer-logo-social">
-									<a href="/" aria-current="page" className="brand w-nav-brand w--current">
-										<img src={logoUrl} loading="lazy" alt="Elire Ride Mexico Logo" className="brand-logo" />
-									</a>
+									<div className="footer-logo-social">
+										<a href="/" aria-current="page" className="brand w-nav-brand w--current">
+											<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+										</a>
 									<div className="footer-text">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
 										efficitur.
