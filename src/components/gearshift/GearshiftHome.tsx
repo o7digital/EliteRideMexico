@@ -217,6 +217,24 @@ const locations: Location[] = [
 		name: 'Cancun',
 		href: '/locations/cancun',
 		image: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf852_JBR.jpg'
+	},
+	{
+		name: 'Leon',
+		href: '/locations/leon',
+		image:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf851_downtown-dubai.jpg'
+	},
+	{
+		name: 'Cuernavaca',
+		href: '/locations/cuernavaca',
+		image:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf850_dubai-marina.jpg'
+	},
+	{
+		name: 'Monterrey',
+		href: '/locations/monterrey',
+		image:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf853_palm-jumeirah.jpg'
 	}
 ];
 
@@ -627,17 +645,17 @@ export default function GearshiftHome() {
 									<a href="tel:+971123456789" className="footer-nav-link">
 										+971 12 345 6789
 									</a>
-										<a href="mailto:info@elireridemexico.com" className="footer-nav-link">
-											info@elireridemexico.com
+										<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
+											info@eliteridemexico.com
 										</a>
-									<a
-										href="https://www.google.com/maps/search/+123+Innovation+Street,+Downtown+Dubai,+Dubai,+UAE/@25.1559625,55.2253142,11.35z?entry=ttu"
-										target="_blank"
-										rel="noreferrer"
-										className="footer-nav-link"
-									>
-										123 Innovation Street, Downtown Dubai, Dubai, UAE
-									</a>
+										<a
+											href="https://www.google.com/maps/search/+123+Innovation+Street,+Downtown+Dubai,+Dubai,+UAE/@25.1559625,55.2253142,11.35z?entry=ttu"
+											target="_blank"
+											rel="noreferrer"
+											className="footer-nav-link"
+										>
+											123 Avenida Presidente Mazarik, Lomas de Chapultepec, 11500 CDMX, Mexico
+										</a>
 								</div>
 							</div>
 							<div className="divider" />
