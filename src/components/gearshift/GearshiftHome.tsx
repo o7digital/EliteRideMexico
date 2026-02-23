@@ -400,14 +400,14 @@ export default function GearshiftHome() {
 					<div className="content-wrapper">
 						<div className="header-section-wrapper">
 							<div className="header-content-wrapper">
-								<div className="header-text-wrapper">
+									<div className="header-text-wrapper">
 										<h1 className="header-text">
-											Explore the Road Ahead with <span className="brand-span">Elite Ride Mexico</span> Rentals
+											We cover Blinded Vehicles Mexico Airports to Town with Drivers with Elite Ride Mexico Rentals.
 										</h1>
-									<div className="primary-text">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
-										efficitur.
-									</div>
+										<div className="primary-text">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
+											efficitur.
+										</div>
 									<div className="header-button-wrapper">
 										<a href="/our-fleet" className="cta-button w-button">
 											View Our Fleet
