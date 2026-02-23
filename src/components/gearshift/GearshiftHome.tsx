@@ -357,7 +357,7 @@ export default function GearshiftHome() {
 											efficitur.
 										</div>
 									<div className="header-button-wrapper">
-										<a href="/our-fleet" className="cta-button w-button">
+										<a href="#featured-cars" className="cta-button w-button">
 											View Our Fleet
 										</a>
 									</div>
@@ -384,7 +384,7 @@ export default function GearshiftHome() {
 				</div>
 			</section>
 
-			<section className="section">
+			<section id="featured-cars" className="section">
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
 						<h2 className="section-heading">Featured Cars</h2>

@@ -131,7 +131,12 @@
 
 @media screen and (max-width: 991px) {
 	.menu-button.w-nav-button {
-		display: flex;
+		display: flex !important;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		z-index: 90;
 	}
 
 	.brand-logo-text {
@@ -139,6 +144,11 @@
 	}
 
 	.navbar {
+		position: relative;
+		z-index: 80;
+	}
+
+	.navbar-wrapper {
 		position: relative;
 	}
 
