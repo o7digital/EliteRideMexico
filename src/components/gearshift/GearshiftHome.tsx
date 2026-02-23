@@ -300,7 +300,7 @@ export default function GearshiftHome() {
 						<div className="content-wrapper">
 							<div className="navbar-wrapper">
 								<a href="/" aria-current="page" className="brand w-nav-brand w--current" onClick={closeMenus}>
-									<img src={logoUrl} loading="lazy" alt="GearShift Logo" className="brand-logo" />
+									<img src={logoUrl} loading="lazy" alt="Elire Ride Mexico Logo" className="brand-logo" />
 								</a>
 								<nav role="navigation" className={`nav-menu-wrapper w-nav-menu ${isMenuOpen ? 'w--open' : ''}`}>
 									<ul role="list" className="nav-menu w-list-unstyled">
@@ -404,9 +404,9 @@ export default function GearshiftHome() {
 						<div className="header-section-wrapper">
 							<div className="header-content-wrapper">
 								<div className="header-text-wrapper">
-									<h1 className="header-text">
-										Explore the Road Ahead with <span className="brand-span">GearShift</span> Rentals
-									</h1>
+										<h1 className="header-text">
+											Explore the Road Ahead with <span className="brand-span">Elire Ride Mexico</span> Rentals
+										</h1>
 									<div className="primary-text">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
 										efficitur.
@@ -526,7 +526,7 @@ export default function GearshiftHome() {
 							<div className="footer-top-content">
 								<div className="footer-logo-social">
 									<a href="/" aria-current="page" className="brand w-nav-brand w--current">
-										<img src={logoUrl} loading="lazy" alt="GearShift Logo" className="brand-logo" />
+										<img src={logoUrl} loading="lazy" alt="Elire Ride Mexico Logo" className="brand-logo" />
 									</a>
 									<div className="footer-text">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
@@ -625,9 +625,9 @@ export default function GearshiftHome() {
 									<a href="tel:+971123456789" className="footer-nav-link">
 										+971 12 345 6789
 									</a>
-									<a href="mailto:info@gearshift.ae" className="footer-nav-link">
-										info@gearshift.ae
-									</a>
+										<a href="mailto:info@elireridemexico.com" className="footer-nav-link">
+											info@elireridemexico.com
+										</a>
 									<a
 										href="https://www.google.com/maps/search/+123+Innovation+Street,+Downtown+Dubai,+Dubai,+UAE/@25.1559625,55.2253142,11.35z?entry=ttu"
 										target="_blank"
@@ -639,23 +639,9 @@ export default function GearshiftHome() {
 								</div>
 							</div>
 							<div className="divider" />
-							<div className="copyright-info-wrapper">
-								<div className="footer-copyright-text">
-									Copyright © GearShift | Powered by{' '}
-									<a href="https://webflow.com/" target="_blank" rel="noreferrer" className="link-text">
-										Webflow
-									</a>{' '}
-									| Designed by{' '}
-									<a
-										href="https://webflow.com/templates/designers/am-templates"
-										target="_blank"
-										rel="noreferrer"
-										className="link-text"
-									>
-										AM Templates
-									</a>
+								<div className="copyright-info-wrapper">
+									<div className="footer-copyright-text">Copyright Eite Ride Mexico</div>
 								</div>
-							</div>
 						</div>
 					</div>
 				</div>
