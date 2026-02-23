@@ -243,6 +243,8 @@ const steps: Step[] = [
 	}
 ];
 
+const whatsappLink = 'https://wa.me/525574085802';
+
 const socialLinks = [
 	{
 		label: 'X',
@@ -265,7 +267,7 @@ const socialLinks = [
 	},
 	{
 		label: 'WhatsApp',
-		href: 'https://www.whatsapp.com/',
+		href: whatsappLink,
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png',
 		alt: 'WhatsApp Icon'
 	}
@@ -558,7 +560,7 @@ export default function GearshiftHome() {
 											rel="noreferrer"
 											className="footer-nav-link"
 										>
-											Goldsmith 250
+											Goldsmith 250, Lomas de Chapultepec Colonia Miguel Hidaglo 11500 CDMX Mexico
 										</a>
 								</div>
 							</div>
@@ -577,6 +579,20 @@ export default function GearshiftHome() {
 					</div>
 				</div>
 			</section>
+			<a
+				href={whatsappLink}
+				target="_blank"
+				rel="noreferrer"
+				className="whatsapp-footer-button"
+				aria-label="WhatsApp"
+			>
+				<img
+					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
+					loading="lazy"
+					alt="WhatsApp Icon"
+					className="whatsapp-footer-icon"
+				/>
+			</a>
 		</div>
 	);
 }
