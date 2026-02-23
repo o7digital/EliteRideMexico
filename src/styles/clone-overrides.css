@@ -63,6 +63,13 @@
 	font-size: 24px;
 }
 
+.header-section {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5) 100%, #fff), url('/slider/gemini-bmw.png') !important;
+	background-position: 0 0, 50% 50% !important;
+	background-size: auto, cover !important;
+	background-repeat: repeat, no-repeat !important;
+}
+
 .whatsapp-footer-button {
 	position: fixed;
 	right: 24px;
