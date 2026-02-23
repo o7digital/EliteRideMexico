@@ -10,6 +10,38 @@
 	height: 44px;
 }
 
+/* Car Cards Alignment */
+.car-collection-item {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.car-image-wrapper {
+	display: block;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	margin-bottom: 0;
+}
+
+.listing-car-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.car-details-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding: 20px 10px 10px;
+}
+
+.details-btn {
+	margin-top: auto;
+}
+
 .hamburger-line {
 	display: block;
 	width: 24px;
