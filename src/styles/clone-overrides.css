@@ -1,0 +1,131 @@
+.w-webflow-badge {
+	display: none !important;
+}
+
+.menu-button.w-nav-button {
+	display: none;
+	background: transparent;
+	padding: 0;
+	border: 0;
+	gap: 6px;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+}
+
+.hamburger-line {
+	display: block;
+	width: 24px;
+	height: 2px;
+	background: #fff;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-button.w--open .hamburger-line:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+}
+
+.menu-button.w--open .hamburger-line:nth-child(2) {
+	opacity: 0;
+}
+
+.menu-button.w--open .hamburger-line:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-dropdown-toggle {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	font: inherit;
+}
+
+.nav-dropdown:hover .nav-dropdown-list {
+	display: flex;
+}
+
+.nav-dropdown-list.w--open {
+	display: flex;
+}
+
+.nav-dropdown-list.pages-dropdown-list.w--open {
+	display: flex;
+}
+
+@media screen and (max-width: 991px) {
+	.menu-button.w-nav-button {
+		display: flex;
+	}
+
+	.navbar {
+		position: relative;
+	}
+
+	.nav-menu-wrapper {
+		display: none;
+		position: absolute;
+		top: calc(100% + 8px);
+		right: 24px;
+		left: 24px;
+		z-index: 30;
+	}
+
+	.nav-menu-wrapper.w--open {
+		display: block;
+	}
+
+	.nav-menu {
+		width: 100%;
+	}
+
+	.nav-dropdown {
+		width: 100%;
+	}
+
+	.nav-dropdown-toggle {
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+	.nav-dropdown:hover .nav-dropdown-list {
+		display: none;
+	}
+
+	.nav-dropdown .nav-dropdown-list.w--open {
+		display: flex;
+	}
+
+	.nav-dropdown-list,
+	.nav-dropdown-list.pages-dropdown-list,
+	.nav-dropdown-list.w--open,
+	.nav-dropdown-list.pages-dropdown-list.w--open {
+		position: static;
+		left: auto;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+		background-color: transparent;
+		border: 0;
+		padding: 20px 0 0;
+		box-shadow: none;
+	}
+
+	.nav-link {
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.menu-button.w-nav-button {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.nav-menu-wrapper {
+		right: 16px;
+		left: 16px;
+	}
+}
