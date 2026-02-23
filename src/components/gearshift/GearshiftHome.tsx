@@ -31,16 +31,15 @@ type Step = {
 
 const cars: Car[] = [
 	{
-		name: 'Porsche Cayenne Coupe',
-		href: '/cars/porsche-cayenne-coupe',
-		image:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf848_porsche-cayenne.jpg',
+		name: 'Chevrolet Suburban',
+		href: '/cars/chevrolet-suburban-black',
+		image: '/cars/chevy-suburban-black.jpeg',
 		year: '2024',
-		price: '5000',
+		price: '4500',
 		details: [
 			{
 				key: 'mileage',
-				value: '5800',
+				value: '5200',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
 				alt: 'Mileage Icon'
 			},
@@ -52,28 +51,28 @@ const cars: Car[] = [
 			},
 			{
 				key: 'seats',
-				value: '5',
+				value: '7',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
 				alt: 'Seats Icon'
 			},
 			{
 				key: 'baggage',
-				value: '4',
+				value: '8',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
 				alt: 'Baggage Icon'
 			}
 		]
 	},
 	{
-		name: 'BMW M4 Competition',
-		href: '/cars/bmw-m4-competition',
-		image: 'https://cdn.prod.website-files.com/666cc5f8d5f2d4084c4b716f/666f8fbd909ca9fc3a1a6f24_bmw-m4.jpg',
-		year: '2019',
-		price: '1300',
+		name: 'Chevrolet Suburban White',
+		href: '/cars/chevrolet-suburban-white',
+		image: '/cars/chevy-white.jpeg',
+		year: '2023',
+		price: '4200',
 		details: [
 			{
 				key: 'mileage',
-				value: '4700',
+				value: '4800',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
 				alt: 'Mileage Icon'
 			},
@@ -85,62 +84,28 @@ const cars: Car[] = [
 			},
 			{
 				key: 'seats',
-				value: '5',
+				value: '7',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
 				alt: 'Seats Icon'
 			},
 			{
 				key: 'baggage',
-				value: '6',
+				value: '8',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
 				alt: 'Baggage Icon'
 			}
 		]
 	},
 	{
-		name: 'Ferrari 458',
-		href: '/cars/ferrari-458',
-		image: 'https://cdn.prod.website-files.com/666cc5f8d5f2d4084c4b716f/666f9021d150b5c5b96e49b6_ferrari-458.jpg',
-		year: '2021',
-		price: '3900',
-		details: [
-			{
-				key: 'mileage',
-				value: '6100',
-				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
-				alt: 'Mileage Icon'
-			},
-			{
-				key: 'transmission',
-				value: 'Manual',
-				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
-				alt: 'Transmission Icon'
-			},
-			{
-				key: 'seats',
-				value: '2',
-				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
-				alt: 'Seats Icon'
-			},
-			{
-				key: 'baggage',
-				value: '2',
-				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
-				alt: 'Baggage Icon'
-			}
-		]
-	},
-	{
-		name: 'Porsche 992',
-		href: '/cars/porsche-992',
-		image:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf849_porsche-992.jpg',
+		name: 'GMC Yukon Denali',
+		href: '/cars/gmc-yukon-denali',
+		image: '/cars/gmc-yukon-beige.jpeg',
 		year: '2024',
-		price: '2100',
+		price: '4800',
 		details: [
 			{
 				key: 'mileage',
-				value: '5500',
+				value: '5100',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
 				alt: 'Mileage Icon'
 			},
@@ -152,13 +117,46 @@ const cars: Car[] = [
 			},
 			{
 				key: 'seats',
-				value: '2',
+				value: '7',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
 				alt: 'Seats Icon'
 			},
 			{
 				key: 'baggage',
-				value: '3',
+				value: '8',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
+				alt: 'Baggage Icon'
+			}
+		]
+	},
+	{
+		name: 'Toyota Land Cruiser',
+		href: '/cars/toyota-land-cruiser',
+		image: '/cars/toyota-landcruiser-black.jpeg',
+		year: '2024',
+		price: '5200',
+		details: [
+			{
+				key: 'mileage',
+				value: '5600',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+				alt: 'Mileage Icon'
+			},
+			{
+				key: 'transmission',
+				value: 'Automatic',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+				alt: 'Transmission Icon'
+			},
+			{
+				key: 'seats',
+				value: '7',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+				alt: 'Seats Icon'
+			},
+			{
+				key: 'baggage',
+				value: '8',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
 				alt: 'Baggage Icon'
 			}
