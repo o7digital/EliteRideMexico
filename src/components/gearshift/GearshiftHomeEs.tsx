@@ -45,7 +45,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automatic',
+				value: 'Automático',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -78,7 +78,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automatic',
+				value: 'Automático',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -111,7 +111,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automatic',
+				value: 'Automático',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -144,7 +144,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automatic',
+				value: 'Automático',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -215,27 +215,27 @@ const locations: Location[] = [
 
 const steps: Step[] = [
 	{
-		title: 'Browse Our Fleet',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+		title: 'Explora Nuestra Flota',
+		description: 'Descubre nuestros vehículos premium disponibles en México.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983a3267985f2f6160ffc_search.png',
 		alt: 'Search Icon'
 	},
 	{
-		title: 'Select Your Vehicle',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+		title: 'Selecciona Tu Vehículo',
+		description: 'Elige la opción que mejor se adapte a tu viaje.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/66798467e9aadbf3723fcb9c_select-car.png',
 		alt: 'Select Car Icon'
 	},
 	{
-		title: 'Submit an Enquiry',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+		title: 'Envía Tu Solicitud',
+		description: 'Comparte tus fechas y preferencias en pocos pasos.',
 		icon:
 			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6679829d328059dd49614d20_online-booking.png',
 		alt: 'Enquiry Form Icon'
 	},
 	{
-		title: 'Pick Up & Drive',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+		title: 'Recoge y Conduce',
+		description: 'Recibe tu unidad y disfruta una experiencia sin complicaciones.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983913dc4764e171e992b_drive.png',
 		alt: 'Drive Icon'
 	}
@@ -272,13 +272,13 @@ const socialLinks = [
 ];
 
 const metrics = [
-	{ value: '10', label: 'Years of Experience' },
-	{ value: '1000', label: 'Happy Clients' },
-	{ value: '200', label: 'Vehicles' },
-	{ value: '10', label: 'Locations' }
+	{ value: '10', label: 'Años de Experiencia' },
+	{ value: '1000', label: 'Clientes Satisfechos' },
+	{ value: '200', label: 'Vehículos' },
+	{ value: '10', label: 'Ubicaciones' }
 ];
 
-export default function GearshiftHome() {
+export default function GearshiftHomeEs() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
@@ -293,68 +293,68 @@ export default function GearshiftHome() {
 				<div className="header-section">
 					<div className="navbar w-nav">
 						<div className="content-wrapper">
-							<div className="navbar-wrapper">
-									<a href="/" aria-current="page" className="brand w-nav-brand w--current" onClick={closeMenus}>
-										<span className="brand-logo-text">ELITE RIDE MEXICO</span>
-									</a>
+								<div className="navbar-wrapper">
+										<a href="/es" aria-current="page" className="brand w-nav-brand w--current" onClick={closeMenus}>
+											<span className="brand-logo-text">ELITE RIDE MEXICO</span>
+										</a>
 								<nav role="navigation" className={`nav-menu-wrapper w-nav-menu ${isMenuOpen ? 'w--open' : ''}`}>
 									<ul role="list" className="nav-menu w-list-unstyled">
-										<li className="nav-list-item">
-											<a href="/" aria-current="page" className="nav-link w--current" onClick={closeMenus}>
-												Home
-											</a>
-										</li>
-										<li className="nav-list-item">
-											<a href="/about" className="nav-link" onClick={closeMenus}>
-												About
-											</a>
-										</li>
-										<li className="nav-list-item">
-											<a href="/our-fleet" className="nav-link" onClick={closeMenus}>
-												Our Fleet
-											</a>
-										</li>
-										<li className="nav-list-item">
-											<a href="/services" className="nav-link" onClick={closeMenus}>
-												Services
-											</a>
-										</li>
-										<li className="nav-list-item">
-											<a href="/contact" className="nav-link" onClick={closeMenus}>
-												Contact Us
-											</a>
-										</li>
-										<li className="nav-list-item">
-											<div className="cta-button-wrapper">
-												<a href="/our-fleet" className="cta-button w-button" onClick={closeMenus}>
-													rent now
+											<li className="nav-list-item">
+												<a href="/es" aria-current="page" className="nav-link w--current" onClick={closeMenus}>
+													Inicio
 												</a>
-											</div>
-										</li>
-										<li className="nav-list-item language-switch-item">
-											<div className="language-switch">
-												<button
-													type="button"
-													className="language-switch-button"
-													onClick={() => setIsLanguageOpen((prev) => !prev)}
-													aria-expanded={isLanguageOpen}
-													aria-label="Switch language"
-												>
-													EN
-													<span className={`language-switch-chevron ${isLanguageOpen ? 'open' : ''}`}>v</span>
-												</button>
-												<div className={`language-switch-list ${isLanguageOpen ? 'open' : ''}`}>
-													<a href="/" className="language-switch-link active" onClick={closeMenus}>
-														EN
-													</a>
-													<a href="/es" className="language-switch-link" onClick={closeMenus}>
-														ES
-													</a>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</nav>
+											</li>
+											<li className="nav-list-item">
+												<a href="/about" className="nav-link" onClick={closeMenus}>
+													Nosotros
+												</a>
+											</li>
+											<li className="nav-list-item">
+												<a href="/our-fleet" className="nav-link" onClick={closeMenus}>
+													Nuestra Flota
+												</a>
+											</li>
+											<li className="nav-list-item">
+												<a href="/services" className="nav-link" onClick={closeMenus}>
+													Servicios
+												</a>
+											</li>
+											<li className="nav-list-item">
+												<a href="/contact" className="nav-link" onClick={closeMenus}>
+													Contacto
+												</a>
+											</li>
+												<li className="nav-list-item">
+													<div className="cta-button-wrapper">
+														<a href="/our-fleet" className="cta-button w-button" onClick={closeMenus}>
+															Reserva ahora
+														</a>
+													</div>
+												</li>
+												<li className="nav-list-item language-switch-item">
+													<div className="language-switch">
+														<button
+															type="button"
+															className="language-switch-button"
+															onClick={() => setIsLanguageOpen((prev) => !prev)}
+															aria-expanded={isLanguageOpen}
+															aria-label="Cambiar idioma"
+														>
+															ES
+															<span className={`language-switch-chevron ${isLanguageOpen ? 'open' : ''}`}>v</span>
+														</button>
+														<div className={`language-switch-list ${isLanguageOpen ? 'open' : ''}`}>
+															<a href="/es" className="language-switch-link active" onClick={closeMenus}>
+																ES
+															</a>
+															<a href="/" className="language-switch-link" onClick={closeMenus}>
+																EN
+															</a>
+														</div>
+													</div>
+												</li>
+										</ul>
+									</nav>
 								<button
 									type="button"
 									className={`menu-button w-nav-button ${isMenuOpen ? 'w--open' : ''}`}
@@ -374,15 +374,14 @@ export default function GearshiftHome() {
 							<div className="header-content-wrapper">
 									<div className="header-text-wrapper">
 											<h1 className="header-text">
-												We cover Blinded Vehicles Mexico Airports to Town with Drivers <span className="brand-span">Elite Ride Mexico</span> Rentals.
+												Ofrecemos Vehículos Blindados en Aeropuertos de México y Traslados a la Ciudad con Chofer de <span className="brand-span">Elite Ride Mexico</span>.
 											</h1>
 										<div className="primary-text">
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
-											efficitur.
+											Renta vehículos premium con servicio profesional, seguridad y atención personalizada.
 										</div>
 									<div className="header-button-wrapper">
 										<a href="#featured-cars" className="cta-button w-button">
-											View Our Fleet
+											Ver Nuestra Flota
 										</a>
 									</div>
 								</div>
@@ -411,9 +410,9 @@ export default function GearshiftHome() {
 			<section id="featured-cars" className="section">
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Featured Cars</h2>
+						<h2 className="section-heading">Vehículos Destacados</h2>
 						<a href="/our-fleet" className="cta-button w-button">
-							Show all
+							Ver todos
 						</a>
 					</div>
 					<div className="cars-collection-list-wrapper">
@@ -430,7 +429,7 @@ export default function GearshiftHome() {
 											<div className="listing-price-wrapper">
 												<div className="currency-price-term">AED</div>
 												<div className="car-listing-price">{car.price}</div>
-												<div className="currency-price-term">/ DAY</div>
+												<div className="currency-price-term">/ DÍA</div>
 											</div>
 											<div className="car-listing-details-wrapper">
 												{car.details.map((detail) => (
@@ -441,7 +440,7 @@ export default function GearshiftHome() {
 												))}
 											</div>
 											<a href={car.href} className="details-btn w-button">
-												See Full Details
+												Ver Detalles
 											</a>
 										</div>
 									</article>
@@ -455,7 +454,7 @@ export default function GearshiftHome() {
 			<section className="section bg-white">
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Our Locations</h2>
+						<h2 className="section-heading">Nuestras Ubicaciones</h2>
 					</div>
 					<div className="location-collection-list-wrapper">
 						<div className="location-collection-list">
@@ -492,15 +491,14 @@ export default function GearshiftHome() {
 				<div className="footer-section-wrapper">
 					<div className="content-wrapper">
 						<div className="footer-content-wrapper">
-							<div className="footer-top-content">
-									<div className="footer-logo-social">
-										<a href="/" aria-current="page" className="brand w-nav-brand w--current">
-											<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
-										</a>
-									<div className="footer-text">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
-										efficitur.
-									</div>
+								<div className="footer-top-content">
+										<div className="footer-logo-social">
+											<a href="/es" aria-current="page" className="brand w-nav-brand w--current">
+												<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+											</a>
+										<div className="footer-text">
+											Servicio premium de renta de vehículos con chofer en los principales destinos de México.
+										</div>
 									<div className="social-media-links">
 										{socialLinks.map((social) => (
 											<a
@@ -517,7 +515,7 @@ export default function GearshiftHome() {
 									</div>
 								</div>
 								<div className="footer-newsletter">
-									<h3 className="small-heading">Subscribe to our newsletter</h3>
+									<h3 className="small-heading">Suscríbete a nuestro boletín</h3>
 									<div className="w-form">
 										<form className="newsletter-form" onSubmit={(event) => event.preventDefault()}>
 											<input
@@ -528,7 +526,7 @@ export default function GearshiftHome() {
 												type="email"
 												required
 											/>
-											<input type="submit" className="cta-button w-button" value="Submit" />
+											<input type="submit" className="cta-button w-button" value="Enviar" />
 										</form>
 									</div>
 								</div>
@@ -536,40 +534,40 @@ export default function GearshiftHome() {
 							<div className="divider" />
 							<div className="footer-bottom-content">
 								<div className="footer-links-wrapper">
-									<h2 className="heading">Pages</h2>
-									<a href="/" className="footer-nav-link w--current">
-										Home
+									<h2 className="heading">Páginas</h2>
+									<a href="/es" className="footer-nav-link w--current">
+										Inicio
 									</a>
 									<a href="/about" className="footer-nav-link">
-										About
+										Nosotros
 									</a>
 									<a href="/our-fleet" className="footer-nav-link">
-										Our Fllet
+										Nuestra Flota
 									</a>
 									<a href="/services" className="footer-nav-link">
-										Services
+										Servicios
 									</a>
 									<a href="/contact" className="footer-nav-link">
-										Contact Us
+										Contacto
 									</a>
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>
 									<a href="/privacy-notice" className="footer-nav-link">
-										Privacy Notice
+										Aviso de Privacidad
 									</a>
 									<a href="/cancelation" className="footer-nav-link">
-										Cancelation
+										Cancelación
 									</a>
 									<a href="/refunds" className="footer-nav-link">
-										Refunds
+										Reembolsos
 									</a>
 									<a href="/taxes" className="footer-nav-link">
-										Taxes
+										Impuestos
 									</a>
 								</div>
 								<div className="footer-links-wrapper">
-									<h2 className="heading">Get In Touch</h2>
+									<h2 className="heading">Contáctanos</h2>
 									<a href="tel:+971123456789" className="footer-nav-link">
 										+971 12 345 6789
 									</a>
@@ -594,7 +592,7 @@ export default function GearshiftHome() {
 											rel="noreferrer"
 											className="footer-copyright-text"
 										>
-											Copyright Eite Ride Mexico 2026 - made by o7Digital
+											Copyright Elite Ride Mexico 2026 - hecho por o7Digital
 										</a>
 									</div>
 						</div>

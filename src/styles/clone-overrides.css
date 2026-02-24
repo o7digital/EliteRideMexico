@@ -105,6 +105,74 @@
 	background-color: #0b0b0b;
 }
 
+.language-switch-item {
+	margin-left: 10px;
+}
+
+.language-switch {
+	position: relative;
+}
+
+.language-switch-button {
+	color: #fff;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	border-radius: 999px;
+	padding: 10px 14px;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.language-switch-chevron {
+	font-size: 10px;
+	transition: transform 0.2s ease;
+}
+
+.language-switch-chevron.open {
+	transform: rotate(180deg);
+}
+
+.language-switch-list {
+	display: none;
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 0;
+	z-index: 95;
+	min-width: 84px;
+	background: #0f0f0f;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 12px;
+	padding: 6px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.language-switch-list.open {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.language-switch-link {
+	color: #fff;
+	text-decoration: none;
+	padding: 8px 10px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.language-switch-link:hover {
+	background: rgba(255, 255, 255, 0.12);
+}
+
+.language-switch-link.active {
+	background: #f68026;
+}
+
 .whatsapp-footer-button {
 	position: fixed;
 	right: 24px;
@@ -206,6 +274,26 @@
 
 	.nav-link {
 		text-align: left;
+	}
+
+	.language-switch-item {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.language-switch {
+		width: 100%;
+	}
+
+	.language-switch-button {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.language-switch-list {
+		position: static;
+		margin-top: 8px;
+		width: 100%;
 	}
 }
 
