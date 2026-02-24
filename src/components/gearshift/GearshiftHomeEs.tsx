@@ -34,7 +34,7 @@ const cars: Car[] = [
 		name: 'Chevrolet Suburban',
 		href: '/cars/chevrolet-suburban-black',
 		image: '/cars/chevy-suburban-black.jpeg',
-		year: '2024',
+		year: '2025',
 		price: '4500',
 		details: [
 			{
@@ -45,7 +45,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automático',
+				value: 'Automatico',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -67,7 +67,7 @@ const cars: Car[] = [
 		name: 'Chevrolet Suburban White',
 		href: '/cars/chevrolet-suburban-white',
 		image: '/cars/chevy-white.jpeg',
-		year: '2023',
+		year: '2025',
 		price: '4200',
 		details: [
 			{
@@ -78,7 +78,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automático',
+				value: 'Automatico',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -100,7 +100,7 @@ const cars: Car[] = [
 		name: 'GMC Yukon Denali',
 		href: '/cars/gmc-yukon-denali',
 		image: '/cars/gmc-yukon-beige.jpeg',
-		year: '2024',
+		year: '2025',
 		price: '4800',
 		details: [
 			{
@@ -111,7 +111,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automático',
+				value: 'Automatico',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -144,7 +144,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automático',
+				value: 'Automatico',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -216,18 +216,18 @@ const locations: Location[] = [
 const steps: Step[] = [
 	{
 		title: 'Explora Nuestra Flota',
-		description: 'Descubre nuestros vehículos premium disponibles en México.',
+		description: 'Descubre nuestros vehiculos premium disponibles en Mexico.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983a3267985f2f6160ffc_search.png',
 		alt: 'Search Icon'
 	},
 	{
-		title: 'Selecciona Tu Vehículo',
-		description: 'Elige la opción que mejor se adapte a tu viaje.',
+		title: 'Selecciona Tu Vehiculo',
+		description: 'Elige la opcion que mejor se adapte a tu viaje.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/66798467e9aadbf3723fcb9c_select-car.png',
 		alt: 'Select Car Icon'
 	},
 	{
-		title: 'Envía Tu Solicitud',
+		title: 'Envia Tu Solicitud',
 		description: 'Comparte tus fechas y preferencias en pocos pasos.',
 		icon:
 			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6679829d328059dd49614d20_online-booking.png',
@@ -274,7 +274,7 @@ const socialLinks = [
 const metrics = [
 	{ value: '10', label: 'Años de Experiencia' },
 	{ value: '1000', label: 'Clientes Satisfechos' },
-	{ value: '200', label: 'Vehículos' },
+	{ value: '200', label: 'Vehiculos' },
 	{ value: '10', label: 'Ubicaciones' }
 ];
 
@@ -374,10 +374,10 @@ export default function GearshiftHomeEs() {
 							<div className="header-content-wrapper">
 									<div className="header-text-wrapper">
 											<h1 className="header-text">
-												Ofrecemos Vehículos Blindados en Aeropuertos de México y Traslados a la Ciudad con Chofer de <span className="brand-span">Elite Ride Mexico</span>.
+													Ofrecemos Vehiculos Blindados en Aeropuertos de Mexico y Traslados a la Ciudad con Chofer de <span className="brand-span">Elite Ride Mexico</span>.
 											</h1>
 										<div className="primary-text">
-											Renta vehículos premium con servicio profesional, seguridad y atención personalizada.
+													Renta vehículos premium con servicio profesional, seguridad y atención personalizada.
 										</div>
 									<div className="header-button-wrapper">
 										<a href="#featured-cars" className="cta-button w-button">
@@ -410,7 +410,7 @@ export default function GearshiftHomeEs() {
 			<section id="featured-cars" className="section">
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Vehículos Destacados</h2>
+								<h2 className="section-heading">Vehiculos DEstacados.</h2>
 						<a href="/our-fleet" className="cta-button w-button">
 							Ver todos
 						</a>
@@ -429,7 +429,7 @@ export default function GearshiftHomeEs() {
 											<div className="listing-price-wrapper">
 												<div className="currency-price-term">AED</div>
 												<div className="car-listing-price">{car.price}</div>
-												<div className="currency-price-term">/ DÍA</div>
+													<div className="currency-price-term">/ DIA</div>
 											</div>
 											<div className="car-listing-details-wrapper">
 												{car.details.map((detail) => (
@@ -497,7 +497,7 @@ export default function GearshiftHomeEs() {
 												<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
 											</a>
 										<div className="footer-text">
-											Servicio premium de renta de vehículos con chofer en los principales destinos de México.
+											Servicio premium de renta de vehiculos con chofer en los principales destinos de Mexico.
 										</div>
 									<div className="social-media-links">
 										{socialLinks.map((social) => (
@@ -515,7 +515,7 @@ export default function GearshiftHomeEs() {
 									</div>
 								</div>
 								<div className="footer-newsletter">
-									<h3 className="small-heading">Suscríbete a nuestro boletín</h3>
+										<h3 className="small-heading">Suscribete a nuestro boletin</h3>
 									<div className="w-form">
 										<form className="newsletter-form" onSubmit={(event) => event.preventDefault()}>
 											<input
@@ -534,7 +534,7 @@ export default function GearshiftHomeEs() {
 							<div className="divider" />
 							<div className="footer-bottom-content">
 								<div className="footer-links-wrapper">
-									<h2 className="heading">Páginas</h2>
+										<h2 className="heading">Paginas</h2>
 									<a href="/es" className="footer-nav-link w--current">
 										Inicio
 									</a>
@@ -557,7 +557,7 @@ export default function GearshiftHomeEs() {
 										Aviso de Privacidad
 									</a>
 									<a href="/cancelation" className="footer-nav-link">
-										Cancelación
+											Cancelacion
 									</a>
 									<a href="/refunds" className="footer-nav-link">
 										Reembolsos
@@ -567,7 +567,7 @@ export default function GearshiftHomeEs() {
 									</a>
 								</div>
 								<div className="footer-links-wrapper">
-									<h2 className="heading">Contáctanos</h2>
+										<h2 className="heading">Contactanos</h2>
 									<a href="tel:+971123456789" className="footer-nav-link">
 										+971 12 345 6789
 									</a>
