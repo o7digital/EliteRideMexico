@@ -33,7 +33,7 @@ const cars: Car[] = [
 	{
 		name: 'Chevrolet Suburban',
 		href: '/cars/chevrolet-suburban-black',
-		image: '/cars/chevy-suburban-black.jpeg',
+		image: '/cars/chevy-suburban-black.webp',
 		year: '2024',
 		price: '4500',
 		details: [
@@ -66,7 +66,7 @@ const cars: Car[] = [
 	{
 		name: 'Chevrolet Suburban White',
 		href: '/cars/chevrolet-suburban-white',
-		image: '/cars/chevy-white.jpeg',
+		image: '/cars/chevy-white.webp',
 		year: '2023',
 		price: '4200',
 		details: [
@@ -99,7 +99,7 @@ const cars: Car[] = [
 	{
 		name: 'GMC Yukon Denali',
 		href: '/cars/gmc-yukon-denali',
-		image: '/cars/gmc-yukon-beige.jpeg',
+		image: '/cars/gmc-yukon-beige.webp',
 		year: '2024',
 		price: '4800',
 		details: [
@@ -132,7 +132,7 @@ const cars: Car[] = [
 	{
 		name: 'Toyota Land Cruiser',
 		href: '/cars/toyota-land-cruiser',
-		image: '/cars/toyota-landcruiser-black.jpeg',
+		image: '/cars/toyota-landcruiser-black.webp',
 		year: '2024',
 		price: '5200',
 		details: [
@@ -216,26 +216,26 @@ const locations: Location[] = [
 const steps: Step[] = [
 	{
 		title: 'Browse Our Fleet',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+		description: 'Choose from 300+ premium SUVs, executive vans and armored vehicles available across Mexico.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983a3267985f2f6160ffc_search.png',
 		alt: 'Search Icon'
 	},
 	{
 		title: 'Select Your Vehicle',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+		description: 'Pick the model that fits your trip — airport pickup, intercity ride, or private chauffeur service.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/66798467e9aadbf3723fcb9c_select-car.png',
 		alt: 'Select Car Icon'
 	},
 	{
 		title: 'Submit an Enquiry',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+		description: 'Send your travel details via WhatsApp or our contact form. We reply within 15–30 minutes.',
 		icon:
 			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6679829d328059dd49614d20_online-booking.png',
 		alt: 'Enquiry Form Icon'
 	},
 	{
 		title: 'Pick Up & Drive',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+		description: 'Your driver meets you at the agreed point. Sit back and travel safely across Mexico.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983913dc4764e171e992b_drive.png',
 		alt: 'Drive Icon'
 	}
@@ -369,11 +369,10 @@ export default function GearshiftHome() {
 							<div className="header-content-wrapper">
 									<div className="header-text-wrapper">
 											<h1 className="header-text">
-												We cover Blinded Vehicles Mexico Airports to Town with Drivers <span className="brand-span">Elite Ride Mexico</span> Rentals.
+												Premium SUV Rental &amp; Private Chauffeur Service in Mexico — <span className="brand-span">Elite Ride Mexico</span>
 											</h1>
 										<div className="primary-text">
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
-											efficitur.
+											Safe, reliable airport transfers and private driver service across Mexico City, Cancun, Guadalajara and beyond. Bilingual drivers, 300+ vehicles, available 24/7.
 										</div>
 									<div className="header-button-wrapper">
 										<a href="#featured-cars" className="cta-button w-button">
@@ -417,13 +416,20 @@ export default function GearshiftHome() {
 								<div key={car.name} className="car-collection-item">
 									<article className="car-card">
 										<a href={car.href} className="car-image-wrapper w-inline-block">
-											<img src={car.image} loading="lazy" alt={car.name} className="listing-car-image" />
+										<img
+											src={car.image}
+											loading="lazy"
+											alt={car.name}
+											width={600}
+											height={400}
+											className="listing-car-image"
+										/>
 											<div className="car-listing-year">{car.year}</div>
 										</a>
 										<div className="car-details-wrapper">
 											<h3 className="car-listing-name">{car.name}</h3>
 											<div className="listing-price-wrapper">
-												<div className="currency-price-term">AED</div>
+												<div className="currency-price-term">MXN</div>
 												<div className="car-listing-price">{car.price}</div>
 												<div className="currency-price-term">/ DAY</div>
 											</div>
@@ -493,8 +499,7 @@ export default function GearshiftHome() {
 											<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
 										</a>
 									<div className="footer-text">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam justo nec ligula eleifend
-										efficitur.
+										Safe, reliable airport transfers and private driver service across Mexico City, Cancun, Guadalajara and beyond. Bilingual drivers, 300+ vehicles, available 24/7.
 									</div>
 									<div className="social-media-links">
 										{socialLinks.map((social) => (
@@ -562,19 +567,19 @@ export default function GearshiftHome() {
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Get In Touch</h2>
-									<a href="tel:+971123456789" className="footer-nav-link">
-										+971 12 345 6789
+									<a href="tel:+525574085802" className="footer-nav-link">
+										+52 55 7408 5802
 									</a>
 										<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
 											info@eliteridemexico.com
 										</a>
 										<a
-											href="https://www.google.com/maps/search/+123+Innovation+Street,+Downtown+Dubai,+Dubai,+UAE/@25.1559625,55.2253142,11.35z?entry=ttu"
+											href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
 											target="_blank"
 											rel="noreferrer"
 											className="footer-nav-link"
 										>
-											Goldsmith 250, Lomas de Chapultepec Colonia Miguel Hidaglo 11500 CDMX Mexico
+											Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500 CDMX Mexico
 										</a>
 								</div>
 							</div>
@@ -586,7 +591,7 @@ export default function GearshiftHome() {
 											rel="noreferrer"
 											className="footer-copyright-text"
 										>
-											Copyright Eite Ride Mexico 2026 - made by o7Digital
+											Copyright Elite Ride Mexico 2026 - made by o7Digital
 										</a>
 									</div>
 						</div>

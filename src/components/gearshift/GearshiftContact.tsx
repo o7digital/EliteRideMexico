@@ -65,11 +65,6 @@ export default function GearshiftContact() {
 											</a>
 										</li>
 										<li className="nav-list-item">
-											<a href="/services" className="nav-link" onClick={closeMenus}>
-												Services
-											</a>
-										</li>
-										<li className="nav-list-item">
 											<a href="/contact" aria-current="page" className="nav-link w--current" onClick={closeMenus}>
 												Contact Us
 											</a>

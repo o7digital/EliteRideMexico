@@ -74,17 +74,17 @@ const fleetCategories: FleetCategory[] = [
 const featuredFleet: FleetVehicle[] = [
 	{
 		name: 'Chevrolet Suburban',
-		image: '/cars/chevy-suburban-black.jpeg',
+		image: '/cars/chevy-suburban-black.webp',
 		description: 'A top choice for airport transfers, business visits, and high-comfort city mobility.'
 	},
 	{
 		name: 'GMC Yukon Denali',
-		image: '/cars/gmc-yukon-beige.jpeg',
+		image: '/cars/gmc-yukon-beige.webp',
 		description: 'Premium full-size SUV with space, stability, and executive-grade comfort.'
 	},
 	{
 		name: 'Toyota Land Cruiser',
-		image: '/cars/toyota-landcruiser-black.jpeg',
+		image: '/cars/toyota-landcruiser-black.webp',
 		description: 'Reliable, high-performance SUV built for intercity routes and demanding itineraries.'
 	}
 ];
@@ -237,7 +237,7 @@ export default function GearshiftFleet() {
 						{featuredFleet.map((vehicle) => (
 							<article key={vehicle.name} className="fleet-model-card">
 								<div className="fleet-model-image-wrapper">
-									<img src={vehicle.image} loading="lazy" alt={vehicle.name} className="fleet-model-image" />
+									<img src={vehicle.image} loading="lazy" alt={vehicle.name} width={600} height={400} className="fleet-model-image" />
 								</div>
 								<div className="fleet-model-body">
 									<h3 className="car-listing-name">{vehicle.name}</h3>
@@ -328,19 +328,19 @@ export default function GearshiftFleet() {
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Get In Touch</h2>
-									<a href="tel:+971123456789" className="footer-nav-link">
-										+971 12 345 6789
+									<a href="tel:+525574085802" className="footer-nav-link">
+										+52 55 7408 5802
 									</a>
 									<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
 										info@eliteridemexico.com
 									</a>
 									<a
-										href="https://www.google.com/maps/search/+123+Innovation+Street,+Downtown+Dubai,+Dubai,+UAE/@25.1559625,55.2253142,11.35z?entry=ttu"
+										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
 										target="_blank"
 										rel="noreferrer"
 										className="footer-nav-link"
 									>
-										Goldsmith 250, Lomas de Chapultepec Colonia Miguel Hidaglo 11500 CDMX Mexico
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500 CDMX Mexico
 									</a>
 								</div>
 							</div>
@@ -352,7 +352,7 @@ export default function GearshiftFleet() {
 									rel="noreferrer"
 									className="footer-copyright-text"
 								>
-									Copyright Eite Ride Mexico 2026 - made by o7Digital
+									Copyright Elite Ride Mexico 2026 - made by o7Digital
 								</a>
 							</div>
 						</div>

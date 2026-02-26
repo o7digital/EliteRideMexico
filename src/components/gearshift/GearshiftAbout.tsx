@@ -323,19 +323,19 @@ export default function GearshiftAbout() {
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Get In Touch</h2>
-									<a href="tel:+971123456789" className="footer-nav-link">
-										+971 12 345 6789
+									<a href="tel:+525574085802" className="footer-nav-link">
+										+52 55 7408 5802
 									</a>
 									<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
 										info@eliteridemexico.com
 									</a>
 									<a
-										href="https://www.google.com/maps/search/+123+Innovation+Street,+Downtown+Dubai,+Dubai,+UAE/@25.1559625,55.2253142,11.35z?entry=ttu"
+										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
 										target="_blank"
 										rel="noreferrer"
 										className="footer-nav-link"
 									>
-										Goldsmith 250, Lomas de Chapultepec Colonia Miguel Hidaglo 11500 CDMX Mexico
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500 CDMX Mexico
 									</a>
 								</div>
 							</div>
@@ -347,7 +347,7 @@ export default function GearshiftAbout() {
 									rel="noreferrer"
 									className="footer-copyright-text"
 								>
-									Copyright Eite Ride Mexico 2026 - made by o7Digital
+									Copyright Elite Ride Mexico 2026 - made by o7Digital
 								</a>
 							</div>
 						</div>
