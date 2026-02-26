@@ -431,3 +431,71 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+.contact-header-section {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6) 100%, #fff),
+		url('https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf850_dubai-marina.jpg') !important;
+	background-position: 0 0, 56% 50% !important;
+	background-size: auto, cover !important;
+}
+
+.contact-header-text-wrapper {
+	max-width: 760px;
+}
+
+.contact-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+	gap: 28px;
+	align-items: start;
+}
+
+.contact-form-card,
+.contact-info-card {
+	background: #fff;
+	border: 1px solid #ececec;
+	border-radius: 14px;
+	padding: 24px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form {
+	display: grid;
+	gap: 14px;
+	margin-top: 10px;
+}
+
+.contact-field-row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.contact-select {
+	color: #6d6d6d;
+}
+
+.contact-textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
+.contact-submit {
+	justify-self: start;
+}
+
+.contact-info-stack {
+	display: grid;
+	gap: 14px;
+}
+
+@media screen and (max-width: 991px) {
+	.contact-layout,
+	.contact-field-row {
+		grid-template-columns: 1fr;
+	}
+
+	.contact-submit {
+		width: 100%;
+	}
+}
