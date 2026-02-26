@@ -30,3 +30,12 @@ npm run preview
 - `src/components/gearshift/GearshiftHome.tsx`
 - `src/layouts/Layout.astro`
 - `src/styles/clone-overrides.css`
+
+## Backend (Supabase + Stripe)
+
+Un squelette backend est disponible dans `supabase/` avec:
+
+- migration SQL (`supabase/migrations`)
+- fonctions Edge (`supabase/functions`)
+- documentation d'usage (`docs/backend-supabase-stripe.md`)
+- page dashboard réservations (`/dashboard/reservations`)

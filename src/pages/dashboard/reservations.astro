@@ -1,0 +1,231 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Dashboard Reservations | Elite Ride Mexico">
+  <main class="dashboard-shell">
+    <section class="dashboard-card">
+      <h1>Reservations Dashboard</h1>
+      <p>Internal view powered by Supabase Edge Function <code>list-bookings</code>.</p>
+
+      <form id="dashboard-form" class="dashboard-form">
+        <label>
+          Functions URL
+          <input
+            id="functions-url"
+            type="url"
+            placeholder="https://<project-ref>.functions.supabase.co/list-bookings"
+            required
+          />
+        </label>
+
+        <label>
+          Dashboard Token
+          <input id="dashboard-token" type="password" placeholder="DASHBOARD_API_TOKEN" required />
+        </label>
+
+        <label>
+          Booking Status
+          <select id="status-filter">
+            <option value="">All</option>
+            <option value="pending">pending</option>
+            <option value="awaiting_payment">awaiting_payment</option>
+            <option value="confirmed">confirmed</option>
+            <option value="cancelled">cancelled</option>
+            <option value="completed">completed</option>
+          </select>
+        </label>
+
+        <button type="submit">Load reservations</button>
+      </form>
+
+      <p id="dashboard-message" aria-live="polite"></p>
+
+      <div class="dashboard-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Ref</th>
+              <th>Customer</th>
+              <th>Pickup</th>
+              <th>Route</th>
+              <th>Vehicle</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('dashboard-form');
+    const message = document.getElementById('dashboard-message');
+    const tbody = document.getElementById('bookings-body');
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const functionsUrlInput = document.getElementById('functions-url');
+      const dashboardTokenInput = document.getElementById('dashboard-token');
+      const statusFilterInput = document.getElementById('status-filter');
+
+      if (!(functionsUrlInput instanceof HTMLInputElement)) return;
+      if (!(dashboardTokenInput instanceof HTMLInputElement)) return;
+      if (!(statusFilterInput instanceof HTMLSelectElement)) return;
+
+      const functionsUrl = functionsUrlInput.value.trim();
+      const dashboardToken = dashboardTokenInput.value.trim();
+      const status = statusFilterInput.value;
+
+      if (!functionsUrl || !dashboardToken) {
+        message.textContent = 'Functions URL and token are required.';
+        return;
+      }
+
+      message.textContent = 'Loading...';
+      tbody.innerHTML = '';
+
+      try {
+        const url = new URL(functionsUrl);
+        if (status) {
+          url.searchParams.set('status', status);
+        }
+        url.searchParams.set('limit', '100');
+
+        const response = await fetch(url.toString(), {
+          headers: {
+            'x-dashboard-token': dashboardToken,
+          },
+        });
+
+        const payload = await response.json();
+
+        if (!response.ok) {
+          message.textContent = payload?.error || 'Request failed';
+          return;
+        }
+
+        const bookings = Array.isArray(payload?.bookings) ? payload.bookings : [];
+
+        if (bookings.length === 0) {
+          message.textContent = 'No reservations found.';
+          return;
+        }
+
+        message.textContent = `${bookings.length} reservation(s)`;
+
+        for (const booking of bookings) {
+          const tr = document.createElement('tr');
+          const customer = booking.customers
+            ? `${booking.customers.first_name || ''} ${booking.customers.last_name || ''}`.trim()
+            : '-';
+          const total = Number.isFinite(booking.amount_total)
+            ? `${(booking.amount_total / 100).toFixed(2)} ${String(booking.currency || 'usd').toUpperCase()}`
+            : '-';
+
+          tr.innerHTML = `
+            <td>${booking.booking_reference || '-'}</td>
+            <td>${customer || '-'}</td>
+            <td>${booking.pickup_datetime || '-'}</td>
+            <td>${booking.pickup_location || '-'} -> ${booking.dropoff_location || '-'}</td>
+            <td>${booking.vehicle_class || '-'}</td>
+            <td>${total}</td>
+            <td>${booking.status || '-'}</td>
+            <td>${booking.payment_status || '-'}</td>
+          `;
+          tbody.appendChild(tr);
+        }
+      } catch (error) {
+        message.textContent = error instanceof Error ? error.message : 'Unexpected error';
+      }
+    });
+  </script>
+</Layout>
+
+<style>
+  .dashboard-shell {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .dashboard-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .dashboard-card h1 {
+    margin: 0 0 8px;
+  }
+
+  .dashboard-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    align-items: end;
+    margin: 20px 0;
+  }
+
+  .dashboard-form label {
+    display: grid;
+    gap: 6px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .dashboard-form input,
+  .dashboard-form select,
+  .dashboard-form button {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font: inherit;
+  }
+
+  .dashboard-form button {
+    background: #0f5f4f;
+    color: #fff;
+    border-color: #0f5f4f;
+    cursor: pointer;
+  }
+
+  .dashboard-form button:hover {
+    background: #0d5043;
+  }
+
+  .dashboard-table-wrap {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 880px;
+  }
+
+  th,
+  td {
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  th {
+    background: #f7f7f7;
+  }
+
+  #dashboard-message {
+    min-height: 20px;
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 14px;
+  }
+</style>

@@ -168,48 +168,42 @@ const locations: Location[] = [
 	{
 		name: 'Mexico City',
 		href: '/locations/mexico-city',
-		image:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf853_palm-jumeirah.jpg'
+		image: '/towns/gemini-cdmx.png'
 	},
 	{
 		name: 'Puerto Vallarta',
 		href: '/locations/puerto-vallarta',
-		image: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf852_JBR.jpg'
+		image: '/towns/gemini-vallarta.png'
 	},
 	{
 		name: 'Guadalajara',
 		href: '/locations/guadalajara',
-		image:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf851_downtown-dubai.jpg'
+		image: '/towns/gemini-guadalajara.png'
 	},
 	{
 		name: 'Ixtapa Zihuatanejo',
 		href: '/locations/ixtapa-zihuatanejo',
-		image:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf850_dubai-marina.jpg'
+		image: '/towns/gemini-zihua.png'
 	},
 	{
 		name: 'Cancun',
 		href: '/locations/cancun',
-		image: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf852_JBR.jpg'
+		image: '/towns/gemini-cancun.png'
 	},
 	{
 		name: 'Leon',
 		href: '/locations/leon',
-		image:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf851_downtown-dubai.jpg'
+		image: '/towns/gemini-leon.png'
 	},
 	{
 		name: 'Cuernavaca',
 		href: '/locations/cuernavaca',
-		image:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf850_dubai-marina.jpg'
+		image: '/towns/gemini-cuerna.png'
 	},
 	{
 		name: 'Monterrey',
 		href: '/locations/monterrey',
-		image:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5d2f59c6148debf853_palm-jumeirah.jpg'
+		image: '/towns/gemini-monterrey.png'
 	}
 ];
 
