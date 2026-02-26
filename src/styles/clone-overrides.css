@@ -79,6 +79,27 @@
 	display: flex;
 }
 
+/* Location Cards — uniform size */
+.location-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.location-listing-image-wrapper {
+	display: block;
+	width: 100%;
+	aspect-ratio: 3 / 2;
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+.location-listing-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
 .nav-dropdown-list.pages-dropdown-list.w--open {
 	display: flex;
 }
