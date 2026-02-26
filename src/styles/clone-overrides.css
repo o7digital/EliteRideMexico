@@ -232,7 +232,7 @@
 	}
 
 	.brand-logo-text {
-		font-size: 20px;
+		font-size: 22px;
 	}
 
 	.navbar {
@@ -242,6 +242,9 @@
 
 	.navbar-wrapper {
 		position: relative;
+		min-height: 64px;
+		align-items: center;
+		padding-right: 56px;
 	}
 
 	.nav-menu-wrapper {
@@ -250,7 +253,10 @@
 		top: calc(100% + 8px);
 		right: 24px;
 		left: 24px;
-		z-index: 30;
+		z-index: 100;
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
 	}
 
 	.nav-menu-wrapper.w--open {
@@ -330,8 +336,8 @@
 	}
 
 	.brand-logo-text {
-		font-size: 16px;
-		letter-spacing: 0.8px;
+		font-size: 20px;
+		letter-spacing: 1px;
 	}
 
 	.whatsapp-footer-button {
@@ -351,6 +357,15 @@
 	.nav-menu-wrapper {
 		right: 16px;
 		left: 16px;
+	}
+
+	.brand-logo-text {
+		font-size: 18px;
+		letter-spacing: 0.8px;
+	}
+
+	.navbar-wrapper {
+		padding-right: 52px;
 	}
 }
 
