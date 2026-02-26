@@ -305,18 +305,13 @@ export default function GearshiftHomeEs() {
 												</a>
 											</li>
 											<li className="nav-list-item">
-												<a href="/about" className="nav-link" onClick={closeMenus}>
+												<a href="/es/about" className="nav-link" onClick={closeMenus}>
 													Nosotros
 												</a>
 											</li>
 											<li className="nav-list-item">
-												<a href="/our-fleet" className="nav-link" onClick={closeMenus}>
+												<a href="/es/our-fleet" className="nav-link" onClick={closeMenus}>
 													Nuestra Flota
-												</a>
-											</li>
-											<li className="nav-list-item">
-												<a href="/services" className="nav-link" onClick={closeMenus}>
-													Servicios
 												</a>
 											</li>
 											<li className="nav-list-item">
@@ -326,9 +321,9 @@ export default function GearshiftHomeEs() {
 											</li>
 												<li className="nav-list-item">
 													<div className="cta-button-wrapper">
-														<a href="/our-fleet" className="cta-button w-button" onClick={closeMenus}>
-															Reserva ahora
-														</a>
+															<a href="/es/our-fleet" className="cta-button w-button" onClick={closeMenus}>
+																Reserva ahora
+															</a>
 													</div>
 												</li>
 												<li className="nav-list-item language-switch-item">
@@ -377,7 +372,7 @@ export default function GearshiftHomeEs() {
 													Ofrecemos Vehiculos Blindados en Aeropuertos de Mexico y Traslados a la Ciudad con Chofer de <span className="brand-span">Elite Ride Mexico</span>.
 											</h1>
 										<div className="primary-text">
-													Renta vehículos premium con servicio profesional, seguridad y atención personalizada.
+													Renta vehiculos premium con servicio profesional, seguridad y atencion personalizada.
 										</div>
 									<div className="header-button-wrapper">
 										<a href="#featured-cars" className="cta-button w-button">
@@ -411,9 +406,9 @@ export default function GearshiftHomeEs() {
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
 								<h2 className="section-heading">Vehiculos DEstacados.</h2>
-						<a href="/our-fleet" className="cta-button w-button">
-							Ver todos
-						</a>
+							<a href="/es/our-fleet" className="cta-button w-button">
+								Ver todos
+							</a>
 					</div>
 					<div className="cars-collection-list-wrapper">
 						<div className="cars-collection-list">
@@ -538,18 +533,15 @@ export default function GearshiftHomeEs() {
 									<a href="/es" className="footer-nav-link w--current">
 										Inicio
 									</a>
-									<a href="/about" className="footer-nav-link">
-										Nosotros
-									</a>
-									<a href="/our-fleet" className="footer-nav-link">
-										Nuestra Flota
-									</a>
-									<a href="/services" className="footer-nav-link">
-										Servicios
-									</a>
-									<a href="/contact" className="footer-nav-link">
-										Contacto
-									</a>
+										<a href="/es/about" className="footer-nav-link">
+											Nosotros
+										</a>
+											<a href="/es/our-fleet" className="footer-nav-link">
+												Nuestra Flota
+											</a>
+										<a href="/contact" className="footer-nav-link">
+											Contacto
+										</a>
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>

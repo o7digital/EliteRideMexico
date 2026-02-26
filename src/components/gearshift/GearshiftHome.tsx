@@ -315,11 +315,6 @@ export default function GearshiftHome() {
 											</a>
 										</li>
 										<li className="nav-list-item">
-											<a href="/services" className="nav-link" onClick={closeMenus}>
-												Services
-											</a>
-										</li>
-										<li className="nav-list-item">
 											<a href="/contact" className="nav-link" onClick={closeMenus}>
 												Contact Us
 											</a>
@@ -544,10 +539,7 @@ export default function GearshiftHome() {
 										About
 									</a>
 									<a href="/our-fleet" className="footer-nav-link">
-										Our Fllet
-									</a>
-									<a href="/services" className="footer-nav-link">
-										Services
+										Our Fleet
 									</a>
 									<a href="/contact" className="footer-nav-link">
 										Contact Us
