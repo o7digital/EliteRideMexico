@@ -18,8 +18,7 @@ const socialLinks = [
 	{
 		label: 'Facebook',
 		href: 'https://www.facebook.com/',
-		icon:
-			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fa_facebook-app-symbol.png',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fa_facebook-app-symbol.png',
 		alt: 'Facebook Icon'
 	},
 	{
@@ -30,7 +29,7 @@ const socialLinks = [
 	}
 ];
 
-export default function GearshiftContact() {
+export default function GearshiftContactEs() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const closeMenus = () => {
@@ -44,35 +43,35 @@ export default function GearshiftContact() {
 					<div className="navbar w-nav">
 						<div className="content-wrapper">
 							<div className="navbar-wrapper">
-								<a href="/" className="brand w-nav-brand" onClick={closeMenus}>
+								<a href="/es" className="brand w-nav-brand" onClick={closeMenus}>
 									<span className="brand-logo-text">ELITE RIDE MEXICO</span>
 								</a>
 								<nav role="navigation" className={`nav-menu-wrapper w-nav-menu ${isMenuOpen ? 'w--open' : ''}`}>
 									<ul role="list" className="nav-menu w-list-unstyled">
 										<li className="nav-list-item">
-											<a href="/" className="nav-link" onClick={closeMenus}>
-												Home
+											<a href="/es" className="nav-link" onClick={closeMenus}>
+												Inicio
 											</a>
 										</li>
 										<li className="nav-list-item">
-											<a href="/about" className="nav-link" onClick={closeMenus}>
-												About
+											<a href="/es/about" className="nav-link" onClick={closeMenus}>
+												Nosotros
 											</a>
 										</li>
 										<li className="nav-list-item">
-											<a href="/our-fleet" className="nav-link" onClick={closeMenus}>
-												Our Fleet
+											<a href="/es/our-fleet" className="nav-link" onClick={closeMenus}>
+												Nuestra Flota
 											</a>
 										</li>
 										<li className="nav-list-item">
-											<a href="/contact" aria-current="page" className="nav-link w--current" onClick={closeMenus}>
-												Contact Us
+											<a href="/es/contact" aria-current="page" className="nav-link w--current" onClick={closeMenus}>
+												Contacto
 											</a>
 										</li>
 										<li className="nav-list-item">
 											<div className="cta-button-wrapper">
-												<a href="/our-fleet" className="cta-button w-button" onClick={closeMenus}>
-													rent now
+												<a href="/es/our-fleet" className="cta-button w-button" onClick={closeMenus}>
+													Reserva ahora
 												</a>
 											</div>
 										</li>
@@ -82,7 +81,7 @@ export default function GearshiftContact() {
 									type="button"
 									className={`menu-button w-nav-button ${isMenuOpen ? 'w--open' : ''}`}
 									onClick={() => setIsMenuOpen((prev) => !prev)}
-									aria-label="Toggle menu"
+									aria-label="Abrir menú"
 									aria-expanded={isMenuOpen}
 								>
 									<span className="hamburger-line" />
@@ -96,14 +95,14 @@ export default function GearshiftContact() {
 						<div className="header-section-wrapper">
 							<div className="header-content-wrapper">
 								<div className="header-text-wrapper contact-header-text-wrapper">
-									<h1 className="header-text">Contact Elite Ride Mexico</h1>
+									<h1 className="header-text">Contacta a Elite Ride Mexico</h1>
 									<div className="primary-text">
-										Share your travel details and our team will contact you quickly with secure transport options
-										across Mexico.
+										Comparte los detalles de tu viaje y nuestro equipo te responderá rápidamente con opciones
+										seguras de transporte en México.
 									</div>
 									<div className="header-button-wrapper">
 										<a href={whatsappLink} target="_blank" rel="noreferrer" className="cta-button w-button">
-											Chat on WhatsApp
+											Escríbenos por WhatsApp
 										</a>
 									</div>
 								</div>
@@ -117,9 +116,10 @@ export default function GearshiftContact() {
 				<div className="content-wrapper">
 					<div className="contact-layout">
 						<div className="contact-form-card">
-							<h2 className="section-heading">Send Us Your Request</h2>
+							<h2 className="section-heading">Envíanos tu solicitud</h2>
 							<p className="primary-text grey-color">
-								Use this form to request airport pickup, city transfers, private driver support, or armored transport.
+								Usa este formulario para solicitar traslado al aeropuerto, viaje interurbano, chofer privado o
+								transporte blindado.
 							</p>
 							<div className="w-form">
 								<form
@@ -131,14 +131,14 @@ export default function GearshiftContact() {
 										<input
 											className="form-field w-input"
 											name="full_name"
-											placeholder="Full Name"
+											placeholder="Nombre completo"
 											type="text"
 											required
 										/>
 										<input
 											className="form-field w-input"
 											name="phone"
-											placeholder="Phone / WhatsApp"
+											placeholder="Teléfono / WhatsApp"
 											type="tel"
 											required
 										/>
@@ -147,14 +147,14 @@ export default function GearshiftContact() {
 										<input
 											className="form-field w-input"
 											name="email"
-											placeholder="Email Address"
+											placeholder="Correo electrónico"
 											type="email"
 											required
 										/>
 										<input
 											className="form-field w-input"
 											name="country"
-											placeholder="Country"
+											placeholder="País"
 											type="text"
 											required
 										/>
@@ -163,27 +163,27 @@ export default function GearshiftContact() {
 										<input
 											className="form-field w-input"
 											name="travel_dates"
-											placeholder="Travel Date(s)"
+											placeholder="Fecha(s) de viaje"
 											type="text"
 										/>
 										<select className="form-field w-input contact-select" name="service_type" required defaultValue="">
 											<option value="" disabled>
-												Select Service
+												Tipo de servicio
 											</option>
-											<option value="airport-transfer">Airport Transfer</option>
-											<option value="private-driver">Private Driver</option>
-											<option value="armored-vehicle">Armored Vehicle</option>
-											<option value="intercity-trip">Intercity Trip</option>
+											<option value="airport-transfer">Traslado al aeropuerto</option>
+											<option value="private-driver">Chofer privado</option>
+											<option value="armored-vehicle">Vehículo blindado</option>
+											<option value="intercity-trip">Viaje interurbano</option>
 										</select>
 									</div>
 									<textarea
 										className="form-field w-input contact-textarea"
 										name="message"
-										placeholder="Tell us your itinerary, city, pickup point, and number of passengers."
+										placeholder="Cuéntanos tu itinerario, ciudad, punto de recogida y número de pasajeros."
 										required
 									/>
-									<input type="hidden" name="_subject" value="New Contact Request - Elite Ride Mexico" />
-									<input type="submit" className="cta-button w-button contact-submit" value="Send Request" />
+									<input type="hidden" name="_subject" value="Nueva solicitud de contacto - Elite Ride Mexico" />
+									<input type="submit" className="cta-button w-button contact-submit" value="Enviar solicitud" />
 								</form>
 							</div>
 						</div>
@@ -201,15 +201,15 @@ export default function GearshiftContact() {
 								</a>
 							</div>
 							<div className="contact-info-card">
-								<h3 className="title-small">Office</h3>
+								<h3 className="title-small">Oficina</h3>
 								<p className="primary-text grey-color metric-text">
-									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, Mexico.
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, México.
 								</p>
 							</div>
 							<div className="contact-info-card">
-								<h3 className="title-small">Response Time</h3>
+								<h3 className="title-small">Tiempo de respuesta</h3>
 								<p className="primary-text grey-color metric-text">
-									We usually reply within 15-30 minutes during operating hours.
+									Normalmente respondemos en 15–30 minutos durante horario de operación.
 								</p>
 							</div>
 						</div>
@@ -223,11 +223,12 @@ export default function GearshiftContact() {
 						<div className="footer-content-wrapper">
 							<div className="footer-top-content">
 								<div className="footer-logo-social">
-									<a href="/" className="brand w-nav-brand">
+									<a href="/es" className="brand w-nav-brand">
 										<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
 									</a>
 									<div className="footer-text">
-										Premium transportation for travelers who prioritize safety, punctuality, and trusted local support.
+										Transporte premium con chofer para viajeros que priorizan seguridad, puntualidad y servicio
+										local de confianza.
 									</div>
 									<div className="social-media-links">
 										{socialLinks.map((social) => (
@@ -245,7 +246,7 @@ export default function GearshiftContact() {
 									</div>
 								</div>
 								<div className="footer-newsletter">
-									<h3 className="small-heading">Subscribe to our newsletter</h3>
+									<h3 className="small-heading">Suscríbete a nuestro boletín</h3>
 									<div className="w-form">
 										<form className="newsletter-form" onSubmit={(event) => event.preventDefault()}>
 											<input
@@ -256,7 +257,7 @@ export default function GearshiftContact() {
 												type="email"
 												required
 											/>
-											<input type="submit" className="cta-button w-button" value="Submit" />
+											<input type="submit" className="cta-button w-button" value="Enviar" />
 										</form>
 									</div>
 								</div>
@@ -264,37 +265,37 @@ export default function GearshiftContact() {
 							<div className="divider" />
 							<div className="footer-bottom-content">
 								<div className="footer-links-wrapper">
-									<h2 className="heading">Pages</h2>
-									<a href="/" className="footer-nav-link">
-										Home
+									<h2 className="heading">Páginas</h2>
+									<a href="/es" className="footer-nav-link">
+										Inicio
 									</a>
-									<a href="/about" className="footer-nav-link">
-										About
+									<a href="/es/about" className="footer-nav-link">
+										Nosotros
 									</a>
-									<a href="/our-fleet" className="footer-nav-link">
-										Our Fleet
+									<a href="/es/our-fleet" className="footer-nav-link">
+										Nuestra Flota
 									</a>
-									<a href="/contact" aria-current="page" className="footer-nav-link w--current">
-										Contact Us
+									<a href="/es/contact" aria-current="page" className="footer-nav-link w--current">
+										Contacto
 									</a>
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>
 									<a href="/privacy-notice" className="footer-nav-link">
-										Privacy Notice
+										Aviso de Privacidad
 									</a>
 									<a href="/cancelation" className="footer-nav-link">
-										Cancellation
+										Cancelación
 									</a>
 									<a href="/refunds" className="footer-nav-link">
-										Refunds
+										Reembolsos
 									</a>
 									<a href="/taxes" className="footer-nav-link">
-										Taxes
+										Impuestos
 									</a>
 								</div>
 								<div className="footer-links-wrapper">
-									<h2 className="heading">Get In Touch</h2>
+									<h2 className="heading">Contáctanos</h2>
 									<a href="tel:+525574085802" className="footer-nav-link">
 										+52 55 7408 5802
 									</a>
@@ -307,7 +308,7 @@ export default function GearshiftContact() {
 										rel="noreferrer"
 										className="footer-nav-link"
 									>
-										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, CDMX, Mexico
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, México.
 									</a>
 								</div>
 							</div>
@@ -319,7 +320,7 @@ export default function GearshiftContact() {
 									rel="noreferrer"
 									className="footer-copyright-text"
 								>
-									Copyright Elite Ride Mexico 2026 - made by o7Digital
+									Copyright Elite Ride Mexico 2026 - hecho por o7Digital
 								</a>
 							</div>
 						</div>

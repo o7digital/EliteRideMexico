@@ -210,7 +210,7 @@ const locations: Location[] = [
 const steps: Step[] = [
 	{
 		title: 'Browse Our Fleet',
-		description: 'Choose from 300+ premium SUVs, executive vans and armored vehicles available across Mexico.',
+		description: 'Choose from 200+ premium SUVs, executive vans and armored vehicles available across Mexico.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983a3267985f2f6160ffc_search.png',
 		alt: 'Search Icon'
 	},
@@ -493,7 +493,7 @@ export default function GearshiftHome() {
 											<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
 										</a>
 									<div className="footer-text">
-										Safe, reliable airport transfers and private driver service across Mexico City, Cancun, Guadalajara and beyond. Bilingual drivers, 300+ vehicles, available 24/7.
+									Safe airport transfers, executive transportation, and private driver service across Mexico City, Cancun, Guadalajara, Puerto Vallarta, and more.
 									</div>
 									<div className="social-media-links">
 										{socialLinks.map((social) => (
@@ -550,7 +550,7 @@ export default function GearshiftHome() {
 										Privacy Notice
 									</a>
 									<a href="/cancelation" className="footer-nav-link">
-										Cancelation
+											Cancellation
 									</a>
 									<a href="/refunds" className="footer-nav-link">
 										Refunds

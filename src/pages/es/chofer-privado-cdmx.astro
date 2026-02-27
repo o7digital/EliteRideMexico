@@ -1,0 +1,254 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: '¿Qué incluye el servicio de chofer privado en CDMX?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'El servicio incluye un conductor profesional bilingüe, SUV premium de lujo, traslado puerta a puerta, seguimiento de vuelo en tiempo real y atención personalizada. Disponible para traslados al aeropuerto, viajes ejecutivos, servicio por horas y renta de camioneta blindada con chofer en Ciudad de México.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿Cómo reservo un chofer privado en Ciudad de México?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Contáctanos por WhatsApp al +52 55 7408 5802 o llena nuestro formulario de contacto. Comparte tu punto de recogida, destino y fecha, y confirmamos en 15–30 minutos.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿A qué aeropuertos de CDMX dan servicio?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Damos servicio al Aeropuerto Internacional Benito Juárez (MEX) y al Aeropuerto Internacional Felipe Ángeles (NLU), así como a todas las terminales de aviación privada en Ciudad de México.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿Tienen vehículos blindados disponibles en CDMX?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Sí. Ofrecemos SUVs blindados y Suburbans blindados con chofer profesional para ejecutivos y viajeros que requieren mayor seguridad en Ciudad de México.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿Cuáles vehículos están disponibles para chofer privado en CDMX?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Nuestra flota en Ciudad de México incluye Chevrolet Suburban, GMC Yukon Denali, Toyota Land Cruiser y vans ejecutivas — todos de modelo reciente, en perfectas condiciones y con chofer bilingüe.'
+			}
+		}
+	]
+});
+
+const whatsappLink = 'https://wa.me/525574085802';
+---
+
+<Layout
+	title="Chofer Privado en CDMX | Traslado Aeropuerto y Transporte Ejecutivo | Elite Ride Mexico"
+	description="Reserva tu chofer privado en Ciudad de México. Traslados al aeropuerto MEX y NLU, SUV premium, vehículos blindados y servicio por horas. Disponible 24/7."
+	canonicalURL="https://eliteridemexico.com/es/chofer-privado-cdmx"
+	lang="es"
+	alternateHref="https://eliteridemexico.com/mexico-city-private-chauffeur"
+	alternateLang="en"
+>
+	<script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+	<div class="page-wrapper">
+		<section>
+			<div class="header-section contact-header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/es" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/es" class="nav-link">Inicio</a></li>
+									<li class="nav-list-item"><a href="/es/about" class="nav-link">Nosotros</a></li>
+									<li class="nav-list-item"><a href="/es/our-fleet" class="nav-link">Nuestra Flota</a></li>
+									<li class="nav-list-item"><a href="/es/contact" class="nav-link">Contacto</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href="/es/our-fleet" class="cta-button w-button">Reserva ahora</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper contact-header-text-wrapper">
+								<h1 class="header-text">Chofer Privado en Ciudad de México — Traslado Aeropuerto y Transporte Ejecutivo</h1>
+								<div class="primary-text">
+									SUV premium con chofer bilingüe profesional en CDMX. Traslados al aeropuerto, viajes
+									ejecutivos y renta por horas. Disponible 24/7.
+								</div>
+								<div class="header-button-wrapper">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Reservar por WhatsApp
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<h2 class="section-heading">¿Por qué elegir un chofer privado en Ciudad de México?</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1.5rem;">
+					Ciudad de México es una de las metrópolis más grandes del mundo. Navegar su tráfico y su compleja
+					red vial puede ser agotador. Con Elite Ride Mexico, llegas y te mueves en total comodidad, con un
+					chofer profesional que conoce la ciudad y habla tu idioma.
+				</p>
+
+				<h2 class="section-heading" style="margin-top:2.5rem;">Servicios de Chofer Privado en CDMX</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">Traslado Aeropuerto CDMX (MEX y NLU)</div>
+						<p class="primary-text grey-color metric-text">
+							Recogida y entrega privada en el Aeropuerto Benito Juárez (MEX) y el Aeropuerto Felipe Ángeles
+							(NLU). Servicio de bienvenida con letrero y seguimiento de vuelo en tiempo real.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Transporte Ejecutivo</div>
+						<p class="primary-text grey-color metric-text">
+							Reuniones de negocios, visitas a empresas, eventos corporativos y viajes de alto nivel en toda la
+							Zona Metropolitana del Valle de México.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Renta de Camioneta Blindada con Chofer</div>
+						<p class="primary-text grey-color metric-text">
+							Suburban y SUVs blindados con chofer entrenado para ejecutivos y viajeros que requieren máxima
+							seguridad en Ciudad de México.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Servicio por Horas o Día Completo</div>
+						<p class="primary-text grey-color metric-text">
+							¿Necesitas un chofer durante horas o todo el día? Reserva nuestro servicio flexible y muévete por
+							CDMX a tu propio ritmo.
+						</p>
+					</div>
+				</div>
+				<div style="text-align:center;margin-top:1.5rem;">
+					<a href="/es/our-fleet" class="cta-button w-button">Ver Nuestra Flota</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Preguntas Frecuentes — Chofer Privado CDMX</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Qué incluye el servicio?</div>
+						<p class="primary-text grey-color metric-text">
+							Chofer bilingüe, SUV premium, traslado puerta a puerta, seguimiento de vuelo y atención personalizada.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Cómo reservo?</div>
+						<p class="primary-text grey-color metric-text">
+							Por WhatsApp al +52 55 7408 5802 o con nuestro formulario. Confirmamos en 15–30 minutos.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Qué aeropuertos atienden?</div>
+						<p class="primary-text grey-color metric-text">
+							Aeropuerto Benito Juárez (MEX), Aeropuerto Felipe Ángeles (NLU) y terminales de aviación privada.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Tienen vehículos blindados?</div>
+						<p class="primary-text grey-color metric-text">
+							Sí. Suburbans y SUVs blindados con chofer profesional disponibles en toda la CDMX.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Reserva Tu Chofer Privado en CDMX</h2>
+				<p class="primary-text grey-color" style="max-width:600px;margin:0 auto 1.5rem;">
+					Disponible 24/7. Respondemos en 15 minutos. Sin costos ocultos.
+				</p>
+				<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">WhatsApp</a>
+				<span style="display:inline-block;width:1rem;"></span>
+				<a href="/es/contact" class="cta-button w-button" style="background:#333;">Enviar Solicitud</a>
+			</div>
+		</section>
+
+		<section>
+			<div class="footer-section-wrapper">
+				<div class="content-wrapper">
+					<div class="footer-content-wrapper">
+						<div class="footer-top-content">
+							<div class="footer-logo-social">
+								<a href="/es" class="brand w-nav-brand">
+									<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<div class="footer-text">
+									Servicio de chofer privado y traslados al aeropuerto en los principales destinos de México.
+									Disponible 24/7.
+								</div>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="footer-bottom-content">
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Páginas</h2>
+								<a href="/es" class="footer-nav-link">Inicio</a>
+								<a href="/es/about" class="footer-nav-link">Nosotros</a>
+								<a href="/es/our-fleet" class="footer-nav-link">Nuestra Flota</a>
+								<a href="/es/contact" class="footer-nav-link">Contacto</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Servicios Locales</h2>
+								<a href="/es/chofer-privado-cdmx" class="footer-nav-link w--current">Chofer CDMX</a>
+								<a href="/es/traslado-aeropuerto-cancun" class="footer-nav-link">Traslado Cancún</a>
+								<a href="/es/chofer-privado-guadalajara" class="footer-nav-link">Chofer Guadalajara</a>
+								<a href="/es/vehiculos-blindados-mexico" class="footer-nav-link">Vehículos Blindados</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Contáctanos</h2>
+								<a href="tel:+525574085802" class="footer-nav-link">+52 55 7408 5802</a>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">info@eliteridemexico.com</a>
+								<a href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico" target="_blank" rel="noreferrer" class="footer-nav-link">
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, México.
+								</a>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="copyright-info-wrapper">
+							<a href="https://www.o7digital.com/en/index-digital-agency" target="_blank" rel="noreferrer" class="footer-copyright-text">
+								Copyright Elite Ride Mexico 2026 - hecho por o7Digital
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+			<img src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png" loading="lazy" alt="WhatsApp Icon" class="whatsapp-footer-icon" />
+		</a>
+	</div>
+</Layout>

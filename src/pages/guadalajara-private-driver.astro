@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: 'How do I book a private driver in Guadalajara?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Contact Elite Ride Mexico via WhatsApp at +52 55 7408 5802 or use our contact form. Share your trip details — pickup point, destination, and date — and we confirm within 15–30 minutes.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'What areas in Guadalajara do you cover?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'We cover all Guadalajara neighborhoods including the city center, Zapopan, Tlaquepaque, Tonalá, and transfers to and from Don Miguel Hidalgo y Costilla International Airport (GDL).'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Can I hire a private driver for the full day in Guadalajara?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Yes. Our full-day hire service gives you a professional bilingual driver and a premium vehicle at your disposal for business or leisure travel across Guadalajara and surroundings.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Do you provide armored vehicles in Guadalajara?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Yes. For corporate executives requiring enhanced security, we offer armored SUVs and armored Suburbans with professional drivers in Guadalajara.'
+			}
+		}
+	]
+});
+
+const whatsappLink = 'https://wa.me/525574085802';
+---
+
+<Layout
+	title="Guadalajara Private Driver | SUV Chauffeur & Airport Transfer | Elite Ride Mexico"
+	description="Book a private driver in Guadalajara. Airport transfers at GDL, executive SUV hire, armored vehicles, and full-day chauffeur service. Available 24/7."
+	canonicalURL="https://eliteridemexico.com/guadalajara-private-driver"
+	alternateHref="https://eliteridemexico.com/es/chofer-privado-guadalajara"
+	alternateLang="es"
+>
+	<script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+	<div class="page-wrapper">
+		<section>
+			<div class="header-section contact-header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/" class="nav-link">Home</a></li>
+									<li class="nav-list-item"><a href="/about" class="nav-link">About</a></li>
+									<li class="nav-list-item"><a href="/our-fleet" class="nav-link">Our Fleet</a></li>
+									<li class="nav-list-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href="/our-fleet" class="cta-button w-button">rent now</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper contact-header-text-wrapper">
+								<h1 class="header-text">Private Driver in Guadalajara — Executive SUV & Chauffeur Service</h1>
+								<div class="primary-text">
+									Premium SUV hire with a professional bilingual driver in Guadalajara. Airport transfers at GDL,
+									executive trips, and full-day chauffeur service. Available 24/7.
+								</div>
+								<div class="header-button-wrapper">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Book on WhatsApp
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Private Driver Services in Guadalajara</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1.5rem;">
+					Guadalajara is Mexico's second-largest city and a major hub for business, manufacturing, and
+					tourism. Elite Ride Mexico provides reliable private driver and chauffeur service across the entire
+					Guadalajara metropolitan area, tailored for international travelers and corporate clients.
+				</p>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">GDL Airport Transfers</div>
+						<p class="primary-text grey-color metric-text">
+							Private pickup and drop-off at Don Miguel Hidalgo y Costilla International Airport. Meet &amp; greet
+							service with real-time flight tracking.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Corporate &amp; Business Travel</div>
+						<p class="primary-text grey-color metric-text">
+							Executive transportation for business meetings, factory visits, and investor trips across Guadalajara,
+							Zapopan, and Tlaquepaque.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Full-Day Hire</div>
+						<p class="primary-text grey-color metric-text">
+							Keep a professional driver at your disposal for the entire day — flexible scheduling, no fixed routes.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Armored Vehicles</div>
+						<p class="primary-text grey-color metric-text">
+							Enhanced security options available for executives and high-profile travelers in Guadalajara and
+							across Jalisco.
+						</p>
+					</div>
+				</div>
+				<div style="text-align:center;margin-top:1.5rem;">
+					<a href="/our-fleet" class="cta-button w-button">View Our Fleet</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Frequently Asked Questions</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">How do I book a private driver in Guadalajara?</div>
+						<p class="primary-text grey-color metric-text">
+							Contact us via WhatsApp at +52 55 7408 5802 or our contact form. We confirm within 15–30 minutes.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">What areas do you cover in Guadalajara?</div>
+						<p class="primary-text grey-color metric-text">
+							City center, Zapopan, Tlaquepaque, Tonalá, GDL airport, and surrounding Jalisco municipalities.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Can I hire a driver for the full day?</div>
+						<p class="primary-text grey-color metric-text">
+							Yes. Our full-day hire gives you a bilingual driver and premium vehicle at your disposal all day.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Are armored vehicles available in Guadalajara?</div>
+						<p class="primary-text grey-color metric-text">
+							Yes. Armored Suburbans and SUVs are available for executives requiring enhanced security.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Book Your Guadalajara Private Driver</h2>
+				<p class="primary-text grey-color" style="max-width:600px;margin:0 auto 1.5rem;">
+					Available 24/7. Reply within 15 minutes. Professional bilingual chauffeurs.
+				</p>
+				<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">Chat on WhatsApp</a>
+				<span style="display:inline-block;width:1rem;"></span>
+				<a href="/contact" class="cta-button w-button" style="background:#333;">Send a Request</a>
+			</div>
+		</section>
+
+		<section>
+			<div class="footer-section-wrapper">
+				<div class="content-wrapper">
+					<div class="footer-content-wrapper">
+						<div class="footer-top-content">
+							<div class="footer-logo-social">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<div class="footer-text">
+									Private driver and chauffeur service across Mexico. Premium SUVs, bilingual drivers, 24/7.
+								</div>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="footer-bottom-content">
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Pages</h2>
+								<a href="/" class="footer-nav-link">Home</a>
+								<a href="/about" class="footer-nav-link">About</a>
+								<a href="/our-fleet" class="footer-nav-link">Our Fleet</a>
+								<a href="/contact" class="footer-nav-link">Contact Us</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Local Services</h2>
+								<a href="/mexico-city-private-chauffeur" class="footer-nav-link">Mexico City Chauffeur</a>
+								<a href="/cancun-airport-transfer" class="footer-nav-link">Cancun Airport Transfer</a>
+								<a href="/guadalajara-private-driver" class="footer-nav-link w--current">Guadalajara Driver</a>
+								<a href="/armored-vehicle-rental-mexico" class="footer-nav-link">Armored Vehicles</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Get In Touch</h2>
+								<a href="tel:+525574085802" class="footer-nav-link">+52 55 7408 5802</a>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">info@eliteridemexico.com</a>
+								<a href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico" target="_blank" rel="noreferrer" class="footer-nav-link">
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, Mexico
+								</a>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="copyright-info-wrapper">
+							<a href="https://www.o7digital.com/en/index-digital-agency" target="_blank" rel="noreferrer" class="footer-copyright-text">
+								Copyright Elite Ride Mexico 2026 - made by o7Digital
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+			<img src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png" loading="lazy" alt="WhatsApp Icon" class="whatsapp-footer-icon" />
+		</a>
+	</div>
+</Layout>

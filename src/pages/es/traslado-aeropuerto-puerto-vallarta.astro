@@ -1,0 +1,238 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: '¿Hacen traslados desde el aeropuerto de Puerto Vallarta a los hoteles?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Sí. Cubrimos todos los hoteles de la Zona Hotelera de Puerto Vallarta, Nuevo Vallarta, Sayulita, Punta Mita y la Riviera Nayarit desde el Aeropuerto Internacional Gustavo Díaz Ordaz (PVR).'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿El traslado en Puerto Vallarta es solo para dos personas?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'No. Nuestras SUVs tienen capacidad para 6 a 8 pasajeros con equipaje. Ideales para familias, grupos de amigos o equipos corporativos.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿Cómo reservo un traslado al aeropuerto de Puerto Vallarta?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Escríbenos por WhatsApp al +52 55 7408 5802 o usa nuestro formulario. Confirma tu número de vuelo, hotel y número de pasajeros. Respondemos en 15–30 minutos.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿Tienen traslados a Sayulita y Punta Mita desde PVR?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Sí. Cubrimos Sayulita, Punta Mita, La Cruz de Huanacaxtle, Bucerias y todos los destinos de la Riviera Nayarit desde el aeropuerto de Puerto Vallarta.'
+			}
+		}
+	]
+});
+
+const whatsappLink = 'https://wa.me/525574085802';
+---
+
+<Layout
+	title="Traslado Aeropuerto Puerto Vallarta | SUV Privado con Chofer | Elite Ride Mexico"
+	description="Traslado privado al aeropuerto de Puerto Vallarta (PVR). Chofer bilingüe, vehículo premium, Sayulita, Punta Mita y Riviera Nayarit. Disponible 24/7."
+	canonicalURL="https://eliteridemexico.com/es/traslado-aeropuerto-puerto-vallarta"
+	lang="es"
+	alternateHref="https://eliteridemexico.com/puerto-vallarta-airport-transfer"
+	alternateLang="en"
+>
+	<script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+	<div class="page-wrapper">
+		<section>
+			<div class="header-section contact-header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/es" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/es" class="nav-link">Inicio</a></li>
+									<li class="nav-list-item"><a href="/es/about" class="nav-link">Nosotros</a></li>
+									<li class="nav-list-item"><a href="/es/our-fleet" class="nav-link">Nuestra Flota</a></li>
+									<li class="nav-list-item"><a href="/es/contact" class="nav-link">Contacto</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href="/es/our-fleet" class="cta-button w-button">Reserva ahora</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper contact-header-text-wrapper">
+								<h1 class="header-text">Traslado al Aeropuerto de Puerto Vallarta — SUV Privado con Chofer</h1>
+								<div class="primary-text">
+									Traslados privados desde el Aeropuerto Internacional de Puerto Vallarta (PVR) hasta tu hotel
+									o resort. Chofer bilingüe, seguimiento de vuelo y cobertura en toda la Riviera Nayarit.
+								</div>
+								<div class="header-button-wrapper">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Reservar por WhatsApp
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Traslado Privado al Aeropuerto de Puerto Vallarta</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1.5rem;">
+					Llega a Puerto Vallarta con estilo. Tu chofer te espera en llegadas con un letrero personalizado.
+					Sin taxímetro, sin sorpresas. Precio fijo y confirmado antes del viaje.
+				</p>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">Recepción Personalizada en PVR</div>
+						<p class="primary-text grey-color metric-text">
+							Tu chofer te espera con letrero en la sala de llegadas. Directo a tu resort sin esperas.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Destinos Cubiertos</div>
+						<p class="primary-text grey-color metric-text">
+							Zona Hotelera PV, Nuevo Vallarta, Sayulita, Punta Mita, La Cruz de Huanacaxtle y Bucerias.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">SUVs para Grupos y Familias</div>
+						<p class="primary-text grey-color metric-text">
+							Capacidad para 6–8 pasajeros con equipaje. Suburban, GMC Yukon y Land Cruiser climatizados.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Seguimiento de Vuelo Incluido</div>
+						<p class="primary-text grey-color metric-text">
+							Si tu vuelo se retrasa, el chofer lo sabe y ajusta su llegada. Sin cargo adicional.
+						</p>
+					</div>
+				</div>
+				<div style="text-align:center;margin-top:1.5rem;">
+					<a href="/es/our-fleet" class="cta-button w-button">Ver Nuestra Flota</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Preguntas Frecuentes — Traslado Aeropuerto Puerto Vallarta</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Cubren todos los hoteles de PV?</div>
+						<p class="primary-text grey-color metric-text">
+							Sí. Zona Hotelera, Nuevo Vallarta, Sayulita, Punta Mita y toda la Riviera Nayarit.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Es para grupos también?</div>
+						<p class="primary-text grey-color metric-text">
+							Sí. Nuestras SUVs tienen capacidad para familias y grupos de hasta 8 personas con equipaje.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Cómo reservo?</div>
+						<p class="primary-text grey-color metric-text">
+							Por WhatsApp con número de vuelo, hotel y pasajeros. Confirmamos en 15–30 minutos.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Cubren Sayulita y Punta Mita?</div>
+						<p class="primary-text grey-color metric-text">
+							Sí. Cubrimos todos los destinos de la Riviera Nayarit desde el aeropuerto PVR.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Reserva Tu Traslado a Puerto Vallarta</h2>
+				<p class="primary-text grey-color" style="max-width:600px;margin:0 auto 1.5rem;">
+					Disponible 24/7. Precio fijo. Respuesta en 15 minutos.
+				</p>
+				<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">WhatsApp</a>
+				<span style="display:inline-block;width:1rem;"></span>
+				<a href="/es/contact" class="cta-button w-button" style="background:#333;">Enviar Solicitud</a>
+			</div>
+		</section>
+
+		<section>
+			<div class="footer-section-wrapper">
+				<div class="content-wrapper">
+					<div class="footer-content-wrapper">
+						<div class="footer-top-content">
+							<div class="footer-logo-social">
+								<a href="/es" class="brand w-nav-brand">
+									<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<div class="footer-text">
+									Traslados privados y servicio de chofer en los principales destinos de México. Disponible 24/7.
+								</div>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="footer-bottom-content">
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Páginas</h2>
+								<a href="/es" class="footer-nav-link">Inicio</a>
+								<a href="/es/about" class="footer-nav-link">Nosotros</a>
+								<a href="/es/our-fleet" class="footer-nav-link">Nuestra Flota</a>
+								<a href="/es/contact" class="footer-nav-link">Contacto</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Servicios Locales</h2>
+								<a href="/es/chofer-privado-cdmx" class="footer-nav-link">Chofer CDMX</a>
+								<a href="/es/traslado-aeropuerto-cancun" class="footer-nav-link">Traslado Cancún</a>
+								<a href="/es/chofer-privado-guadalajara" class="footer-nav-link">Chofer Guadalajara</a>
+								<a href="/es/traslado-aeropuerto-puerto-vallarta" class="footer-nav-link w--current">Traslado Puerto Vallarta</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Contáctanos</h2>
+								<a href="tel:+525574085802" class="footer-nav-link">+52 55 7408 5802</a>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">info@eliteridemexico.com</a>
+								<a href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico" target="_blank" rel="noreferrer" class="footer-nav-link">
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, México.
+								</a>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="copyright-info-wrapper">
+							<a href="https://www.o7digital.com/en/index-digital-agency" target="_blank" rel="noreferrer" class="footer-copyright-text">
+								Copyright Elite Ride Mexico 2026 - hecho por o7Digital
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+			<img src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png" loading="lazy" alt="WhatsApp Icon" class="whatsapp-footer-icon" />
+		</a>
+	</div>
+</Layout>

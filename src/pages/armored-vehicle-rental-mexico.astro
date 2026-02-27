@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: 'What is an armored vehicle rental in Mexico?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'An armored vehicle rental provides a professionally modified SUV or van with ballistic protection and a trained driver. Elite Ride Mexico offers armored Chevrolet Suburbans and armored SUVs with professional chauffeurs for executives, diplomats, and security-conscious travelers in Mexico.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Which cities in Mexico do you offer armored vehicles?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'We provide armored vehicle rental with driver in Mexico City, Cancun, Guadalajara, Monterrey, Puerto Vallarta, Cuernavaca, and more locations across Mexico.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Can I rent an armored vehicle without a driver in Mexico?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Our armored vehicles are provided with a trained professional chauffeur. This ensures both vehicle operation safety and client security at all times.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'What protection level do your armored vehicles offer?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Our armored fleet is equipped to NIJ Level III/IV standards and B4–B6 ballistic ratings, suitable for corporate security, diplomatic escort, and high-risk travel environments in Mexico.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'How do I book an armored vehicle in Mexico?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Contact Elite Ride Mexico via WhatsApp at +52 55 7408 5802 or through our contact form. Share your dates, city, and security requirements, and we will respond within 30 minutes.'
+			}
+		}
+	]
+});
+
+const whatsappLink = 'https://wa.me/525574085802';
+---
+
+<Layout
+	title="Armored Vehicle Rental in Mexico | Suburban with Driver | Elite Ride Mexico"
+	description="Rent an armored vehicle with professional driver in Mexico. Armored Suburban, armored SUV hire for executives, diplomats, and corporate travel. Available 24/7 nationwide."
+	canonicalURL="https://eliteridemexico.com/armored-vehicle-rental-mexico"
+	alternateHref="https://eliteridemexico.com/es/vehiculos-blindados-mexico"
+	alternateLang="es"
+>
+	<script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+	<div class="page-wrapper">
+		<section>
+			<div class="header-section contact-header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/" class="nav-link">Home</a></li>
+									<li class="nav-list-item"><a href="/about" class="nav-link">About</a></li>
+									<li class="nav-list-item"><a href="/our-fleet" class="nav-link">Our Fleet</a></li>
+									<li class="nav-list-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href="/our-fleet" class="cta-button w-button">rent now</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper contact-header-text-wrapper">
+								<h1 class="header-text">Armored Vehicle Rental in Mexico — Suburban & SUV with Driver</h1>
+								<div class="primary-text">
+									Secure transportation for executives, diplomats, and international travelers. Armored Suburban
+									and SUV rental with professional trained chauffeurs across Mexico. Available 24/7.
+								</div>
+								<div class="header-button-wrapper">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Book on WhatsApp
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Armored Vehicle Rental with Driver in Mexico</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1.5rem;">
+					For travelers who cannot compromise on security, Elite Ride Mexico provides armored vehicle
+					transportation with professional trained drivers across Mexico. Our armored fleet is used by
+					corporate executives, diplomatic missions, HNWI travelers, and security-conscious international
+					clients.
+				</p>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">Armored Chevrolet Suburban</div>
+						<p class="primary-text grey-color metric-text">
+							The most trusted armored SUV in Mexico. B4–B6 ballistic protection, 7 seats, and a professional
+							bilingual driver. Available in black and white.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Armored GMC Yukon Denali</div>
+						<p class="primary-text grey-color metric-text">
+							Executive-grade protection in a premium full-size SUV. Ideal for corporate convoys and high-profile
+							airport transfers.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Professional Security Drivers</div>
+						<p class="primary-text grey-color metric-text">
+							All armored vehicles are operated by trained, vetted chauffeurs experienced in executive protection
+							and defensive driving across Mexico.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Nationwide Coverage</div>
+						<p class="primary-text grey-color metric-text">
+							Available in Mexico City, Cancun, Guadalajara, Monterrey, Puerto Vallarta, and all major Mexican
+							cities and airports.
+						</p>
+					</div>
+				</div>
+
+				<h2 class="section-heading" style="margin-top:2.5rem;">Who Uses Armored Vehicles in Mexico?</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1rem;">
+					Our armored vehicle clients include Fortune 500 executives, private equity investors, diplomatic
+					corps, government officials, entertainment industry professionals, and families requiring secure
+					transport for travel across Mexico.
+				</p>
+				<div style="text-align:center;margin-top:1.5rem;">
+					<a href="/our-fleet" class="cta-button w-button">View Our Armored Fleet</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Frequently Asked Questions — Armored Vehicle Rental Mexico</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">What is an armored vehicle rental in Mexico?</div>
+						<p class="primary-text grey-color metric-text">
+							A professionally modified SUV with ballistic protection and a trained driver for secure travel
+							across Mexico.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Which cities do you serve?</div>
+						<p class="primary-text grey-color metric-text">
+							Mexico City, Cancun, Guadalajara, Monterrey, Puerto Vallarta, Cuernavaca, and more.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Can I rent without a driver?</div>
+						<p class="primary-text grey-color metric-text">
+							All armored vehicles include a trained professional chauffeur for safety and operational reasons.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">How do I book an armored vehicle?</div>
+						<p class="primary-text grey-color metric-text">
+							Contact us via WhatsApp at +52 55 7408 5802 or our contact form. We respond within 30 minutes.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Book Armored Transportation in Mexico</h2>
+				<p class="primary-text grey-color" style="max-width:600px;margin:0 auto 1.5rem;">
+					Available 24/7. Discrete, professional, and secure. Contact us now.
+				</p>
+				<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">Chat on WhatsApp</a>
+				<span style="display:inline-block;width:1rem;"></span>
+				<a href="/contact" class="cta-button w-button" style="background:#333;">Send a Request</a>
+			</div>
+		</section>
+
+		<section>
+			<div class="footer-section-wrapper">
+				<div class="content-wrapper">
+					<div class="footer-content-wrapper">
+						<div class="footer-top-content">
+							<div class="footer-logo-social">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<div class="footer-text">
+									Armored vehicle rental and executive transportation across Mexico. Professional drivers, 24/7.
+								</div>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="footer-bottom-content">
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Pages</h2>
+								<a href="/" class="footer-nav-link">Home</a>
+								<a href="/about" class="footer-nav-link">About</a>
+								<a href="/our-fleet" class="footer-nav-link">Our Fleet</a>
+								<a href="/contact" class="footer-nav-link">Contact Us</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Local Services</h2>
+								<a href="/mexico-city-private-chauffeur" class="footer-nav-link">Mexico City Chauffeur</a>
+								<a href="/cancun-airport-transfer" class="footer-nav-link">Cancun Airport Transfer</a>
+								<a href="/guadalajara-private-driver" class="footer-nav-link">Guadalajara Driver</a>
+								<a href="/armored-vehicle-rental-mexico" class="footer-nav-link w--current">Armored Vehicles</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Get In Touch</h2>
+								<a href="tel:+525574085802" class="footer-nav-link">+52 55 7408 5802</a>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">info@eliteridemexico.com</a>
+								<a href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico" target="_blank" rel="noreferrer" class="footer-nav-link">
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, Mexico
+								</a>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="copyright-info-wrapper">
+							<a href="https://www.o7digital.com/en/index-digital-agency" target="_blank" rel="noreferrer" class="footer-copyright-text">
+								Copyright Elite Ride Mexico 2026 - made by o7Digital
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+			<img src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png" loading="lazy" alt="WhatsApp Icon" class="whatsapp-footer-icon" />
+		</a>
+	</div>
+</Layout>

@@ -1,0 +1,289 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: 'What is a private chauffeur service in Mexico City?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'A private chauffeur service in Mexico City provides a professional, bilingual driver in a premium SUV or executive vehicle. Elite Ride Mexico offers door-to-door transfers, airport pickups, and full-day hire across CDMX and surrounding areas.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'How do I book a private chauffeur in Mexico City?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'You can book by contacting us via WhatsApp at +52 55 7408 5802 or through our contact form. We typically confirm within 15–30 minutes and send all trip details to your phone.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Which airports does Elite Ride Mexico serve in CDMX?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'We serve Benito Juárez International Airport (MEX) and Felipe Ángeles International Airport (NLU), as well as all private terminals in Mexico City.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Are armored vehicles available in Mexico City?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Yes. Elite Ride Mexico offers armored SUVs and armored Suburbans for corporate executives and travelers requiring enhanced security in Mexico City.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'What vehicles are available for private chauffeur service in Mexico City?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Our Mexico City fleet includes Chevrolet Suburban, GMC Yukon Denali, Toyota Land Cruiser, and executive vans — all late-model, clean, and driven by professional bilingual chauffeurs.'
+			}
+		}
+	]
+});
+
+const whatsappLink = 'https://wa.me/525574085802';
+---
+
+<Layout
+	title="Mexico City Private Chauffeur | Airport Transfer & Executive Transport | Elite Ride Mexico"
+	description="Book a private chauffeur in Mexico City. Premium SUV transfers, airport pickups at MEX & NLU, armored vehicles, and full-day hire. Available 24/7. Contact us now."
+	canonicalURL="https://eliteridemexico.com/mexico-city-private-chauffeur"
+	alternateHref="https://eliteridemexico.com/es/chofer-privado-cdmx"
+	alternateLang="es"
+>
+	<script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+	<div class="page-wrapper">
+		<!-- NAV -->
+		<section>
+			<div class="header-section contact-header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/" class="nav-link">Home</a></li>
+									<li class="nav-list-item"><a href="/about" class="nav-link">About</a></li>
+									<li class="nav-list-item"><a href="/our-fleet" class="nav-link">Our Fleet</a></li>
+									<li class="nav-list-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href="/our-fleet" class="cta-button w-button">rent now</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<!-- HERO -->
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper contact-header-text-wrapper">
+								<h1 class="header-text">Mexico City Private Chauffeur Service</h1>
+								<div class="primary-text">
+									Premium SUV and executive van hire with a professional bilingual driver in CDMX. Airport
+									transfers, corporate trips, and full-day chauffeur service available 24/7.
+								</div>
+								<div class="header-button-wrapper">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Book on WhatsApp
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- MAIN CONTENT -->
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Why Choose a Private Chauffeur in Mexico City?</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1.5rem;">
+					Mexico City is one of the largest metropolises in the world. Navigating its traffic, complex road
+					network, and security considerations on your own is stressful. Elite Ride Mexico provides a
+					seamless, secure, and comfortable private driver experience from the moment you land.
+				</p>
+
+				<h2 class="section-heading" style="margin-top:2.5rem;">Private Chauffeur Services We Offer in CDMX</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">Airport Transfers (MEX & NLU)</div>
+						<p class="primary-text grey-color metric-text">
+							Private pickup and drop-off at Benito Juárez (MEX) and Felipe Ángeles (NLU) airports. Meet &amp;
+							greet service, flight tracking, and a professional driver waiting for you.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Executive Transportation</div>
+						<p class="primary-text grey-color metric-text">
+							Corporate meetings, investor tours, embassy visits, and high-level business travel across Mexico
+							City and surrounding areas — done right.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Armored Vehicle Hire</div>
+						<p class="primary-text grey-color metric-text">
+							For executives and travelers who require enhanced security, we provide armored Suburban and armored
+							SUV rentals with trained professional chauffeurs in Mexico City.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Full-Day &amp; Hourly Hire</div>
+						<p class="primary-text grey-color metric-text">
+							Need a driver for an entire day or a few hours? Book our full-day chauffeur service for flexible
+							private transportation across CDMX at your own pace.
+						</p>
+					</div>
+				</div>
+
+				<h2 class="section-heading" style="margin-top:2.5rem;">Our Fleet for Mexico City</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1rem;">
+					All vehicles are late-model, fully insured, and maintained to the highest standards. Choose from
+					Chevrolet Suburban, GMC Yukon Denali, Toyota Land Cruiser, and executive vans — driven by
+					bilingual, professional chauffeurs.
+				</p>
+				<div style="text-align:center;margin-top:1.5rem;">
+					<a href="/our-fleet" class="cta-button w-button">View Full Fleet</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section class="section">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Frequently Asked Questions</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">What is a private chauffeur service in Mexico City?</div>
+						<p class="primary-text grey-color metric-text">
+							A private chauffeur service provides a professional bilingual driver in a premium vehicle for
+							airport transfers, corporate trips, or personal travel in CDMX.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">How do I book a private chauffeur in Mexico City?</div>
+						<p class="primary-text grey-color metric-text">
+							Contact us via WhatsApp at +52 55 7408 5802 or use our contact form. We confirm within 15–30
+							minutes and send all trip details to your phone.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Are armored vehicles available?</div>
+						<p class="primary-text grey-color metric-text">
+							Yes. We offer armored Suburbans and SUVs for executives and travelers requiring enhanced security
+							anywhere in Mexico City.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Do you serve both MEX and NLU airports?</div>
+						<p class="primary-text grey-color metric-text">
+							Absolutely. We provide private airport transfers from both Benito Juárez International (MEX) and
+							Felipe Ángeles International (NLU), as well as all private terminals.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA FOOTER -->
+		<section class="section bg-white">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Ready to Book Your Mexico City Chauffeur?</h2>
+				<p class="primary-text grey-color" style="max-width:600px;margin:0 auto 1.5rem;">
+					Contact Elite Ride Mexico now. We reply within 15 minutes and operate 24/7.
+				</p>
+				<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+					Chat on WhatsApp
+				</a>
+				<span style="display:inline-block;width:1rem;"></span>
+				<a href="/contact" class="cta-button w-button" style="background:#333;">
+					Send a Request
+				</a>
+			</div>
+		</section>
+
+		<!-- FOOTER -->
+		<section>
+			<div class="footer-section-wrapper">
+				<div class="content-wrapper">
+					<div class="footer-content-wrapper">
+						<div class="footer-top-content">
+							<div class="footer-logo-social">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<div class="footer-text">
+									Safe airport transfers, executive transportation, and private driver service across Mexico City,
+									Cancun, Guadalajara, Puerto Vallarta, and more.
+								</div>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="footer-bottom-content">
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Pages</h2>
+								<a href="/" class="footer-nav-link">Home</a>
+								<a href="/about" class="footer-nav-link">About</a>
+								<a href="/our-fleet" class="footer-nav-link">Our Fleet</a>
+								<a href="/contact" class="footer-nav-link">Contact Us</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Local Services</h2>
+								<a href="/mexico-city-private-chauffeur" class="footer-nav-link w--current">Mexico City Chauffeur</a>
+								<a href="/cancun-airport-transfer" class="footer-nav-link">Cancun Airport Transfer</a>
+								<a href="/guadalajara-private-driver" class="footer-nav-link">Guadalajara Driver</a>
+								<a href="/armored-vehicle-rental-mexico" class="footer-nav-link">Armored Vehicles</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Get In Touch</h2>
+								<a href="tel:+525574085802" class="footer-nav-link">+52 55 7408 5802</a>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">info@eliteridemexico.com</a>
+								<a
+									href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
+									target="_blank"
+									rel="noreferrer"
+									class="footer-nav-link"
+								>
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, Mexico
+								</a>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="copyright-info-wrapper">
+							<a
+								href="https://www.o7digital.com/en/index-digital-agency"
+								target="_blank"
+								rel="noreferrer"
+								class="footer-copyright-text"
+							>
+								Copyright Elite Ride Mexico 2026 - made by o7Digital
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+			<img
+				src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
+				loading="lazy"
+				alt="WhatsApp Icon"
+				class="whatsapp-footer-icon"
+			/>
+		</a>
+	</div>
+</Layout>

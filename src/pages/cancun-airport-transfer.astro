@@ -1,0 +1,257 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: 'How do I arrange an airport transfer in Cancun?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Contact Elite Ride Mexico via WhatsApp at +52 55 7408 5802 or use our contact form. Share your flight details and we will assign a professional bilingual driver to meet you at Cancun International Airport (CUN).'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'What vehicles are available for Cancun airport transfers?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'We offer Chevrolet Suburban, GMC Yukon Denali, Toyota Land Cruiser, and executive vans for private airport transfers in Cancun — ideal for families, corporate groups, and VIP travelers.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Is the Cancun airport transfer private or shared?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'All our Cancun airport transfers are 100% private. You will not share the vehicle with other passengers. Your driver waits for you at the arrivals hall with a name sign.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Do you track my flight for Cancun pickups?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Yes. We monitor your flight status in real time so your driver adjusts arrival time if your flight is delayed, at no extra cost.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Which hotels and resorts in Cancun do you serve?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'We provide transfers to and from all hotels in the Hotel Zone, downtown Cancun, Playa del Carmen, Tulum, and surrounding areas in the Riviera Maya.'
+			}
+		}
+	]
+});
+
+const whatsappLink = 'https://wa.me/525574085802';
+---
+
+<Layout
+	title="Cancun Airport Transfer | Private SUV & Chauffeur Service | Elite Ride Mexico"
+	description="Private airport transfer in Cancun. Meet & greet at CUN, premium SUV, bilingual driver, flight tracking. Hotels, resorts, and Riviera Maya. Book 24/7."
+	canonicalURL="https://eliteridemexico.com/cancun-airport-transfer"
+	alternateHref="https://eliteridemexico.com/es/traslado-aeropuerto-cancun"
+	alternateLang="es"
+>
+	<script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+	<div class="page-wrapper">
+		<section>
+			<div class="header-section contact-header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/" class="nav-link">Home</a></li>
+									<li class="nav-list-item"><a href="/about" class="nav-link">About</a></li>
+									<li class="nav-list-item"><a href="/our-fleet" class="nav-link">Our Fleet</a></li>
+									<li class="nav-list-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href="/our-fleet" class="cta-button w-button">rent now</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper contact-header-text-wrapper">
+								<h1 class="header-text">Cancun Airport Transfer — Private SUV & Chauffeur</h1>
+								<div class="primary-text">
+									Private, door-to-door airport transfers at Cancun International Airport (CUN). Premium SUVs,
+									bilingual drivers, meet &amp; greet service, and real-time flight tracking. Available 24/7.
+								</div>
+								<div class="header-button-wrapper">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Book on WhatsApp
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Private Airport Transfer Service in Cancun</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1.5rem;">
+					Arriving in Cancun should be a pleasure, not a hassle. Elite Ride Mexico's private airport transfer
+					service ensures you are met at arrivals by a professional chauffeur, your luggage is handled, and
+					your premium vehicle is ready for a smooth, comfortable ride to your destination.
+				</p>
+
+				<h2 class="section-heading" style="margin-top:2.5rem;">What's Included</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">Meet & Greet at CUN</div>
+						<p class="primary-text grey-color metric-text">
+							Your driver waits in the arrivals hall with a name sign. No searching, no stress.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Flight Tracking</div>
+						<p class="primary-text grey-color metric-text">
+							We monitor your flight in real time. If it's delayed, your driver adjusts — at no extra charge.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">100% Private Vehicle</div>
+						<p class="primary-text grey-color metric-text">
+							No shared shuttles. The vehicle is exclusively yours from airport to hotel or resort.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Destinations Covered</div>
+						<p class="primary-text grey-color metric-text">
+							Hotel Zone, Downtown Cancun, Playa del Carmen, Tulum, Akumal, and all Riviera Maya destinations.
+						</p>
+					</div>
+				</div>
+
+				<h2 class="section-heading" style="margin-top:2.5rem;">Vehicles for Cancun Airport Transfers</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1rem;">
+					Suburban chauffeur service, GMC Yukon Denali, Toyota Land Cruiser, and executive vans — all with
+					air conditioning, ample luggage space, and a professional bilingual driver.
+				</p>
+				<div style="text-align:center;margin-top:1.5rem;">
+					<a href="/our-fleet" class="cta-button w-button">View Full Fleet</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Frequently Asked Questions — Cancun Airport Transfer</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">How do I arrange an airport transfer in Cancun?</div>
+						<p class="primary-text grey-color metric-text">
+							Contact us via WhatsApp or our contact form. Share your flight number, arrival time, and hotel.
+							We confirm within 15–30 minutes.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Are transfers private or shared?</div>
+						<p class="primary-text grey-color metric-text">
+							All transfers are 100% private. You never share a vehicle with other passengers.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Do you track my flight?</div>
+						<p class="primary-text grey-color metric-text">
+							Yes. We monitor your flight status so the driver adjusts if there's a delay — at no extra cost.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Which areas in Cancun do you serve?</div>
+						<p class="primary-text grey-color metric-text">
+							Hotel Zone, downtown, Playa del Carmen, Tulum, and all Riviera Maya destinations.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Book Your Cancun Airport Transfer Now</h2>
+				<p class="primary-text grey-color" style="max-width:600px;margin:0 auto 1.5rem;">
+					Available 24/7. Reply within 15 minutes. No hidden fees.
+				</p>
+				<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">Chat on WhatsApp</a>
+				<span style="display:inline-block;width:1rem;"></span>
+				<a href="/contact" class="cta-button w-button" style="background:#333;">Send a Request</a>
+			</div>
+		</section>
+
+		<section>
+			<div class="footer-section-wrapper">
+				<div class="content-wrapper">
+					<div class="footer-content-wrapper">
+						<div class="footer-top-content">
+							<div class="footer-logo-social">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<div class="footer-text">
+									Private airport transfers and chauffeur service across Mexico. Premium SUVs, bilingual drivers,
+									available 24/7.
+								</div>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="footer-bottom-content">
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Pages</h2>
+								<a href="/" class="footer-nav-link">Home</a>
+								<a href="/about" class="footer-nav-link">About</a>
+								<a href="/our-fleet" class="footer-nav-link">Our Fleet</a>
+								<a href="/contact" class="footer-nav-link">Contact Us</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Local Services</h2>
+								<a href="/mexico-city-private-chauffeur" class="footer-nav-link">Mexico City Chauffeur</a>
+								<a href="/cancun-airport-transfer" class="footer-nav-link w--current">Cancun Airport Transfer</a>
+								<a href="/guadalajara-private-driver" class="footer-nav-link">Guadalajara Driver</a>
+								<a href="/armored-vehicle-rental-mexico" class="footer-nav-link">Armored Vehicles</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Get In Touch</h2>
+								<a href="tel:+525574085802" class="footer-nav-link">+52 55 7408 5802</a>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">info@eliteridemexico.com</a>
+								<a
+									href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
+									target="_blank" rel="noreferrer" class="footer-nav-link"
+								>Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, Mexico</a>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="copyright-info-wrapper">
+							<a href="https://www.o7digital.com/en/index-digital-agency" target="_blank" rel="noreferrer" class="footer-copyright-text">
+								Copyright Elite Ride Mexico 2026 - made by o7Digital
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+			<img src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png" loading="lazy" alt="WhatsApp Icon" class="whatsapp-footer-icon" />
+		</a>
+	</div>
+</Layout>

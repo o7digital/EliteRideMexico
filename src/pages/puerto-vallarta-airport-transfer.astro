@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: 'How do I book an airport transfer in Puerto Vallarta?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Contact Elite Ride Mexico via WhatsApp at +52 55 7408 5802 or use our contact form. Share your flight number and hotel, and we confirm your private transfer within 15–30 minutes.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Which airport serves Puerto Vallarta?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Licenciado Gustavo Díaz Ordaz International Airport (PVR) serves Puerto Vallarta. Elite Ride Mexico provides private transfers to and from PVR for all hotels in the Puerto Vallarta and Riviera Nayarit area.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Do you provide transfers from Puerto Vallarta to Sayulita or Punta Mita?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Yes. We serve Puerto Vallarta, Nuevo Vallarta, Sayulita, Punta Mita, Bucerías, and all Riviera Nayarit destinations from PVR airport.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: 'Are your Puerto Vallarta airport transfers private?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Yes, 100% private. You will never share a vehicle. Your professional bilingual driver will be waiting with a name sign at the arrivals area.'
+			}
+		}
+	]
+});
+
+const whatsappLink = 'https://wa.me/525574085802';
+---
+
+<Layout
+	title="Puerto Vallarta Airport Transfer | Private SUV Chauffeur | Elite Ride Mexico"
+	description="Private airport transfer at Puerto Vallarta (PVR). Premium SUV, bilingual driver, meet & greet, flight tracking. Vallarta, Sayulita, Punta Mita. Available 24/7."
+	canonicalURL="https://eliteridemexico.com/puerto-vallarta-airport-transfer"
+	alternateHref="https://eliteridemexico.com/es/traslado-aeropuerto-puerto-vallarta"
+	alternateLang="es"
+>
+	<script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+	<div class="page-wrapper">
+		<section>
+			<div class="header-section contact-header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/" class="nav-link">Home</a></li>
+									<li class="nav-list-item"><a href="/about" class="nav-link">About</a></li>
+									<li class="nav-list-item"><a href="/our-fleet" class="nav-link">Our Fleet</a></li>
+									<li class="nav-list-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href="/our-fleet" class="cta-button w-button">rent now</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper contact-header-text-wrapper">
+								<h1 class="header-text">Puerto Vallarta Airport Transfer — Private SUV & Chauffeur</h1>
+								<div class="primary-text">
+									Private, comfortable airport transfers at Licenciado Gustavo Díaz Ordaz International Airport
+									(PVR). Premium SUVs, bilingual drivers, real-time flight tracking — available 24/7.
+								</div>
+								<div class="header-button-wrapper">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Book on WhatsApp
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Private Airport Transfer Service in Puerto Vallarta</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1.5rem;">
+					Puerto Vallarta is one of Mexico's most popular beach destinations. Arrive in style with a private
+					chauffeur waiting at PVR — no taxis, no shared vans, just a seamless, premium transfer to your
+					hotel or villa.
+				</p>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">PVR Airport Meet & Greet</div>
+						<p class="primary-text grey-color metric-text">
+							Your driver waits at arrivals with your name sign. No wait, no confusion.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Destinations Covered</div>
+						<p class="primary-text grey-color metric-text">
+							Puerto Vallarta, Nuevo Vallarta, Sayulita, Punta Mita, Bucerías, and all Riviera Nayarit resorts.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Premium SUV Fleet</div>
+						<p class="primary-text grey-color metric-text">
+							Chevrolet Suburban, GMC Yukon Denali, Toyota Land Cruiser — air-conditioned and spacious for families
+							and groups.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Flight Tracking</div>
+						<p class="primary-text grey-color metric-text">
+							We monitor your flight in real time so your driver is always there when you land, even if delayed.
+						</p>
+					</div>
+				</div>
+				<div style="text-align:center;margin-top:1.5rem;">
+					<a href="/our-fleet" class="cta-button w-button">View Our Fleet</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Frequently Asked Questions</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">How do I book an airport transfer in Puerto Vallarta?</div>
+						<p class="primary-text grey-color metric-text">
+							WhatsApp us at +52 55 7408 5802 or fill out our contact form. Confirmation within 15–30 minutes.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Which airport serves Puerto Vallarta?</div>
+						<p class="primary-text grey-color metric-text">
+							Licenciado Gustavo Díaz Ordaz International Airport (PVR). We serve all terminals and private
+							aviation areas.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Do you go to Sayulita or Punta Mita?</div>
+						<p class="primary-text grey-color metric-text">
+							Yes. We serve Sayulita, Punta Mita, Bucerías, Nuevo Vallarta, and all Riviera Nayarit destinations.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Are transfers 100% private?</div>
+						<p class="primary-text grey-color metric-text">
+							Absolutely. No shared vehicles. Your exclusive private transfer, just the way you want it.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Book Your Puerto Vallarta Airport Transfer</h2>
+				<p class="primary-text grey-color" style="max-width:600px;margin:0 auto 1.5rem;">
+					Available 24/7. No hidden fees. Reply in 15 minutes.
+				</p>
+				<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">Chat on WhatsApp</a>
+				<span style="display:inline-block;width:1rem;"></span>
+				<a href="/contact" class="cta-button w-button" style="background:#333;">Send a Request</a>
+			</div>
+		</section>
+
+		<section>
+			<div class="footer-section-wrapper">
+				<div class="content-wrapper">
+					<div class="footer-content-wrapper">
+						<div class="footer-top-content">
+							<div class="footer-logo-social">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<div class="footer-text">
+									Private airport transfers across Mexico. Premium SUVs, bilingual drivers, available 24/7.
+								</div>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="footer-bottom-content">
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Pages</h2>
+								<a href="/" class="footer-nav-link">Home</a>
+								<a href="/about" class="footer-nav-link">About</a>
+								<a href="/our-fleet" class="footer-nav-link">Our Fleet</a>
+								<a href="/contact" class="footer-nav-link">Contact Us</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Local Services</h2>
+								<a href="/mexico-city-private-chauffeur" class="footer-nav-link">Mexico City Chauffeur</a>
+								<a href="/cancun-airport-transfer" class="footer-nav-link">Cancun Airport Transfer</a>
+								<a href="/guadalajara-private-driver" class="footer-nav-link">Guadalajara Driver</a>
+								<a href="/puerto-vallarta-airport-transfer" class="footer-nav-link w--current">Puerto Vallarta Transfer</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Get In Touch</h2>
+								<a href="tel:+525574085802" class="footer-nav-link">+52 55 7408 5802</a>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">info@eliteridemexico.com</a>
+								<a href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico" target="_blank" rel="noreferrer" class="footer-nav-link">
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, Mexico
+								</a>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="copyright-info-wrapper">
+							<a href="https://www.o7digital.com/en/index-digital-agency" target="_blank" rel="noreferrer" class="footer-copyright-text">
+								Copyright Elite Ride Mexico 2026 - made by o7Digital
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+			<img src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png" loading="lazy" alt="WhatsApp Icon" class="whatsapp-footer-icon" />
+		</a>
+	</div>
+</Layout>

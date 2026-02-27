@@ -45,7 +45,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automatico',
+				value: 'Automático',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -78,7 +78,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automatico',
+				value: 'Automático',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -111,7 +111,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automatico',
+				value: 'Automático',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -144,7 +144,7 @@ const cars: Car[] = [
 			},
 			{
 				key: 'transmission',
-				value: 'Automatico',
+				value: 'Automático',
 				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
 				alt: 'Transmission Icon'
 			},
@@ -210,13 +210,13 @@ const locations: Location[] = [
 const steps: Step[] = [
 	{
 		title: 'Explora Nuestra Flota',
-		description: 'Descubre nuestros vehiculos premium disponibles en Mexico.',
+		description: 'Descubre nuestros vehículos premium disponibles en México.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983a3267985f2f6160ffc_search.png',
 		alt: 'Search Icon'
 	},
 	{
-		title: 'Selecciona Tu Vehiculo',
-		description: 'Elige la opcion que mejor se adapte a tu viaje.',
+		title: 'Selecciona Tu Vehículo',
+		description: 'Elige la opción que mejor se adapte a tu viaje — traslado aeropuerto, viaje interurbano o chofer privado.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/66798467e9aadbf3723fcb9c_select-car.png',
 		alt: 'Select Car Icon'
 	},
@@ -228,8 +228,8 @@ const steps: Step[] = [
 		alt: 'Enquiry Form Icon'
 	},
 	{
-		title: 'Recoge y Conduce',
-		description: 'Recibe tu unidad y disfruta una experiencia sin complicaciones.',
+		title: 'Tu Chofer al Punto de Encuentro',
+		description: 'Tu chofer privado te recibe en el punto acordado y te lleva a tu destino con seguridad y puntualidad.',
 		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983913dc4764e171e992b_drive.png',
 		alt: 'Drive Icon'
 	}
@@ -268,7 +268,7 @@ const socialLinks = [
 const metrics = [
 	{ value: '10', label: 'Años de Experiencia' },
 	{ value: '1000', label: 'Clientes Satisfechos' },
-	{ value: '200', label: 'Vehiculos' },
+	{ value: '200', label: 'Vehículos' },
 	{ value: '10', label: 'Ubicaciones' }
 ];
 
@@ -309,7 +309,7 @@ export default function GearshiftHomeEs() {
 												</a>
 											</li>
 											<li className="nav-list-item">
-												<a href="/contact" className="nav-link" onClick={closeMenus}>
+												<a href="/es/contact" className="nav-link" onClick={closeMenus}>
 													Contacto
 												</a>
 											</li>
@@ -363,10 +363,10 @@ export default function GearshiftHomeEs() {
 							<div className="header-content-wrapper">
 									<div className="header-text-wrapper">
 											<h1 className="header-text">
-													Ofrecemos Vehiculos Blindados en Aeropuertos de Mexico y Traslados a la Ciudad con Chofer de <span className="brand-span">Elite Ride Mexico</span>.
-											</h1>
-										<div className="primary-text">
-													Renta vehiculos premium con servicio profesional, seguridad y atencion personalizada.
+										Renta de SUV premium con chofer privado en <span className="brand-span">México</span>
+									</h1>
+									<div className="primary-text">
+										Traslados al aeropuerto, transporte ejecutivo y servicio de chofer privado en Ciudad de México, Cancún, Guadalajara, Puerto Vallarta y más.
 										</div>
 									<div className="header-button-wrapper">
 										<a href="#featured-cars" className="cta-button w-button">
@@ -399,7 +399,7 @@ export default function GearshiftHomeEs() {
 			<section id="featured-cars" className="section">
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
-								<h2 className="section-heading">Vehiculos DEstacados.</h2>
+								<h2 className="section-heading">Vehículos Destacados</h2>
 							<a href="/es/our-fleet" className="cta-button w-button">
 								Ver todos
 							</a>
@@ -416,9 +416,9 @@ export default function GearshiftHomeEs() {
 										<div className="car-details-wrapper">
 											<h3 className="car-listing-name">{car.name}</h3>
 											<div className="listing-price-wrapper">
-												<div className="currency-price-term">AED</div>
-												<div className="car-listing-price">{car.price}</div>
-													<div className="currency-price-term">/ DIA</div>
+										<div className="currency-price-term">MXN</div>
+										<div className="car-listing-price">{car.price}</div>
+											<div className="currency-price-term">/ DÍA</div>
 											</div>
 											<div className="car-listing-details-wrapper">
 												{car.details.map((detail) => (
@@ -486,7 +486,7 @@ export default function GearshiftHomeEs() {
 												<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
 											</a>
 										<div className="footer-text">
-											Servicio premium de renta de vehiculos con chofer en los principales destinos de Mexico.
+											Servicio premium de renta de vehículos con chofer en los principales destinos de México.
 										</div>
 									<div className="social-media-links">
 										{socialLinks.map((social) => (
@@ -504,7 +504,7 @@ export default function GearshiftHomeEs() {
 									</div>
 								</div>
 								<div className="footer-newsletter">
-										<h3 className="small-heading">Suscribete a nuestro boletin</h3>
+										<h3 className="small-heading">Suscríbete a nuestro boletín</h3>
 									<div className="w-form">
 										<form className="newsletter-form" onSubmit={(event) => event.preventDefault()}>
 											<input
@@ -523,7 +523,7 @@ export default function GearshiftHomeEs() {
 							<div className="divider" />
 							<div className="footer-bottom-content">
 								<div className="footer-links-wrapper">
-										<h2 className="heading">Paginas</h2>
+										<h2 className="heading">Páginas</h2>
 									<a href="/es" className="footer-nav-link w--current">
 										Inicio
 									</a>
@@ -533,7 +533,7 @@ export default function GearshiftHomeEs() {
 											<a href="/es/our-fleet" className="footer-nav-link">
 												Nuestra Flota
 											</a>
-										<a href="/contact" className="footer-nav-link">
+									<a href="/es/contact" className="footer-nav-link">
 											Contacto
 										</a>
 								</div>
@@ -543,7 +543,7 @@ export default function GearshiftHomeEs() {
 										Aviso de Privacidad
 									</a>
 									<a href="/cancelation" className="footer-nav-link">
-											Cancelacion
+									Cancelación
 									</a>
 									<a href="/refunds" className="footer-nav-link">
 										Reembolsos
@@ -553,20 +553,20 @@ export default function GearshiftHomeEs() {
 									</a>
 								</div>
 								<div className="footer-links-wrapper">
-										<h2 className="heading">Contactanos</h2>
-									<a href="tel:+971123456789" className="footer-nav-link">
-										+971 12 345 6789
+										<h2 className="heading">Contáctanos</h2>
+								<a href="tel:+525574085802" className="footer-nav-link">
+									+52 55 7408 5802
 									</a>
 										<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
 											info@eliteridemexico.com
 										</a>
 										<a
-											href="https://www.google.com/maps/search/+123+Innovation+Street,+Downtown+Dubai,+Dubai,+UAE/@25.1559625,55.2253142,11.35z?entry=ttu"
-											target="_blank"
-											rel="noreferrer"
-											className="footer-nav-link"
-										>
-											Goldsmith 250, Lomas de Chapultepec Colonia Miguel Hidaglo 11500 CDMX Mexico
+										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
+										target="_blank"
+										rel="noreferrer"
+										className="footer-nav-link"
+									>
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, México.
 										</a>
 								</div>
 							</div>

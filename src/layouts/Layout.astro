@@ -104,6 +104,9 @@ const jsonLd = JSON.stringify({
 
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json" set:html={jsonLd} />
+
+		<!-- Per-page extra head (schema, etc.) -->
+		<slot name="head" />
 	</head>
 	<body class="body">
 		<slot />
