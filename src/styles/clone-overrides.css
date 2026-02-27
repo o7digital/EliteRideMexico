@@ -470,7 +470,7 @@
 
 .contact-header-section {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6) 100%, #fff),
-		url('https://cdn.prod.website-files.com/6677ef5c2f59c6148debf80a/6677ef5c2f59c6148debf850_dubai-marina.jpg') !important;
+		url('/contact/cdmx-timeout.jpg') !important;
 	background-position: 0 0, 56% 50% !important;
 	background-size: auto, cover !important;
 }
