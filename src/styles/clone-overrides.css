@@ -12,6 +12,12 @@
 	cursor: pointer;
 }
 
+/* Thicccboi from the Webflow theme drops accented glyphs on ES pages.
+   Force a latin-complete fallback font when lang is Spanish. */
+html[lang='es'] .body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
 /* Car Cards Alignment */
 .car-collection-item {
 	display: flex;
