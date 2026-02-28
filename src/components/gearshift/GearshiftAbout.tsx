@@ -208,6 +208,13 @@ export default function GearshiftAbout() {
 							Whether you are visiting for the World Cup, business, or leisure, our mission is simple: give
 							international guests a premium and predictable transportation experience in Mexico.
 						</p>
+						<p className="primary-text grey-color">
+							Read our{' '}
+							<a href="/world-cup-2026-mexico" className="link-text">
+								FIFA World Cup 2026 Mexico transport guide, including Estadio Azteca tips
+							</a>
+							.
+						</p>
 					</div>
 				</div>
 			</section>

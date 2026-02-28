@@ -536,6 +536,9 @@ export default function GearshiftHomeEs() {
 									<a href="/es/contact" className="footer-nav-link">
 											Contacto
 										</a>
+										<a href="/es/copa-del-mundo-2026-mexico" className="footer-nav-link">
+											Noticias Mundial 2026
+										</a>
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>

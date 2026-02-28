@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do you provide private transfers for FIFA World Cup 2026 in Mexico?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Elite Ride Mexico provides private SUV and chauffeur transfers for FIFA World Cup 2026 visitors, including airport pickups, hotel rides, and stadium transportation in Mexico City.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I book transportation to Estadio Azteca?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We provide private transportation to and from Estadio Azteca with professional bilingual drivers and flexible pickup times.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I reserve a World Cup 2026 transfer in Mexico?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Contact us on WhatsApp at +52 5644166523 with your date, location, and number of passengers. We confirm availability quickly and send your driver details.'
+      }
+    }
+  ]
+});
+
+const whatsappLink = 'https://wa.me/525644166523';
+---
+
+<Layout
+  title="FIFA World Cup 2026 Mexico | Estadio Azteca Transfers & Private Chauffeur | Elite Ride Mexico"
+  description="Private transport for FIFA World Cup 2026 in Mexico. Book Estadio Azteca transfers, airport pickups, and secure chauffeur service in Mexico City with Elite Ride Mexico."
+  canonicalURL="https://eliteridemexico.com/world-cup-2026-mexico"
+  alternateHref="https://eliteridemexico.com/es/copa-del-mundo-2026-mexico"
+  alternateLang="es"
+>
+  <script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+  <div class="page-wrapper">
+    <section>
+      <div class="header-section contact-header-section">
+        <div class="navbar w-nav">
+          <div class="content-wrapper">
+            <div class="navbar-wrapper">
+              <a href="/" class="brand w-nav-brand">
+                <span class="brand-logo-text">ELITE RIDE MEXICO</span>
+              </a>
+              <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+                <ul role="list" class="nav-menu w-list-unstyled">
+                  <li class="nav-list-item"><a href="/" class="nav-link">Home</a></li>
+                  <li class="nav-list-item"><a href="/about" class="nav-link">About</a></li>
+                  <li class="nav-list-item"><a href="/our-fleet" class="nav-link">Our Fleet</a></li>
+                  <li class="nav-list-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+                  <li class="nav-list-item">
+                    <div class="cta-button-wrapper">
+                      <a href="/our-fleet" class="cta-button w-button">rent now</a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-wrapper">
+          <div class="header-section-wrapper">
+            <div class="header-content-wrapper">
+              <div class="header-text-wrapper contact-header-text-wrapper">
+                <h1 class="header-text">FIFA World Cup 2026 Transport in Mexico City</h1>
+                <div class="primary-text">
+                  Private SUV and chauffeur service for World Cup 2026 fans, teams, and business travelers.
+                  Reliable airport pickups and direct transfers to Estadio Azteca and key FIFA event zones.
+                </div>
+                <div class="header-button-wrapper">
+                  <a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+                    Book on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="content-wrapper">
+        <h2 class="section-heading">Private Transfers for Copa del Mundo / World Cup 2026</h2>
+        <p class="primary-text grey-color" style="max-width:760px;margin:0 auto 1.5rem;">
+          If you are traveling to Mexico for FIFA World Cup 2026, transport planning is critical. We provide secure,
+          punctual, and private mobility for arrivals, match-day movements, and city-to-city rides.
+        </p>
+
+        <h2 class="section-heading" style="margin-top:2.5rem;">Estadio Azteca Transportation Services</h2>
+        <div class="grid-wrapper" style="margin-top:1.5rem;">
+          <div class="grid-item-wrapper">
+            <div class="title-small">Match-Day Pickup & Drop-off</div>
+            <p class="primary-text grey-color metric-text">
+              Private transfers to Estadio Azteca with pre-defined pickup points and return plans after each match.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">Airport to Hotel Transfers</div>
+            <p class="primary-text grey-color metric-text">
+              Door-to-door transportation from MEX and NLU to hotels, short-term rentals, and fan meeting points.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">Bilingual Professional Drivers</div>
+            <p class="primary-text grey-color metric-text">
+              English/Spanish support for international visitors, with clear communication during busy tournament days.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">Secure Premium Fleet</div>
+            <p class="primary-text grey-color metric-text">
+              Chevrolet Suburban, GMC Yukon Denali, Toyota Land Cruiser, and executive vans available 24/7.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-wrapper">
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+        <div class="grid-wrapper" style="margin-top:1.5rem;">
+          <div class="grid-item-wrapper">
+            <div class="title-small">Do you provide transfers for FIFA World Cup 2026 in Mexico?</div>
+            <p class="primary-text grey-color metric-text">
+              Yes. We provide private transportation for World Cup visitors in Mexico City and other key destinations.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">Can I reserve transportation to Estadio Azteca?</div>
+            <p class="primary-text grey-color metric-text">
+              Yes. Share your match date and pickup location and we will organize a private transfer plan.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">How do I book?</div>
+            <p class="primary-text grey-color metric-text">
+              Send your request on WhatsApp at +52 5644166523. We reply quickly with availability and pricing.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">Do you support groups and executives?</div>
+            <p class="primary-text grey-color metric-text">
+              Yes. We support VIP, corporate, and group itineraries with flexible scheduling and dedicated drivers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="content-wrapper" style="text-align:center;">
+        <h2 class="section-heading">Plan Your Mexico 2026 Transport Early</h2>
+        <p class="primary-text grey-color" style="max-width:620px;margin:0 auto 1.5rem;">
+          Demand rises significantly during major FIFA events. Reserve your private transport in advance for the best
+          availability.
+        </p>
+        <a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">Chat on WhatsApp</a>
+        <span style="display:inline-block;width:1rem;"></span>
+        <a href="/contact" class="cta-button w-button" style="background:#333;">Send a Request</a>
+      </div>
+    </section>
+  </div>
+</Layout>

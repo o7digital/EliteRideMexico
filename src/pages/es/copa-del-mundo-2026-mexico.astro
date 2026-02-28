@@ -1,0 +1,177 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Ofrecen traslados privados para la Copa del Mundo FIFA 2026 en México?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí. Elite Ride Mexico ofrece traslados privados con chofer para visitantes de la Copa del Mundo FIFA 2026, incluyendo aeropuerto, hotel y movilidad para días de partido.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Puedo reservar transporte al Estadio Azteca?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí. Organizamos traslados privados al Estadio Azteca con chofer bilingüe, horarios flexibles y logística de regreso.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cómo reservo un traslado para México 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Escríbenos por WhatsApp al +52 5644166523 con fecha, origen y número de pasajeros. Confirmamos disponibilidad rápidamente.'
+      }
+    }
+  ]
+});
+
+const whatsappLink = 'https://wa.me/525644166523';
+---
+
+<Layout
+  title="Copa del Mundo FIFA 2026 en México | Traslados al Estadio Azteca y Chofer Privado | Elite Ride Mexico"
+  description="Transporte privado para la Copa del Mundo FIFA 2026 en México. Reserva traslados al Estadio Azteca, aeropuerto y chofer privado en CDMX con Elite Ride Mexico."
+  canonicalURL="https://eliteridemexico.com/es/copa-del-mundo-2026-mexico"
+  lang="es"
+  alternateHref="https://eliteridemexico.com/world-cup-2026-mexico"
+  alternateLang="en"
+>
+  <script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+  <div class="page-wrapper">
+    <section>
+      <div class="header-section contact-header-section">
+        <div class="navbar w-nav">
+          <div class="content-wrapper">
+            <div class="navbar-wrapper">
+              <a href="/es" class="brand w-nav-brand">
+                <span class="brand-logo-text">ELITE RIDE MEXICO</span>
+              </a>
+              <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+                <ul role="list" class="nav-menu w-list-unstyled">
+                  <li class="nav-list-item"><a href="/es" class="nav-link">Inicio</a></li>
+                  <li class="nav-list-item"><a href="/es/about" class="nav-link">Nosotros</a></li>
+                  <li class="nav-list-item"><a href="/es/our-fleet" class="nav-link">Nuestra Flota</a></li>
+                  <li class="nav-list-item"><a href="/es/contact" class="nav-link">Contacto</a></li>
+                  <li class="nav-list-item">
+                    <div class="cta-button-wrapper">
+                      <a href="/es/our-fleet" class="cta-button w-button">Reservar ahora</a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-wrapper">
+          <div class="header-section-wrapper">
+            <div class="header-content-wrapper">
+              <div class="header-text-wrapper contact-header-text-wrapper">
+                <h1 class="header-text">Transporte para la Copa del Mundo FIFA 2026 en CDMX</h1>
+                <div class="primary-text">
+                  Servicio privado de SUV con chofer para visitantes de México 2026. Traslados puntuales al Estadio
+                  Azteca, aeropuertos y zonas clave de la ciudad.
+                </div>
+                <div class="header-button-wrapper">
+                  <a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+                    Reservar por WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="content-wrapper">
+        <h2 class="section-heading">Traslados privados para la Copa del Mundo 2026</h2>
+        <p class="primary-text grey-color" style="max-width:760px;margin:0 auto 1.5rem;">
+          Si viajas a México por la Copa del Mundo FIFA 2026, la logística de movilidad es clave. Ofrecemos
+          transporte privado, seguro y puntual para llegadas, días de partido y recorridos en ciudad.
+        </p>
+
+        <h2 class="section-heading" style="margin-top:2.5rem;">Servicios al Estadio Azteca y sedes FIFA</h2>
+        <div class="grid-wrapper" style="margin-top:1.5rem;">
+          <div class="grid-item-wrapper">
+            <div class="title-small">Pickup y regreso en día de partido</div>
+            <p class="primary-text grey-color metric-text">
+              Traslados privados al Estadio Azteca con puntos de encuentro definidos y regreso coordinado.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">Traslado aeropuerto-hotel</div>
+            <p class="primary-text grey-color metric-text">
+              Transporte puerta a puerta desde MEX y NLU hacia hoteles, alojamientos y zonas de fanáticos.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">Choferes bilingües</div>
+            <p class="primary-text grey-color metric-text">
+              Soporte en español e inglés para visitantes internacionales durante toda la operación.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">Flota premium segura</div>
+            <p class="primary-text grey-color metric-text">
+              Chevrolet Suburban, GMC Yukon Denali, Toyota Land Cruiser y vans ejecutivas disponibles 24/7.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-wrapper">
+        <h2 class="section-heading">Preguntas Frecuentes</h2>
+        <div class="grid-wrapper" style="margin-top:1.5rem;">
+          <div class="grid-item-wrapper">
+            <div class="title-small">¿Ofrecen traslados para la Copa del Mundo FIFA 2026 en México?</div>
+            <p class="primary-text grey-color metric-text">
+              Sí. Atendemos traslados privados para visitantes en CDMX y otros destinos estratégicos.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">¿Puedo reservar transporte al Estadio Azteca?</div>
+            <p class="primary-text grey-color metric-text">
+              Sí. Comparte fecha de partido y punto de salida para organizar tu plan de traslado.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">¿Cómo reservo?</div>
+            <p class="primary-text grey-color metric-text">
+              Escríbenos por WhatsApp al +52 5644166523. Respondemos rápido con disponibilidad y tarifa.
+            </p>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="title-small">¿Atienden grupos y ejecutivos?</div>
+            <p class="primary-text grey-color metric-text">
+              Sí. Diseñamos itinerarios para grupos, ejecutivos y perfiles VIP con chofer dedicado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="content-wrapper" style="text-align:center;">
+        <h2 class="section-heading">Planea tu movilidad para México 2026</h2>
+        <p class="primary-text grey-color" style="max-width:620px;margin:0 auto 1.5rem;">
+          En eventos FIFA la demanda sube rápidamente. Reserva con anticipación para asegurar disponibilidad.
+        </p>
+        <a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">WhatsApp</a>
+        <span style="display:inline-block;width:1rem;"></span>
+        <a href="/es/contact" class="cta-button w-button" style="background:#333;">Enviar solicitud</a>
+      </div>
+    </section>
+  </div>
+</Layout>

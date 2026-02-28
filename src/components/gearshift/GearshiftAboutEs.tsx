@@ -207,6 +207,13 @@ export default function GearshiftAboutEs() {
 							Si vienes por el Mundial, negocios o vacaciones, nuestra mision es ofrecer un transporte premium,
 							predecible y adaptado a visitantes internacionales.
 						</p>
+						<p className="primary-text grey-color">
+							Consulta nuestra{' '}
+							<a href="/es/copa-del-mundo-2026-mexico" className="link-text">
+								guía de transporte para la Copa del Mundo FIFA 2026 en México y Estadio Azteca
+							</a>
+							.
+						</p>
 					</div>
 				</div>
 			</section>
