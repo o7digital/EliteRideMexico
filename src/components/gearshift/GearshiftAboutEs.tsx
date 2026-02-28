@@ -10,7 +10,7 @@ type ProtectionStep = {
 	description: string;
 };
 
-const whatsappLink = 'https://wa.me/525574085802';
+const whatsappLink = 'https://wa.me/525644166523';
 
 const socialLinks = [
 	{
@@ -320,11 +320,11 @@ export default function GearshiftAboutEs() {
 										Impuestos
 									</a>
 								</div>
-								<div className="footer-links-wrapper">
-									<h2 className="heading">Contacto</h2>
-									<a href="tel:+971123456789" className="footer-nav-link">
-										+971 12 345 6789
-									</a>
+									<div className="footer-links-wrapper">
+										<h2 className="heading">Contacto</h2>
+										<a href="tel:+525644166523" className="footer-nav-link">
+											+52 5644166523
+										</a>
 									<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
 										info@eliteridemexico.com
 									</a>

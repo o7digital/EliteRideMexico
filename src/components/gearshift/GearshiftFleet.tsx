@@ -11,7 +11,7 @@ type FleetVehicle = {
 	description: string;
 };
 
-const whatsappLink = 'https://wa.me/525574085802';
+const whatsappLink = 'https://wa.me/525644166523';
 
 const socialLinks = [
 	{
@@ -328,8 +328,8 @@ export default function GearshiftFleet() {
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Get In Touch</h2>
-									<a href="tel:+525574085802" className="footer-nav-link">
-										+52 55 7408 5802
+									<a href="tel:+525644166523" className="footer-nav-link">
+										+52 5644166523
 									</a>
 									<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
 										info@eliteridemexico.com
