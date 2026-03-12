@@ -1,0 +1,337 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+type Vehicle = {
+	slug: string;
+	name: string;
+	year: string;
+	price: string;
+	image: string;
+	description: string;
+	highlights: string[];
+	idealFor: string[];
+	specs: {
+		mileage: string;
+		transmission: string;
+		seats: string;
+		baggage: string;
+	};
+};
+
+const vehicles: Vehicle[] = [
+	{
+		slug: 'chevrolet-suburban-black',
+		name: 'Chevrolet Suburban',
+		year: '2024',
+		price: '4500',
+		image: '/cars/chevy-suburban-black.webp',
+		description:
+			'A full-size luxury SUV built for executive airport transfers, family travel, and long-distance comfort across Mexico.',
+		highlights: [
+			'Premium leather interior with spacious third-row seating.',
+			'Smooth ride quality with extra cargo capacity.',
+			'Professional chauffeur available 24/7 in major cities.'
+		],
+		idealFor: ['Airport transfers', 'Business travel', 'Family trips', 'VIP transport'],
+		specs: {
+			mileage: '5200',
+			transmission: 'Automatic',
+			seats: '7',
+			baggage: '8'
+		}
+	},
+	{
+		slug: 'chevrolet-suburban-white',
+		name: 'Chevrolet Suburban White',
+		year: '2023',
+		price: '4200',
+		image: '/cars/chevy-white.webp',
+		description:
+			'Our white Suburban delivers the same executive comfort in a clean, understated finish ideal for corporate travel.',
+		highlights: [
+			'Comfortable seating for groups with oversized luggage.',
+			'Quiet cabin and premium suspension for long rides.',
+			'Available with bilingual chauffeur support.'
+		],
+		idealFor: ['Corporate transfers', 'Group travel', 'Private chauffeur service'],
+		specs: {
+			mileage: '4800',
+			transmission: 'Automatic',
+			seats: '7',
+			baggage: '8'
+		}
+	},
+	{
+		slug: 'gmc-yukon-denali',
+		name: 'GMC Yukon Denali',
+		year: '2024',
+		price: '4800',
+		image: '/cars/gmc-yukon-beige.webp',
+		description:
+			'Executive-grade SUV with bold presence, spacious interior, and refined comfort for premium transfers.',
+		highlights: [
+			'Denali trim with luxury finishes throughout.',
+			'High seating position and smooth highway handling.',
+			'Perfect balance of elegance and performance.'
+		],
+		idealFor: ['Executive travel', 'VIP arrivals', 'Intercity routes'],
+		specs: {
+			mileage: '5100',
+			transmission: 'Automatic',
+			seats: '7',
+			baggage: '8'
+		}
+	},
+	{
+		slug: 'toyota-land-cruiser',
+		name: 'Toyota Land Cruiser',
+		year: '2024',
+		price: '5200',
+		image: '/cars/toyota-landcruiser-black.webp',
+		description:
+			'Legendary reliability and performance for long-distance routes, premium adventures, and rugged terrain.',
+		highlights: [
+			'Proven durability for demanding itineraries.',
+			'Comfort-focused cabin with premium amenities.',
+			'Ideal for private tours and intercity travel.'
+		],
+		idealFor: ['Intercity travel', 'Private tours', 'High-security routes'],
+		specs: {
+			mileage: '5600',
+			transmission: 'Automatic',
+			seats: '7',
+			baggage: '8'
+		}
+	}
+];
+
+export function getStaticPaths() {
+	return vehicles.map((vehicle) => ({
+		params: { slug: vehicle.slug },
+		props: { vehicle }
+	}));
+}
+
+const { vehicle } = Astro.props as { vehicle: Vehicle };
+const whatsappLink = 'https://wa.me/525574085802';
+const title = `${vehicle.name} | Elite Ride Mexico`;
+const description = `${vehicle.name} with private chauffeur service in Mexico. Premium SUV rental from Elite Ride Mexico. Book now.`;
+const canonicalURL = `https://eliteridemexico.com/cars/${vehicle.slug}`;
+const ogImage = `https://eliteridemexico.com${vehicle.image}`;
+
+const specIcons = {
+	mileage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+	transmission: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+	seats: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+	baggage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg'
+};
+---
+
+<Layout title={title} description={description} canonicalURL={canonicalURL} ogImage={ogImage}>
+	<div class="page-wrapper">
+		<section>
+			<div class="header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/" class="nav-link">Home</a></li>
+									<li class="nav-list-item"><a href="/about" class="nav-link">About</a></li>
+									<li class="nav-list-item"><a href="/our-fleet" class="nav-link">Our Fleet</a></li>
+									<li class="nav-list-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href={whatsappLink} class="cta-button w-button">Book with Chauffeur</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper" style="max-width:720px;">
+								<h1 class="header-text">{vehicle.name}</h1>
+								<div class="primary-text">
+									{vehicle.description}
+								</div>
+								<div class="header-button-wrapper" style="display:flex;gap:12px;flex-wrap:wrap;">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Book on WhatsApp
+									</a>
+									<a href="/contact" class="cta-button w-button" style="background:#333;">
+										Request a Quote
+									</a>
+								</div>
+							</div>
+							<div style="flex:1;min-width:280px;max-width:520px;">
+								<img
+									src={vehicle.image}
+									alt={vehicle.name}
+									loading="eager"
+									decoding="async"
+									width={900}
+									height={600}
+									style="width:100%;height:auto;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,0.15);"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<div class="section-heading-wrapper">
+					<h2 class="section-heading">Vehicle Highlights</h2>
+				</div>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					{vehicle.highlights.map((item) => (
+						<div class="grid-item-wrapper" key={item}>
+							<div class="title-small">{item}</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper">
+				<div class="section-heading-wrapper">
+					<h2 class="section-heading">Specs</h2>
+				</div>
+				<div class="cars-collection-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;">
+					<div class="car-listing-detail">
+						<img src={specIcons.mileage} alt="Mileage Icon" class="listing-icon" loading="lazy" />
+						<div class="listing-detail">{vehicle.specs.mileage} km</div>
+					</div>
+					<div class="car-listing-detail">
+						<img src={specIcons.transmission} alt="Transmission Icon" class="listing-icon" loading="lazy" />
+						<div class="listing-detail">{vehicle.specs.transmission}</div>
+					</div>
+					<div class="car-listing-detail">
+						<img src={specIcons.seats} alt="Seats Icon" class="listing-icon" loading="lazy" />
+						<div class="listing-detail">{vehicle.specs.seats} seats</div>
+					</div>
+					<div class="car-listing-detail">
+						<img src={specIcons.baggage} alt="Baggage Icon" class="listing-icon" loading="lazy" />
+						<div class="listing-detail">{vehicle.specs.baggage} bags</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<div class="section-heading-wrapper">
+					<h2 class="section-heading">Ideal For</h2>
+				</div>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					{vehicle.idealFor.map((item) => (
+						<div class="grid-item-wrapper" key={item}>
+							<div class="title-small">{item}</div>
+						</div>
+					))}
+				</div>
+				<div style="margin-top:2rem;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+					<div class="listing-price-wrapper">
+						<div class="currency-price-term">MXN</div>
+						<div class="car-listing-price">{vehicle.price}</div>
+						<div class="currency-price-term">/ DAY</div>
+					</div>
+					<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+						Check availability
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Explore the rest of our fleet</h2>
+				<p class="primary-text grey-color" style="max-width:680px;margin:0 auto 1.5rem;">
+					Browse premium SUVs and chauffeur services across Mexico. We confirm within 15–30 minutes.
+				</p>
+				<a href="/our-fleet" class="cta-button w-button">View All Vehicles</a>
+			</div>
+		</section>
+
+		<section>
+			<div class="footer-section-wrapper">
+				<div class="content-wrapper">
+					<div class="footer-content-wrapper">
+						<div class="footer-top-content">
+							<div class="footer-logo-social">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<div class="footer-text">
+									Safe airport transfers, executive transportation, and private driver service across Mexico City,
+									Cancun, Guadalajara, Puerto Vallarta, and more.
+								</div>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="footer-bottom-content">
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Pages</h2>
+								<a href="/" class="footer-nav-link">Home</a>
+								<a href="/about" class="footer-nav-link">About</a>
+								<a href="/our-fleet" class="footer-nav-link">Our Fleet</a>
+								<a href="/contact" class="footer-nav-link">Contact Us</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Local Services</h2>
+								<a href="/mexico-city-private-chauffeur" class="footer-nav-link">Mexico City Chauffeur</a>
+								<a href="/cancun-airport-transfer" class="footer-nav-link">Cancun Airport Transfer</a>
+								<a href="/guadalajara-private-driver" class="footer-nav-link">Guadalajara Driver</a>
+								<a href="/armored-vehicle-rental-mexico" class="footer-nav-link">Armored Vehicles</a>
+							</div>
+							<div class="footer-links-wrapper">
+								<h2 class="heading">Get In Touch</h2>
+								<a href="tel:+525574085802" class="footer-nav-link">+52 55 7408 5802</a>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">info@eliteridemexico.com</a>
+								<a
+									href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
+									target="_blank"
+									rel="noreferrer"
+									class="footer-nav-link"
+								>
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, Mexico
+								</a>
+							</div>
+						</div>
+						<div class="divider"></div>
+						<div class="copyright-info-wrapper">
+							<a
+								href="https://www.o7digital.com/en/index-digital-agency"
+								target="_blank"
+								rel="noreferrer"
+								class="footer-copyright-text"
+							>
+								Copyright Elite Ride Mexico 2026 - made by o7Digital
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+			<img
+				src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
+				loading="lazy"
+				alt="WhatsApp Icon"
+				class="whatsapp-footer-icon"
+			/>
+		</a>
+	</div>
+</Layout>
