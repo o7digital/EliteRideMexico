@@ -52,6 +52,102 @@
 
   <url>
     <loc>https://eliteridemexico.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/mexico-city-private-chauffeur</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/mexico-city-private-chauffeur"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/chofer-privado-cdmx"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/es/chofer-privado-cdmx</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/mexico-city-private-chauffeur"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/chofer-privado-cdmx"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/guadalajara-private-driver</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/guadalajara-private-driver"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/chofer-privado-guadalajara"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/es/chofer-privado-guadalajara</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/guadalajara-private-driver"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/chofer-privado-guadalajara"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/cancun-airport-transfer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/cancun-airport-transfer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/traslado-aeropuerto-cancun"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/es/traslado-aeropuerto-cancun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/cancun-airport-transfer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/traslado-aeropuerto-cancun"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/puerto-vallarta-airport-transfer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/puerto-vallarta-airport-transfer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/traslado-aeropuerto-puerto-vallarta"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/es/traslado-aeropuerto-puerto-vallarta</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/puerto-vallarta-airport-transfer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/traslado-aeropuerto-puerto-vallarta"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/world-cup-2026-mexico</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/world-cup-2026-mexico"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/copa-del-mundo-2026-mexico"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/es/copa-del-mundo-2026-mexico</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliteridemexico.com/world-cup-2026-mexico"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliteridemexico.com/es/copa-del-mundo-2026-mexico"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://eliteridemexico.com/armored-vehicle-rental-mexico</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

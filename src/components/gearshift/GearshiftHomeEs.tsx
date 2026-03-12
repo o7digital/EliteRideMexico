@@ -33,7 +33,7 @@ const cars: Car[] = [
 	{
 		name: 'Chevrolet Suburban',
 		href: '/cars/chevrolet-suburban-black',
-		image: '/cars/chevy-suburban-black.jpeg',
+		image: '/cars/chevy-suburban-black.webp',
 		year: '2025',
 		price: '4500',
 		details: [
@@ -66,7 +66,7 @@ const cars: Car[] = [
 	{
 		name: 'Chevrolet Suburban White',
 		href: '/cars/chevrolet-suburban-white',
-		image: '/cars/chevy-white.jpeg',
+		image: '/cars/chevy-white.webp',
 		year: '2025',
 		price: '4200',
 		details: [
@@ -99,7 +99,7 @@ const cars: Car[] = [
 	{
 		name: 'GMC Yukon Denali',
 		href: '/cars/gmc-yukon-denali',
-		image: '/cars/gmc-yukon-beige.jpeg',
+		image: '/cars/gmc-yukon-beige.webp',
 		year: '2025',
 		price: '4800',
 		details: [
@@ -132,7 +132,7 @@ const cars: Car[] = [
 	{
 		name: 'Toyota Land Cruiser',
 		href: '/cars/toyota-land-cruiser',
-		image: '/cars/toyota-landcruiser-black.jpeg',
+		image: '/cars/toyota-landcruiser-black.webp',
 		year: '2024',
 		price: '5200',
 		details: [
@@ -235,7 +235,7 @@ const steps: Step[] = [
 	}
 ];
 
-const whatsappLink = 'https://wa.me/525644166523';
+const whatsappLink = 'https://wa.me/525574085802';
 
 const socialLinks = [
 	{
@@ -410,7 +410,15 @@ export default function GearshiftHomeEs() {
 								<div key={car.name} className="car-collection-item">
 									<article className="car-card">
 										<a href={car.href} className="car-image-wrapper w-inline-block">
-											<img src={car.image} loading="lazy" alt={car.name} className="listing-car-image" />
+											<img
+												src={car.image}
+												loading="lazy"
+												decoding="async"
+												alt={car.name}
+												width={600}
+												height={400}
+												className="listing-car-image"
+											/>
 											<div className="car-listing-year">{car.year}</div>
 										</a>
 										<div className="car-details-wrapper">
@@ -536,9 +544,6 @@ export default function GearshiftHomeEs() {
 									<a href="/es/contact" className="footer-nav-link">
 											Contacto
 										</a>
-										<a href="/es/copa-del-mundo-2026-mexico" className="footer-nav-link">
-											Noticias Mundial 2026
-										</a>
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>
@@ -557,8 +562,8 @@ export default function GearshiftHomeEs() {
 								</div>
 								<div className="footer-links-wrapper">
 										<h2 className="heading">Contáctanos</h2>
-								<a href="tel:+525644166523" className="footer-nav-link">
-									+52 5644166523
+								<a href="tel:+525574085802" className="footer-nav-link">
+									+52 55 7408 5802
 									</a>
 										<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
 											info@eliteridemexico.com

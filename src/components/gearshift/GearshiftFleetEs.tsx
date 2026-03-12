@@ -74,17 +74,17 @@ const fleetCategories: FleetCategory[] = [
 const featuredFleet: FleetVehicle[] = [
 	{
 		name: 'Chevrolet Suburban',
-		image: '/cars/chevy-suburban-black.jpeg',
+		image: '/cars/chevy-suburban-black.webp',
 		description: 'Una opcion ideal para aeropuerto, agenda de negocios y movilidad urbana con maximo confort.'
 	},
 	{
 		name: 'GMC Yukon Denali',
-		image: '/cars/gmc-yukon-beige.jpeg',
+		image: '/cars/gmc-yukon-beige.webp',
 		description: 'SUV premium de gran formato con espacio, estabilidad y comodidad ejecutiva.'
 	},
 	{
 		name: 'Toyota Land Cruiser',
-		image: '/cars/toyota-landcruiser-black.jpeg',
+		image: '/cars/toyota-landcruiser-black.webp',
 		description: 'SUV robusta y confiable para rutas interurbanas e itinerarios exigentes.'
 	}
 ];
@@ -237,7 +237,15 @@ export default function GearshiftFleetEs() {
 						{featuredFleet.map((vehicle) => (
 							<article key={vehicle.name} className="fleet-model-card">
 								<div className="fleet-model-image-wrapper">
-									<img src={vehicle.image} loading="lazy" alt={vehicle.name} className="fleet-model-image" />
+										<img
+											src={vehicle.image}
+											loading="lazy"
+											decoding="async"
+											alt={vehicle.name}
+											width={600}
+											height={400}
+											className="fleet-model-image"
+										/>
 								</div>
 								<div className="fleet-model-body">
 									<h3 className="car-listing-name">{vehicle.name}</h3>
