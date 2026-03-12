@@ -541,3 +541,56 @@ html[lang='es'] .body {
 		width: 100%;
 	}
 }
+
+.seo-content-keywords {
+	display: grid;
+	gap: 10px;
+	margin-top: 1.25rem;
+}
+
+.seo-keywords-intro {
+	max-width: 920px;
+	margin: 0 auto 1.5rem;
+	text-align: center;
+}
+
+.seo-content-keywords__line {
+	margin: 0;
+	color: #5e5e5e;
+	font-size: 0.95rem;
+	line-height: 1.9;
+	text-align: center;
+}
+
+.seo-footer-keywords {
+	background: #050505;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 18px 24px 26px;
+}
+
+.seo-footer-keywords__inner {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: grid;
+	gap: 8px;
+}
+
+.seo-footer-keywords__line {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.68);
+	font-size: 0.83rem;
+	line-height: 1.85;
+	text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+	.seo-content-keywords__line,
+	.seo-footer-keywords__line {
+		font-size: 0.8rem;
+		line-height: 1.75;
+	}
+
+	.seo-footer-keywords {
+		padding: 16px 16px 22px;
+	}
+}

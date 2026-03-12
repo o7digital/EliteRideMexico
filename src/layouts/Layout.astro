@@ -1,5 +1,6 @@
 ---
 import '../styles/clone-overrides.css';
+import FooterKeywordBar from '../components/FooterKeywordBar.astro';
 
 interface Props {
 	title?: string;
@@ -23,6 +24,8 @@ const {
 
 const siteName = 'Elite Ride Mexico';
 const siteURL = 'https://eliteridemexico.com';
+const resolvedLang = lang === 'es' || Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
+const showFooterKeywordBar = !Astro.url.pathname.startsWith('/dashboard');
 
 const jsonLd = JSON.stringify({
 	'@context': 'https://schema.org',
@@ -110,5 +113,6 @@ const jsonLd = JSON.stringify({
 	</head>
 	<body class="body">
 		<slot />
+		{showFooterKeywordBar && <FooterKeywordBar lang={resolvedLang} />}
 	</body>
 </html>

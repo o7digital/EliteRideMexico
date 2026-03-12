@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getWorldCupKeywordLines } from '../../data/worldCupKeywords';
 
 type CarDetail = {
 	key: string;
@@ -272,6 +273,8 @@ const metrics = [
 	{ value: '10', label: 'Ubicaciones' }
 ];
 
+const keywordLines = getWorldCupKeywordLines('es');
+
 export default function GearshiftHomeEs() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isLanguageOpen, setIsLanguageOpen] = useState(false);
@@ -479,6 +482,26 @@ export default function GearshiftHomeEs() {
 								<div className="title-small">{step.title}</div>
 								<div className="primary-text grey-color metric-text">{step.description}</div>
 							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section className="section bg-white">
+				<div className="content-wrapper">
+					<div className="section-heading-wrapper">
+						<h2 className="section-heading">Búsquedas de transporte para el Mundial 2026 en México</h2>
+					</div>
+					<p className="primary-text grey-color seo-keywords-intro">
+						Elite Ride Mexico atiende traslados al aeropuerto, chofer privado, transporte al estadio,
+						movilidad corporativa, SUVs premium, rutas blindadas y servicio ejecutivo para aficionados,
+						ejecutivos y perfiles VIP que viajan a México 2026.
+					</p>
+					<div className="seo-content-keywords">
+						{keywordLines.map((line) => (
+							<p key={line} className="seo-content-keywords__line">
+								{line}
+							</p>
 						))}
 					</div>
 				</div>

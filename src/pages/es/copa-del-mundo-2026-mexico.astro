@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getWorldCupKeywordLines } from '../../data/worldCupKeywords';
 
 const faqSchema = JSON.stringify({
   '@context': 'https://schema.org',
@@ -33,6 +34,7 @@ const faqSchema = JSON.stringify({
 });
 
 const whatsappLink = 'https://wa.me/525644166523';
+const keywordLines = getWorldCupKeywordLines('es');
 ---
 
 <Layout
@@ -132,7 +134,18 @@ const whatsappLink = 'https://wa.me/525644166523';
 
     <section class="section">
       <div class="content-wrapper">
-        <h2 class="section-heading">Preguntas Frecuentes</h2>
+        <h2 class="section-heading">Búsquedas frecuentes para México 2026</h2>
+        <p class="primary-text grey-color seo-keywords-intro">
+          Los viajeros que vienen al torneo suelen buscar traslados al aeropuerto, chofer privado, transporte al
+          estadio, movilidad ejecutiva, SUVs premium, rutas seguras y servicio VIP entre las principales sedes.
+        </p>
+        <div class="seo-content-keywords">
+          {keywordLines.map((line) => (
+            <p class="seo-content-keywords__line">{line}</p>
+          ))}
+        </div>
+
+        <h2 class="section-heading" style="margin-top:2.5rem;">Preguntas Frecuentes</h2>
         <div class="grid-wrapper" style="margin-top:1.5rem;">
           <div class="grid-item-wrapper">
             <div class="title-small">¿Ofrecen traslados para la Copa del Mundo FIFA 2026 en México?</div>

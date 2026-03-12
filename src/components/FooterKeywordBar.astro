@@ -1,0 +1,22 @@
+---
+import { getWorldCupKeywordLines } from '../data/worldCupKeywords';
+
+interface Props {
+	lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+const keywordLines = getWorldCupKeywordLines(lang);
+const ariaLabel =
+	lang === 'es'
+		? 'Búsquedas relacionadas con Mundial 2026 en México'
+		: 'World Cup 2026 transportation searches in Mexico';
+---
+
+<section class="seo-footer-keywords" aria-label={ariaLabel}>
+	<div class="seo-footer-keywords__inner">
+		{keywordLines.map((line) => (
+			<p class="seo-footer-keywords__line">{line}</p>
+		))}
+	</div>
+</section>

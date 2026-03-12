@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getWorldCupKeywordLines } from '../data/worldCupKeywords';
 
 const faqSchema = JSON.stringify({
   '@context': 'https://schema.org',
@@ -33,6 +34,7 @@ const faqSchema = JSON.stringify({
 });
 
 const whatsappLink = 'https://wa.me/525644166523';
+const keywordLines = getWorldCupKeywordLines('en');
 ---
 
 <Layout
@@ -131,7 +133,18 @@ const whatsappLink = 'https://wa.me/525644166523';
 
     <section class="section">
       <div class="content-wrapper">
-        <h2 class="section-heading">Frequently Asked Questions</h2>
+        <h2 class="section-heading">Popular Mexico 2026 Search Terms</h2>
+        <p class="primary-text grey-color seo-keywords-intro">
+          Travelers searching for private World Cup mobility in Mexico often look for airport pickups, private
+          drivers, stadium transfers, executive rides, secure SUVs, and VIP ground transport across the host cities.
+        </p>
+        <div class="seo-content-keywords">
+          {keywordLines.map((line) => (
+            <p class="seo-content-keywords__line">{line}</p>
+          ))}
+        </div>
+
+        <h2 class="section-heading" style="margin-top:2.5rem;">Frequently Asked Questions</h2>
         <div class="grid-wrapper" style="margin-top:1.5rem;">
           <div class="grid-item-wrapper">
             <div class="title-small">Do you provide transfers for FIFA World Cup 2026 in Mexico?</div>
