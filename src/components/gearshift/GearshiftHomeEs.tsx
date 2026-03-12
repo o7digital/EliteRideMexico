@@ -19,7 +19,7 @@ type Car = {
 
 type Location = {
 	name: string;
-	href: string;
+	href?: string;
 	image: string;
 };
 
@@ -168,42 +168,38 @@ const cars: Car[] = [
 const locations: Location[] = [
 	{
 		name: 'Mexico City',
-		href: '/locations/mexico-city',
+		href: '/es/chofer-privado-cdmx',
 		image: '/towns/gemini-cdmx.png'
 	},
 	{
 		name: 'Puerto Vallarta',
-		href: '/locations/puerto-vallarta',
+		href: '/es/traslado-aeropuerto-puerto-vallarta',
 		image: '/towns/gemini-vallarta.png'
 	},
 	{
 		name: 'Guadalajara',
-		href: '/locations/guadalajara',
+		href: '/es/chofer-privado-guadalajara',
 		image: '/towns/gemini-guadalajara.png'
 	},
 	{
 		name: 'Ixtapa Zihuatanejo',
-		href: '/locations/ixtapa-zihuatanejo',
 		image: '/towns/gemini-zihua.png'
 	},
 	{
 		name: 'Cancun',
-		href: '/locations/cancun',
+		href: '/es/traslado-aeropuerto-cancun',
 		image: '/towns/gemini-cancun.png'
 	},
 	{
 		name: 'Leon',
-		href: '/locations/leon',
 		image: '/towns/gemini-leon.png'
 	},
 	{
 		name: 'Cuernavaca',
-		href: '/locations/cuernavaca',
 		image: '/towns/gemini-cuerna.png'
 	},
 	{
 		name: 'Monterrey',
-		href: '/locations/monterrey',
 		image: '/towns/gemini-monterrey.png'
 	}
 ];
@@ -458,14 +454,28 @@ export default function GearshiftHomeEs() {
 					</div>
 					<div className="location-collection-list-wrapper">
 						<div className="location-collection-list">
-							{locations.map((location) => (
-								<div key={location.name} className="location-item">
-									<a href={location.href} className="location-listing-image-wrapper w-inline-block">
+							{locations.map((location) => {
+								const content = (
+									<>
 										<img src={location.image} loading="lazy" alt={location.name} className="location-listing-image" />
 										<div className="location-name">{location.name}</div>
-									</a>
-								</div>
-							))}
+									</>
+								);
+
+								return (
+									<div key={location.name} className="location-item">
+										{location.href ? (
+											<a href={location.href} className="location-listing-image-wrapper w-inline-block">
+												{content}
+											</a>
+										) : (
+											<div className="location-listing-image-wrapper w-inline-block location-listing-image-wrapper--static">
+												{content}
+											</div>
+										)}
+									</div>
+								);
+							})}
 						</div>
 					</div>
 				</div>
@@ -570,18 +580,18 @@ export default function GearshiftHomeEs() {
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>
-									<a href="/privacy-notice" className="footer-nav-link">
-										Aviso de Privacidad
-									</a>
-									<a href="/cancelation" className="footer-nav-link">
-									Cancelación
-									</a>
-									<a href="/refunds" className="footer-nav-link">
-										Reembolsos
-									</a>
-									<a href="/taxes" className="footer-nav-link">
-										Impuestos
-									</a>
+										<a href="/es/aviso-de-privacidad" className="footer-nav-link">
+											Aviso de Privacidad
+										</a>
+										<a href="/es/cancelacion" className="footer-nav-link">
+										Cancelación
+										</a>
+										<a href="/es/reembolsos" className="footer-nav-link">
+											Reembolsos
+										</a>
+										<a href="/es/impuestos" className="footer-nav-link">
+											Impuestos
+										</a>
 								</div>
 								<div className="footer-links-wrapper">
 										<h2 className="heading">Contáctanos</h2>

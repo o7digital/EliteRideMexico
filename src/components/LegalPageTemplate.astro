@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { LegalSection } from '../data/legalPages';
+
+interface Props {
+	title: string;
+	description: string;
+	heading: string;
+	intro: string;
+	sections: LegalSection[];
+	canonicalURL: string;
+	alternateHref: string;
+	alternateLang: string;
+	lang?: 'en' | 'es';
+}
+
+const {
+	title,
+	description,
+	heading,
+	intro,
+	sections,
+	canonicalURL,
+	alternateHref,
+	alternateLang,
+	lang = 'en'
+} = Astro.props;
+
+const contactHref = lang === 'es' ? '/es/contact' : '/contact';
+const ctaTitle =
+	lang === 'es' ? '¿Necesitas ayuda con tu reserva?' : 'Need help with your reservation?';
+const ctaText =
+	lang === 'es'
+		? 'Nuestro equipo puede ayudarte con cambios, documentación, facturación y coordinación operativa de tu servicio.'
+		: 'Our team can assist with schedule changes, documentation, invoicing, and operational coordination for your service.';
+const ctaLabel = lang === 'es' ? 'Contactar al equipo' : 'Contact our team';
+---
+
+<Layout
+	title={title}
+	description={description}
+	canonicalURL={canonicalURL}
+	alternateHref={alternateHref}
+	alternateLang={alternateLang}
+	lang={lang}
+>
+	<div class="page-wrapper">
+		<section class="section bg-white">
+			<div class="content-wrapper legal-page">
+				<div class="section-heading-wrapper legal-page__heading">
+					<h1 class="section-heading">{heading}</h1>
+				</div>
+				<p class="primary-text grey-color legal-intro">{intro}</p>
+
+				<div class="legal-grid">
+					{sections.map((section) => (
+						<article class="legal-card">
+							<h2 class="title-small legal-card__title">{section.title}</h2>
+							{section.paragraphs.map((paragraph) => (
+								<p class="primary-text grey-color legal-card__text">{paragraph}</p>
+							))}
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper legal-cta">
+				<h2 class="section-heading">{ctaTitle}</h2>
+				<p class="primary-text grey-color legal-cta__text">{ctaText}</p>
+				<a href={contactHref} class="cta-button w-button">{ctaLabel}</a>
+			</div>
+		</section>
+	</div>
+</Layout>

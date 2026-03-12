@@ -123,7 +123,7 @@ export default function GearshiftAboutEs() {
 											</a>
 										</li>
 										<li className="nav-list-item">
-											<a href="/contact" className="nav-link" onClick={closeMenus}>
+											<a href="/es/contact" className="nav-link" onClick={closeMenus}>
 												Contacto
 											</a>
 										</li>
@@ -308,24 +308,24 @@ export default function GearshiftAboutEs() {
 									<a href="/es/our-fleet" className="footer-nav-link">
 										Nuestra Flota
 									</a>
-									<a href="/contact" className="footer-nav-link">
-										Contacto
-									</a>
+										<a href="/es/contact" className="footer-nav-link">
+											Contacto
+										</a>
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>
-									<a href="/privacy-notice" className="footer-nav-link">
-										Aviso de Privacidad
-									</a>
-									<a href="/cancelation" className="footer-nav-link">
-										Cancelacion
-									</a>
-									<a href="/refunds" className="footer-nav-link">
-										Reembolsos
-									</a>
-									<a href="/taxes" className="footer-nav-link">
-										Impuestos
-									</a>
+										<a href="/es/aviso-de-privacidad" className="footer-nav-link">
+											Aviso de Privacidad
+										</a>
+										<a href="/es/cancelacion" className="footer-nav-link">
+											Cancelacion
+										</a>
+										<a href="/es/reembolsos" className="footer-nav-link">
+											Reembolsos
+										</a>
+										<a href="/es/impuestos" className="footer-nav-link">
+											Impuestos
+										</a>
 								</div>
 									<div className="footer-links-wrapper">
 										<h2 className="heading">Contacto</h2>

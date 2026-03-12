@@ -281,18 +281,18 @@ export default function GearshiftContactEs() {
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>
-									<a href="/privacy-notice" className="footer-nav-link">
-										Aviso de Privacidad
-									</a>
-									<a href="/cancelation" className="footer-nav-link">
-										Cancelación
-									</a>
-									<a href="/refunds" className="footer-nav-link">
-										Reembolsos
-									</a>
-									<a href="/taxes" className="footer-nav-link">
-										Impuestos
-									</a>
+										<a href="/es/aviso-de-privacidad" className="footer-nav-link">
+											Aviso de Privacidad
+										</a>
+										<a href="/es/cancelacion" className="footer-nav-link">
+											Cancelación
+										</a>
+										<a href="/es/reembolsos" className="footer-nav-link">
+											Reembolsos
+										</a>
+										<a href="/es/impuestos" className="footer-nav-link">
+											Impuestos
+										</a>
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Contáctanos</h2>

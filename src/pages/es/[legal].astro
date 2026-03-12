@@ -1,0 +1,27 @@
+---
+import LegalPageTemplate from '../../components/LegalPageTemplate.astro';
+import { legalPagesEs, type LegalPageContent } from '../../data/legalPages';
+
+export function getStaticPaths() {
+	return legalPagesEs.map((page) => ({
+		params: { legal: page.slug },
+		props: { page }
+	}));
+}
+
+const { page } = Astro.props as { page: LegalPageContent };
+const canonicalURL = `https://eliteridemexico.com/es/${page.slug}`;
+const alternateHref = `https://eliteridemexico.com/${page.alternateSlug}`;
+---
+
+<LegalPageTemplate
+	title={page.title}
+	description={page.description}
+	heading={page.heading}
+	intro={page.intro}
+	sections={page.sections}
+	canonicalURL={canonicalURL}
+	alternateHref={alternateHref}
+	alternateLang="en"
+	lang="es"
+/>

@@ -583,6 +583,60 @@ html[lang='es'] .body {
 	text-align: center;
 }
 
+.location-listing-image-wrapper--static {
+	cursor: default;
+}
+
+.legal-page {
+	display: grid;
+	gap: 24px;
+}
+
+.legal-page__heading {
+	margin-bottom: 0;
+}
+
+.legal-intro {
+	max-width: 920px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.legal-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.legal-card {
+	background: #fff;
+	border: 1px solid #ececec;
+	border-radius: 14px;
+	padding: 24px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.legal-card__title {
+	margin-bottom: 12px;
+}
+
+.legal-card__text {
+	margin: 0 0 12px;
+}
+
+.legal-card__text:last-child {
+	margin-bottom: 0;
+}
+
+.legal-cta {
+	text-align: center;
+}
+
+.legal-cta__text {
+	max-width: 720px;
+	margin: 0 auto 1.5rem;
+}
+
 @media screen and (max-width: 767px) {
 	.seo-content-keywords__line,
 	.seo-footer-keywords__line {
@@ -592,5 +646,11 @@ html[lang='es'] .body {
 
 	.seo-footer-keywords {
 		padding: 16px 16px 22px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.legal-grid {
+		grid-template-columns: 1fr;
 	}
 }

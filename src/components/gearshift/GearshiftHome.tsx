@@ -19,7 +19,7 @@ type Car = {
 
 type Location = {
 	name: string;
-	href: string;
+	href?: string;
 	image: string;
 };
 
@@ -168,42 +168,38 @@ const cars: Car[] = [
 const locations: Location[] = [
 	{
 		name: 'Mexico City',
-		href: '/locations/mexico-city',
+		href: '/mexico-city-private-chauffeur',
 		image: '/towns/gemini-cdmx.png'
 	},
 	{
 		name: 'Puerto Vallarta',
-		href: '/locations/puerto-vallarta',
+		href: '/puerto-vallarta-airport-transfer',
 		image: '/towns/gemini-vallarta.png'
 	},
 	{
 		name: 'Guadalajara',
-		href: '/locations/guadalajara',
+		href: '/guadalajara-private-driver',
 		image: '/towns/gemini-guadalajara.png'
 	},
 	{
 		name: 'Ixtapa Zihuatanejo',
-		href: '/locations/ixtapa-zihuatanejo',
 		image: '/towns/gemini-zihua.png'
 	},
 	{
 		name: 'Cancun',
-		href: '/locations/cancun',
+		href: '/cancun-airport-transfer',
 		image: '/towns/gemini-cancun.png'
 	},
 	{
 		name: 'Leon',
-		href: '/locations/leon',
 		image: '/towns/gemini-leon.png'
 	},
 	{
 		name: 'Cuernavaca',
-		href: '/locations/cuernavaca',
 		image: '/towns/gemini-cuerna.png'
 	},
 	{
 		name: 'Monterrey',
-		href: '/locations/monterrey',
 		image: '/towns/gemini-monterrey.png'
 	}
 ];
@@ -457,14 +453,28 @@ export default function GearshiftHome() {
 					</div>
 					<div className="location-collection-list-wrapper">
 						<div className="location-collection-list">
-							{locations.map((location) => (
-								<div key={location.name} className="location-item">
-									<a href={location.href} className="location-listing-image-wrapper w-inline-block">
+							{locations.map((location) => {
+								const content = (
+									<>
 										<img src={location.image} loading="lazy" alt={location.name} className="location-listing-image" />
 										<div className="location-name">{location.name}</div>
-									</a>
-								</div>
-							))}
+									</>
+								);
+
+								return (
+									<div key={location.name} className="location-item">
+										{location.href ? (
+											<a href={location.href} className="location-listing-image-wrapper w-inline-block">
+												{content}
+											</a>
+										) : (
+											<div className="location-listing-image-wrapper w-inline-block location-listing-image-wrapper--static">
+												{content}
+											</div>
+										)}
+									</div>
+								);
+							})}
 						</div>
 					</div>
 				</div>

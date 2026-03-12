@@ -1,0 +1,207 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqSchema = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: '¿Qué incluye la renta de un vehículo blindado en México?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Incluye una SUV blindada o unidad ejecutiva con protección balística y chofer profesional capacitado. Elite Ride Mexico ofrece Suburban blindada y SUVs blindadas con chofer para ejecutivos, diplomáticos y viajeros que priorizan seguridad.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿En qué ciudades ofrecen vehículos blindados?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Ofrecemos vehículos blindados con chofer en Ciudad de México, Cancún, Guadalajara, Monterrey, Puerto Vallarta, Cuernavaca y otros destinos clave en México.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿Puedo rentar un vehículo blindado sin chofer?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'No. Nuestras unidades blindadas operan con chofer profesional para mantener seguridad, protocolo y control operativo del servicio.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿Qué nivel de protección ofrecen?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Nuestra flota blindada trabaja con configuraciones equivalentes a estándares NIJ nivel III/IV y rangos balísticos B4 a B6, adecuados para perfiles corporativos, diplomáticos y rutas sensibles.'
+			}
+		},
+		{
+			'@type': 'Question',
+			name: '¿Cómo reservo un vehículo blindado en México?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Escríbenos por WhatsApp al +52 5644166523 o desde el formulario de contacto. Comparte fechas, ciudad y necesidades de seguridad y respondemos rápidamente.'
+			}
+		}
+	]
+});
+
+const whatsappLink = 'https://wa.me/525644166523';
+---
+
+<Layout
+	title="Vehículos blindados en México | Suburban blindada con chofer | Elite Ride Mexico"
+	description="Renta de vehículos blindados con chofer profesional en México. Suburban blindada, SUV blindada y transporte ejecutivo seguro para perfiles corporativos, diplomáticos y VIP."
+	canonicalURL="https://eliteridemexico.com/es/vehiculos-blindados-mexico"
+	alternateHref="https://eliteridemexico.com/armored-vehicle-rental-mexico"
+	alternateLang="en"
+	lang="es"
+>
+	<script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+	<div class="page-wrapper">
+		<section>
+			<div class="header-section contact-header-section">
+				<div class="navbar w-nav">
+					<div class="content-wrapper">
+						<div class="navbar-wrapper">
+							<a href="/es" class="brand w-nav-brand">
+								<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+							</a>
+							<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+								<ul role="list" class="nav-menu w-list-unstyled">
+									<li class="nav-list-item"><a href="/es" class="nav-link">Inicio</a></li>
+									<li class="nav-list-item"><a href="/es/about" class="nav-link">Nosotros</a></li>
+									<li class="nav-list-item"><a href="/es/our-fleet" class="nav-link">Nuestra Flota</a></li>
+									<li class="nav-list-item"><a href="/es/contact" class="nav-link">Contacto</a></li>
+									<li class="nav-list-item">
+										<div class="cta-button-wrapper">
+											<a href="/es/our-fleet" class="cta-button w-button">Reserva ahora</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="content-wrapper">
+					<div class="header-section-wrapper">
+						<div class="header-content-wrapper">
+							<div class="header-text-wrapper contact-header-text-wrapper">
+								<h1 class="header-text">Vehículos Blindados en México con Chofer Profesional</h1>
+								<div class="primary-text">
+									Transporte seguro para ejecutivos, diplomáticos y viajeros internacionales. Servicio de
+									Suburban blindada y SUV blindada con chofer capacitado en los principales destinos de México.
+								</div>
+								<div class="header-button-wrapper">
+									<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+										Reservar por WhatsApp
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Renta de vehículos blindados con chofer en México</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1.5rem;">
+					Para clientes que no pueden comprometer seguridad, Elite Ride Mexico ofrece transporte blindado con
+					chofer profesional en México. Nuestra flota atiende a perfiles corporativos, misiones diplomáticas,
+					familias, viajeros internacionales y ejecutivos con requerimientos especiales.
+				</p>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">Suburban blindada</div>
+						<p class="primary-text grey-color metric-text">
+							Una de las opciones más solicitadas para movilidad segura en México. Protección balística B4 a B6,
+							espacio para 7 pasajeros y chofer bilingüe.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">SUV blindada ejecutiva</div>
+						<p class="primary-text grey-color metric-text">
+							Protección premium para traslados corporativos, llegadas VIP, hoteles, aeropuertos y recorridos de
+							agenda sensible.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Choferes capacitados</div>
+						<p class="primary-text grey-color metric-text">
+							Operación con choferes profesionales, discretos y con experiencia en conducción defensiva y
+							servicio ejecutivo.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">Cobertura nacional</div>
+						<p class="primary-text grey-color metric-text">
+							Disponible en CDMX, Cancún, Guadalajara, Monterrey, Puerto Vallarta, Cuernavaca y otras ciudades
+							relevantes para viajes corporativos o estratégicos.
+						</p>
+					</div>
+				</div>
+
+				<h2 class="section-heading" style="margin-top:2.5rem;">¿Quién utiliza transporte blindado en México?</h2>
+				<p class="primary-text grey-color" style="max-width:720px;margin:0 auto 1rem;">
+					Atendemos directivos, inversionistas, familias, diplomáticos, funcionarios, artistas y viajeros con
+					perfiles de seguridad que necesitan una operación profesional y discreta durante su estancia en México.
+				</p>
+				<div style="text-align:center;margin-top:1.5rem;">
+					<a href="/es/our-fleet" class="cta-button w-button">Ver unidades disponibles</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="content-wrapper">
+				<h2 class="section-heading">Preguntas frecuentes sobre vehículos blindados</h2>
+				<div class="grid-wrapper" style="margin-top:1.5rem;">
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Qué incluye el servicio?</div>
+						<p class="primary-text grey-color metric-text">
+							Unidad blindada, chofer profesional, logística de recogida y operación segura según la agenda del
+							cliente.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿En qué ciudades operan?</div>
+						<p class="primary-text grey-color metric-text">
+							CDMX, Cancún, Guadalajara, Monterrey, Puerto Vallarta, Cuernavaca y otras plazas con operación
+							especial.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Se puede rentar sin chofer?</div>
+						<p class="primary-text grey-color metric-text">
+							No. La operación se realiza con chofer profesional para mantener control, seguridad y protocolo.
+						</p>
+					</div>
+					<div class="grid-item-wrapper">
+						<div class="title-small">¿Cómo se reserva?</div>
+						<p class="primary-text grey-color metric-text">
+							Escríbenos por WhatsApp o por el formulario de contacto. Respondemos rápido con disponibilidad y
+							requerimientos.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section bg-white">
+			<div class="content-wrapper" style="text-align:center;">
+				<h2 class="section-heading">Solicita transporte blindado en México</h2>
+				<p class="primary-text grey-color" style="max-width:600px;margin:0 auto 1.5rem;">
+					Atención 24/7 para rutas ejecutivas, llegadas VIP, logística corporativa y servicios de alta seguridad.
+				</p>
+				<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">WhatsApp</a>
+				<span style="display:inline-block;width:1rem;"></span>
+				<a href="/es/contact" class="cta-button w-button" style="background:#333;">Enviar solicitud</a>
+			</div>
+		</section>
+	</div>
+</Layout>
