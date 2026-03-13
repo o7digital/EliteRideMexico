@@ -39,6 +39,14 @@ type Step = {
 	alt: string;
 };
 
+const specIcons = {
+	mileage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+	transmission:
+		'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+	seats: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+	baggage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg'
+} as const;
+
 const cars: Car[] = [
 	{
 		name: 'Chevrolet Suburban',
@@ -264,10 +272,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Consultar disponibilidad',
 		details: [
-			{ key: 'mileage', value: 'A consultar', icon: '/icons/mileage.svg', alt: 'Ícono de kilometraje' },
-			{ key: 'transmission', value: 'Automática', icon: '/icons/transmission.svg', alt: 'Ícono de transmisión' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Ícono de asientos' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Ícono de equipaje' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
 		]
 	},
 	{
@@ -277,10 +285,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Consultar disponibilidad',
 		details: [
-			{ key: 'mileage', value: 'A consultar', icon: '/icons/mileage.svg', alt: 'Ícono de kilometraje' },
-			{ key: 'transmission', value: 'Automática', icon: '/icons/transmission.svg', alt: 'Ícono de transmisión' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Ícono de asientos' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Ícono de equipaje' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
 		]
 	},
 	{
@@ -290,10 +298,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Consultar disponibilidad',
 		details: [
-			{ key: 'mileage', value: 'A consultar', icon: '/icons/mileage.svg', alt: 'Ícono de kilometraje' },
-			{ key: 'transmission', value: 'Automática', icon: '/icons/transmission.svg', alt: 'Ícono de transmisión' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Ícono de asientos' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Ícono de equipaje' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
 		]
 	},
 	{
@@ -303,10 +311,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Consultar disponibilidad',
 		details: [
-			{ key: 'mileage', value: 'A consultar', icon: '/icons/mileage.svg', alt: 'Ícono de kilometraje' },
-			{ key: 'transmission', value: 'Automática', icon: '/icons/transmission.svg', alt: 'Ícono de transmisión' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Ícono de asientos' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Ícono de equipaje' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
 		]
 	},
 	{
@@ -316,10 +324,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Consultar disponibilidad',
 		details: [
-			{ key: 'mileage', value: 'A consultar', icon: '/icons/mileage.svg', alt: 'Ícono de kilometraje' },
-			{ key: 'transmission', value: 'Automática', icon: '/icons/transmission.svg', alt: 'Ícono de transmisión' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Ícono de asientos' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Ícono de equipaje' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
 		]
 	},
 	{
@@ -329,10 +337,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Consultar disponibilidad',
 		details: [
-			{ key: 'mileage', value: 'A consultar', icon: '/icons/mileage.svg', alt: 'Ícono de kilometraje' },
-			{ key: 'transmission', value: 'Automática', icon: '/icons/transmission.svg', alt: 'Ícono de transmisión' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Ícono de asientos' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Ícono de equipaje' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
 		]
 	},
 	{
@@ -342,10 +350,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Consultar disponibilidad',
 		details: [
-			{ key: 'mileage', value: 'A consultar', icon: '/icons/mileage.svg', alt: 'Ícono de kilometraje' },
-			{ key: 'transmission', value: 'Manual/Auto', icon: '/icons/transmission.svg', alt: 'Ícono de transmisión' },
-			{ key: 'seats', value: '14', icon: '/icons/seats.svg', alt: 'Ícono de asientos' },
-			{ key: 'baggage', value: 'A consultar', icon: '/icons/baggage.svg', alt: 'Ícono de equipaje' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Manual/Auto', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '14', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '—', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
 		]
 	}
 ];

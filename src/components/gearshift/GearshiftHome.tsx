@@ -39,6 +39,14 @@ type Step = {
 	alt: string;
 };
 
+const specIcons = {
+	mileage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+	transmission:
+		'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+	seats: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+	baggage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg'
+} as const;
+
 const cars: Car[] = [
 	{
 		name: 'Chevrolet Suburban',
@@ -264,10 +272,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Check availability',
 		details: [
-			{ key: 'mileage', value: 'On request', icon: '/icons/mileage.svg', alt: 'Mileage Icon' },
-			{ key: 'transmission', value: 'Automatic', icon: '/icons/transmission.svg', alt: 'Transmission Icon' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Seats Icon' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Baggage Icon' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatic', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
 		]
 	},
 	{
@@ -277,10 +285,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Check availability',
 		details: [
-			{ key: 'mileage', value: 'On request', icon: '/icons/mileage.svg', alt: 'Mileage Icon' },
-			{ key: 'transmission', value: 'Automatic', icon: '/icons/transmission.svg', alt: 'Transmission Icon' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Seats Icon' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Baggage Icon' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatic', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
 		]
 	},
 	{
@@ -290,10 +298,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Check availability',
 		details: [
-			{ key: 'mileage', value: 'On request', icon: '/icons/mileage.svg', alt: 'Mileage Icon' },
-			{ key: 'transmission', value: 'Automatic', icon: '/icons/transmission.svg', alt: 'Transmission Icon' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Seats Icon' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Baggage Icon' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatic', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
 		]
 	},
 	{
@@ -303,10 +311,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Check availability',
 		details: [
-			{ key: 'mileage', value: 'On request', icon: '/icons/mileage.svg', alt: 'Mileage Icon' },
-			{ key: 'transmission', value: 'Automatic', icon: '/icons/transmission.svg', alt: 'Transmission Icon' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Seats Icon' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Baggage Icon' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatic', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
 		]
 	},
 	{
@@ -316,10 +324,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Check availability',
 		details: [
-			{ key: 'mileage', value: 'On request', icon: '/icons/mileage.svg', alt: 'Mileage Icon' },
-			{ key: 'transmission', value: 'Automatic', icon: '/icons/transmission.svg', alt: 'Transmission Icon' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Seats Icon' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Baggage Icon' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatic', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
 		]
 	},
 	{
@@ -329,10 +337,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Check availability',
 		details: [
-			{ key: 'mileage', value: 'On request', icon: '/icons/mileage.svg', alt: 'Mileage Icon' },
-			{ key: 'transmission', value: 'Automatic', icon: '/icons/transmission.svg', alt: 'Transmission Icon' },
-			{ key: 'seats', value: '7', icon: '/icons/seats.svg', alt: 'Seats Icon' },
-			{ key: 'baggage', value: '8', icon: '/icons/baggage.svg', alt: 'Baggage Icon' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatic', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
 		]
 	},
 	{
@@ -342,10 +350,10 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		href: whatsappLink,
 		ctaLabel: 'Check availability',
 		details: [
-			{ key: 'mileage', value: 'On request', icon: '/icons/mileage.svg', alt: 'Mileage Icon' },
-			{ key: 'transmission', value: 'Manual/Auto', icon: '/icons/transmission.svg', alt: 'Transmission Icon' },
-			{ key: 'seats', value: '14', icon: '/icons/seats.svg', alt: 'Seats Icon' },
-			{ key: 'baggage', value: 'On request', icon: '/icons/baggage.svg', alt: 'Baggage Icon' }
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Manual/Auto', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '14', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '—', icon: specIcons.baggage, alt: 'Baggage Icon' }
 		]
 	}
 ];
