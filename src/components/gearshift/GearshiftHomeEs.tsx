@@ -422,11 +422,6 @@ export default function GearshiftHomeEs() {
 										</a>
 										<div className="car-details-wrapper">
 											<h3 className="car-listing-name">{car.name}</h3>
-											<div className="listing-price-wrapper">
-										<div className="currency-price-term">MXN</div>
-										<div className="car-listing-price">{car.price}</div>
-											<div className="currency-price-term">/ DÍA</div>
-											</div>
 											<div className="car-listing-details-wrapper">
 												{car.details.map((detail) => (
 													<div key={`${car.name}-${detail.key}`} className="car-listing-detail">
