@@ -51,8 +51,15 @@ html[lang='es'] .body {
 }
 
 /* Featured cars — infinite carousel (right to left) */
+#featured-cars .section-heading-wrapper {
+	position: relative;
+	z-index: 5;
+}
+
 .featured-cars-carousel {
 	overflow: hidden;
+	position: relative;
+	z-index: 1;
 }
 
 .featured-cars-carousel__track {
@@ -98,6 +105,25 @@ html[lang='es'] .body {
 	}
 	.featured-cars-carousel .car-collection-item {
 		scroll-snap-align: start;
+	}
+}
+
+/* Our Fleet — full list grid */
+.fleet-vehicles-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 28px;
+}
+
+@media screen and (max-width: 991px) {
+	.fleet-vehicles-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.fleet-vehicles-grid {
+		grid-template-columns: 1fr;
 	}
 }
 
