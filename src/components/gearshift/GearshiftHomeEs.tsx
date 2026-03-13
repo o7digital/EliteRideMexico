@@ -22,22 +22,6 @@ type Location = {
 	image: string;
 };
 
-type FeaturedCarouselItem =
-	| {
-			key: string;
-			name: string;
-			year: string;
-			image: string;
-			href: string;
-			details: CarDetail[];
-	  }
-	| {
-			key: string;
-			name: string;
-			image: string;
-			isStatic: true;
-	  };
-
 type Step = {
 	title: string;
 	description: string;
@@ -288,41 +272,6 @@ const metrics = [
 	{ value: '10', label: 'Ubicaciones' }
 ];
 
-const camionettes: FeaturedCarouselItem[] = [
-	{ key: 'camionette-01', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.jpeg', isStatic: true },
-	{ key: 'camionette-02', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59 (1).jpeg', isStatic: true },
-	{ key: 'camionette-03', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59.jpeg', isStatic: true },
-	{ key: 'camionette-04', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (1).jpeg', isStatic: true },
-	{ key: 'camionette-05', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (2).jpeg', isStatic: true },
-	{ key: 'camionette-06', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (3).jpeg', isStatic: true },
-	{ key: 'camionette-07', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.jpeg', isStatic: true },
-	{ key: 'camionette-08', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51 (1).jpeg', isStatic: true },
-	{ key: 'camionette-09', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51 (2).jpeg', isStatic: true },
-	{ key: 'camionette-10', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51.jpeg', isStatic: true },
-	{ key: 'camionette-11', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.50 (1).jpeg', isStatic: true },
-	{ key: 'camionette-12', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.50.jpeg', isStatic: true },
-	{ key: 'camionette-13', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.51 (1).jpeg', isStatic: true },
-	{ key: 'camionette-14', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.51 (2).jpeg', isStatic: true },
-	{ key: 'camionette-15', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.51 (3).jpeg', isStatic: true },
-	{ key: 'camionette-16', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.51 (4).jpeg', isStatic: true },
-	{ key: 'camionette-17', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.51 (5).jpeg', isStatic: true },
-	{ key: 'camionette-18', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.51.jpeg', isStatic: true },
-	{ key: 'camionette-19', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).jpeg', isStatic: true },
-	{ key: 'camionette-20', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03.jpeg', isStatic: true }
-];
-
-const featuredCarouselItems: FeaturedCarouselItem[] = [
-	...cars.map((car) => ({
-		key: `car-${car.name}`,
-		name: car.name,
-		year: car.year,
-		image: car.image,
-		href: car.href,
-		details: car.details
-	})),
-	...camionettes
-];
-
 export default function GearshiftHomeEs() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isLanguageOpen, setIsLanguageOpen] = useState(false);
@@ -458,118 +407,68 @@ export default function GearshiftHomeEs() {
 					<div className="cars-collection-list-wrapper featured-cars-carousel" role="region" aria-label="Carrusel de vehículos destacados">
 						<div className="featured-cars-carousel__track" aria-live="off">
 							<div className="cars-collection-list">
-								{featuredCarouselItems.map((item) => (
-									<div key={item.key} className="car-collection-item">
+								{cars.map((car) => (
+									<div key={car.name} className="car-collection-item">
 										<article className="car-card">
-											{('href' in item && item.href) ? (
-												<a href={item.href} className="car-image-wrapper w-inline-block">
-													<img
-														src={item.image}
-														loading="lazy"
-														decoding="async"
-														alt={item.name}
-														width={600}
-														height={400}
-														className="listing-car-image"
-													/>
-													<div className="car-listing-year">{item.year}</div>
-												</a>
-											) : (
-												<div className="car-image-wrapper w-inline-block" role="img" aria-label={item.name}>
-													<img
-														src={item.image}
-														loading="lazy"
-														decoding="async"
-														alt={item.name}
-														width={600}
-														height={400}
-														className="listing-car-image"
-													/>
-												</div>
-											)}
+											<a href={car.href} className="car-image-wrapper w-inline-block">
+												<img
+													src={car.image}
+													loading="lazy"
+													decoding="async"
+													alt={car.name}
+													width={600}
+													height={400}
+													className="listing-car-image"
+												/>
+												<div className="car-listing-year">{car.year}</div>
+											</a>
 											<div className="car-details-wrapper">
-												<h3 className="car-listing-name">{item.name}</h3>
-												{'details' in item ? (
-													<>
-														<div className="car-listing-details-wrapper">
-															{item.details.map((detail) => (
-																<div key={`${item.key}-${detail.key}`} className="car-listing-detail">
-																	<img src={detail.icon} alt={detail.alt} className="listing-icon" loading="lazy" />
-																	<div className="listing-detail">{detail.value}</div>
-																</div>
-															))}
+												<h3 className="car-listing-name">{car.name}</h3>
+												<div className="car-listing-details-wrapper">
+													{car.details.map((detail) => (
+														<div key={`${car.name}-${detail.key}`} className="car-listing-detail">
+															<img src={detail.icon} alt={detail.alt} className="listing-icon" loading="lazy" />
+															<div className="listing-detail">{detail.value}</div>
 														</div>
-														<a href={item.href} className="details-btn w-button">
-															Ver Detalles
-														</a>
-													</>
-												) : (
-													<a href={whatsappLink} target="_blank" rel="noreferrer" className="details-btn w-button">
-														Consultar disponibilidad
-													</a>
-												)}
+													))}
+												</div>
+												<a href={car.href} className="details-btn w-button">
+													Ver Detalles
+												</a>
 											</div>
 										</article>
 									</div>
 								))}
 							</div>
 							<div className="cars-collection-list" aria-hidden="true">
-								{featuredCarouselItems.map((item) => (
-									<div key={`${item.key}-dup`} className="car-collection-item">
+								{cars.map((car) => (
+									<div key={`${car.name}-dup`} className="car-collection-item">
 										<article className="car-card">
-											{('href' in item && item.href) ? (
-												<a href={item.href} className="car-image-wrapper w-inline-block" tabIndex={-1}>
-													<img
-														src={item.image}
-														loading="lazy"
-														decoding="async"
-														alt=""
-														width={600}
-														height={400}
-														className="listing-car-image"
-													/>
-													<div className="car-listing-year">{item.year}</div>
-												</a>
-											) : (
-												<div className="car-image-wrapper w-inline-block">
-													<img
-														src={item.image}
-														loading="lazy"
-														decoding="async"
-														alt=""
-														width={600}
-														height={400}
-														className="listing-car-image"
-													/>
-												</div>
-											)}
+											<a href={car.href} className="car-image-wrapper w-inline-block" tabIndex={-1}>
+												<img
+													src={car.image}
+													loading="lazy"
+													decoding="async"
+													alt=""
+													width={600}
+													height={400}
+													className="listing-car-image"
+												/>
+												<div className="car-listing-year">{car.year}</div>
+											</a>
 											<div className="car-details-wrapper">
-												<h3 className="car-listing-name">{item.name}</h3>
-												{'details' in item ? (
-													<>
-														<div className="car-listing-details-wrapper">
-															{item.details.map((detail) => (
-																<div key={`${item.key}-dup-${detail.key}`} className="car-listing-detail">
-																	<img src={detail.icon} alt="" className="listing-icon" loading="lazy" />
-																	<div className="listing-detail">{detail.value}</div>
-																</div>
-															))}
+												<h3 className="car-listing-name">{car.name}</h3>
+												<div className="car-listing-details-wrapper">
+													{car.details.map((detail) => (
+														<div key={`${car.name}-dup-${detail.key}`} className="car-listing-detail">
+															<img src={detail.icon} alt="" className="listing-icon" loading="lazy" />
+															<div className="listing-detail">{detail.value}</div>
 														</div>
-														<a href={item.href} className="details-btn w-button" tabIndex={-1}>
-															Ver Detalles
-														</a>
-													</>
-												) : (
-													<a
-														href={whatsappLink}
-														target="_blank"
-														rel="noreferrer"
-														className="details-btn w-button"
-														tabIndex={-1}
-													>
-														Consultar disponibilidad
-													</a>
-												)}
+													))}
+												</div>
+												<a href={car.href} className="details-btn w-button" tabIndex={-1}>
+													Ver Detalles
+												</a>
 											</div>
 										</article>
 									</div>
