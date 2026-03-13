@@ -521,9 +521,6 @@ export default function GearshiftHomeEs() {
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
 								<h2 className="section-heading">Vehículos Destacados</h2>
-							<a href="/es/our-fleet" className="cta-button w-button">
-								Ver todos
-							</a>
 					</div>
 					<div className="cars-collection-list-wrapper featured-cars-carousel" role="region" aria-label="Carrusel de vehículos destacados">
 						<div className="featured-cars-carousel__track" aria-live="off">
