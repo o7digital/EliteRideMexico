@@ -22,6 +22,12 @@ type Location = {
 	image: string;
 };
 
+type CarouselImageItem = {
+	key: string;
+	name: string;
+	image: string;
+};
+
 type Step = {
 	title: string;
 	description: string;
@@ -162,6 +168,19 @@ const cars: Car[] = [
 			}
 		]
 	}
+];
+
+const camionettes: CarouselImageItem[] = [
+	{ key: 'camionette-01', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.jpeg' },
+	{ key: 'camionette-02', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59 (1).jpeg' },
+	{ key: 'camionette-03', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59.jpeg' },
+	{ key: 'camionette-04', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (1).jpeg' },
+	{ key: 'camionette-05', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (3).jpeg' },
+	{ key: 'camionette-06', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.jpeg' },
+	{ key: 'camionette-07', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51.jpeg' },
+	{ key: 'camionette-08', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.50.jpeg' },
+	{ key: 'camionette-09', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.39.51 (3).jpeg' },
+	{ key: 'camionette-10', name: 'Camionnette', image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).jpeg' }
 ];
 
 const locations: Location[] = [
@@ -466,6 +485,72 @@ export default function GearshiftHome() {
 												</div>
 												<a href={car.href} className="details-btn w-button" tabIndex={-1}>
 													See Full Details
+												</a>
+											</div>
+										</article>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="featured-camionettes" className="section bg-white">
+				<div className="content-wrapper">
+					<div className="section-heading-wrapper">
+						<h2 className="section-heading">Camionnettes</h2>
+					</div>
+					<div className="cars-collection-list-wrapper featured-cars-carousel" role="region" aria-label="Camionnettes carousel">
+						<div className="featured-cars-carousel__track" aria-live="off">
+							<div className="cars-collection-list">
+								{camionettes.map((item) => (
+									<div key={item.key} className="car-collection-item">
+										<article className="car-card">
+											<div className="car-image-wrapper w-inline-block" role="img" aria-label={item.name}>
+												<img
+													src={item.image}
+													loading="lazy"
+													alt={item.name}
+													width={600}
+													height={400}
+													className="listing-car-image"
+												/>
+											</div>
+											<div className="car-details-wrapper">
+												<h3 className="car-listing-name">{item.name}</h3>
+												<a href={whatsappLink} target="_blank" rel="noreferrer" className="details-btn w-button">
+													Check availability
+												</a>
+											</div>
+										</article>
+									</div>
+								))}
+							</div>
+							<div className="cars-collection-list" aria-hidden="true">
+								{camionettes.map((item) => (
+									<div key={`${item.key}-dup`} className="car-collection-item">
+										<article className="car-card">
+											<div className="car-image-wrapper w-inline-block">
+												<img
+													src={item.image}
+													loading="lazy"
+													alt=""
+													width={600}
+													height={400}
+													className="listing-car-image"
+												/>
+											</div>
+											<div className="car-details-wrapper">
+												<h3 className="car-listing-name">{item.name}</h3>
+												<a
+													href={whatsappLink}
+													target="_blank"
+													rel="noreferrer"
+													className="details-btn w-button"
+													tabIndex={-1}
+												>
+													Check availability
 												</a>
 											</div>
 										</article>
