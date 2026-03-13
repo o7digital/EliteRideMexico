@@ -404,40 +404,76 @@ export default function GearshiftHomeEs() {
 								Ver todos
 							</a>
 					</div>
-					<div className="cars-collection-list-wrapper">
-						<div className="cars-collection-list">
-							{cars.map((car) => (
-								<div key={car.name} className="car-collection-item">
-									<article className="car-card">
-										<a href={car.href} className="car-image-wrapper w-inline-block">
-											<img
-												src={car.image}
-												loading="lazy"
-												decoding="async"
-												alt={car.name}
-												width={600}
-												height={400}
-												className="listing-car-image"
-											/>
-											<div className="car-listing-year">{car.year}</div>
-										</a>
-										<div className="car-details-wrapper">
-											<h3 className="car-listing-name">{car.name}</h3>
-											<div className="car-listing-details-wrapper">
-												{car.details.map((detail) => (
-													<div key={`${car.name}-${detail.key}`} className="car-listing-detail">
-														<img src={detail.icon} alt={detail.alt} className="listing-icon" loading="lazy" />
-														<div className="listing-detail">{detail.value}</div>
-													</div>
-												))}
-											</div>
-											<a href={car.href} className="details-btn w-button">
-												Ver Detalles
+					<div className="cars-collection-list-wrapper featured-cars-carousel" role="region" aria-label="Carrusel de vehículos destacados">
+						<div className="featured-cars-carousel__track" aria-live="off">
+							<div className="cars-collection-list">
+								{cars.map((car) => (
+									<div key={car.name} className="car-collection-item">
+										<article className="car-card">
+											<a href={car.href} className="car-image-wrapper w-inline-block">
+												<img
+													src={car.image}
+													loading="lazy"
+													decoding="async"
+													alt={car.name}
+													width={600}
+													height={400}
+													className="listing-car-image"
+												/>
+												<div className="car-listing-year">{car.year}</div>
 											</a>
-										</div>
-									</article>
-								</div>
-							))}
+											<div className="car-details-wrapper">
+												<h3 className="car-listing-name">{car.name}</h3>
+												<div className="car-listing-details-wrapper">
+													{car.details.map((detail) => (
+														<div key={`${car.name}-${detail.key}`} className="car-listing-detail">
+															<img src={detail.icon} alt={detail.alt} className="listing-icon" loading="lazy" />
+															<div className="listing-detail">{detail.value}</div>
+														</div>
+													))}
+												</div>
+												<a href={car.href} className="details-btn w-button">
+													Ver Detalles
+												</a>
+											</div>
+										</article>
+									</div>
+								))}
+							</div>
+							<div className="cars-collection-list" aria-hidden="true">
+								{cars.map((car) => (
+									<div key={`${car.name}-dup`} className="car-collection-item">
+										<article className="car-card">
+											<a href={car.href} className="car-image-wrapper w-inline-block" tabIndex={-1}>
+												<img
+													src={car.image}
+													loading="lazy"
+													decoding="async"
+													alt=""
+													width={600}
+													height={400}
+													className="listing-car-image"
+												/>
+												<div className="car-listing-year">{car.year}</div>
+											</a>
+											<div className="car-details-wrapper">
+												<h3 className="car-listing-name">{car.name}</h3>
+												<div className="car-listing-details-wrapper">
+													{car.details.map((detail) => (
+														<div key={`${car.name}-dup-${detail.key}`} className="car-listing-detail">
+															<img src={detail.icon} alt="" className="listing-icon" loading="lazy" />
+															<div className="listing-detail">{detail.value}</div>
+														</div>
+													))}
+												</div>
+												<a href={car.href} className="details-btn w-button" tabIndex={-1}>
+													Ver Detalles
+												</a>
+											</div>
+										</article>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>

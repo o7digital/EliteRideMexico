@@ -50,6 +50,57 @@ html[lang='es'] .body {
 	margin-top: auto;
 }
 
+/* Featured cars — infinite carousel (right to left) */
+.featured-cars-carousel {
+	overflow: hidden;
+}
+
+.featured-cars-carousel__track {
+	display: flex;
+	width: max-content;
+	will-change: transform;
+	animation: featured-cars-marquee 38s linear infinite;
+}
+
+.featured-cars-carousel:hover .featured-cars-carousel__track,
+.featured-cars-carousel:focus-within .featured-cars-carousel__track {
+	animation-play-state: paused;
+}
+
+.featured-cars-carousel .cars-collection-list {
+	display: flex;
+	gap: 28px;
+	flex: 0 0 auto;
+	padding-right: 28px;
+}
+
+.featured-cars-carousel .car-collection-item {
+	flex: 0 0 auto;
+	width: clamp(260px, 26vw, 340px);
+}
+
+@keyframes featured-cars-marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.featured-cars-carousel__track {
+		animation: none;
+	}
+	.featured-cars-carousel {
+		overflow: auto;
+		scroll-snap-type: x mandatory;
+	}
+	.featured-cars-carousel .car-collection-item {
+		scroll-snap-align: start;
+	}
+}
+
 .hamburger-line {
 	display: block;
 	width: 24px;
