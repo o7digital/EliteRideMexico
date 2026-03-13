@@ -269,7 +269,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		key: 'camionette-tahoe-01',
 		name: 'Chevrolet Tahoe',
 		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.jpeg',
-		href: whatsappLink,
+		href: '/cars/chevrolet-tahoe',
 		ctaLabel: 'See Full Details',
 		details: [
 			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
@@ -282,7 +282,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		key: 'camionette-yukon-01',
 		name: 'GMC Yukon Denali',
 		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59.jpeg',
-		href: whatsappLink,
+		href: '/cars/gmc-yukon-denali',
 		ctaLabel: 'See Full Details',
 		details: [
 			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
@@ -295,7 +295,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		key: 'camionette-yukon-02',
 		name: 'GMC Yukon Denali',
 		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59 (1).jpeg',
-		href: whatsappLink,
+		href: '/cars/gmc-yukon-denali',
 		ctaLabel: 'See Full Details',
 		details: [
 			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
@@ -308,7 +308,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		key: 'camionette-yukon-03',
 		name: 'GMC Yukon Denali',
 		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (1).jpeg',
-		href: whatsappLink,
+		href: '/cars/gmc-yukon-denali',
 		ctaLabel: 'See Full Details',
 		details: [
 			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
@@ -321,7 +321,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		key: 'camionette-escalade-01',
 		name: 'Cadillac Escalade',
 		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.jpeg',
-		href: whatsappLink,
+		href: '/cars/cadillac-escalade',
 		ctaLabel: 'See Full Details',
 		details: [
 			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
@@ -334,7 +334,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		key: 'camionette-suburban-01',
 		name: 'Chevrolet Suburban',
 		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51.jpeg',
-		href: whatsappLink,
+		href: '/cars/chevrolet-suburban-black',
 		ctaLabel: 'See Full Details',
 		details: [
 			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
@@ -347,7 +347,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 		key: 'camionette-urvan-01',
 		name: 'Nissan Urvan',
 		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).jpeg',
-		href: whatsappLink,
+		href: '/cars/nissan-urvan',
 		ctaLabel: 'See Full Details',
 		details: [
 			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
