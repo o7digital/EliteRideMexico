@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { getWorldCupKeywordLines } from '../../data/worldCupKeywords';
-
+---
 type CarDetail = {
 	key: string;
 	value: string;
@@ -187,38 +185,38 @@ const locations: Location[] = [
 	{
 		name: 'Mexico City',
 		href: '/mexico-city-private-chauffeur',
-		image: '/towns/gemini-cdmx.png'
+		image: '/towns/gemini-cdmx.webp'
 	},
 	{
 		name: 'Puerto Vallarta',
 		href: '/puerto-vallarta-airport-transfer',
-		image: '/towns/gemini-vallarta.png'
+		image: '/towns/gemini-vallarta.webp'
 	},
 	{
 		name: 'Guadalajara',
 		href: '/guadalajara-private-driver',
-		image: '/towns/gemini-guadalajara.png'
+		image: '/towns/gemini-guadalajara.webp'
 	},
 	{
 		name: 'Ixtapa Zihuatanejo',
-		image: '/towns/gemini-zihua.png'
+		image: '/towns/gemini-zihua.webp'
 	},
 	{
 		name: 'Cancun',
 		href: '/cancun-airport-transfer',
-		image: '/towns/gemini-cancun.png'
+		image: '/towns/gemini-cancun.webp'
 	},
 	{
 		name: 'Leon',
-		image: '/towns/gemini-leon.png'
+		image: '/towns/gemini-leon.webp'
 	},
 	{
 		name: 'Cuernavaca',
-		image: '/towns/gemini-cuerna.png'
+		image: '/towns/gemini-cuerna.webp'
 	},
 	{
 		name: 'Monterrey',
-		image: '/towns/gemini-monterrey.png'
+		image: '/towns/gemini-monterrey.webp'
 	}
 ];
 
@@ -265,7 +263,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 	{
 		key: 'camionette-tahoe-01',
 		name: 'Chevrolet Tahoe',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.webp',
 		href: '/cars/chevrolet-tahoe',
 		ctaLabel: 'See Full Details',
 		details: [
@@ -278,7 +276,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 	{
 		key: 'camionette-yukon-01',
 		name: 'GMC Yukon Denali',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59.jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59.webp',
 		href: '/cars/gmc-yukon-denali',
 		ctaLabel: 'See Full Details',
 		details: [
@@ -291,7 +289,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 	{
 		key: 'camionette-yukon-02',
 		name: 'GMC Yukon Denali',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59 (1).jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59 (1).webp',
 		href: '/cars/gmc-yukon-denali',
 		ctaLabel: 'See Full Details',
 		details: [
@@ -304,7 +302,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 	{
 		key: 'camionette-yukon-03',
 		name: 'GMC Yukon Denali',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (1).jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (1).webp',
 		href: '/cars/gmc-yukon-denali',
 		ctaLabel: 'See Full Details',
 		details: [
@@ -317,7 +315,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 	{
 		key: 'camionette-escalade-01',
 		name: 'Cadillac Escalade',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.webp',
 		href: '/cars/cadillac-escalade',
 		ctaLabel: 'See Full Details',
 		details: [
@@ -330,7 +328,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 	{
 		key: 'camionette-suburban-01',
 		name: 'Chevrolet Suburban',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51.jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51.webp',
 		href: '/cars/chevrolet-suburban-black',
 		ctaLabel: 'See Full Details',
 		details: [
@@ -343,7 +341,7 @@ const featuredCarouselItems: FeaturedCarouselItem[] = [
 	{
 		key: 'camionette-urvan-01',
 		name: 'Nissan Urvan',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).webp',
 		href: '/cars/nissan-urvan',
 		ctaLabel: 'See Full Details',
 		details: [
@@ -390,73 +388,62 @@ const metrics = [
 	{ value: '10', label: 'Locations' }
 ];
 
-const keywordLines = getWorldCupKeywordLines('en');
+---
 
-export default function GearshiftHome() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-
-	const closeMenus = () => {
-		setIsMenuOpen(false);
-		setIsLanguageOpen(false);
-	};
-
-	return (
-		<div className="page-wrapper">
+		<div class="page-wrapper">
 			<section>
-				<div className="header-section">
-					<div className="navbar w-nav">
-						<div className="content-wrapper">
-							<div className="navbar-wrapper">
-									<a href="/" aria-current="page" className="brand w-nav-brand w--current" onClick={closeMenus}>
-										<span className="brand-logo-text">ELITE RIDE MEXICO</span>
+				<div class="header-section">
+					<div class="navbar w-nav">
+						<div class="content-wrapper">
+							<div class="navbar-wrapper">
+									<a href="/" aria-current="page" class="brand w-nav-brand w--current">
+										<span class="brand-logo-text">ELITE RIDE MEXICO</span>
 									</a>
-								<nav role="navigation" className={`nav-menu-wrapper w-nav-menu ${isMenuOpen ? 'w--open' : ''}`}>
-									<ul role="list" className="nav-menu w-list-unstyled">
-										<li className="nav-list-item">
-											<a href="/" aria-current="page" className="nav-link w--current" onClick={closeMenus}>
+								<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+									<ul role="list" class="nav-menu w-list-unstyled">
+										<li class="nav-list-item">
+											<a href="/" aria-current="page" class="nav-link w--current">
 												Home
 											</a>
 										</li>
-										<li className="nav-list-item">
-											<a href="/about" className="nav-link" onClick={closeMenus}>
+										<li class="nav-list-item">
+											<a href="/about" class="nav-link">
 												About
 											</a>
 										</li>
-										<li className="nav-list-item">
-											<a href="/our-fleet" className="nav-link" onClick={closeMenus}>
+										<li class="nav-list-item">
+											<a href="/our-fleet" class="nav-link">
 												Our Fleet
 											</a>
 										</li>
-										<li className="nav-list-item">
-											<a href="/contact" className="nav-link" onClick={closeMenus}>
+										<li class="nav-list-item">
+											<a href="/contact" class="nav-link">
 												Contact Us
 											</a>
 										</li>
-										<li className="nav-list-item">
-											<div className="cta-button-wrapper">
-												<a href="/our-fleet" className="cta-button w-button" onClick={closeMenus}>
+										<li class="nav-list-item">
+											<div class="cta-button-wrapper">
+												<a href="/our-fleet" class="cta-button w-button">
 													rent now
 												</a>
 											</div>
 										</li>
-										<li className="nav-list-item language-switch-item">
-											<div className="language-switch">
+										<li class="nav-list-item language-switch-item">
+											<div class="language-switch">
 												<button
 													type="button"
-													className="language-switch-button"
-													onClick={() => setIsLanguageOpen((prev) => !prev)}
-													aria-expanded={isLanguageOpen}
+													class="language-switch-button"
+													aria-expanded="false"
 													aria-label="Switch language"
 												>
 													EN
-													<span className={`language-switch-chevron ${isLanguageOpen ? 'open' : ''}`}>v</span>
+													<span class="language-switch-chevron">v</span>
 												</button>
-												<div className={`language-switch-list ${isLanguageOpen ? 'open' : ''}`}>
-													<a href="/" className="language-switch-link active" onClick={closeMenus}>
+												<div class="language-switch-list">
+													<a href="/" class="language-switch-link active">
 														EN
 													</a>
-													<a href="/es" className="language-switch-link" onClick={closeMenus}>
+													<a href="/es" class="language-switch-link">
 														ES
 													</a>
 												</div>
@@ -466,30 +453,29 @@ export default function GearshiftHome() {
 								</nav>
 								<button
 									type="button"
-									className={`menu-button w-nav-button ${isMenuOpen ? 'w--open' : ''}`}
-									onClick={() => setIsMenuOpen((prev) => !prev)}
+									class="menu-button w-nav-button"
 									aria-label="Toggle menu"
-									aria-expanded={isMenuOpen}
+									aria-expanded="false"
 								>
-									<span className="hamburger-line" />
-									<span className="hamburger-line" />
-									<span className="hamburger-line" />
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
 								</button>
 							</div>
 						</div>
 					</div>
-					<div className="content-wrapper">
-						<div className="header-section-wrapper">
-							<div className="header-content-wrapper">
-									<div className="header-text-wrapper">
-											<h1 className="header-text">
-												Premium SUV Rental &amp; Private Chauffeur Service in Mexico — <span className="brand-span">Elite Ride Mexico</span>
+					<div class="content-wrapper">
+						<div class="header-section-wrapper">
+							<div class="header-content-wrapper">
+									<div class="header-text-wrapper">
+											<h1 class="header-text">
+												Premium SUV Rental &amp; Private Chauffeur Service in Mexico — <span class="brand-span">Elite Ride Mexico</span>
 											</h1>
-										<div className="primary-text">
+										<div class="primary-text">
 											Safe, reliable airport transfers and private driver service across Mexico City, Cancun, Guadalajara and beyond. Bilingual drivers, 300+ vehicles, available 24/7.
 										</div>
-									<div className="header-button-wrapper">
-										<a href="#featured-cars" className="cta-button w-button">
+									<div class="header-button-wrapper">
+										<a href="#featured-cars" class="cta-button w-button">
 											View Our Fleet
 										</a>
 									</div>
@@ -500,55 +486,55 @@ export default function GearshiftHome() {
 				</div>
 			</section>
 
-			<section className="section bg-white">
-				<div className="content-wrapper">
-					<div className="grid-wrapper">
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="grid-wrapper">
 						{metrics.map((metric) => (
-							<div key={metric.label} className="grid-item-wrapper">
-								<div className="metric-number-wrapper">
-									<h2 className="metric-number">{metric.value}</h2>
-									<h2 className="metric-plus-sign">+</h2>
+							<div key={metric.label} class="grid-item-wrapper">
+								<div class="metric-number-wrapper">
+									<h2 class="metric-number">{metric.value}</h2>
+									<h2 class="metric-plus-sign">+</h2>
 								</div>
-								<div className="title-small">{metric.label}</div>
+								<div class="title-small">{metric.label}</div>
 							</div>
 						))}
 					</div>
 				</div>
 			</section>
 
-			<section id="featured-cars" className="section">
-				<div className="content-wrapper">
-					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Featured Cars</h2>
+			<section id="featured-cars" class="section">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Featured Cars</h2>
 					</div>
-					<div className="cars-collection-list-wrapper featured-cars-carousel" role="region" aria-label="Featured cars carousel">
-						<div className="featured-cars-carousel__track" aria-live="off">
-							<div className="cars-collection-list">
+					<div class="cars-collection-list-wrapper featured-cars-carousel" role="region" aria-label="Featured cars carousel">
+						<div class="featured-cars-carousel__track" aria-live="off">
+							<div class="cars-collection-list">
 								{featuredCarouselItems.map((item) => (
-									<div key={item.key} className="car-collection-item">
-										<article className="car-card">
-											<a href={item.href} className="car-image-wrapper w-inline-block">
+									<div key={item.key} class="car-collection-item">
+										<article class="car-card">
+											<a href={item.href} class="car-image-wrapper w-inline-block">
 												<img
 													src={item.image}
 													loading="lazy"
 													alt={item.name}
 													width={600}
 													height={400}
-													className="listing-car-image"
+													class="listing-car-image"
 												/>
-												{item.year ? <div className="car-listing-year">{item.year}</div> : null}
+												{item.year ? <div class="car-listing-year">{item.year}</div> : null}
 											</a>
-											<div className="car-details-wrapper">
-												<h3 className="car-listing-name">{item.name}</h3>
-												<div className="car-listing-details-wrapper">
+											<div class="car-details-wrapper">
+												<h3 class="car-listing-name">{item.name}</h3>
+												<div class="car-listing-details-wrapper">
 													{item.details.map((detail) => (
-														<div key={`${item.key}-${detail.key}`} className="car-listing-detail">
-															<img src={detail.icon} alt={detail.alt} className="listing-icon" loading="lazy" />
-															<div className="listing-detail">{detail.value}</div>
+														<div key={`${item.key}-${detail.key}`} class="car-listing-detail">
+															<img src={detail.icon} alt={detail.alt} class="listing-icon" loading="lazy" />
+															<div class="listing-detail">{detail.value}</div>
 														</div>
 													))}
 												</div>
-												<a href={item.href} className="details-btn w-button" target={item.href === whatsappLink ? '_blank' : undefined} rel={item.href === whatsappLink ? 'noreferrer' : undefined}>
+												<a href={item.href} class="details-btn w-button" target={item.href === whatsappLink ? '_blank' : undefined} rel={item.href === whatsappLink ? 'noreferrer' : undefined}>
 													{item.ctaLabel}
 												</a>
 											</div>
@@ -556,13 +542,13 @@ export default function GearshiftHome() {
 									</div>
 								))}
 							</div>
-							<div className="cars-collection-list" aria-hidden="true">
+							<div class="cars-collection-list" aria-hidden="true">
 								{featuredCarouselItems.map((item) => (
-									<div key={`${item.key}-dup`} className="car-collection-item">
-										<article className="car-card">
+									<div key={`${item.key}-dup`} class="car-collection-item">
+										<article class="car-card">
 											<a
 												href={item.href}
-												className="car-image-wrapper w-inline-block"
+												class="car-image-wrapper w-inline-block"
 												tabIndex={-1}
 												target={item.href === whatsappLink ? '_blank' : undefined}
 												rel={item.href === whatsappLink ? 'noreferrer' : undefined}
@@ -573,23 +559,23 @@ export default function GearshiftHome() {
 													alt=""
 													width={600}
 													height={400}
-													className="listing-car-image"
+													class="listing-car-image"
 												/>
-												{item.year ? <div className="car-listing-year">{item.year}</div> : null}
+												{item.year ? <div class="car-listing-year">{item.year}</div> : null}
 											</a>
-											<div className="car-details-wrapper">
-												<h3 className="car-listing-name">{item.name}</h3>
-												<div className="car-listing-details-wrapper">
+											<div class="car-details-wrapper">
+												<h3 class="car-listing-name">{item.name}</h3>
+												<div class="car-listing-details-wrapper">
 													{item.details.map((detail) => (
-														<div key={`${item.key}-dup-${detail.key}`} className="car-listing-detail">
-															<img src={detail.icon} alt="" className="listing-icon" loading="lazy" />
-															<div className="listing-detail">{detail.value}</div>
+														<div key={`${item.key}-dup-${detail.key}`} class="car-listing-detail">
+															<img src={detail.icon} alt="" class="listing-icon" loading="lazy" />
+															<div class="listing-detail">{detail.value}</div>
 														</div>
 													))}
 												</div>
 												<a
 													href={item.href}
-													className="details-btn w-button"
+													class="details-btn w-button"
 													tabIndex={-1}
 													target={item.href === whatsappLink ? '_blank' : undefined}
 													rel={item.href === whatsappLink ? 'noreferrer' : undefined}
@@ -606,29 +592,29 @@ export default function GearshiftHome() {
 				</div>
 			</section>
 
-			<section className="section bg-white">
-				<div className="content-wrapper">
-					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Our Locations</h2>
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Our Locations</h2>
 					</div>
-					<div className="location-collection-list-wrapper">
-						<div className="location-collection-list">
+					<div class="location-collection-list-wrapper">
+						<div class="location-collection-list">
 							{locations.map((location) => {
 								const content = (
 									<>
-										<img src={location.image} loading="lazy" alt={location.name} className="location-listing-image" />
-										<div className="location-name">{location.name}</div>
+										<img src={location.image} loading="lazy" alt={location.name} class="location-listing-image" />
+										<div class="location-name">{location.name}</div>
 									</>
 								);
 
 								return (
-									<div key={location.name} className="location-item">
+									<div key={location.name} class="location-item">
 										{location.href ? (
-											<a href={location.href} className="location-listing-image-wrapper w-inline-block">
+											<a href={location.href} class="location-listing-image-wrapper w-inline-block">
 												{content}
 											</a>
 										) : (
-											<div className="location-listing-image-wrapper w-inline-block location-listing-image-wrapper--static">
+											<div class="location-listing-image-wrapper w-inline-block location-listing-image-wrapper--static">
 												{content}
 											</div>
 										)}
@@ -640,146 +626,126 @@ export default function GearshiftHome() {
 				</div>
 			</section>
 
-			<section className="section">
-				<div className="content-wrapper">
-					<div className="grid-wrapper">
+			<section class="section">
+				<div class="content-wrapper">
+					<div class="grid-wrapper">
 						{steps.map((step) => (
-							<div key={step.title} className="grid-item-wrapper">
-								<div className="icon-wrapper">
+							<div key={step.title} class="grid-item-wrapper">
+								<div class="icon-wrapper">
 									<img src={step.icon} loading="lazy" alt={step.alt} />
 								</div>
-								<div className="title-small">{step.title}</div>
-								<div className="primary-text grey-color metric-text">{step.description}</div>
+								<div class="title-small">{step.title}</div>
+								<div class="primary-text grey-color metric-text">{step.description}</div>
 							</div>
-						))}
-					</div>
-				</div>
-			</section>
-
-			<section className="section bg-white">
-				<div className="content-wrapper">
-					<div className="section-heading-wrapper">
-						<h2 className="section-heading">World Cup 2026 Transport Searches in Mexico</h2>
-					</div>
-					<p className="primary-text grey-color seo-keywords-intro">
-						Elite Ride Mexico supports airport pickups, private drivers, stadium transfers, corporate
-						mobility, premium SUVs, armored routes, and chauffeur service for fans, executives, and VIP
-						travelers coming to Mexico for the 2026 tournament.
-					</p>
-					<div className="seo-content-keywords">
-						{keywordLines.map((line) => (
-							<p key={line} className="seo-content-keywords__line">
-								{line}
-							</p>
 						))}
 					</div>
 				</div>
 			</section>
 
 			<section>
-				<div className="footer-section-wrapper">
-					<div className="content-wrapper">
-						<div className="footer-content-wrapper">
-							<div className="footer-top-content">
-									<div className="footer-logo-social">
-										<a href="/" aria-current="page" className="brand w-nav-brand w--current">
-											<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+				<div class="footer-section-wrapper">
+					<div class="content-wrapper">
+						<div class="footer-content-wrapper">
+							<div class="footer-top-content">
+									<div class="footer-logo-social">
+										<a href="/" aria-current="page" class="brand w-nav-brand w--current">
+											<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
 										</a>
-									<div className="footer-text">
+									<div class="footer-text">
 									Safe airport transfers, executive transportation, and private driver service across Mexico City, Cancun, Guadalajara, Puerto Vallarta, and more.
 									</div>
-									<div className="social-media-links">
+									<div class="social-media-links">
 										{socialLinks.map((social) => (
 											<a
 												key={social.label}
 												href={social.href}
 												target="_blank"
 												rel="noreferrer"
-												className="social-media w-inline-block"
+												class="social-media w-inline-block"
 												aria-label={social.label}
 											>
-												<img src={social.icon} loading="lazy" alt={social.alt} className="image" />
+												<img src={social.icon} loading="lazy" alt={social.alt} class="image" />
 											</a>
 										))}
 									</div>
 								</div>
-								<div className="footer-newsletter">
-									<h3 className="small-heading">Subscribe to our newsletter</h3>
-									<div className="w-form">
-										<form className="newsletter-form" onSubmit={(event) => event.preventDefault()}>
+								<div class="footer-newsletter">
+									<h3 class="small-heading">Subscribe to our newsletter</h3>
+									<div class="w-form">
+										<form class="newsletter-form">
 											<input
-												className="form-field w-input"
+												class="form-field w-input"
 												maxLength={256}
 												name="Email"
 												placeholder="example@gmail.com"
 												type="email"
 												required
 											/>
-											<input type="submit" className="cta-button w-button" value="Submit" />
+											<input type="submit" class="cta-button w-button" value="Submit" />
 										</form>
 									</div>
 								</div>
 							</div>
-							<div className="divider" />
-							<div className="footer-bottom-content">
-								<div className="footer-links-wrapper">
-									<h2 className="heading">Pages</h2>
-									<a href="/" className="footer-nav-link w--current">
+							<div class="divider" />
+							<div class="footer-bottom-content">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Pages</h2>
+									<a href="/" class="footer-nav-link w--current">
 										Home
 									</a>
-									<a href="/about" className="footer-nav-link">
+									<a href="/about" class="footer-nav-link">
 										About
 									</a>
-									<a href="/our-fleet" className="footer-nav-link">
+									<a href="/our-fleet" class="footer-nav-link">
 										Our Fleet
 									</a>
-									<a href="/contact" className="footer-nav-link">
+									<a href="/contact" class="footer-nav-link">
 										Contact Us
 									</a>
-										<a href="/world-cup-2026-mexico" className="footer-nav-link">
+										<a href="/world-cup-2026-mexico" class="footer-nav-link">
 											World Cup 2026 News
 										</a>
 								</div>
-								<div className="footer-links-wrapper">
-									<h2 className="heading">Legal</h2>
-									<a href="/privacy-notice" className="footer-nav-link">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Legal</h2>
+									<a href="/privacy-notice" class="footer-nav-link">
 										Privacy Notice
 									</a>
-									<a href="/cancelation" className="footer-nav-link">
+									<a href="/cancelation" class="footer-nav-link">
 											Cancellation
 									</a>
-									<a href="/refunds" className="footer-nav-link">
+									<a href="/refunds" class="footer-nav-link">
 										Refunds
 									</a>
-									<a href="/taxes" className="footer-nav-link">
+									<a href="/taxes" class="footer-nav-link">
 										Taxes
 									</a>
 								</div>
-								<div className="footer-links-wrapper">
-									<h2 className="heading">Get In Touch</h2>
-									<a href="tel:+525644166523" className="footer-nav-link">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Get In Touch</h2>
+									<a href="tel:+525644166523" class="footer-nav-link">
 										+52 5644166523
 									</a>
-										<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
+										<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">
 											info@eliteridemexico.com
 										</a>
 										<a
 											href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
 											target="_blank"
 											rel="noreferrer"
-											className="footer-nav-link"
+											class="footer-nav-link"
 										>
 											Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500 CDMX Mexico
 										</a>
 								</div>
 							</div>
-								<div className="divider" />
-									<div className="copyright-info-wrapper">
+								<div class="divider" />
+									<div class="copyright-info-wrapper">
 										<a
 											href="https://www.o7digital.com/en/index-digital-agency"
 											target="_blank"
 											rel="noreferrer"
-											className="footer-copyright-text"
+											class="footer-copyright-text"
 										>
 											Copyright Elite Ride Mexico 2026 - made by o7Digital
 										</a>
@@ -792,16 +758,14 @@ export default function GearshiftHome() {
 				href={whatsappLink}
 				target="_blank"
 				rel="noreferrer"
-				className="whatsapp-footer-button"
+				class="whatsapp-footer-button"
 				aria-label="WhatsApp"
 			>
 				<img
 					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
 					loading="lazy"
 					alt="WhatsApp Icon"
-					className="whatsapp-footer-icon"
+					class="whatsapp-footer-icon"
 				/>
 			</a>
 		</div>
-	);
-}

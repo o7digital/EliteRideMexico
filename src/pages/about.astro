@@ -1,5 +1,5 @@
 ---
-import GearshiftAbout from '../components/gearshift/GearshiftAbout';
+import GearshiftAbout from '../components/gearshift/GearshiftAbout.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -7,8 +7,9 @@ import Layout from '../layouts/Layout.astro';
 	title="About Us | Elite Ride Mexico — Secure Transport for International Travelers"
 	description="Learn how Elite Ride Mexico supports international visitors with secure, premium SUV transportation across Mexico. Professional bilingual drivers, 24/7 support."
 	canonicalURL="https://eliteridemexico.com/about"
+	preloadImages={['/slider/gemini-bmw.webp']}
 	alternateHref="https://eliteridemexico.com/es/about"
 	alternateLang="es"
 >
-	<GearshiftAbout client:load />
+		<GearshiftAbout />
 </Layout>

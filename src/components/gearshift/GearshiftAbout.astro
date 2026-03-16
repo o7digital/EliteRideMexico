@@ -1,0 +1,362 @@
+---
+
+type SafetyPillar = {
+	title: string;
+	description: string;
+};
+
+type ProtectionStep = {
+	title: string;
+	description: string;
+};
+
+const whatsappLink = 'https://wa.me/525644166523';
+
+const socialLinks = [
+	{
+		label: 'X',
+		href: 'https://x.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f8_twitter.png',
+		alt: 'X Icon'
+	},
+	{
+		label: 'Instagram',
+		href: 'https://www.instagram.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f9_instagram.png',
+		alt: 'Instagram Icon'
+	},
+	{
+		label: 'Facebook',
+		href: 'https://www.facebook.com/',
+		icon:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fa_facebook-app-symbol.png',
+		alt: 'Facebook Icon'
+	},
+	{
+		label: 'WhatsApp',
+		href: whatsappLink,
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png',
+		alt: 'WhatsApp Icon'
+	}
+];
+
+const safetyPillars: SafetyPillar[] = [
+	{
+		title: 'Professional Drivers',
+		description:
+			'Our drivers are selected for professionalism, local route knowledge, and a calm approach for international travelers.'
+	},
+	{
+		title: 'Secure, Premium Vehicles',
+		description:
+			'We provide high-standard SUVs prepared for airport, hotel, and intercity transfers with comfort and security in mind.'
+	},
+	{
+		title: 'Route Planning Support',
+		description:
+			'We help you avoid uncertain transit options with pre-planned pickups, direct routes, and live coordination.'
+	},
+	{
+		title: 'Bilingual Assistance',
+		description:
+			'Our team supports visitors from all countries with responsive communication before, during, and after each trip.'
+	}
+];
+
+const protectionSteps: ProtectionStep[] = [
+	{
+		title: 'Pre-Arrival Coordination',
+		description:
+			'We confirm your itinerary, arrival details, and preferred communication channel before your flight lands.'
+	},
+	{
+		title: 'Verified Pickup Process',
+		description:
+			'You receive clear meeting instructions and driver identification to reduce confusion at airports and busy zones.'
+	},
+	{
+		title: 'Trip Monitoring',
+		description:
+			'For critical transfers, our team stays available in real time and can adapt pickup and drop-off points when needed.'
+	},
+	{
+		title: '24/7 Support Access',
+		description:
+			'You can reach our team through WhatsApp for schedule updates, route questions, and assistance during your stay.'
+	}
+];
+
+---
+
+		<div class="page-wrapper">
+			<section>
+				<div class="header-section about-header-section">
+					<div class="navbar w-nav">
+						<div class="content-wrapper">
+							<div class="navbar-wrapper">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+									<ul role="list" class="nav-menu w-list-unstyled">
+										<li class="nav-list-item">
+											<a href="/" class="nav-link">
+												Home
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/about" aria-current="page" class="nav-link w--current">
+												About
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/our-fleet" class="nav-link">
+												Our Fleet
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/contact" class="nav-link">
+												Contact Us
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<div class="cta-button-wrapper">
+												<a href="/our-fleet" class="cta-button w-button">
+													rent now
+												</a>
+											</div>
+										</li>
+										<li class="nav-list-item language-switch-item">
+											<div class="language-switch">
+												<button
+													type="button"
+													class="language-switch-button"
+													aria-expanded="false"
+													aria-label="Switch language"
+												>
+													EN
+													<span class="language-switch-chevron">v</span>
+												</button>
+												<div class="language-switch-list">
+													<a href="/about" class="language-switch-link active">
+														EN
+													</a>
+													<a href="/es/about" class="language-switch-link">
+														ES
+													</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</nav>
+								<button
+									type="button"
+									class="menu-button w-nav-button"
+									aria-label="Toggle menu"
+									aria-expanded="false"
+								>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="content-wrapper">
+						<div class="header-section-wrapper">
+							<div class="header-content-wrapper">
+								<div class="header-text-wrapper about-header-text-wrapper">
+									<h1 class="header-text">About Elite Ride Mexico</h1>
+									<div class="primary-text">
+										We are a Mexico-based company focused on safe, reliable transportation for international
+										travelers, including visitors arriving for major sporting events and tourism across the country.
+									</div>
+									<div class="header-button-wrapper">
+										<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+											Talk to Our Team
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Safety-First Mobility for Travelers in Mexico</h2>
+					</div>
+					<div class="about-intro-grid">
+						<p class="primary-text grey-color">
+							Elite Ride Mexico was created for people who value security, punctuality, and trusted local execution.
+							From airport arrivals to hotel transfers and private city-to-city rides, we reduce travel friction so you
+							can focus on your trip.
+						</p>
+						<p class="primary-text grey-color">
+							Whether you are visiting for the World Cup, business, or leisure, our mission is simple: give
+							international guests a premium and predictable transportation experience in Mexico.
+						</p>
+						<p class="primary-text grey-color">
+							Read our{' '}
+							<a href="/world-cup-2026-mexico" class="link-text">
+								FIFA World Cup 2026 Mexico transport guide, including Estadio Azteca tips
+							</a>
+							.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">What Makes Our Service Trusted</h2>
+					</div>
+					<div class="about-pillars-grid">
+						{safetyPillars.map((pillar) => (
+							<article key={pillar.title} class="about-card">
+								<h3 class="title-small">{pillar.title}</h3>
+								<p class="primary-text grey-color metric-text">{pillar.description}</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">How We Protect Each Journey</h2>
+					</div>
+					<div class="about-steps-grid">
+						{protectionSteps.map((step) => (
+							<article key={step.title} class="about-step-card">
+								<h3 class="title-small">{step.title}</h3>
+								<p class="primary-text grey-color metric-text">{step.description}</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="footer-section-wrapper">
+					<div class="content-wrapper">
+						<div class="footer-content-wrapper">
+							<div class="footer-top-content">
+								<div class="footer-logo-social">
+									<a href="/" class="brand w-nav-brand">
+										<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+									</a>
+									<div class="footer-text">
+										Mexico-based secure transportation for international visitors who want confidence, comfort, and
+										reliable local support.
+									</div>
+									<div class="social-media-links">
+										{socialLinks.map((social) => (
+											<a
+												key={social.label}
+												href={social.href}
+												target="_blank"
+												rel="noreferrer"
+												class="social-media w-inline-block"
+												aria-label={social.label}
+											>
+												<img src={social.icon} loading="lazy" alt={social.alt} class="image" />
+											</a>
+										))}
+									</div>
+								</div>
+								<div class="footer-newsletter">
+									<h3 class="small-heading">Subscribe to our newsletter</h3>
+									<div class="w-form">
+										<form class="newsletter-form">
+											<input
+												class="form-field w-input"
+												maxLength={256}
+												name="Email"
+												placeholder="example@gmail.com"
+												type="email"
+												required
+											/>
+											<input type="submit" class="cta-button w-button" value="Submit" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="footer-bottom-content">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Pages</h2>
+									<a href="/" class="footer-nav-link">
+										Home
+									</a>
+									<a href="/about" aria-current="page" class="footer-nav-link w--current">
+										About
+									</a>
+									<a href="/our-fleet" class="footer-nav-link">
+										Our Fleet
+									</a>
+									<a href="/contact" class="footer-nav-link">
+										Contact Us
+									</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Legal</h2>
+									<a href="/privacy-notice" class="footer-nav-link">
+										Privacy Notice
+									</a>
+									<a href="/cancelation" class="footer-nav-link">
+										Cancelation
+									</a>
+									<a href="/refunds" class="footer-nav-link">
+										Refunds
+									</a>
+									<a href="/taxes" class="footer-nav-link">
+										Taxes
+									</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Get In Touch</h2>
+									<a href="tel:+525644166523" class="footer-nav-link">
+										+52 5644166523
+									</a>
+									<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">
+										info@eliteridemexico.com
+									</a>
+									<a
+										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
+										target="_blank"
+										rel="noreferrer"
+										class="footer-nav-link"
+									>
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500 CDMX Mexico
+									</a>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="copyright-info-wrapper">
+								<a
+									href="https://www.o7digital.com/en/index-digital-agency"
+									target="_blank"
+									rel="noreferrer"
+									class="footer-copyright-text"
+								>
+									Copyright Elite Ride Mexico 2026 - made by o7Digital
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+				<img
+					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
+					loading="lazy"
+					alt="WhatsApp Icon"
+					class="whatsapp-footer-icon"
+				/>
+			</a>
+		</div>

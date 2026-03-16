@@ -24,7 +24,18 @@ const specIcons = {
 };
 ---
 
-<Layout title={title} description={description} canonicalURL={canonicalURL} ogImage={ogImage}>
+<Layout
+	title={title}
+	description={description}
+	canonicalURL={canonicalURL}
+	ogImage={ogImage}
+	preloadImages={[vehicle.image]}
+	breadcrumbs={[
+		{ name: 'Home', item: 'https://eliteridemexico.com/' },
+		{ name: 'Our Fleet', item: 'https://eliteridemexico.com/our-fleet' },
+		{ name: vehicle.name, item: canonicalURL }
+	]}
+>
 	<div class="page-wrapper">
 		<section>
 			<div class="header-section">
@@ -73,6 +84,7 @@ const specIcons = {
 									src={vehicle.image}
 									alt={vehicle.name}
 									loading="eager"
+									fetchpriority="high"
 									decoding="async"
 									width={900}
 									height={600}

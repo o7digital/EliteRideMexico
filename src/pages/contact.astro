@@ -1,5 +1,5 @@
 ---
-import GearshiftContact from '../components/gearshift/GearshiftContact';
+import GearshiftContact from '../components/gearshift/GearshiftContact.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -7,6 +7,9 @@ import Layout from '../layouts/Layout.astro';
 	title="Contact Elite Ride Mexico | Book Private Chauffeur & Airport Transfer"
 	description="Contact Elite Ride Mexico to book airport transfers, private chauffeur service, armored vehicles, and executive transportation across Mexico."
 	canonicalURL="https://eliteridemexico.com/contact"
+	preloadImages={['/contact/cdmx-timeout.webp']}
+	alternateHref="https://eliteridemexico.com/es/contact"
+	alternateLang="es"
 >
-	<GearshiftContact client:load />
+		<GearshiftContact />
 </Layout>

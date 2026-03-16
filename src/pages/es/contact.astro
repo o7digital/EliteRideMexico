@@ -1,5 +1,5 @@
 ---
-import GearshiftContactEs from '../../components/gearshift/GearshiftContactEs';
+import GearshiftContactEs from '../../components/gearshift/GearshiftContactEs.astro';
 import Layout from '../../layouts/Layout.astro';
 ---
 
@@ -8,8 +8,9 @@ import Layout from '../../layouts/Layout.astro';
 	description="Contáctanos para reservar traslados al aeropuerto, chofer privado, transporte ejecutivo y vehículos blindados en México."
 	canonicalURL="https://eliteridemexico.com/es/contact"
 	lang="es"
+	preloadImages={['/contact/cdmx-timeout.webp']}
 	alternateHref="https://eliteridemexico.com/contact"
 	alternateLang="en"
 >
-	<GearshiftContactEs client:load />
+		<GearshiftContactEs />
 </Layout>

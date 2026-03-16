@@ -1,4 +1,4 @@
-import { useState } from 'react';
+---
 
 type AboutCard = {
 	title: string;
@@ -81,71 +81,62 @@ const serviceStandards: AboutCard[] = [
 	}
 ];
 
-export default function GearshiftAboutEs() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+---
 
-	const closeMenus = () => {
-		setIsMenuOpen(false);
-		setIsLanguageOpen(false);
-	};
-
-	return (
-		<div className="page-wrapper">
+		<div class="page-wrapper">
 			<section>
-				<div className="header-section about-header-section">
-					<div className="navbar w-nav">
-						<div className="content-wrapper">
-							<div className="navbar-wrapper">
-								<a href="/es" className="brand w-nav-brand" onClick={closeMenus}>
-									<span className="brand-logo-text">ELITE RIDE MEXICO</span>
+				<div class="header-section about-header-section">
+					<div class="navbar w-nav">
+						<div class="content-wrapper">
+							<div class="navbar-wrapper">
+								<a href="/es" class="brand w-nav-brand">
+									<span class="brand-logo-text">ELITE RIDE MEXICO</span>
 								</a>
-								<nav role="navigation" className={`nav-menu-wrapper w-nav-menu ${isMenuOpen ? 'w--open' : ''}`}>
-									<ul role="list" className="nav-menu w-list-unstyled">
-										<li className="nav-list-item">
-											<a href="/es" className="nav-link" onClick={closeMenus}>
+								<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+									<ul role="list" class="nav-menu w-list-unstyled">
+										<li class="nav-list-item">
+											<a href="/es" class="nav-link">
 												Inicio
 											</a>
 										</li>
-										<li className="nav-list-item">
-											<a href="/es/about" aria-current="page" className="nav-link w--current" onClick={closeMenus}>
+										<li class="nav-list-item">
+											<a href="/es/about" aria-current="page" class="nav-link w--current">
 												Nosotros
 											</a>
 										</li>
-										<li className="nav-list-item">
-											<a href="/es/our-fleet" className="nav-link" onClick={closeMenus}>
+										<li class="nav-list-item">
+											<a href="/es/our-fleet" class="nav-link">
 												Nuestra Flota
 											</a>
 										</li>
-										<li className="nav-list-item">
-											<a href="/es/contact" className="nav-link" onClick={closeMenus}>
+										<li class="nav-list-item">
+											<a href="/es/contact" class="nav-link">
 												Contacto
 											</a>
 										</li>
-										<li className="nav-list-item">
-											<div className="cta-button-wrapper">
-												<a href="/es/our-fleet" className="cta-button w-button" onClick={closeMenus}>
+										<li class="nav-list-item">
+											<div class="cta-button-wrapper">
+												<a href="/es/our-fleet" class="cta-button w-button">
 													Reservar ahora
 												</a>
 											</div>
 										</li>
-										<li className="nav-list-item language-switch-item">
-											<div className="language-switch">
+										<li class="nav-list-item language-switch-item">
+											<div class="language-switch">
 												<button
 													type="button"
-													className="language-switch-button"
-													onClick={() => setIsLanguageOpen((prev) => !prev)}
-													aria-expanded={isLanguageOpen}
+													class="language-switch-button"
+													aria-expanded="false"
 													aria-label="Cambiar idioma"
 												>
 													ES
-													<span className={`language-switch-chevron ${isLanguageOpen ? 'open' : ''}`}>v</span>
+													<span class="language-switch-chevron">v</span>
 												</button>
-												<div className={`language-switch-list ${isLanguageOpen ? 'open' : ''}`}>
-													<a href="/es/about" className="language-switch-link active" onClick={closeMenus}>
+												<div class="language-switch-list">
+													<a href="/es/about" class="language-switch-link active">
 														ES
 													</a>
-													<a href="/about" className="language-switch-link" onClick={closeMenus}>
+													<a href="/about" class="language-switch-link">
 														EN
 													</a>
 												</div>
@@ -155,30 +146,29 @@ export default function GearshiftAboutEs() {
 								</nav>
 								<button
 									type="button"
-									className={`menu-button w-nav-button ${isMenuOpen ? 'w--open' : ''}`}
-									onClick={() => setIsMenuOpen((prev) => !prev)}
+									class="menu-button w-nav-button"
 									aria-label="Abrir menú"
-									aria-expanded={isMenuOpen}
+									aria-expanded="false"
 								>
-									<span className="hamburger-line" />
-									<span className="hamburger-line" />
-									<span className="hamburger-line" />
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
 								</button>
 							</div>
 						</div>
 					</div>
-					<div className="content-wrapper">
-						<div className="header-section-wrapper">
-							<div className="header-content-wrapper">
-								<div className="header-text-wrapper about-header-text-wrapper">
-									<h1 className="header-text">Sobre Elite Ride Mexico</h1>
-									<div className="primary-text">
+					<div class="content-wrapper">
+						<div class="header-section-wrapper">
+							<div class="header-content-wrapper">
+								<div class="header-text-wrapper about-header-text-wrapper">
+									<h1 class="header-text">Sobre Elite Ride Mexico</h1>
+									<div class="primary-text">
 										Con base en Ciudad de México, Elite Ride Mexico ofrece transporte privado premium para
 										viajeros internacionales, ejecutivos y familias que buscan seguridad, puntualidad y comodidad
 										en los principales destinos del país.
 									</div>
-									<div className="header-button-wrapper">
-										<a href={whatsappLink} target="_blank" rel="noreferrer" className="cta-button w-button">
+									<div class="header-button-wrapper">
+										<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
 											Hablar con un asesor
 										</a>
 									</div>
@@ -189,25 +179,25 @@ export default function GearshiftAboutEs() {
 				</div>
 			</section>
 
-			<section className="section bg-white">
-				<div className="content-wrapper">
-					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Un servicio diseñado para viajar mejor en México</h2>
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Un servicio diseñado para viajar mejor en México</h2>
 					</div>
-					<div className="about-intro-grid">
-						<p className="primary-text grey-color">
+					<div class="about-intro-grid">
+						<p class="primary-text grey-color">
 							Elite Ride Mexico nació con una idea clara: ofrecer una alternativa más confiable, elegante y bien
 							coordinada al transporte improvisado. Diseñamos experiencias puerta a puerta para clientes que valoran
 							la discreción, la comodidad y un servicio que realmente responde.
 						</p>
-						<p className="primary-text grey-color">
+						<p class="primary-text grey-color">
 							Nuestro compromiso es brindar un traslado personalizado y de alta calidad, ya sea para aeropuerto,
 							agenda corporativa, vacaciones o movilidad de alto nivel. Queremos que cada trayecto sea fluido,
 							seguro y a la altura de tu viaje.
 						</p>
-						<p className="primary-text grey-color">
+						<p class="primary-text grey-color">
 							Si visitas México por negocios, vacaciones o la Copa del Mundo 2026, consulta también nuestra{' '}
-							<a href="/es/copa-del-mundo-2026-mexico" className="link-text">
+							<a href="/es/copa-del-mundo-2026-mexico" class="link-text">
 								guía de transporte para la Copa del Mundo FIFA 2026 en México y el Estadio Azteca
 							</a>
 							.
@@ -216,32 +206,32 @@ export default function GearshiftAboutEs() {
 				</div>
 			</section>
 
-			<section className="section">
-				<div className="content-wrapper">
-					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Servicios que ofrecemos</h2>
+			<section class="section">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Servicios que ofrecemos</h2>
 					</div>
-					<div className="about-pillars-grid">
+					<div class="about-pillars-grid">
 						{serviceOfferings.map((service) => (
-							<article key={service.title} className="about-card">
-								<h3 className="title-small">{service.title}</h3>
-								<p className="primary-text grey-color metric-text">{service.description}</p>
+							<article key={service.title} class="about-card">
+								<h3 class="title-small">{service.title}</h3>
+								<p class="primary-text grey-color metric-text">{service.description}</p>
 							</article>
 						))}
 					</div>
 				</div>
 			</section>
 
-			<section className="section bg-white">
-				<div className="content-wrapper">
-					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Lo que distingue cada traslado</h2>
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Lo que distingue cada traslado</h2>
 					</div>
-					<div className="about-steps-grid">
+					<div class="about-steps-grid">
 						{serviceStandards.map((standard) => (
-							<article key={standard.title} className="about-step-card">
-								<h3 className="title-small">{standard.title}</h3>
-								<p className="primary-text grey-color metric-text">{standard.description}</p>
+							<article key={standard.title} class="about-step-card">
+								<h3 class="title-small">{standard.title}</h3>
+								<p class="primary-text grey-color metric-text">{standard.description}</p>
 							</article>
 						))}
 					</div>
@@ -249,107 +239,107 @@ export default function GearshiftAboutEs() {
 			</section>
 
 			<section>
-				<div className="footer-section-wrapper">
-					<div className="content-wrapper">
-						<div className="footer-content-wrapper">
-							<div className="footer-top-content">
-								<div className="footer-logo-social">
-									<a href="/es" className="brand w-nav-brand">
-										<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+				<div class="footer-section-wrapper">
+					<div class="content-wrapper">
+						<div class="footer-content-wrapper">
+							<div class="footer-top-content">
+								<div class="footer-logo-social">
+									<a href="/es" class="brand w-nav-brand">
+										<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
 									</a>
-									<div className="footer-text">
+									<div class="footer-text">
 										Transporte privado premium en México para viajeros internacionales, ejecutivos y familias
 										que priorizan seguridad, puntualidad y atención personalizada.
 									</div>
-									<div className="social-media-links">
+									<div class="social-media-links">
 										{socialLinks.map((social) => (
 											<a
 												key={social.label}
 												href={social.href}
 												target="_blank"
 												rel="noreferrer"
-												className="social-media w-inline-block"
+												class="social-media w-inline-block"
 												aria-label={social.label}
 											>
-												<img src={social.icon} loading="lazy" alt={social.alt} className="image" />
+												<img src={social.icon} loading="lazy" alt={social.alt} class="image" />
 											</a>
 										))}
 									</div>
 								</div>
-								<div className="footer-newsletter">
-									<h3 className="small-heading">Suscríbete al newsletter</h3>
-									<div className="w-form">
-										<form className="newsletter-form" onSubmit={(event) => event.preventDefault()}>
+								<div class="footer-newsletter">
+									<h3 class="small-heading">Suscríbete al newsletter</h3>
+									<div class="w-form">
+										<form class="newsletter-form">
 											<input
-												className="form-field w-input"
+												class="form-field w-input"
 												maxLength={256}
 												name="Email"
 												placeholder="ejemplo@gmail.com"
 												type="email"
 												required
 											/>
-											<input type="submit" className="cta-button w-button" value="Enviar" />
+											<input type="submit" class="cta-button w-button" value="Enviar" />
 										</form>
 									</div>
 								</div>
 							</div>
-							<div className="divider" />
-							<div className="footer-bottom-content">
-								<div className="footer-links-wrapper">
-									<h2 className="heading">Páginas</h2>
-									<a href="/es" className="footer-nav-link">
+							<div class="divider" />
+							<div class="footer-bottom-content">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Páginas</h2>
+									<a href="/es" class="footer-nav-link">
 										Inicio
 									</a>
-									<a href="/es/about" aria-current="page" className="footer-nav-link w--current">
+									<a href="/es/about" aria-current="page" class="footer-nav-link w--current">
 										Nosotros
 									</a>
-									<a href="/es/our-fleet" className="footer-nav-link">
+									<a href="/es/our-fleet" class="footer-nav-link">
 										Nuestra Flota
 									</a>
-									<a href="/es/contact" className="footer-nav-link">
+									<a href="/es/contact" class="footer-nav-link">
 										Contacto
 									</a>
 								</div>
-									<div className="footer-links-wrapper">
-										<h2 className="heading">Legal</h2>
-										<a href="/es/aviso-de-privacidad" className="footer-nav-link">
+									<div class="footer-links-wrapper">
+										<h2 class="heading">Legal</h2>
+										<a href="/es/aviso-de-privacidad" class="footer-nav-link">
 											Aviso de Privacidad
 										</a>
-										<a href="/es/cancelacion" className="footer-nav-link">
+										<a href="/es/cancelacion" class="footer-nav-link">
 											Cancelación
 										</a>
-										<a href="/es/reembolsos" className="footer-nav-link">
+										<a href="/es/reembolsos" class="footer-nav-link">
 											Reembolsos
 									</a>
-									<a href="/es/impuestos" className="footer-nav-link">
+									<a href="/es/impuestos" class="footer-nav-link">
 										Impuestos
 									</a>
 								</div>
-								<div className="footer-links-wrapper">
-									<h2 className="heading">Contacto</h2>
-									<a href="tel:+525644166523" className="footer-nav-link">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Contacto</h2>
+									<a href="tel:+525644166523" class="footer-nav-link">
 										+52 5644166523
 									</a>
-									<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
+									<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">
 										info@eliteridemexico.com
 									</a>
 									<a
 										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Miguel+Hidalgo,+11500,+CDMX,+Mexico"
 										target="_blank"
 										rel="noreferrer"
-										className="footer-nav-link"
+										class="footer-nav-link"
 									>
 										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, México
 									</a>
 								</div>
 							</div>
-							<div className="divider" />
-							<div className="copyright-info-wrapper">
+							<div class="divider" />
+							<div class="copyright-info-wrapper">
 								<a
 									href="https://www.o7digital.com/en/index-digital-agency"
 									target="_blank"
 									rel="noreferrer"
-									className="footer-copyright-text"
+									class="footer-copyright-text"
 								>
 									Copyright Elite Ride Mexico 2026 - made by o7Digital
 								</a>
@@ -358,14 +348,12 @@ export default function GearshiftAboutEs() {
 					</div>
 				</div>
 			</section>
-			<a href={whatsappLink} target="_blank" rel="noreferrer" className="whatsapp-footer-button" aria-label="WhatsApp">
+			<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
 				<img
 					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
 					loading="lazy"
 					alt="WhatsApp Icon"
-					className="whatsapp-footer-icon"
+					class="whatsapp-footer-icon"
 				/>
 			</a>
 		</div>
-	);
-}

@@ -2,6 +2,11 @@
 import '../styles/clone-overrides.css';
 import FooterKeywordBar from '../components/FooterKeywordBar.astro';
 
+interface BreadcrumbItem {
+	name: string;
+	item: string;
+}
+
 interface Props {
 	title?: string;
 	description?: string;
@@ -10,6 +15,9 @@ interface Props {
 	lang?: string;
 	alternateHref?: string;
 	alternateLang?: string;
+	robots?: string;
+	preloadImages?: string[];
+	breadcrumbs?: BreadcrumbItem[];
 }
 
 const {
@@ -19,54 +27,120 @@ const {
 	ogImage = 'https://eliteridemexico.com/cars/chevy-suburban-black.webp',
 	lang = 'en',
 	alternateHref,
-	alternateLang
+	alternateLang,
+	robots = 'index, follow',
+	preloadImages = [],
+	breadcrumbs
 } = Astro.props;
 
 const siteName = 'Elite Ride Mexico';
 const siteURL = 'https://eliteridemexico.com';
 const resolvedLang = lang === 'es' || Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
+const locale = resolvedLang === 'es' ? 'es_MX' : 'en_US';
+const alternateLocale = alternateLang === 'es' ? 'es_MX' : alternateLang === 'en' ? 'en_US' : undefined;
 const showFooterKeywordBar = !Astro.url.pathname.startsWith('/dashboard');
+const pageName = title.split('|')[0]?.split('—')[0]?.trim() || siteName;
+const isHomePath = Astro.url.pathname === '/' || Astro.url.pathname === '/es' || Astro.url.pathname === '/es/';
+const homeHref = resolvedLang === 'es' ? `${siteURL}/es/` : `${siteURL}/`;
+const autoBreadcrumbs =
+	!isHomePath && !Astro.url.pathname.startsWith('/dashboard')
+		? [
+				{ name: resolvedLang === 'es' ? 'Inicio' : 'Home', item: homeHref },
+				{ name: pageName, item: canonicalURL }
+			]
+		: [];
+const resolvedBreadcrumbs = breadcrumbs ?? autoBreadcrumbs;
+const breadcrumbId = `${canonicalURL}#breadcrumb`;
+const xDefaultHref = resolvedLang === 'es' && alternateHref ? alternateHref : canonicalURL;
+
+const schemaGraph = [
+	{
+		'@type': 'WebSite',
+		'@id': `${siteURL}/#website`,
+		name: siteName,
+		url: siteURL,
+		inLanguage: ['en-US', 'es-MX']
+	},
+	{
+		'@type': 'LocalBusiness',
+		'@id': `${siteURL}/#business`,
+		name: siteName,
+		url: siteURL,
+		logo: `${siteURL}/favicon.svg`,
+		image: ogImage,
+		telephone: '+525644166523',
+		email: 'info@eliteridemexico.com',
+		priceRange: '$$$$',
+		availableLanguage: ['English', 'Spanish'],
+		address: {
+			'@type': 'PostalAddress',
+			streetAddress: 'Goldsmith 250, Lomas de Chapultepec',
+			addressLocality: 'Miguel Hidalgo',
+			postalCode: '11500',
+			addressRegion: 'CDMX',
+			addressCountry: 'MX'
+		},
+		areaServed: ['Mexico City', 'Cancun', 'Guadalajara', 'Puerto Vallarta', 'Monterrey', 'León', 'Cuernavaca', 'Ixtapa Zihuatanejo'],
+		openingHours: 'Mo-Su 00:00-24:00',
+		sameAs: ['https://www.instagram.com/eliteridemexico', 'https://www.facebook.com/eliteridemexico'],
+		description
+	},
+	{
+		'@type': 'WebPage',
+		'@id': `${canonicalURL}#webpage`,
+		url: canonicalURL,
+		name: pageName,
+		description,
+		inLanguage: locale,
+		isPartOf: { '@id': `${siteURL}/#website` },
+		about: { '@id': `${siteURL}/#business` },
+		...(ogImage
+			? {
+					primaryImageOfPage: {
+						'@type': 'ImageObject',
+						url: ogImage
+					}
+				}
+			: {}),
+		...(resolvedBreadcrumbs.length > 1 ? { breadcrumb: { '@id': breadcrumbId } } : {})
+	},
+	...(resolvedBreadcrumbs.length > 1
+		? [
+				{
+					'@type': 'BreadcrumbList',
+					'@id': breadcrumbId,
+					itemListElement: resolvedBreadcrumbs.map((breadcrumb, index) => ({
+						'@type': 'ListItem',
+						position: index + 1,
+						name: breadcrumb.name,
+						item: breadcrumb.item
+					}))
+				}
+			]
+		: [])
+];
 
 const jsonLd = JSON.stringify({
 	'@context': 'https://schema.org',
-	'@type': 'CarRental',
-	name: siteName,
-	url: siteURL,
-	logo: `${siteURL}/favicon.svg`,
-	telephone: '+525644166523',
-	email: 'info@eliteridemexico.com',
-	address: {
-		'@type': 'PostalAddress',
-		streetAddress: 'Goldsmith 250, Lomas de Chapultepec',
-		addressLocality: 'Miguel Hidalgo',
-		postalCode: '11500',
-		addressRegion: 'CDMX',
-		addressCountry: 'MX'
-	},
-	areaServed: ['Mexico City', 'Cancun', 'Guadalajara', 'Puerto Vallarta', 'Monterrey', 'León', 'Cuernavaca', 'Ixtapa Zihuatanejo'],
-	openingHours: 'Mo-Su 00:00-24:00',
-	priceRange: '$$$$',
-	sameAs: [
-		'https://www.instagram.com/eliteridemexico',
-		'https://www.facebook.com/eliteridemexico'
-	],
-	description
+	'@graph': schemaGraph
 });
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={resolvedLang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="robots" content="index, follow" />
+		<meta name="robots" content={robots} />
+		<meta name="theme-color" content="#0b0b0b" />
 
 		<!-- Canonical & hreflang -->
 		<link rel="canonical" href={canonicalURL} />
 		{alternateHref && alternateLang && (
 			<link rel="alternate" hreflang={alternateLang} href={alternateHref} />
 		)}
-		<link rel="alternate" hreflang={lang} href={canonicalURL} />
+		<link rel="alternate" hreflang={resolvedLang} href={canonicalURL} />
+		<link rel="alternate" hreflang="x-default" href={xDefaultHref} />
 
 		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -75,6 +149,7 @@ const jsonLd = JSON.stringify({
 		<!-- Preconnect CDN -->
 		<link rel="preconnect" href="https://cdn.prod.website-files.com" />
 		<link rel="dns-prefetch" href="https://cdn.prod.website-files.com" />
+		{preloadImages.map((href) => <link rel="preload" as="image" href={href} />)}
 
 		<!-- CSS -->
 		<link
@@ -95,15 +170,18 @@ const jsonLd = JSON.stringify({
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:alt" content={pageName} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:locale" content={lang === 'es' ? 'es_MX' : 'en_US'} />
+		<meta property="og:locale" content={locale} />
+		{alternateLocale && <meta property="og:locale:alternate" content={alternateLocale} />}
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content={pageName} />
 
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json" set:html={jsonLd} />
@@ -111,8 +189,89 @@ const jsonLd = JSON.stringify({
 		<!-- Per-page extra head (schema, etc.) -->
 		<slot name="head" />
 	</head>
-	<body class="body">
-		<slot />
-		{showFooterKeywordBar && <FooterKeywordBar lang={resolvedLang} />}
-	</body>
-</html>
+		<body class="body">
+			<slot />
+			{showFooterKeywordBar && <FooterKeywordBar lang={resolvedLang} />}
+			<script is:inline>
+				(() => {
+					const initGearshiftUI = () => {
+						document.querySelectorAll('.navbar-wrapper').forEach((wrapper) => {
+							if (!(wrapper instanceof HTMLElement) || wrapper.dataset.uiReady === 'true') return;
+							wrapper.dataset.uiReady = 'true';
+
+							const menuButton = wrapper.querySelector('.menu-button');
+							const navMenu = wrapper.querySelector('.nav-menu-wrapper');
+							const languageSwitch = wrapper.querySelector('.language-switch');
+							const languageButton = wrapper.querySelector('.language-switch-button');
+							const languageList = wrapper.querySelector('.language-switch-list');
+							const languageChevron = wrapper.querySelector('.language-switch-chevron');
+
+							const closeMenu = () => {
+								if (menuButton instanceof HTMLElement) menuButton.classList.remove('w--open');
+								if (navMenu instanceof HTMLElement) navMenu.classList.remove('w--open');
+								if (menuButton instanceof HTMLButtonElement) menuButton.setAttribute('aria-expanded', 'false');
+							};
+
+							const closeLanguage = () => {
+								if (languageList instanceof HTMLElement) languageList.classList.remove('open');
+								if (languageChevron instanceof HTMLElement) languageChevron.classList.remove('open');
+								if (languageButton instanceof HTMLButtonElement) languageButton.setAttribute('aria-expanded', 'false');
+							};
+
+							if (menuButton instanceof HTMLButtonElement && navMenu instanceof HTMLElement) {
+								menuButton.addEventListener('click', () => {
+									const isOpen = menuButton.classList.toggle('w--open');
+									navMenu.classList.toggle('w--open', isOpen);
+									menuButton.setAttribute('aria-expanded', String(isOpen));
+									if (!isOpen) closeLanguage();
+								});
+							}
+
+							if (languageButton instanceof HTMLButtonElement && languageList instanceof HTMLElement) {
+								languageButton.addEventListener('click', (event) => {
+									event.stopPropagation();
+									const isOpen = languageList.classList.toggle('open');
+									if (languageChevron instanceof HTMLElement) languageChevron.classList.toggle('open', isOpen);
+									languageButton.setAttribute('aria-expanded', String(isOpen));
+								});
+							}
+
+							wrapper.querySelectorAll('.nav-menu-wrapper a').forEach((link) => {
+								link.addEventListener('click', () => {
+									closeMenu();
+									closeLanguage();
+								});
+							});
+
+							document.addEventListener('click', (event) => {
+								if (!(event.target instanceof Node)) return;
+								if (languageSwitch instanceof HTMLElement && !languageSwitch.contains(event.target)) closeLanguage();
+								if (!wrapper.contains(event.target)) closeMenu();
+							});
+
+							document.addEventListener('keydown', (event) => {
+								if (event.key === 'Escape') {
+									closeMenu();
+									closeLanguage();
+								}
+							});
+						});
+
+						document.querySelectorAll('.newsletter-form').forEach((form) => {
+							if (!(form instanceof HTMLFormElement) || form.dataset.uiReady === 'true') return;
+							form.dataset.uiReady = 'true';
+							form.addEventListener('submit', (event) => {
+								event.preventDefault();
+							});
+						});
+					};
+
+					if (document.readyState === 'loading') {
+						document.addEventListener('DOMContentLoaded', initGearshiftUI, { once: true });
+					} else {
+						initGearshiftUI();
+					}
+				})();
+			</script>
+		</body>
+	</html>

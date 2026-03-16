@@ -1,0 +1,330 @@
+---
+
+const whatsappLink = 'https://wa.me/525644166523';
+
+const socialLinks = [
+	{
+		label: 'X',
+		href: 'https://x.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f8_twitter.png',
+		alt: 'X Icon'
+	},
+	{
+		label: 'Instagram',
+		href: 'https://www.instagram.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f9_instagram.png',
+		alt: 'Instagram Icon'
+	},
+	{
+		label: 'Facebook',
+		href: 'https://www.facebook.com/',
+		icon:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fa_facebook-app-symbol.png',
+		alt: 'Facebook Icon'
+	},
+	{
+		label: 'WhatsApp',
+		href: whatsappLink,
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png',
+		alt: 'WhatsApp Icon'
+	}
+];
+
+---
+
+		<div class="page-wrapper">
+			<section>
+				<div class="header-section contact-header-section">
+					<div class="navbar w-nav">
+						<div class="content-wrapper">
+							<div class="navbar-wrapper">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+									<ul role="list" class="nav-menu w-list-unstyled">
+										<li class="nav-list-item">
+											<a href="/" class="nav-link">
+												Home
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/about" class="nav-link">
+												About
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/our-fleet" class="nav-link">
+												Our Fleet
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/contact" aria-current="page" class="nav-link w--current">
+												Contact Us
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<div class="cta-button-wrapper">
+												<a href="/our-fleet" class="cta-button w-button">
+													rent now
+												</a>
+											</div>
+										</li>
+									</ul>
+								</nav>
+								<button
+									type="button"
+									class="menu-button w-nav-button"
+									aria-label="Toggle menu"
+									aria-expanded="false"
+								>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="content-wrapper">
+						<div class="header-section-wrapper">
+							<div class="header-content-wrapper">
+								<div class="header-text-wrapper contact-header-text-wrapper">
+									<h1 class="header-text">Contact Elite Ride Mexico</h1>
+									<div class="primary-text">
+										Share your travel details and our team will contact you quickly with secure transport options
+										across Mexico.
+									</div>
+									<div class="header-button-wrapper">
+										<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+											Chat on WhatsApp
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="contact-layout">
+						<div class="contact-form-card">
+							<h2 class="section-heading">Send Us Your Request</h2>
+							<p class="primary-text grey-color">
+								Use this form to request airport pickup, city transfers, private driver support, or armored transport.
+							</p>
+							<div class="w-form">
+								<form
+									class="contact-form"
+									action="https://formspree.io/f/xqednlel"
+									method="POST"
+								>
+									<div class="contact-field-row">
+										<input
+											class="form-field w-input"
+											name="full_name"
+											placeholder="Full Name"
+											type="text"
+											required
+										/>
+										<input
+											class="form-field w-input"
+											name="phone"
+											placeholder="Phone / WhatsApp"
+											type="tel"
+											required
+										/>
+									</div>
+									<div class="contact-field-row">
+										<input
+											class="form-field w-input"
+											name="email"
+											placeholder="Email Address"
+											type="email"
+											required
+										/>
+										<input
+											class="form-field w-input"
+											name="country"
+											placeholder="Country"
+											type="text"
+											required
+										/>
+									</div>
+									<div class="contact-field-row">
+										<input
+											class="form-field w-input"
+											name="travel_dates"
+											placeholder="Travel Date(s)"
+											type="text"
+										/>
+										<select class="form-field w-input contact-select" name="service_type" required>
+											<option value="" disabled>
+												Select Service
+											</option>
+											<option value="airport-transfer">Airport Transfer</option>
+											<option value="private-driver">Private Driver</option>
+											<option value="armored-vehicle">Armored Vehicle</option>
+											<option value="intercity-trip">Intercity Trip</option>
+										</select>
+									</div>
+									<textarea
+										class="form-field w-input contact-textarea"
+										name="message"
+										placeholder="Tell us your itinerary, city, pickup point, and number of passengers."
+										required
+									></textarea>
+									<input type="hidden" name="_subject" value="New Contact Request - Elite Ride Mexico" />
+									<input type="submit" class="cta-button w-button contact-submit" value="Send Request" />
+								</form>
+							</div>
+						</div>
+						<div class="contact-info-stack">
+							<div class="contact-info-card">
+								<h3 class="title-small">WhatsApp</h3>
+								<a href={whatsappLink} target="_blank" rel="noreferrer" class="footer-nav-link">
+									+52 5644166523
+								</a>
+							</div>
+							<div class="contact-info-card">
+								<h3 class="title-small">Email</h3>
+								<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">
+									info@eliteridemexico.com
+								</a>
+							</div>
+							<div class="contact-info-card">
+								<h3 class="title-small">Office</h3>
+								<p class="primary-text grey-color metric-text">
+									Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, Mexico.
+								</p>
+							</div>
+							<div class="contact-info-card">
+								<h3 class="title-small">Response Time</h3>
+								<p class="primary-text grey-color metric-text">
+									We usually reply within 15-30 minutes during operating hours.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="footer-section-wrapper">
+					<div class="content-wrapper">
+						<div class="footer-content-wrapper">
+							<div class="footer-top-content">
+								<div class="footer-logo-social">
+									<a href="/" class="brand w-nav-brand">
+										<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+									</a>
+									<div class="footer-text">
+										Premium transportation for travelers who prioritize safety, punctuality, and trusted local support.
+									</div>
+									<div class="social-media-links">
+										{socialLinks.map((social) => (
+											<a
+												key={social.label}
+												href={social.href}
+												target="_blank"
+												rel="noreferrer"
+												class="social-media w-inline-block"
+												aria-label={social.label}
+											>
+												<img src={social.icon} loading="lazy" alt={social.alt} class="image" />
+											</a>
+										))}
+									</div>
+								</div>
+								<div class="footer-newsletter">
+									<h3 class="small-heading">Subscribe to our newsletter</h3>
+									<div class="w-form">
+										<form class="newsletter-form">
+											<input
+												class="form-field w-input"
+												maxLength={256}
+												name="Email"
+												placeholder="example@gmail.com"
+												type="email"
+												required
+											/>
+											<input type="submit" class="cta-button w-button" value="Submit" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="footer-bottom-content">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Pages</h2>
+									<a href="/" class="footer-nav-link">
+										Home
+									</a>
+									<a href="/about" class="footer-nav-link">
+										About
+									</a>
+									<a href="/our-fleet" class="footer-nav-link">
+										Our Fleet
+									</a>
+									<a href="/contact" aria-current="page" class="footer-nav-link w--current">
+										Contact Us
+									</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Legal</h2>
+									<a href="/privacy-notice" class="footer-nav-link">
+										Privacy Notice
+									</a>
+									<a href="/cancelation" class="footer-nav-link">
+										Cancellation
+									</a>
+									<a href="/refunds" class="footer-nav-link">
+										Refunds
+									</a>
+									<a href="/taxes" class="footer-nav-link">
+										Taxes
+									</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Get In Touch</h2>
+									<a href="tel:+525644166523" class="footer-nav-link">
+										+52 5644166523
+									</a>
+									<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">
+										info@eliteridemexico.com
+									</a>
+									<a
+										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
+										target="_blank"
+										rel="noreferrer"
+										class="footer-nav-link"
+									>
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, CDMX, Mexico
+									</a>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="copyright-info-wrapper">
+								<a
+									href="https://www.o7digital.com/en/index-digital-agency"
+									target="_blank"
+									rel="noreferrer"
+									class="footer-copyright-text"
+								>
+									Copyright Elite Ride Mexico 2026 - made by o7Digital
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+				<img
+					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
+					loading="lazy"
+					alt="WhatsApp Icon"
+					class="whatsapp-footer-icon"
+				/>
+			</a>
+		</div>

@@ -1,0 +1,412 @@
+---
+import { vehicles } from '../../data/vehicles';
+
+type FleetCategory = {
+	title: string;
+	description: string;
+};
+
+type FleetVehicle = {
+	name: string;
+	image: string;
+	description: string;
+};
+
+const whatsappLink = 'https://wa.me/525644166523';
+
+const socialLinks = [
+	{
+		label: 'X',
+		href: 'https://x.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f8_twitter.png',
+		alt: 'X Icon'
+	},
+	{
+		label: 'Instagram',
+		href: 'https://www.instagram.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f9_instagram.png',
+		alt: 'Instagram Icon'
+	},
+	{
+		label: 'Facebook',
+		href: 'https://www.facebook.com/',
+		icon:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fa_facebook-app-symbol.png',
+		alt: 'Facebook Icon'
+	},
+	{
+		label: 'WhatsApp',
+		href: whatsappLink,
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png',
+		alt: 'WhatsApp Icon'
+	}
+];
+
+const fleetMetrics = [
+	{ value: '300', label: 'Vehicles Available' },
+	{ value: '24/7', label: 'Chauffeur Operations' },
+	{ value: '10', label: 'Major Mexican Cities' },
+	{ value: '100%', label: 'Private Transfers' }
+];
+
+const fleetCategories: FleetCategory[] = [
+	{
+		title: 'Premium SUVs',
+		description:
+			'Chevrolet Suburban, GMC Yukon Denali, and Toyota Land Cruiser units for executive airport transfers and long-distance travel.'
+	},
+	{
+		title: 'Executive Vans',
+		description:
+			'Comfort-focused vans for families, groups, and delegations that need more space without compromising service quality.'
+	},
+	{
+		title: 'Armored Vehicles',
+		description:
+			'Armored options are available for clients with elevated security requirements, operated with strict route discipline.'
+	},
+	{
+		title: 'Chauffeur-Driven Service',
+		description:
+			'Every trip can be handled by professional drivers trained for punctual pickup, discreet assistance, and safe execution.'
+	}
+];
+
+const featuredFleet: FleetVehicle[] = [
+	{
+		name: 'Chevrolet Suburban',
+		image: '/cars/chevy-suburban-black.webp',
+		description: 'A top choice for airport transfers, business visits, and high-comfort city mobility.'
+	},
+	{
+		name: 'GMC Yukon Denali',
+		image: '/cars/gmc-yukon-beige.webp',
+		description: 'Premium full-size SUV with space, stability, and executive-grade comfort.'
+	},
+	{
+		name: 'Toyota Land Cruiser',
+		image: '/cars/toyota-landcruiser-black.webp',
+		description: 'Reliable, high-performance SUV built for intercity routes and demanding itineraries.'
+	}
+];
+
+---
+
+		<div class="page-wrapper">
+			<section>
+				<div class="header-section fleet-header-section">
+					<div class="navbar w-nav">
+						<div class="content-wrapper">
+							<div class="navbar-wrapper">
+								<a href="/" class="brand w-nav-brand">
+									<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+									<ul role="list" class="nav-menu w-list-unstyled">
+										<li class="nav-list-item">
+											<a href="/" class="nav-link">
+												Home
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/about" class="nav-link">
+												About
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/our-fleet" aria-current="page" class="nav-link w--current">
+												Our Fleet
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/contact" class="nav-link">
+												Contact Us
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<div class="cta-button-wrapper">
+												<a href={whatsappLink} class="cta-button w-button">
+													Book with Chauffeur
+												</a>
+											</div>
+										</li>
+										<li class="nav-list-item language-switch-item">
+											<div class="language-switch">
+												<button
+													type="button"
+													class="language-switch-button"
+													aria-expanded="false"
+													aria-label="Switch language"
+												>
+													EN
+													<span class="language-switch-chevron">v</span>
+												</button>
+												<div class="language-switch-list">
+													<a href="/our-fleet" class="language-switch-link active">
+														EN
+													</a>
+													<a href="/es/our-fleet" class="language-switch-link">
+														ES
+													</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</nav>
+								<button
+									type="button"
+									class="menu-button w-nav-button"
+									aria-label="Toggle menu"
+									aria-expanded="false"
+								>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="content-wrapper">
+						<div class="header-section-wrapper">
+							<div class="header-content-wrapper">
+								<div class="header-text-wrapper fleet-header-text-wrapper">
+									<h1 class="header-text">Our Fleet</h1>
+									<div class="primary-text">
+										Elite Ride Mexico operates around 300 vehicles, including premium cars, full-size SUVs, executive
+										vans, and armored units with professional chauffeurs available on request.
+									</div>
+									<div class="header-button-wrapper">
+										<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+											Request Fleet Availability
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="grid-wrapper">
+						{fleetMetrics.map((metric) => (
+							<div key={metric.label} class="grid-item-wrapper">
+								<div class="metric-number-wrapper">
+									<h2 class="metric-number">{metric.value}</h2>
+									{metric.value === '300' && <h2 class="metric-plus-sign">+</h2>}
+								</div>
+								<div class="title-small">{metric.label}</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Fleet Capabilities for International Travelers</h2>
+					</div>
+					<div class="fleet-categories-grid">
+						{fleetCategories.map((category) => (
+							<article key={category.title} class="fleet-category-card">
+								<h3 class="title-small">{category.title}</h3>
+								<p class="primary-text grey-color metric-text">{category.description}</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Featured Models</h2>
+					</div>
+					<div class="fleet-models-grid">
+						{featuredFleet.map((vehicle) => (
+							<article key={vehicle.name} class="fleet-model-card">
+								<div class="fleet-model-image-wrapper">
+									<img src={vehicle.image} loading="lazy" alt={vehicle.name} width={600} height={400} class="fleet-model-image" />
+								</div>
+								<div class="fleet-model-body">
+									<h3 class="car-listing-name">{vehicle.name}</h3>
+									<p class="primary-text grey-color metric-text">{vehicle.description}</p>
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">All Vehicles</h2>
+					</div>
+					<div class="fleet-vehicles-grid">
+						{vehicles.map((vehicle) => (
+							<div key={vehicle.slug} class="car-collection-item">
+								<article class="car-card">
+									<a href={`/cars/${vehicle.slug}`} class="car-image-wrapper w-inline-block">
+										<img
+											src={vehicle.image}
+											loading="lazy"
+											alt={vehicle.name}
+											width={600}
+											height={400}
+											class="listing-car-image"
+										/>
+										<div class="car-listing-year">{vehicle.year}</div>
+									</a>
+									<div class="car-details-wrapper">
+										<h3 class="car-listing-name">{vehicle.name}</h3>
+										<div class="car-listing-details-wrapper">
+											<div class="car-listing-detail">
+												<img src="/icons/mileage.svg" alt="Mileage Icon" class="listing-icon" loading="lazy" />
+												<div class="listing-detail">{vehicle.specs.mileage}</div>
+											</div>
+											<div class="car-listing-detail">
+												<img src="/icons/transmission.svg" alt="Transmission Icon" class="listing-icon" loading="lazy" />
+												<div class="listing-detail">{vehicle.specs.transmission}</div>
+											</div>
+											<div class="car-listing-detail">
+												<img src="/icons/seats.svg" alt="Seats Icon" class="listing-icon" loading="lazy" />
+												<div class="listing-detail">{vehicle.specs.seats}</div>
+											</div>
+											<div class="car-listing-detail">
+												<img src="/icons/baggage.svg" alt="Baggage Icon" class="listing-icon" loading="lazy" />
+												<div class="listing-detail">{vehicle.specs.baggage}</div>
+											</div>
+										</div>
+										<a href={`/cars/${vehicle.slug}`} class="details-btn w-button">
+											See Full Details
+										</a>
+									</div>
+								</article>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="footer-section-wrapper">
+					<div class="content-wrapper">
+						<div class="footer-content-wrapper">
+							<div class="footer-top-content">
+								<div class="footer-logo-social">
+									<a href="/" class="brand w-nav-brand">
+										<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+									</a>
+									<div class="footer-text">
+										From VIP airport pickups to armored chauffeur transport, our fleet is built for travelers who
+										prioritize safety and reliability in Mexico.
+									</div>
+									<div class="social-media-links">
+										{socialLinks.map((social) => (
+											<a
+												key={social.label}
+												href={social.href}
+												target="_blank"
+												rel="noreferrer"
+												class="social-media w-inline-block"
+												aria-label={social.label}
+											>
+												<img src={social.icon} loading="lazy" alt={social.alt} class="image" />
+											</a>
+										))}
+									</div>
+								</div>
+								<div class="footer-newsletter">
+									<h3 class="small-heading">Subscribe to our newsletter</h3>
+									<div class="w-form">
+										<form class="newsletter-form">
+											<input
+												class="form-field w-input"
+												maxLength={256}
+												name="Email"
+												placeholder="example@gmail.com"
+												type="email"
+												required
+											/>
+											<input type="submit" class="cta-button w-button" value="Submit" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="footer-bottom-content">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Pages</h2>
+									<a href="/" class="footer-nav-link">
+										Home
+									</a>
+									<a href="/about" class="footer-nav-link">
+										About
+									</a>
+									<a href="/our-fleet" aria-current="page" class="footer-nav-link w--current">
+										Our Fleet
+									</a>
+									<a href="/contact" class="footer-nav-link">
+										Contact Us
+									</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Legal</h2>
+									<a href="/privacy-notice" class="footer-nav-link">
+										Privacy Notice
+									</a>
+									<a href="/cancelation" class="footer-nav-link">
+										Cancelation
+									</a>
+									<a href="/refunds" class="footer-nav-link">
+										Refunds
+									</a>
+									<a href="/taxes" class="footer-nav-link">
+										Taxes
+									</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Get In Touch</h2>
+									<a href="tel:+525644166523" class="footer-nav-link">
+										+52 5644166523
+									</a>
+									<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">
+										info@eliteridemexico.com
+									</a>
+									<a
+										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
+										target="_blank"
+										rel="noreferrer"
+										class="footer-nav-link"
+									>
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500 CDMX Mexico
+									</a>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="copyright-info-wrapper">
+								<a
+									href="https://www.o7digital.com/en/index-digital-agency"
+									target="_blank"
+									rel="noreferrer"
+									class="footer-copyright-text"
+								>
+									Copyright Elite Ride Mexico 2026 - made by o7Digital
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+				<img
+					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
+					loading="lazy"
+					alt="WhatsApp Icon"
+					class="whatsapp-footer-icon"
+				/>
+			</a>
+		</div>

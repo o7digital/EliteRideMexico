@@ -21,7 +21,7 @@ export const vehicles: Vehicle[] = [
 		name: 'Chevrolet Tahoe',
 		year: '2024',
 		price: '0',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.webp',
 		description: 'Full-size SUV for premium airport transfers, private driver service, and family travel across Mexico.',
 		highlights: ['Spacious interior with premium comfort.', 'Smooth highway handling for long routes.', 'Professional chauffeur available on request.'],
 		idealFor: ['Airport transfers', 'Family trips', 'Executive travel', 'Private tours'],
@@ -121,7 +121,7 @@ export const vehicles: Vehicle[] = [
 		name: 'Cadillac Escalade',
 		year: '2024',
 		price: '0',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.webp',
 		description: 'Signature luxury SUV for VIP arrivals, executive transfers, and premium city mobility.',
 		highlights: [
 			'Executive-grade comfort and presence.',
@@ -141,7 +141,7 @@ export const vehicles: Vehicle[] = [
 		name: 'Nissan Urvan',
 		year: '2024',
 		price: '0',
-		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).jpeg',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).webp',
 		description: 'Passenger van for group transfers and private tours with flexible seating and luggage space.',
 		highlights: [
 			'Great for groups and delegations.',

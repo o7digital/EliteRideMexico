@@ -1,5 +1,5 @@
 ---
-import GearshiftHome from '../components/gearshift/GearshiftHome';
+import GearshiftHome from '../components/gearshift/GearshiftHome.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -8,8 +8,9 @@ import Layout from '../layouts/Layout.astro';
 	description="Book premium SUV rental, private chauffeur service, airport transfers, and secure rides for FIFA World Cup 2026 in Mexico. Estadio Azteca transfers in Mexico City, plus Cancun, Guadalajara, and more."
 	canonicalURL="https://eliteridemexico.com/"
 	ogImage="https://eliteridemexico.com/cars/chevy-suburban-black.webp"
+	preloadImages={['/slider/gemini-bmw.webp']}
 	alternateHref="https://eliteridemexico.com/es/"
 	alternateLang="es"
 >
-	<GearshiftHome client:load />
+		<GearshiftHome />
 </Layout>

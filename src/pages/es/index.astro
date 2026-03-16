@@ -1,5 +1,5 @@
 ---
-import GearshiftHomeEs from '../../components/gearshift/GearshiftHomeEs';
+import GearshiftHomeEs from '../../components/gearshift/GearshiftHomeEs.astro';
 import Layout from '../../layouts/Layout.astro';
 ---
 
@@ -9,8 +9,9 @@ import Layout from '../../layouts/Layout.astro';
 	canonicalURL="https://eliteridemexico.com/es/"
 	ogImage="https://eliteridemexico.com/cars/chevy-suburban-black.webp"
 	lang="es"
+	preloadImages={['/slider/gemini-bmw.webp']}
 	alternateHref="https://eliteridemexico.com/"
 	alternateLang="en"
 >
-	<GearshiftHomeEs client:load />
+		<GearshiftHomeEs />
 </Layout>

@@ -202,7 +202,7 @@ html[lang='es'] .body {
 }
 
 .header-section {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5) 100%, #fff), url('/slider/gemini-bmw.png') !important;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5) 100%, #fff), url('/slider/gemini-bmw.webp') !important;
 	background-position: 0 0, 56% 52% !important;
 	background-size: auto, 92% !important;
 	background-repeat: repeat, no-repeat !important;
@@ -453,7 +453,7 @@ html[lang='es'] .body {
 }
 
 .about-header-section {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.62) 100%, #fff), url('/slider/gemini-bmw.png') !important;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.62) 100%, #fff), url('/slider/gemini-bmw.webp') !important;
 	background-position: 0 0, 58% 50% !important;
 	background-size: auto, cover !important;
 }
@@ -498,7 +498,7 @@ html[lang='es'] .body {
 }
 
 .fleet-header-section {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.58) 100%, #fff), url('/slider/gemini-bmw.png') !important;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.58) 100%, #fff), url('/slider/gemini-bmw.webp') !important;
 	background-position: 0 0, 58% 50% !important;
 	background-size: auto, cover !important;
 }
@@ -648,16 +648,25 @@ html[lang='es'] .body {
 .seo-footer-keywords__inner {
 	max-width: 1280px;
 	margin: 0 auto;
-	display: grid;
-	gap: 8px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.seo-footer-keywords__inner::-webkit-scrollbar {
+	display: none;
 }
 
 .seo-footer-keywords__line {
 	margin: 0;
 	color: rgba(255, 255, 255, 0.68);
 	font-size: 0.83rem;
-	line-height: 1.85;
+	line-height: 1.65;
 	text-align: center;
+	white-space: nowrap;
+	display: inline-block;
+	min-width: 100%;
 }
 
 .location-listing-image-wrapper--static {

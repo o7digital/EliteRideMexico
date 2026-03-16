@@ -1,5 +1,5 @@
 ---
-import GearshiftAboutEs from '../../components/gearshift/GearshiftAboutEs';
+import GearshiftAboutEs from '../../components/gearshift/GearshiftAboutEs.astro';
 import Layout from '../../layouts/Layout.astro';
 ---
 
@@ -8,8 +8,9 @@ import Layout from '../../layouts/Layout.astro';
 	description="Conoce Elite Ride Mexico: chofer privado, traslados al aeropuerto, transporte ejecutivo y SUVs premium con soporte bilingüe y atención 24/7 en México."
 	canonicalURL="https://eliteridemexico.com/es/about"
 	lang="es"
+	preloadImages={['/slider/gemini-bmw.webp']}
 	alternateHref="https://eliteridemexico.com/about"
 	alternateLang="en"
 >
-	<GearshiftAboutEs client:load />
+		<GearshiftAboutEs />
 </Layout>

@@ -1,5 +1,5 @@
 ---
-import GearshiftFleet from '../components/gearshift/GearshiftFleet';
+import GearshiftFleet from '../components/gearshift/GearshiftFleet.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -7,8 +7,9 @@ import Layout from '../layouts/Layout.astro';
 	title="Our Fleet | Chevrolet Suburban, GMC Yukon, Land Cruiser — Elite Ride Mexico"
 	description="Discover Elite Ride Mexico's fleet of 300+ vehicles: Chevrolet Suburban, GMC Yukon Denali, Toyota Land Cruiser, executive vans and armored SUVs with professional chauffeurs."
 	canonicalURL="https://eliteridemexico.com/our-fleet"
+	preloadImages={['/slider/gemini-bmw.webp']}
 	alternateHref="https://eliteridemexico.com/es/our-fleet"
 	alternateLang="es"
 >
-	<GearshiftFleet client:load />
+		<GearshiftFleet />
 </Layout>
