@@ -1,11 +1,6 @@
 import { useState } from 'react';
 
-type SafetyPillar = {
-	title: string;
-	description: string;
-};
-
-type ProtectionStep = {
+type AboutCard = {
 	title: string;
 	description: string;
 };
@@ -40,49 +35,49 @@ const socialLinks = [
 	}
 ];
 
-const safetyPillars: SafetyPillar[] = [
+const serviceOfferings: AboutCard[] = [
 	{
-		title: 'Conductores Profesionales',
+		title: 'Traslados privados al aeropuerto y hotel',
 		description:
-			'Seleccionamos conductores por su profesionalismo, conocimiento de rutas y manejo discreto para viajeros internacionales.'
+			'Coordinamos servicio puerta a puerta con seguimiento de vuelo, comunicación clara y recepción puntual desde tu llegada.'
 	},
 	{
-		title: 'Vehiculos Premium y Seguros',
+		title: 'Chofer privado por horas o por día',
 		description:
-			'Operamos SUVs de alto estandar para traslados de aeropuerto, hotel y viajes interurbanos con enfoque en seguridad.'
+			'Reserva movilidad flexible para agendas ejecutivas, reuniones, turismo o recorridos personalizados en la ciudad.'
 	},
 	{
-		title: 'Planeacion de Rutas',
+		title: 'Movilidad para negocios y eventos',
 		description:
-			'Te ayudamos a evitar traslados inciertos con rutas planificadas, pickups definidos y coordinacion en tiempo real.'
+			'Atendemos reuniones corporativas, roadshows, cenas, bodas y eventos especiales con logística discreta y bien ejecutada.'
 	},
 	{
-		title: 'Atencion Bilingue',
+		title: 'Viajes interurbanos y rutas especiales',
 		description:
-			'Nuestro equipo apoya a visitantes de cualquier pais con comunicacion clara antes, durante y despues del servicio.'
+			'Operamos trayectos cortos y largos dentro y fuera de la ciudad con SUVs premium, vans ejecutivas y opciones blindadas.'
 	}
 ];
 
-const protectionSteps: ProtectionStep[] = [
+const serviceStandards: AboutCard[] = [
 	{
-		title: 'Coordinacion Previa',
+		title: 'Seguridad y discreción',
 		description:
-			'Confirmamos itinerario, llegada y canal de contacto antes de tu aterrizaje para que todo quede preparado.'
+			'Trabajamos con choferes profesionales, rutas definidas y procesos claros para que cada traslado se sienta confiable de principio a fin.'
 	},
 	{
-		title: 'Pickup Verificado',
+		title: 'Puntualidad y eficiencia',
 		description:
-			'Recibes instrucciones claras y datos del conductor para reducir confusion en aeropuertos y zonas concurridas.'
+			'Confirmamos horarios, monitoreamos llegadas y ajustamos la operación en tiempo real para proteger tu agenda.'
 	},
 	{
-		title: 'Monitoreo del Trayecto',
+		title: 'Atención personalizada',
 		description:
-			'Para traslados sensibles, nuestro equipo acompana la operacion en tiempo real y ajusta puntos si se necesita.'
+			'Cada reserva se adapta a pasajeros, equipaje, idioma, tipo de viaje y nivel de servicio requerido.'
 	},
 	{
-		title: 'Soporte 24/7',
+		title: 'Flota premium y soporte 24/7',
 		description:
-			'Estamos disponibles por WhatsApp para cambios de horario, dudas de ruta y asistencia durante tu estancia.'
+			'Ponemos a tu disposición SUVs ejecutivas, vans y vehículos blindados con asistencia continua antes, durante y después del servicio.'
 	}
 ];
 
@@ -162,7 +157,7 @@ export default function GearshiftAboutEs() {
 									type="button"
 									className={`menu-button w-nav-button ${isMenuOpen ? 'w--open' : ''}`}
 									onClick={() => setIsMenuOpen((prev) => !prev)}
-									aria-label="Abrir menu"
+									aria-label="Abrir menú"
 									aria-expanded={isMenuOpen}
 								>
 									<span className="hamburger-line" />
@@ -176,14 +171,15 @@ export default function GearshiftAboutEs() {
 						<div className="header-section-wrapper">
 							<div className="header-content-wrapper">
 								<div className="header-text-wrapper about-header-text-wrapper">
-									<h1 className="header-text">Nosotros</h1>
+									<h1 className="header-text">Sobre Elite Ride Mexico</h1>
 									<div className="primary-text">
-										Somos una empresa mexicana enfocada en transporte seguro y confiable para viajeros
-										internacionales, incluidos visitantes que llegan por eventos deportivos y turismo en todo Mexico.
+										Con base en Ciudad de México, Elite Ride Mexico ofrece transporte privado premium para
+										viajeros internacionales, ejecutivos y familias que buscan seguridad, puntualidad y comodidad
+										en los principales destinos del país.
 									</div>
 									<div className="header-button-wrapper">
 										<a href={whatsappLink} target="_blank" rel="noreferrer" className="cta-button w-button">
-											Hablar con el equipo
+											Hablar con un asesor
 										</a>
 									</div>
 								</div>
@@ -196,21 +192,23 @@ export default function GearshiftAboutEs() {
 			<section className="section bg-white">
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Movilidad segura para viajeros en Mexico</h2>
+						<h2 className="section-heading">Un servicio diseñado para viajar mejor en México</h2>
 					</div>
 					<div className="about-intro-grid">
 						<p className="primary-text grey-color">
-							Elite Ride Mexico nace para quienes priorizan seguridad, puntualidad y ejecucion local confiable. Desde
-							llegadas al aeropuerto hasta traslados privados entre ciudades, reducimos riesgos y friccion operativa.
+							Elite Ride Mexico nació con una idea clara: ofrecer una alternativa más confiable, elegante y bien
+							coordinada al transporte improvisado. Diseñamos experiencias puerta a puerta para clientes que valoran
+							la discreción, la comodidad y un servicio que realmente responde.
 						</p>
 						<p className="primary-text grey-color">
-							Si vienes por el Mundial, negocios o vacaciones, nuestra mision es ofrecer un transporte premium,
-							predecible y adaptado a visitantes internacionales.
+							Nuestro compromiso es brindar un traslado personalizado y de alta calidad, ya sea para aeropuerto,
+							agenda corporativa, vacaciones o movilidad de alto nivel. Queremos que cada trayecto sea fluido,
+							seguro y a la altura de tu viaje.
 						</p>
 						<p className="primary-text grey-color">
-							Consulta nuestra{' '}
+							Si visitas México por negocios, vacaciones o la Copa del Mundo 2026, consulta también nuestra{' '}
 							<a href="/es/copa-del-mundo-2026-mexico" className="link-text">
-								guía de transporte para la Copa del Mundo FIFA 2026 en México y Estadio Azteca
+								guía de transporte para la Copa del Mundo FIFA 2026 en México y el Estadio Azteca
 							</a>
 							.
 						</p>
@@ -221,13 +219,13 @@ export default function GearshiftAboutEs() {
 			<section className="section">
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Por que confian en nuestro servicio</h2>
+						<h2 className="section-heading">Servicios que ofrecemos</h2>
 					</div>
 					<div className="about-pillars-grid">
-						{safetyPillars.map((pillar) => (
-							<article key={pillar.title} className="about-card">
-								<h3 className="title-small">{pillar.title}</h3>
-								<p className="primary-text grey-color metric-text">{pillar.description}</p>
+						{serviceOfferings.map((service) => (
+							<article key={service.title} className="about-card">
+								<h3 className="title-small">{service.title}</h3>
+								<p className="primary-text grey-color metric-text">{service.description}</p>
 							</article>
 						))}
 					</div>
@@ -237,13 +235,13 @@ export default function GearshiftAboutEs() {
 			<section className="section bg-white">
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
-						<h2 className="section-heading">Como protegemos cada traslado</h2>
+						<h2 className="section-heading">Lo que distingue cada traslado</h2>
 					</div>
 					<div className="about-steps-grid">
-						{protectionSteps.map((step) => (
-							<article key={step.title} className="about-step-card">
-								<h3 className="title-small">{step.title}</h3>
-								<p className="primary-text grey-color metric-text">{step.description}</p>
+						{serviceStandards.map((standard) => (
+							<article key={standard.title} className="about-step-card">
+								<h3 className="title-small">{standard.title}</h3>
+								<p className="primary-text grey-color metric-text">{standard.description}</p>
 							</article>
 						))}
 					</div>
@@ -260,8 +258,8 @@ export default function GearshiftAboutEs() {
 										<span className="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
 									</a>
 									<div className="footer-text">
-										Transporte seguro en Mexico para visitantes internacionales que buscan confianza, comodidad y
-										soporte local.
+										Transporte privado premium en México para viajeros internacionales, ejecutivos y familias
+										que priorizan seguridad, puntualidad y atención personalizada.
 									</div>
 									<div className="social-media-links">
 										{socialLinks.map((social) => (
@@ -279,7 +277,7 @@ export default function GearshiftAboutEs() {
 									</div>
 								</div>
 								<div className="footer-newsletter">
-									<h3 className="small-heading">Suscribete al newsletter</h3>
+									<h3 className="small-heading">Suscríbete al newsletter</h3>
 									<div className="w-form">
 										<form className="newsletter-form" onSubmit={(event) => event.preventDefault()}>
 											<input
@@ -298,7 +296,7 @@ export default function GearshiftAboutEs() {
 							<div className="divider" />
 							<div className="footer-bottom-content">
 								<div className="footer-links-wrapper">
-									<h2 className="heading">Paginas</h2>
+									<h2 className="heading">Páginas</h2>
 									<a href="/es" className="footer-nav-link">
 										Inicio
 									</a>
@@ -308,40 +306,40 @@ export default function GearshiftAboutEs() {
 									<a href="/es/our-fleet" className="footer-nav-link">
 										Nuestra Flota
 									</a>
-										<a href="/es/contact" className="footer-nav-link">
-											Contacto
-										</a>
+									<a href="/es/contact" className="footer-nav-link">
+										Contacto
+									</a>
 								</div>
 								<div className="footer-links-wrapper">
 									<h2 className="heading">Legal</h2>
-										<a href="/es/aviso-de-privacidad" className="footer-nav-link">
-											Aviso de Privacidad
-										</a>
-										<a href="/es/cancelacion" className="footer-nav-link">
-											Cancelacion
-										</a>
-										<a href="/es/reembolsos" className="footer-nav-link">
-											Reembolsos
-										</a>
-										<a href="/es/impuestos" className="footer-nav-link">
-											Impuestos
-										</a>
+									<a href="/es/aviso-de-privacidad" className="footer-nav-link">
+										Aviso de Privacidad
+									</a>
+									<a href="/es/cancelacion" className="footer-nav-link">
+										Cancelación
+									</a>
+									<a href="/es/reembolsos" className="footer-nav-link">
+										Reembolsos
+									</a>
+									<a href="/es/impuestos" className="footer-nav-link">
+										Impuestos
+									</a>
 								</div>
-									<div className="footer-links-wrapper">
-										<h2 className="heading">Contacto</h2>
-										<a href="tel:+525644166523" className="footer-nav-link">
-											+52 5644166523
-										</a>
+								<div className="footer-links-wrapper">
+									<h2 className="heading">Contacto</h2>
+									<a href="tel:+525644166523" className="footer-nav-link">
+										+52 5644166523
+									</a>
 									<a href="mailto:info@eliteridemexico.com" className="footer-nav-link">
 										info@eliteridemexico.com
 									</a>
 									<a
-										href="https://www.google.com/maps/search/+123+Innovation+Street,+Downtown+Dubai,+Dubai,+UAE/@25.1559625,55.2253142,11.35z?entry=ttu"
+										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Miguel+Hidalgo,+11500,+CDMX,+Mexico"
 										target="_blank"
 										rel="noreferrer"
 										className="footer-nav-link"
 									>
-										Goldsmith 250, Lomas de Chapultepec Colonia Miguel Hidaglo 11500 CDMX Mexico
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, México
 									</a>
 								</div>
 							</div>
@@ -353,7 +351,7 @@ export default function GearshiftAboutEs() {
 									rel="noreferrer"
 									className="footer-copyright-text"
 								>
-									Copyright Eite Ride Mexico 2026 - made by o7Digital
+									Copyright Elite Ride Mexico 2026 - made by o7Digital
 								</a>
 							</div>
 						</div>
