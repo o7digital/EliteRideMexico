@@ -17,6 +17,22 @@ export type Vehicle = {
 
 export const vehicles: Vehicle[] = [
 	{
+		slug: 'chevrolet-tahoe',
+		name: 'Chevrolet Tahoe',
+		year: '2024',
+		price: '0',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.jpeg',
+		description: 'Full-size SUV for premium airport transfers, private driver service, and family travel across Mexico.',
+		highlights: ['Spacious interior with premium comfort.', 'Smooth highway handling for long routes.', 'Professional chauffeur available on request.'],
+		idealFor: ['Airport transfers', 'Family trips', 'Executive travel', 'Private tours'],
+		specs: {
+			mileage: '—',
+			transmission: 'Automatic',
+			seats: '7',
+			baggage: '8'
+		}
+	},
+	{
 		slug: 'chevrolet-suburban-black',
 		name: 'Chevrolet Suburban',
 		year: '2024',
@@ -98,6 +114,46 @@ export const vehicles: Vehicle[] = [
 			transmission: 'Automatic',
 			seats: '7',
 			baggage: '8'
+		}
+	},
+	{
+		slug: 'cadillac-escalade',
+		name: 'Cadillac Escalade',
+		year: '2024',
+		price: '0',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.jpeg',
+		description: 'Signature luxury SUV for VIP arrivals, executive transfers, and premium city mobility.',
+		highlights: [
+			'Executive-grade comfort and presence.',
+			'Ideal for VIP schedules and events.',
+			'Available with bilingual chauffeur support.'
+		],
+		idealFor: ['VIP transport', 'Executive travel', 'Hotel transfers', 'Private chauffeur service'],
+		specs: {
+			mileage: '—',
+			transmission: 'Automatic',
+			seats: '7',
+			baggage: '8'
+		}
+	},
+	{
+		slug: 'nissan-urvan',
+		name: 'Nissan Urvan',
+		year: '2024',
+		price: '0',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).jpeg',
+		description: 'Passenger van for group transfers and private tours with flexible seating and luggage space.',
+		highlights: [
+			'Great for groups and delegations.',
+			'Comfortable seating for longer routes.',
+			'Ideal for airport + hotel logistics.'
+		],
+		idealFor: ['Group travel', 'Airport transfers', 'Corporate transport', 'Tours'],
+		specs: {
+			mileage: '—',
+			transmission: 'Manual/Auto',
+			seats: '14',
+			baggage: '—'
 		}
 	}
 ];

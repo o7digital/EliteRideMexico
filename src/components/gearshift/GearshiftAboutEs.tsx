@@ -310,16 +310,16 @@ export default function GearshiftAboutEs() {
 										Contacto
 									</a>
 								</div>
-								<div className="footer-links-wrapper">
-									<h2 className="heading">Legal</h2>
-									<a href="/es/aviso-de-privacidad" className="footer-nav-link">
-										Aviso de Privacidad
-									</a>
-									<a href="/es/cancelacion" className="footer-nav-link">
-										Cancelación
-									</a>
-									<a href="/es/reembolsos" className="footer-nav-link">
-										Reembolsos
+									<div className="footer-links-wrapper">
+										<h2 className="heading">Legal</h2>
+										<a href="/es/aviso-de-privacidad" className="footer-nav-link">
+											Aviso de Privacidad
+										</a>
+										<a href="/es/cancelacion" className="footer-nav-link">
+											Cancelación
+										</a>
+										<a href="/es/reembolsos" className="footer-nav-link">
+											Reembolsos
 									</a>
 									<a href="/es/impuestos" className="footer-nav-link">
 										Impuestos

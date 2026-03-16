@@ -23,12 +23,30 @@ type Location = {
 	image: string;
 };
 
+type FeaturedCarouselItem = {
+	key: string;
+	name: string;
+	year?: string;
+	image: string;
+	href: string;
+	ctaLabel: string;
+	details: CarDetail[];
+};
+
 type Step = {
 	title: string;
 	description: string;
 	icon: string;
 	alt: string;
 };
+
+const specIcons = {
+	mileage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+	transmission:
+		'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+	seats: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+	baggage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg'
+} as const;
 
 const cars: Car[] = [
 	{
@@ -234,6 +252,109 @@ const steps: Step[] = [
 
 const whatsappLink = 'https://wa.me/525574085802';
 
+const featuredCarouselItems: FeaturedCarouselItem[] = [
+	...cars.map((car) => ({
+		key: `car-${car.name}`,
+		name: car.name,
+		year: car.year,
+		image: car.image,
+		href: car.href,
+		ctaLabel: 'Ver Detalles',
+		details: car.details
+	})),
+	{
+		key: 'camionette-tahoe-01',
+		name: 'Chevrolet Tahoe',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.jpeg',
+		href: '/cars/chevrolet-tahoe',
+		ctaLabel: 'Ver Detalles',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
+		]
+	},
+	{
+		key: 'camionette-yukon-01',
+		name: 'GMC Yukon Denali',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59.jpeg',
+		href: '/cars/gmc-yukon-denali',
+		ctaLabel: 'Ver Detalles',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
+		]
+	},
+	{
+		key: 'camionette-yukon-02',
+		name: 'GMC Yukon Denali',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59 (1).jpeg',
+		href: '/cars/gmc-yukon-denali',
+		ctaLabel: 'Ver Detalles',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
+		]
+	},
+	{
+		key: 'camionette-yukon-03',
+		name: 'GMC Yukon Denali',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (1).jpeg',
+		href: '/cars/gmc-yukon-denali',
+		ctaLabel: 'Ver Detalles',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
+		]
+	},
+	{
+		key: 'camionette-escalade-01',
+		name: 'Cadillac Escalade',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.jpeg',
+		href: '/cars/cadillac-escalade',
+		ctaLabel: 'Ver Detalles',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
+		]
+	},
+	{
+		key: 'camionette-suburban-01',
+		name: 'Chevrolet Suburban',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51.jpeg',
+		href: '/cars/chevrolet-suburban-black',
+		ctaLabel: 'Ver Detalles',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Automática', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
+		]
+	},
+	{
+		key: 'camionette-urvan-01',
+		name: 'Nissan Urvan',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).jpeg',
+		href: '/cars/nissan-urvan',
+		ctaLabel: 'Ver Detalles',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Ícono de kilometraje' },
+			{ key: 'transmission', value: 'Manual/Auto', icon: specIcons.transmission, alt: 'Ícono de transmisión' },
+			{ key: 'seats', value: '14', icon: specIcons.seats, alt: 'Ícono de asientos' },
+			{ key: 'baggage', value: '—', icon: specIcons.baggage, alt: 'Ícono de equipaje' }
+		]
+	}
+];
+
 const socialLinks = [
 	{
 		label: 'X',
@@ -399,44 +520,99 @@ export default function GearshiftHomeEs() {
 				<div className="content-wrapper">
 					<div className="section-heading-wrapper">
 								<h2 className="section-heading">Vehículos Destacados</h2>
-							<a href="/es/our-fleet" className="cta-button w-button">
-								Ver todos
-							</a>
 					</div>
-					<div className="cars-collection-list-wrapper">
-						<div className="cars-collection-list">
-							{cars.map((car) => (
-								<div key={car.name} className="car-collection-item">
-									<article className="car-card">
-										<a href={car.href} className="car-image-wrapper w-inline-block">
-											<img
-												src={car.image}
-												loading="lazy"
-												decoding="async"
-												alt={car.name}
-												width={600}
-												height={400}
-												className="listing-car-image"
-											/>
-											<div className="car-listing-year">{car.year}</div>
-										</a>
-										<div className="car-details-wrapper">
-											<h3 className="car-listing-name">{car.name}</h3>
-											<div className="car-listing-details-wrapper">
-												{car.details.map((detail) => (
-													<div key={`${car.name}-${detail.key}`} className="car-listing-detail">
-														<img src={detail.icon} alt={detail.alt} className="listing-icon" loading="lazy" />
-														<div className="listing-detail">{detail.value}</div>
-													</div>
-												))}
+					<div className="cars-collection-list-wrapper featured-cars-carousel" role="region" aria-label="Carrusel de vehículos destacados">
+						<div className="featured-cars-carousel__track" aria-live="off">
+							<div className="cars-collection-list">
+								{featuredCarouselItems.map((item) => (
+									<div key={item.key} className="car-collection-item">
+										<article className="car-card">
+											<a
+												href={item.href}
+												className="car-image-wrapper w-inline-block"
+												target={item.href === whatsappLink ? '_blank' : undefined}
+												rel={item.href === whatsappLink ? 'noreferrer' : undefined}
+											>
+												<img
+													src={item.image}
+													loading="lazy"
+													decoding="async"
+													alt={item.name}
+													width={600}
+														height={400}
+														className="listing-car-image"
+													/>
+													{item.year ? <div className="car-listing-year">{item.year}</div> : null}
+												</a>
+												<div className="car-details-wrapper">
+													<h3 className="car-listing-name">{item.name}</h3>
+												<div className="car-listing-details-wrapper">
+													{item.details.map((detail) => (
+														<div key={`${item.key}-${detail.key}`} className="car-listing-detail">
+															<img src={detail.icon} alt={detail.alt} className="listing-icon" loading="lazy" />
+															<div className="listing-detail">{detail.value}</div>
+														</div>
+													))}
+												</div>
+												<a
+													href={item.href}
+													className="details-btn w-button"
+													target={item.href === whatsappLink ? '_blank' : undefined}
+													rel={item.href === whatsappLink ? 'noreferrer' : undefined}
+												>
+													{item.ctaLabel}
+												</a>
 											</div>
-											<a href={car.href} className="details-btn w-button">
-												Ver Detalles
+										</article>
+									</div>
+								))}
+							</div>
+							<div className="cars-collection-list" aria-hidden="true">
+								{featuredCarouselItems.map((item) => (
+									<div key={`${item.key}-dup`} className="car-collection-item">
+										<article className="car-card">
+											<a
+												href={item.href}
+												className="car-image-wrapper w-inline-block"
+												tabIndex={-1}
+												target={item.href === whatsappLink ? '_blank' : undefined}
+												rel={item.href === whatsappLink ? 'noreferrer' : undefined}
+											>
+												<img
+													src={item.image}
+													loading="lazy"
+													decoding="async"
+													alt=""
+													width={600}
+													height={400}
+													className="listing-car-image"
+												/>
+												{item.year ? <div className="car-listing-year">{item.year}</div> : null}
 											</a>
-										</div>
-									</article>
-								</div>
-							))}
+											<div className="car-details-wrapper">
+												<h3 className="car-listing-name">{item.name}</h3>
+												<div className="car-listing-details-wrapper">
+													{item.details.map((detail) => (
+														<div key={`${item.key}-dup-${detail.key}`} className="car-listing-detail">
+															<img src={detail.icon} alt="" className="listing-icon" loading="lazy" />
+															<div className="listing-detail">{detail.value}</div>
+														</div>
+													))}
+												</div>
+												<a
+													href={item.href}
+													className="details-btn w-button"
+													tabIndex={-1}
+													target={item.href === whatsappLink ? '_blank' : undefined}
+													rel={item.href === whatsappLink ? 'noreferrer' : undefined}
+												>
+													{item.ctaLabel}
+												</a>
+											</div>
+										</article>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>

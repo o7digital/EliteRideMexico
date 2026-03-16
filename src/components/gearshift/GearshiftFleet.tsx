@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { vehicles } from '../../data/vehicles';
 
 type FleetCategory = {
 	title: string;
@@ -244,6 +245,57 @@ export default function GearshiftFleet() {
 									<p className="primary-text grey-color metric-text">{vehicle.description}</p>
 								</div>
 							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section className="section">
+				<div className="content-wrapper">
+					<div className="section-heading-wrapper">
+						<h2 className="section-heading">All Vehicles</h2>
+					</div>
+					<div className="fleet-vehicles-grid">
+						{vehicles.map((vehicle) => (
+							<div key={vehicle.slug} className="car-collection-item">
+								<article className="car-card">
+									<a href={`/cars/${vehicle.slug}`} className="car-image-wrapper w-inline-block">
+										<img
+											src={vehicle.image}
+											loading="lazy"
+											alt={vehicle.name}
+											width={600}
+											height={400}
+											className="listing-car-image"
+										/>
+										<div className="car-listing-year">{vehicle.year}</div>
+									</a>
+									<div className="car-details-wrapper">
+										<h3 className="car-listing-name">{vehicle.name}</h3>
+										<div className="car-listing-details-wrapper">
+											<div className="car-listing-detail">
+												<img src="/icons/mileage.svg" alt="Mileage Icon" className="listing-icon" loading="lazy" />
+												<div className="listing-detail">{vehicle.specs.mileage}</div>
+											</div>
+											<div className="car-listing-detail">
+												<img src="/icons/transmission.svg" alt="Transmission Icon" className="listing-icon" loading="lazy" />
+												<div className="listing-detail">{vehicle.specs.transmission}</div>
+											</div>
+											<div className="car-listing-detail">
+												<img src="/icons/seats.svg" alt="Seats Icon" className="listing-icon" loading="lazy" />
+												<div className="listing-detail">{vehicle.specs.seats}</div>
+											</div>
+											<div className="car-listing-detail">
+												<img src="/icons/baggage.svg" alt="Baggage Icon" className="listing-icon" loading="lazy" />
+												<div className="listing-detail">{vehicle.specs.baggage}</div>
+											</div>
+										</div>
+										<a href={`/cars/${vehicle.slug}`} className="details-btn w-button">
+											See Full Details
+										</a>
+									</div>
+								</article>
+							</div>
 						))}
 					</div>
 				</div>
