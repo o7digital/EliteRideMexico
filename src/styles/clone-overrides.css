@@ -201,6 +201,15 @@ html[lang='es'] .body {
 	font-size: 24px;
 }
 
+/* Force same hero background (BMW) for EN + ES home header */
+.header-section {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5) 100%, #fff), url('/slider/gemini-bmw.webp') !important;
+	background-position: 0 0, 50% 50% !important;
+	background-size: auto, cover !important;
+	background-repeat: repeat, no-repeat !important;
+	background-color: #0b0b0b;
+}
+
 .hero-slider {
 	margin-top: 22px;
 	display: grid;
