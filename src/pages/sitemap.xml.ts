@@ -48,7 +48,7 @@ const bilingualRoutes: BilingualRoute[] = [
 	},
 	{
 		en: '/world-cup-2026-mexico',
-		es: '/es/copa-del-mundo-2026-mexico',
+		es: '/es/transporte-mundial-2026-mexico',
 		changefreq: 'monthly',
 		priority: '0.8'
 	},
