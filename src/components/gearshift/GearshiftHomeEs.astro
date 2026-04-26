@@ -22,7 +22,6 @@ const {
 } = staticContent;
 
 const { featuredCarouselItems, offers } = content;
-const { heroSlides } = staticContent;
 
 const premiumServices = [
 	{
@@ -145,15 +144,6 @@ const citySeoBlocks = [
 											{hero.ctaLabel}
 										</a>
 									</div>
-									{heroSlides.length > 0 && (
-										<div class="hero-slider" role="region" aria-label="Galería principal de vehículos">
-											{heroSlides.map((slide) => (
-												<a key={slide.key} href={slide.href ?? hero.ctaHref} class="hero-slide w-inline-block">
-													<img src={slide.image} alt={slide.alt} loading="lazy" decoding="async" />
-												</a>
-											))}
-										</div>
-									)}
 								</div>
 							</div>
 						</div>
