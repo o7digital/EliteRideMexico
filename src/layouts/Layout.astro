@@ -186,6 +186,16 @@ const jsonLd = JSON.stringify({
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json" set:html={jsonLd} />
 
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N1CEB9M6L9"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-N1CEB9M6L9');
+		</script>
+
 		<!-- Per-page extra head (schema, etc.) -->
 		<slot name="head" />
 	</head>
