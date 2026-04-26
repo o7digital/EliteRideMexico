@@ -99,6 +99,14 @@ const featuredFleet: FleetVehicle[] = [
 	}
 ];
 
+const specIcons = {
+	mileage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+	transmission:
+		'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+	seats: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+	baggage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg'
+} as const;
+
 ---
 
 		<div class="page-wrapper">
@@ -297,19 +305,19 @@ const featuredFleet: FleetVehicle[] = [
 										<h3 class="car-listing-name">{vehicle.name}</h3>
 										<div class="car-listing-details-wrapper">
 											<div class="car-listing-detail">
-												<img src="/icons/mileage.svg" alt="Ícono de kilometraje" class="listing-icon" loading="lazy" />
+												<img src={specIcons.mileage} alt="Ícono de kilometraje" class="listing-icon" loading="lazy" />
 												<div class="listing-detail">{vehicle.specs.mileage}</div>
 											</div>
 											<div class="car-listing-detail">
-												<img src="/icons/transmission.svg" alt="Ícono de transmisión" class="listing-icon" loading="lazy" />
+												<img src={specIcons.transmission} alt="Ícono de transmisión" class="listing-icon" loading="lazy" />
 												<div class="listing-detail">{vehicle.specs.transmission}</div>
 											</div>
 											<div class="car-listing-detail">
-												<img src="/icons/seats.svg" alt="Ícono de asientos" class="listing-icon" loading="lazy" />
+												<img src={specIcons.seats} alt="Ícono de asientos" class="listing-icon" loading="lazy" />
 												<div class="listing-detail">{vehicle.specs.seats}</div>
 											</div>
 											<div class="car-listing-detail">
-												<img src="/icons/baggage.svg" alt="Ícono de equipaje" class="listing-icon" loading="lazy" />
+												<img src={specIcons.baggage} alt="Ícono de equipaje" class="listing-icon" loading="lazy" />
 												<div class="listing-detail">{vehicle.specs.baggage}</div>
 											</div>
 										</div>
