@@ -201,12 +201,52 @@ html[lang='es'] .body {
 	font-size: 24px;
 }
 
+/* Force same hero background (BMW) for EN + ES home header */
 .header-section {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5) 100%, #fff), url('/slider/gemini-bmw.webp') !important;
-	background-position: 0 0, 56% 52% !important;
-	background-size: auto, 92% !important;
+	background-position: 0 0, 50% 50% !important;
+	background-size: auto, cover !important;
 	background-repeat: repeat, no-repeat !important;
 	background-color: #0b0b0b;
+}
+
+.hero-slider {
+	margin-top: 22px;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.hero-slide {
+	display: block;
+	border-radius: 12px;
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.hero-slide img {
+	width: 100%;
+	height: 110px;
+	object-fit: cover;
+	display: block;
+}
+
+.offers-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.offer-card {
+	background: #fff;
+	border: 1px solid #ececec;
+	border-radius: 14px;
+	padding: 24px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 .language-switch-item {
@@ -316,6 +356,11 @@ html[lang='es'] .body {
 
 	.brand-logo-text {
 		font-size: 22px;
+	}
+
+	.hero-slider,
+	.offers-grid {
+		grid-template-columns: 1fr;
 	}
 
 	.navbar {
@@ -648,10 +693,8 @@ html[lang='es'] .body {
 .seo-footer-keywords__inner {
 	max-width: 1280px;
 	margin: 0 auto;
-	overflow-x: auto;
-	overflow-y: hidden;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
+	display: grid;
+	gap: 6px;
 }
 
 .seo-footer-keywords__inner::-webkit-scrollbar {
@@ -664,9 +707,8 @@ html[lang='es'] .body {
 	font-size: 0.83rem;
 	line-height: 1.65;
 	text-align: center;
-	white-space: nowrap;
-	display: inline-block;
-	min-width: 100%;
+	white-space: normal;
+	display: block;
 }
 
 .location-listing-image-wrapper--static {

@@ -90,6 +90,14 @@ const featuredFleet: FleetVehicle[] = [
 	}
 ];
 
+const specIcons = {
+	mileage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+	transmission:
+		'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+	seats: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+	baggage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg'
+} as const;
+
 ---
 
 		<div class="page-wrapper">
@@ -228,7 +236,13 @@ const featuredFleet: FleetVehicle[] = [
 						{featuredFleet.map((vehicle) => (
 							<article key={vehicle.name} class="fleet-model-card">
 								<div class="fleet-model-image-wrapper">
-									<img src={vehicle.image} loading="lazy" alt={vehicle.name} width={600} height={400} class="fleet-model-image" />
+									<picture>
+										<source
+											srcset={vehicle.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+											type="image/webp"
+										/>
+										<img src={vehicle.image} loading="lazy" alt={vehicle.name} width={600} height={400} class="fleet-model-image" />
+									</picture>
 								</div>
 								<div class="fleet-model-body">
 									<h3 class="car-listing-name">{vehicle.name}</h3>
@@ -250,33 +264,39 @@ const featuredFleet: FleetVehicle[] = [
 							<div key={vehicle.slug} class="car-collection-item">
 								<article class="car-card">
 									<a href={`/cars/${vehicle.slug}`} class="car-image-wrapper w-inline-block">
-										<img
-											src={vehicle.image}
-											loading="lazy"
-											alt={vehicle.name}
-											width={600}
-											height={400}
-											class="listing-car-image"
-										/>
+										<picture>
+											<source
+												srcset={vehicle.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+												type="image/webp"
+											/>
+											<img
+												src={vehicle.image}
+												loading="lazy"
+												alt={vehicle.name}
+												width={600}
+												height={400}
+												class="listing-car-image"
+											/>
+										</picture>
 										<div class="car-listing-year">{vehicle.year}</div>
 									</a>
 									<div class="car-details-wrapper">
 										<h3 class="car-listing-name">{vehicle.name}</h3>
 										<div class="car-listing-details-wrapper">
 											<div class="car-listing-detail">
-												<img src="/icons/mileage.svg" alt="Mileage Icon" class="listing-icon" loading="lazy" />
+												<img src={specIcons.mileage} alt="Mileage Icon" class="listing-icon" loading="lazy" />
 												<div class="listing-detail">{vehicle.specs.mileage}</div>
 											</div>
 											<div class="car-listing-detail">
-												<img src="/icons/transmission.svg" alt="Transmission Icon" class="listing-icon" loading="lazy" />
+												<img src={specIcons.transmission} alt="Transmission Icon" class="listing-icon" loading="lazy" />
 												<div class="listing-detail">{vehicle.specs.transmission}</div>
 											</div>
 											<div class="car-listing-detail">
-												<img src="/icons/seats.svg" alt="Seats Icon" class="listing-icon" loading="lazy" />
+												<img src={specIcons.seats} alt="Seats Icon" class="listing-icon" loading="lazy" />
 												<div class="listing-detail">{vehicle.specs.seats}</div>
 											</div>
 											<div class="car-listing-detail">
-												<img src="/icons/baggage.svg" alt="Baggage Icon" class="listing-icon" loading="lazy" />
+												<img src={specIcons.baggage} alt="Baggage Icon" class="listing-icon" loading="lazy" />
 												<div class="listing-detail">{vehicle.specs.baggage}</div>
 											</div>
 										</div>
