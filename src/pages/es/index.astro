@@ -1,17 +1,27 @@
 ---
 import GearshiftHomeEs from '../../components/gearshift/GearshiftHomeEs.astro';
 import Layout from '../../layouts/Layout.astro';
+import { getHomeEsContent } from '../../lib/cms/homeEs';
+
+const homeContent = await getHomeEsContent();
+
+const seo = {
+	title: homeContent.seo.title,
+	description: homeContent.seo.description,
+	canonicalURL: homeContent.seo.canonicalUrl,
+	ogImage: homeContent.seo.ogImage
+};
 ---
 
 <Layout
-	title="Renta de SUV premium en México | Copa del Mundo FIFA 2026 y Estadio Azteca | Elite Ride Mexico"
-	description="Reserva SUV premium con chofer privado, traslados al aeropuerto y transporte seguro para la Copa del Mundo FIFA 2026 en México. Servicio 24/7 en CDMX, Estadio Azteca, Cancún, Guadalajara y más."
-	canonicalURL="https://eliteridemexico.com/es/"
-	ogImage="https://eliteridemexico.com/cars/chevy-suburban-black.webp"
+	title={seo.title}
+	description={seo.description}
+	canonicalURL={seo.canonicalURL}
+	ogImage={seo.ogImage}
 	lang="es"
 	preloadImages={['/slider/gemini-bmw.webp']}
 	alternateHref="https://eliteridemexico.com/"
 	alternateLang="en"
 >
-		<GearshiftHomeEs />
+	<GearshiftHomeEs content={homeContent} />
 </Layout>
