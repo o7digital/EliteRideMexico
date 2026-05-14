@@ -1,0 +1,379 @@
+---
+
+type AboutCard = {
+	title: string;
+	description: string;
+};
+
+const whatsappLink = 'https://wa.me/525644166523';
+
+const socialLinks = [
+	{
+		label: 'X',
+		href: 'https://x.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f8_twitter.png',
+		alt: 'X Icon'
+	},
+	{
+		label: 'Instagram',
+		href: 'https://www.instagram.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f9_instagram.png',
+		alt: 'Instagram Icon'
+	},
+	{
+		label: 'Facebook',
+		href: 'https://www.facebook.com/',
+		icon:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fa_facebook-app-symbol.png',
+		alt: 'Facebook Icon'
+	},
+	{
+		label: 'WhatsApp',
+		href: whatsappLink,
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png',
+		alt: 'WhatsApp Icon'
+	}
+];
+
+const serviceOfferings: AboutCard[] = [
+	{
+		title: 'Transferts privés aéroport et hôtel',
+		description:
+			'Nous coordonnons un service porte à porte avec suivi de vol, communication claire et accueil ponctuel dès votre arrivée.'
+	},
+	{
+		title: 'Chauffeur privé por horas o por día',
+		description:
+			'Réservez une mobilité flexible pour agendas exécutifs, réunions, tourisme ou itinéraires personnalisés en ville.'
+	},
+	{
+		title: 'Mobilité affaires et événements',
+		description:
+			'Nous accompagnons réunions corporate, roadshows, dîners, mariages et événements spéciaux avec une logistique discrète et maîtrisée.'
+	},
+	{
+		title: 'Trajets interurbains et routes spéciales',
+		description:
+			'Nous opérons des trajets courts et longs avec SUV premium, vans exécutifs et options blindées.'
+	}
+];
+
+const serviceStandards: AboutCard[] = [
+	{
+		title: 'Sécurité et discrétion',
+		description:
+			'Nous travaillons avec des chauffeurs professionnels, des routes définies et des processus clairs pour un trajet fiable de bout en bout.'
+	},
+	{
+		title: 'Ponctualité et efficacité',
+		description:
+			'Nous confirmons les horaires, suivons les arrivées et ajustons l opération en temps réel pour protéger votre agenda.'
+	},
+	{
+		title: 'Service personnalisé',
+		description:
+			'Chaque réservation s adapte aux passagers, bagages, langue, type de trajet et niveau de service requis.'
+	},
+	{
+		title: 'Flotte premium et assistance 24/7',
+		description:
+			'Nous mettons à disposition SUV exécutifs, vans et véhicules blindés avec assistance continue avant, pendant et après le service.'
+	}
+];
+
+---
+
+		<div class="page-wrapper">
+			<section>
+				<div class="header-section about-header-section">
+					<div class="navbar w-nav">
+						<div class="content-wrapper">
+							<div class="navbar-wrapper">
+								<a href="/fr" class="brand w-nav-brand">
+									<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+								</a>
+								<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+									<ul role="list" class="nav-menu w-list-unstyled">
+										<li class="nav-list-item">
+											<a href="/fr" class="nav-link">
+												Accueil
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/fr/about" aria-current="page" class="nav-link w--current">
+												A propos
+											</a>
+										</li>
+											<li class="nav-list-item">
+												<a href="/fr/our-fleet" class="nav-link">
+													Notre flotte
+												</a>
+											</li>
+											<li class="nav-list-item">
+												<a href="/fr/faq" class="nav-link">
+													FAQ
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/fr/contact" class="nav-link">
+												Contact
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<div class="cta-button-wrapper">
+												<a href="/fr/our-fleet" class="cta-button w-button">
+													Réserver
+												</a>
+											</div>
+										</li>
+										<li class="nav-list-item language-switch-item">
+											<div class="language-switch">
+												<button
+													type="button"
+													class="language-switch-button"
+													aria-expanded="false"
+													aria-label="Changer de langue"
+												>
+													FR
+														<span class="language-switch-chevron">v</span>
+												</button>
+												<div class="language-switch-list">
+													<a href="/fr/about" class="language-switch-link active">
+														FR
+													</a>
+													<a href="/about" class="language-switch-link">
+														EN
+													</a>
+													<a href="/es/about" class="language-switch-link">
+														ES
+													</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</nav>
+								<button
+									type="button"
+									class="menu-button w-nav-button"
+									aria-label="Ouvrir le menu"
+									aria-expanded="false"
+								>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="content-wrapper">
+						<div class="header-section-wrapper">
+							<div class="header-content-wrapper">
+								<div class="header-text-wrapper about-header-text-wrapper">
+									<h1 class="header-text">A propos d Elite Ride Mexico</h1>
+									<div class="primary-text">
+										Basée à Mexico, Elite Ride Mexico propose un transport privé premium aux voyageurs internationaux, dirigeants et familles qui recherchent sécurité, ponctualité et confort dans les principales destinations du pays.
+									</div>
+									<div class="header-button-wrapper">
+										<a href={whatsappLink} target="_blank" rel="noreferrer" class="cta-button w-button">
+											Parler à un conseiller
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Un service conçu pour mieux voyager au Mexique</h2>
+					</div>
+					<div class="about-intro-grid">
+						<p class="primary-text grey-color">
+							Elite Ride Mexico est née d une idée claire: offrir une alternative plus fiable, élégante et bien coordonnée au transport improvisé. Nous créons des expériences porte à porte pour les clients qui valorisent discrétion, confort et réactivité.
+						</p>
+						<p class="primary-text grey-color">
+							Notre engagement est d offrir un transfert personnalisé et haut de gamme, pour l aéroport, les voyages d affaires, les vacances ou la mobilité premium. Chaque trajet doit être fluide, sûr et à la hauteur de votre voyage.
+						</p>
+						<p class="primary-text grey-color">
+							Si vous visitez le Mexique pour affaires, vacances ou la Coupe du Monde 2026, consultez aussi notre{' '}
+							<a href="/fr/transporte-mundial-2026-mexico" class="link-text">
+								guide de transport pour la Coupe du Monde FIFA 2026 au Mexique et l Estadio Azteca
+							</a>
+							.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Services proposés</h2>
+					</div>
+					<div class="about-pillars-grid">
+						{serviceOfferings.map((service) => (
+							<article key={service.title} class="about-card">
+								<h3 class="title-small">{service.title}</h3>
+								<p class="primary-text grey-color metric-text">{service.description}</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Ce qui distingue chaque trajet</h2>
+					</div>
+					<div class="about-steps-grid">
+						{serviceStandards.map((standard) => (
+							<article key={standard.title} class="about-step-card">
+								<h3 class="title-small">{standard.title}</h3>
+								<p class="primary-text grey-color metric-text">{standard.description}</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Présence nationale dans les destinations clés du Mexique</h2>
+					</div>
+					<div class="about-intro-grid">
+						<p class="primary-text grey-color">
+							Elite Ride Mexico opère avec une approche premium dans les corridors les plus demandés du pays: Cancún, Veracruz, Acapulco, Guadalajara, Monterrey, Los Cabos et Puerto Vallarta. Cette couverture nous permet de coordonner des transferts privés pour voyageurs internationaux, dirigeants et familles avec des standards constants dans chaque ville.
+						</p>
+						<p class="primary-text grey-color">
+							Pour les transferts aéroport-hôtel, les chauffeurs privés à l heure ou la logistique événementielle, notre équipe privilégie ponctualité, sécurité et service personnalisé. Chaque prestation est adaptée à l itinéraire réel du client pour une expérience fluide, discrète et fiable.
+						</p>
+						<p class="primary-text grey-color">
+							Pour un transport exécutif à Cancún, une mobilité privée à Monterrey, un service premium à Guadalajara ou des transferts sûrs à Los Cabos et Vallarta, nous concevons une solution adaptée à votre voyage au Mexique.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="footer-section-wrapper">
+					<div class="content-wrapper">
+						<div class="footer-content-wrapper">
+							<div class="footer-top-content">
+								<div class="footer-logo-social">
+									<a href="/fr" class="brand w-nav-brand">
+										<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+									</a>
+									<div class="footer-text">
+										Transport privé premium au Mexique pour voyageurs internationaux, dirigeants et familles qui privilégient sécurité, ponctualité et service personnalisé.
+									</div>
+									<div class="social-media-links">
+										{socialLinks.map((social) => (
+											<a
+												key={social.label}
+												href={social.href}
+												target="_blank"
+												rel="noreferrer"
+												class="social-media w-inline-block"
+												aria-label={social.label}
+											>
+												<img src={social.icon} loading="lazy" alt={social.alt} class="image" />
+											</a>
+										))}
+									</div>
+								</div>
+								<div class="footer-newsletter">
+									<h3 class="small-heading">Suscríbete al newsletter</h3>
+									<div class="w-form">
+										<form class="newsletter-form">
+											<input
+												class="form-field w-input"
+												maxLength={256}
+												name="Email"
+												placeholder="ejemplo@gmail.com"
+												type="email"
+												required
+											/>
+											<input type="submit" class="cta-button w-button" value="Enviar" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="footer-bottom-content">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Pages</h2>
+									<a href="/fr" class="footer-nav-link">
+										Accueil
+									</a>
+									<a href="/fr/about" aria-current="page" class="footer-nav-link w--current">
+										A propos
+									</a>
+									<a href="/fr/our-fleet" class="footer-nav-link">
+										Notre flotte
+									</a>
+									<a href="/fr/contact" class="footer-nav-link">
+										Contact
+									</a>
+								</div>
+									<div class="footer-links-wrapper">
+										<h2 class="heading">Legal</h2>
+										<a href="/fr/aviso-de-privacidad" class="footer-nav-link">
+											Aviso de Privacidad
+										</a>
+										<a href="/fr/cancelacion" class="footer-nav-link">
+											Annulation
+										</a>
+										<a href="/fr/reembolsos" class="footer-nav-link">
+											Remboursements
+									</a>
+									<a href="/fr/impuestos" class="footer-nav-link">
+										Taxes
+									</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Contact</h2>
+									<a href="tel:+525644166523" class="footer-nav-link">
+										+52 5644166523
+									</a>
+									<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">
+										info@eliteridemexico.com
+									</a>
+									<a
+										href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Miguel+Hidalgo,+11500,+CDMX,+Mexico"
+										target="_blank"
+										rel="noreferrer"
+										class="footer-nav-link"
+									>
+										Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500, CDMX, México
+									</a>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="copyright-info-wrapper">
+								<a
+									href="https://www.o7digital.com/en/index-digital-agency"
+									target="_blank"
+									rel="noreferrer"
+									class="footer-copyright-text"
+								>
+									Copyright Elite Ride Mexico 2026 - made by o7Digital
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<a href={whatsappLink} target="_blank" rel="noreferrer" class="whatsapp-footer-button" aria-label="WhatsApp">
+				<img
+					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
+					loading="lazy"
+					alt="WhatsApp Icon"
+					class="whatsapp-footer-icon"
+				/>
+			</a>
+		</div>

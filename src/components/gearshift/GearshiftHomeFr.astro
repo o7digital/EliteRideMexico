@@ -1,0 +1,775 @@
+---
+type CarDetail = {
+	key: string;
+	value: string;
+	icon: string;
+	alt: string;
+};
+
+type Car = {
+	name: string;
+	href: string;
+	image: string;
+	year: string;
+	price: string;
+	details: CarDetail[];
+};
+
+type Location = {
+	name: string;
+	href?: string;
+	image: string;
+};
+
+type FeaturedCarouselItem = {
+	key: string;
+	name: string;
+	year?: string;
+	image: string;
+	href: string;
+	ctaLabel: string;
+	details: CarDetail[];
+};
+
+type Step = {
+	title: string;
+	description: string;
+	icon: string;
+	alt: string;
+};
+
+const specIcons = {
+	mileage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+	transmission:
+		'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+	seats: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+	baggage: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg'
+} as const;
+
+const cars: Car[] = [
+	{
+		name: 'Chevrolet Suburban',
+		href: '/cars/chevrolet-suburban-black',
+		image: '/cars/chevy-suburban-black.webp',
+		year: '2024',
+		price: '4500',
+		details: [
+			{
+				key: 'mileage',
+				value: '5200',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+				alt: 'Mileage Icon'
+			},
+			{
+				key: 'transmission',
+				value: 'Automatique',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+				alt: 'Transmission Icon'
+			},
+			{
+				key: 'seats',
+				value: '7',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+				alt: 'Seats Icon'
+			},
+			{
+				key: 'baggage',
+				value: '8',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
+				alt: 'Baggage Icon'
+			}
+		]
+	},
+	{
+		name: 'Chevrolet Suburban White',
+		href: '/cars/chevrolet-suburban-white',
+		image: '/cars/chevy-white.webp',
+		year: '2023',
+		price: '4200',
+		details: [
+			{
+				key: 'mileage',
+				value: '4800',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+				alt: 'Mileage Icon'
+			},
+			{
+				key: 'transmission',
+				value: 'Automatique',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+				alt: 'Transmission Icon'
+			},
+			{
+				key: 'seats',
+				value: '7',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+				alt: 'Seats Icon'
+			},
+			{
+				key: 'baggage',
+				value: '8',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
+				alt: 'Baggage Icon'
+			}
+		]
+	},
+	{
+		name: 'GMC Yukon Denali',
+		href: '/cars/gmc-yukon-denali',
+		image: '/cars/gmc-yukon-beige.webp',
+		year: '2024',
+		price: '4800',
+		details: [
+			{
+				key: 'mileage',
+				value: '5100',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+				alt: 'Mileage Icon'
+			},
+			{
+				key: 'transmission',
+				value: 'Automatique',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+				alt: 'Transmission Icon'
+			},
+			{
+				key: 'seats',
+				value: '7',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+				alt: 'Seats Icon'
+			},
+			{
+				key: 'baggage',
+				value: '8',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
+				alt: 'Baggage Icon'
+			}
+		]
+	},
+	{
+		name: 'Toyota Land Cruiser',
+		href: '/cars/toyota-land-cruiser',
+		image: '/cars/toyota-landcruiser-black.webp',
+		year: '2024',
+		price: '5200',
+		details: [
+			{
+				key: 'mileage',
+				value: '5600',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf80e_mileage.svg',
+				alt: 'Mileage Icon'
+			},
+			{
+				key: 'transmission',
+				value: 'Automatique',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82b_transmission.svg',
+				alt: 'Transmission Icon'
+			},
+			{
+				key: 'seats',
+				value: '7',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf82a_seats.svg',
+				alt: 'Seats Icon'
+			},
+			{
+				key: 'baggage',
+				value: '8',
+				icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fd_baggage.svg',
+				alt: 'Baggage Icon'
+			}
+		]
+	}
+];
+
+const locations: Location[] = [
+	{
+		name: 'Mexico City',
+		href: '/mexico-city-private-chauffeur',
+		image: '/towns/gemini-cdmx.webp'
+	},
+	{
+		name: 'Puerto Vallarta',
+		href: '/puerto-vallarta-airport-transfer',
+		image: '/towns/gemini-vallarta.webp'
+	},
+	{
+		name: 'Guadalajara',
+		href: '/guadalajara-private-driver',
+		image: '/towns/gemini-guadalajara.webp'
+	},
+	{
+		name: 'Ixtapa Zihuatanejo',
+		image: '/towns/gemini-zihua.webp'
+	},
+	{
+		name: 'Cancun',
+		href: '/cancun-airport-transfer',
+		image: '/towns/gemini-cancun.webp'
+	},
+	{
+		name: 'Leon',
+		image: '/towns/gemini-leon.webp'
+	},
+	{
+		name: 'Cuernavaca',
+		image: '/towns/gemini-cuerna.webp'
+	},
+	{
+		name: 'Monterrey',
+		image: '/towns/gemini-monterrey.webp'
+	}
+];
+
+const steps: Step[] = [
+	{
+		title: 'Choisir votre véhicule',
+		description: 'Choisissez parmi des SUV premium, vans exécutifs et véhicules blindés disponibles au Mexique.',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983a3267985f2f6160ffc_search.png',
+		alt: 'Search Icon'
+	},
+	{
+		title: 'Sélectionner le modèle',
+		description: 'Sélectionnez le modèle adapté à votre trajet: aéroport, route interurbaine ou chauffeur privé.',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/66798467e9aadbf3723fcb9c_select-car.png',
+		alt: 'Select Car Icon'
+	},
+	{
+		title: 'Envoyer une demande',
+		description: 'Envoyez les détails de votre trajet par WhatsApp ou via le formulaire. Réponse sous 15 à 30 minutes.',
+		icon:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6679829d328059dd49614d20_online-booking.png',
+		alt: 'Enquiry Form Icon'
+	},
+	{
+		title: 'Prise en charge',
+		description: 'Votre chauffeur vous attend au point convenu. Installez-vous et voyagez sereinement au Mexique.',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/667983913dc4764e171e992b_drive.png',
+		alt: 'Drive Icon'
+	}
+];
+
+const whatsappLink = 'https://wa.me/525644166523';
+
+const featuredCarouselItems: FeaturedCarouselItem[] = [
+	...cars.map((car) => ({
+		key: `car-${car.name}`,
+		name: car.name,
+		year: car.year,
+		image: car.image,
+		href: car.href,
+		ctaLabel: 'Voir les détails',
+		details: car.details
+	})),
+	{
+		key: 'camionette-tahoe-01',
+		name: 'Chevrolet Tahoe',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.58.webp',
+		href: '/cars/chevrolet-tahoe',
+		ctaLabel: 'Voir les détails',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatique', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
+		]
+	},
+	{
+		key: 'camionette-yukon-01',
+		name: 'GMC Yukon Denali',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59.webp',
+		href: '/cars/gmc-yukon-denali',
+		ctaLabel: 'Voir les détails',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatique', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
+		]
+	},
+	{
+		key: 'camionette-yukon-02',
+		name: 'GMC Yukon Denali',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.31.59 (1).webp',
+		href: '/cars/gmc-yukon-denali',
+		ctaLabel: 'Voir les détails',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatique', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
+		]
+	},
+	{
+		key: 'camionette-yukon-03',
+		name: 'GMC Yukon Denali',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17 (1).webp',
+		href: '/cars/gmc-yukon-denali',
+		ctaLabel: 'Voir les détails',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatique', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
+		]
+	},
+	{
+		key: 'camionette-escalade-01',
+		name: 'Cadillac Escalade',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.32.17.webp',
+		href: '/cars/cadillac-escalade',
+		ctaLabel: 'Voir les détails',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatique', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
+		]
+	},
+	{
+		key: 'camionette-suburban-01',
+		name: 'Chevrolet Suburban',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.38.51.webp',
+		href: '/cars/chevrolet-suburban-black',
+		ctaLabel: 'Voir les détails',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Automatique', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '7', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '8', icon: specIcons.baggage, alt: 'Baggage Icon' }
+		]
+	},
+	{
+		key: 'camionette-urvan-01',
+		name: 'Nissan Urvan',
+		image: '/cars/camionettes/WhatsApp Image 2026-03-12 at 19.49.03 (1).webp',
+		href: '/cars/nissan-urvan',
+		ctaLabel: 'Voir les détails',
+		details: [
+			{ key: 'mileage', value: '—', icon: specIcons.mileage, alt: 'Mileage Icon' },
+			{ key: 'transmission', value: 'Manuel/Auto', icon: specIcons.transmission, alt: 'Transmission Icon' },
+			{ key: 'seats', value: '14', icon: specIcons.seats, alt: 'Seats Icon' },
+			{ key: 'baggage', value: '—', icon: specIcons.baggage, alt: 'Baggage Icon' }
+		]
+	}
+];
+
+const socialLinks = [
+	{
+		label: 'X',
+		href: 'https://x.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f8_twitter.png',
+		alt: 'X Icon'
+	},
+	{
+		label: 'Instagram',
+		href: 'https://www.instagram.com/',
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7f9_instagram.png',
+		alt: 'Instagram Icon'
+	},
+	{
+		label: 'Facebook',
+		href: 'https://www.facebook.com/',
+		icon:
+			'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf7fa_facebook-app-symbol.png',
+		alt: 'Facebook Icon'
+	},
+	{
+		label: 'WhatsApp',
+		href: whatsappLink,
+		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png',
+		alt: 'WhatsApp Icon'
+	}
+];
+
+const metrics = [
+	{ value: '10', label: 'années d expérience' },
+	{ value: '1000', label: 'clients satisfaits' },
+	{ value: '200', label: 'véhicules' },
+	{ value: '10', label: 'destinations' }
+];
+
+---
+
+		<div class="page-wrapper">
+			<section>
+				<div class="header-section">
+					<div class="navbar w-nav">
+						<div class="content-wrapper">
+							<div class="navbar-wrapper">
+									<a href="/fr" aria-current="page" class="brand w-nav-brand w--current">
+										<span class="brand-logo-text">ELITE RIDE MEXICO</span>
+									</a>
+								<nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+									<ul role="list" class="nav-menu w-list-unstyled">
+										<li class="nav-list-item">
+											<a href="/fr" aria-current="page" class="nav-link w--current">Accueil</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/fr/about" class="nav-link">A propos</a>
+										</li>
+											<li class="nav-list-item">
+												<a href="/fr/our-fleet" class="nav-link">Notre flotte</a>
+											</li>
+											<li class="nav-list-item">
+												<a href="/fr/faq" class="nav-link">
+													FAQ
+											</a>
+										</li>
+										<li class="nav-list-item">
+											<a href="/fr/contact" class="nav-link">Contact</a>
+										</li>
+										<li class="nav-list-item">
+											<div class="cta-button-wrapper">
+												<a href="/fr/our-fleet" class="cta-button w-button">
+													reserver
+												</a>
+											</div>
+										</li>
+										<li class="nav-list-item language-switch-item">
+											<div class="language-switch">
+												<button
+													type="button"
+													class="language-switch-button"
+													aria-expanded="false"
+													aria-label="Switch language"
+												>
+													FR
+															<span class="language-switch-chevron">v</span>
+												</button>
+												<div class="language-switch-list">
+													<a href="/" class="language-switch-link">
+															EN
+														</a>
+													<a href="/es" class="language-switch-link">
+														ES
+													</a>
+													<a href="/fr" class="language-switch-link active">
+															FR
+														</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</nav>
+								<button
+									type="button"
+									class="menu-button w-nav-button"
+									aria-label="Toggle menu"
+									aria-expanded="false"
+								>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+									<span class="hamburger-line" ></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="content-wrapper">
+						<div class="header-section-wrapper">
+							<div class="header-content-wrapper">
+									<div class="header-text-wrapper">
+											<h1 class="header-text">
+												Location de SUV premium et chauffeur privé au Mexique — <span class="brand-span">Elite Ride Mexico</span>
+											</h1>
+										<div class="primary-text">
+											Transferts aéroport fiables, service de chauffeur privé à Mexico, Cancún, Guadalajara et au-delà. Chauffeurs bilingues, plus de 300 véhicules, disponibles 24/7.
+										</div>
+									<div class="header-button-wrapper">
+										<a href="#featured-cars" class="cta-button w-button">
+											Voir notre flotte
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="grid-wrapper">
+						{metrics.map((metric) => (
+							<div key={metric.label} class="grid-item-wrapper">
+								<div class="metric-number-wrapper">
+									<h2 class="metric-number">{metric.value}</h2>
+									<h2 class="metric-plus-sign">+</h2>
+								</div>
+								<div class="title-small">{metric.label}</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="featured-cars" class="section">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Véhicules populaires</h2>
+					</div>
+					<div class="cars-collection-list-wrapper featured-cars-carousel" role="region" aria-label="Featured cars carousel">
+						<div class="featured-cars-carousel__track" aria-live="off">
+							<div class="cars-collection-list">
+								{featuredCarouselItems.map((item) => (
+									<div key={item.key} class="car-collection-item">
+										<article class="car-card">
+											<a href={item.href} class="car-image-wrapper w-inline-block">
+												<picture>
+													<source
+														srcset={item.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+														type="image/webp"
+													/>
+													<img
+														src={item.image}
+														loading="lazy"
+														alt={item.name}
+														width={600}
+														height={400}
+														class="listing-car-image"
+													/>
+												</picture>
+												{item.year ? <div class="car-listing-year">{item.year}</div> : null}
+											</a>
+											<div class="car-details-wrapper">
+												<h3 class="car-listing-name">{item.name}</h3>
+												<div class="car-listing-details-wrapper">
+													{item.details.map((detail) => (
+														<div key={`${item.key}-${detail.key}`} class="car-listing-detail">
+															<img src={detail.icon} alt={detail.alt} class="listing-icon" loading="lazy" />
+															<div class="listing-detail">{detail.value}</div>
+														</div>
+													))}
+												</div>
+												<a href={item.href} class="details-btn w-button" target={item.href === whatsappLink ? '_blank' : undefined} rel={item.href === whatsappLink ? 'noreferrer' : undefined}>
+													{item.ctaLabel}
+												</a>
+											</div>
+										</article>
+									</div>
+								))}
+							</div>
+							<div class="cars-collection-list" aria-hidden="true">
+								{featuredCarouselItems.map((item) => (
+									<div key={`${item.key}-dup`} class="car-collection-item">
+										<article class="car-card">
+											<a
+												href={item.href}
+												class="car-image-wrapper w-inline-block"
+												tabIndex={-1}
+												target={item.href === whatsappLink ? '_blank' : undefined}
+												rel={item.href === whatsappLink ? 'noreferrer' : undefined}
+											>
+												<picture>
+													<source
+														srcset={item.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+														type="image/webp"
+													/>
+													<img
+														src={item.image}
+														loading="lazy"
+														alt=""
+														width={600}
+														height={400}
+														class="listing-car-image"
+													/>
+												</picture>
+												{item.year ? <div class="car-listing-year">{item.year}</div> : null}
+											</a>
+											<div class="car-details-wrapper">
+												<h3 class="car-listing-name">{item.name}</h3>
+												<div class="car-listing-details-wrapper">
+													{item.details.map((detail) => (
+														<div key={`${item.key}-dup-${detail.key}`} class="car-listing-detail">
+															<img src={detail.icon} alt="" class="listing-icon" loading="lazy" />
+															<div class="listing-detail">{detail.value}</div>
+														</div>
+													))}
+												</div>
+												<a
+													href={item.href}
+													class="details-btn w-button"
+													tabIndex={-1}
+													target={item.href === whatsappLink ? '_blank' : undefined}
+													rel={item.href === whatsappLink ? 'noreferrer' : undefined}
+												>
+													{item.ctaLabel}
+												</a>
+											</div>
+										</article>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-white">
+				<div class="content-wrapper">
+					<div class="section-heading-wrapper">
+						<h2 class="section-heading">Our destinations</h2>
+					</div>
+					<div class="location-collection-list-wrapper">
+						<div class="location-collection-list">
+							{locations.map((location) => {
+								const content = (
+									<>
+										<img src={location.image} loading="lazy" alt={location.name} class="location-listing-image" />
+										<div class="location-name">{location.name}</div>
+									</>
+								);
+
+								return (
+									<div key={location.name} class="location-item">
+										{location.href ? (
+											<a href={location.href} class="location-listing-image-wrapper w-inline-block">
+												{content}
+											</a>
+										) : (
+											<div class="location-listing-image-wrapper w-inline-block location-listing-image-wrapper--static">
+												{content}
+											</div>
+										)}
+									</div>
+								);
+							})}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="content-wrapper">
+					<div class="grid-wrapper">
+						{steps.map((step) => (
+							<div key={step.title} class="grid-item-wrapper">
+								<div class="icon-wrapper">
+									<img src={step.icon} loading="lazy" alt={step.alt} />
+								</div>
+								<div class="title-small">{step.title}</div>
+								<div class="primary-text grey-color metric-text">{step.description}</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="footer-section-wrapper">
+					<div class="content-wrapper">
+						<div class="footer-content-wrapper">
+							<div class="footer-top-content">
+									<div class="footer-logo-social">
+										<a href="/fr" aria-current="page" class="brand w-nav-brand w--current">
+											<span class="brand-logo-text footer-brand-logo-text">ELITE RIDE MEXICO</span>
+										</a>
+									<div class="footer-text">
+									Transferts aéroport, transport exécutif et chauffeur privé à Mexico, Cancún, Guadalajara, Puerto Vallarta et plus encore.
+									</div>
+									<div class="social-media-links">
+										{socialLinks.map((social) => (
+											<a
+												key={social.label}
+												href={social.href}
+												target="_blank"
+												rel="noreferrer"
+												class="social-media w-inline-block"
+												aria-label={social.label}
+											>
+												<img src={social.icon} loading="lazy" alt={social.alt} class="image" />
+											</a>
+										))}
+									</div>
+								</div>
+								<div class="footer-newsletter">
+									<h3 class="small-heading">S inscrire à notre newsletter</h3>
+									<div class="w-form">
+										<form class="newsletter-form">
+											<input
+												class="form-field w-input"
+												maxLength={256}
+												name="Email"
+												placeholder="example@gmail.com"
+												type="email"
+												required
+											/>
+											<input type="submit" class="cta-button w-button" value="Envoyer" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="divider" />
+							<div class="footer-bottom-content">
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Pages</h2>
+									<a href="/" class="footer-nav-link w--current">Accueil</a>
+									<a href="/fr/about" class="footer-nav-link">A propos</a>
+									<a href="/fr/our-fleet" class="footer-nav-link">Notre flotte</a>
+									<a href="/fr/contact" class="footer-nav-link">Contact</a>
+										<a href="/world-cup-2026-mexico" class="footer-nav-link">
+											Transport Coupe du Monde 2026
+										</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Légal</h2>
+									<a href="/privacy-notice" class="footer-nav-link">
+										Avis de confidentialité
+									</a>
+									<a href="/cancelation" class="footer-nav-link">
+											Annulation
+									</a>
+									<a href="/refunds" class="footer-nav-link">
+										Remboursements
+									</a>
+									<a href="/taxes" class="footer-nav-link">
+										Taxes
+									</a>
+								</div>
+								<div class="footer-links-wrapper">
+									<h2 class="heading">Contact</h2>
+									<a href="tel:+525644166523" class="footer-nav-link">
+										+52 5644166523
+									</a>
+										<a href="mailto:info@eliteridemexico.com" class="footer-nav-link">
+											info@eliteridemexico.com
+										</a>
+										<a
+											href="https://www.google.com/maps/search/Goldsmith+250,+Lomas+de+Chapultepec,+Ciudad+de+Mexico"
+											target="_blank"
+											rel="noreferrer"
+											class="footer-nav-link"
+										>
+											Goldsmith 250, Lomas de Chapultepec, Miguel Hidalgo, 11500 CDMX Mexico
+										</a>
+								</div>
+							</div>
+								<div class="divider" />
+									<div class="copyright-info-wrapper">
+										<a
+											href="https://www.o7digital.com/en/index-digital-agency"
+											target="_blank"
+											rel="noreferrer"
+											class="footer-copyright-text"
+										>
+											Copyright Elite Ride Mexico 2026 - made by o7Digital
+										</a>
+									</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<a
+				href={whatsappLink}
+				target="_blank"
+				rel="noreferrer"
+				class="whatsapp-footer-button"
+				aria-label="WhatsApp"
+			>
+				<img
+					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
+					loading="lazy"
+					alt="WhatsApp Icon"
+					class="whatsapp-footer-icon"
+				/>
+			</a>
+		</div>
