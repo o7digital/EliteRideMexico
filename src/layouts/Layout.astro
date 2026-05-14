@@ -35,23 +35,34 @@ const {
 
 const siteName = 'Elite Ride Mexico';
 const siteURL = 'https://eliteridemexico.com';
-const resolvedLang = lang === 'es' || Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
-const locale = resolvedLang === 'es' ? 'es_MX' : 'en_US';
-const alternateLocale = alternateLang === 'es' ? 'es_MX' : alternateLang === 'en' ? 'en_US' : undefined;
+const resolvedLang =
+	lang === 'fr' || Astro.url.pathname.startsWith('/fr')
+		? 'fr'
+		: lang === 'es' || Astro.url.pathname.startsWith('/es')
+			? 'es'
+			: 'en';
+const locale = resolvedLang === 'es' ? 'es_MX' : resolvedLang === 'fr' ? 'fr_FR' : 'en_US';
+const alternateLocale =
+	alternateLang === 'es' ? 'es_MX' : alternateLang === 'fr' ? 'fr_FR' : alternateLang === 'en' ? 'en_US' : undefined;
 const showFooterKeywordBar = !Astro.url.pathname.startsWith('/dashboard');
 const pageName = title.split('|')[0]?.split('—')[0]?.trim() || siteName;
-const isHomePath = Astro.url.pathname === '/' || Astro.url.pathname === '/es' || Astro.url.pathname === '/es/';
-const homeHref = resolvedLang === 'es' ? `${siteURL}/es/` : `${siteURL}/`;
+const isHomePath =
+	Astro.url.pathname === '/' ||
+	Astro.url.pathname === '/es' ||
+	Astro.url.pathname === '/es/' ||
+	Astro.url.pathname === '/fr' ||
+	Astro.url.pathname === '/fr/';
+const homeHref = resolvedLang === 'es' ? `${siteURL}/es/` : resolvedLang === 'fr' ? `${siteURL}/fr/` : `${siteURL}/`;
 const autoBreadcrumbs =
 	!isHomePath && !Astro.url.pathname.startsWith('/dashboard')
 		? [
-				{ name: resolvedLang === 'es' ? 'Inicio' : 'Home', item: homeHref },
+				{ name: resolvedLang === 'es' ? 'Inicio' : resolvedLang === 'fr' ? 'Accueil' : 'Home', item: homeHref },
 				{ name: pageName, item: canonicalURL }
 			]
 		: [];
 const resolvedBreadcrumbs = breadcrumbs ?? autoBreadcrumbs;
 const breadcrumbId = `${canonicalURL}#breadcrumb`;
-const xDefaultHref = resolvedLang === 'es' && alternateHref ? alternateHref : canonicalURL;
+const xDefaultHref = (resolvedLang === 'es' || resolvedLang === 'fr') && alternateHref ? alternateHref : canonicalURL;
 
 const schemaGraph = [
 	{
@@ -59,7 +70,7 @@ const schemaGraph = [
 		'@id': `${siteURL}/#website`,
 		name: siteName,
 		url: siteURL,
-		inLanguage: ['en-US', 'es-MX']
+		inLanguage: ['en-US', 'es-MX', 'fr-FR']
 	},
 	{
 		'@type': 'LocalBusiness',
@@ -71,7 +82,7 @@ const schemaGraph = [
 		telephone: '+525644166523',
 		email: 'info@eliteridemexico.com',
 		priceRange: '$$$$',
-		availableLanguage: ['English', 'Spanish'],
+		availableLanguage: ['English', 'Spanish', 'French'],
 		address: {
 			'@type': 'PostalAddress',
 			streetAddress: 'Goldsmith 250, Lomas de Chapultepec',

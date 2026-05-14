@@ -1,20 +1,29 @@
 ---
-import { worldCupKeywordsEn, worldCupKeywordsEs } from '../data/worldCupKeywords';
+import { footerKeywordsEn, footerKeywordsEs } from '../data/worldCupKeywords';
 
 interface Props {
-	lang?: 'en' | 'es';
+	lang?: 'en' | 'es' | 'fr';
 }
 
 const { lang = 'en' } = Astro.props;
-const keywords = (lang === 'es' ? worldCupKeywordsEs : worldCupKeywordsEn).join(' · ');
+const keywords = lang === 'es' ? footerKeywordsEs : footerKeywordsEn;
+const chunkSize = 8;
+const keywordLines: string[] = [];
+for (let i = 0; i < keywords.length; i += chunkSize) {
+	keywordLines.push(keywords.slice(i, i + chunkSize).join(' · '));
+}
 const ariaLabel =
 	lang === 'es'
-		? 'Búsquedas relacionadas con Mundial 2026 en México'
-		: 'World Cup 2026 transportation searches in Mexico';
+		? 'Palabras clave de transporte privado en México'
+		: lang === 'fr'
+			? 'Mots-clés SEO de transport privé au Mexique'
+		: 'Private transportation SEO keywords in Mexico';
 ---
 
 <section class="seo-footer-keywords" aria-label={ariaLabel}>
 	<div class="seo-footer-keywords__inner">
-		<p class="seo-footer-keywords__line">{keywords}</p>
+		{keywordLines.map((line) => (
+			<p class="seo-footer-keywords__line">{line}</p>
+		))}
 	</div>
 </section>

@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqItems = [
+  {
+    question: 'Quels services propose Elite Ride Mexico ?',
+    answer:
+      'Nous proposons des transferts prives aeroport, un service de chauffeur a l heure ou a la journee, du transport executif, des trajets interurbains et des options de vehicules blindes sur certaines routes.'
+  },
+  {
+    question: 'Dans quelles villes intervenez-vous ?',
+    answer:
+      'Nous operons dans les destinations cles du Mexique: Mexico City, Cancun, Guadalajara, Monterrey, Puerto Vallarta, Los Cabos, Veracruz et Acapulco, avec des routes personnalisees sur demande.'
+  },
+  {
+    question: 'Comment reserver un service ?',
+    answer:
+      'Vous pouvez reserver par WhatsApp ou via le formulaire de contact. Indiquez la date, l heure, la ville, le nombre de passagers et le type de service; nous confirmons rapidement disponibilite et tarif.'
+  },
+  {
+    question: 'Combien de temps a l avance faut-il reserver ?',
+    answer:
+      'Nous recommandons de reserver 24 a 72 heures a l avance. Pour les periodes de forte demande, les grands evenements ou les deplacements d entreprise, une reservation anticipee est preferable.'
+  },
+  {
+    question: 'Les trajets sont-ils partages ?',
+    answer:
+      'Non. Notre service est entierement prive. Le vehicule est reserve exclusivement pour vous et votre groupe.'
+  },
+  {
+    question: 'Suivez-vous les vols pour les prises en charge aeroport ?',
+    answer:
+      'Oui. Nous suivons les vols en temps reel et ajustons la coordination en cas de retard afin de maintenir une prise en charge ponctuelle.'
+  },
+  {
+    question: 'Quels types de vehicules sont disponibles ?',
+    answer:
+      'Nous proposons des SUV premium, des vans executifs et des options adaptees au nombre de passagers, aux bagages et au niveau de service demande.'
+  },
+  {
+    question: 'Proposez-vous la facturation pour les entreprises ?',
+    answer:
+      'Oui. Nous accompagnons les clients corporate et pouvons coordonner les informations administratives et de facturation avec votre equipe.'
+  },
+  {
+    question: 'Puis-je reserver un chauffeur prive pour toute la journee ?',
+    answer:
+      'Oui. Nous proposons des disponibilites a l heure, a la demi-journee ou a la journee pour les agendas professionnels, le tourisme et les besoins logistiques specifiques.'
+  },
+  {
+    question: 'Prenez-vous en charge les evenements et les groupes ?',
+    answer:
+      'Oui. Nous coordonnons le transport pour les evenements d entreprise, mariages, conventions et groupes, avec planification des routes et des horaires.'
+  },
+  {
+    question: 'Comment les tarifs sont-ils calcules ?',
+    answer:
+      'Les tarifs dependent de la ville, de la distance, de la duree, de la categorie de vehicule, de l horaire et du niveau de service requis. Nous envoyons un devis clair avant confirmation.'
+  },
+  {
+    question: 'Quels sont vos horaires de service ?',
+    answer:
+      'Notre equipe recoit les demandes tous les jours et les services peuvent etre operes 24/7 selon disponibilite et coordination prealable.'
+  }
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer
+    }
+  }))
+});
+---
+
+<Layout
+  lang="fr"
+  title="FAQ | Elite Ride Mexico"
+  description="Questions frequentes sur le transport prive au Mexique: transferts aeroport, chauffeur prive, villes desservies, tarifs et reservation."
+  canonicalURL="https://eliteridemexico.com/fr/faq"
+  preloadImages={['/contact/cdmx-timeout.webp']}
+  alternateHref="https://eliteridemexico.com/faq"
+  alternateLang="en"
+>
+  <script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+  <div class="page-wrapper">
+    <section>
+      <div class="header-section contact-header-section">
+        <div class="navbar w-nav">
+          <div class="content-wrapper">
+            <div class="navbar-wrapper">
+              <a href="/" class="brand w-nav-brand"><span class="brand-logo-text">ELITE RIDE MEXICO</span></a>
+              <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+                <ul role="list" class="nav-menu w-list-unstyled">
+                  <li class="nav-list-item"><a href="/fr" class="nav-link">Accueil</a></li>
+                  <li class="nav-list-item"><a href="/fr/about" class="nav-link">A propos</a></li>
+                  <li class="nav-list-item"><a href="/fr/our-fleet" class="nav-link">Notre flotte</a></li>
+                  <li class="nav-list-item"><a href="/fr/faq" aria-current="page" class="nav-link w--current">FAQ</a></li>
+                  <li class="nav-list-item"><a href="/fr/contact" class="nav-link">Contact</a></li>
+                  <li class="nav-list-item language-switch-item">
+                    <div class="language-switch">
+                      <button
+                        type="button"
+                        class="language-switch-button"
+                        aria-expanded="false"
+                        aria-label="Switch language"
+                      >
+                        FR
+                        <span class="language-switch-chevron">v</span>
+                      </button>
+                      <div class="language-switch-list">
+                        <a href="/fr/faq" class="language-switch-link active">FR</a>
+                        <a href="/faq" class="language-switch-link">EN</a>
+                        <a href="/es/preguntas-frecuentes" class="language-switch-link">ES</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-wrapper">
+          <div class="header-section-wrapper">
+            <div class="header-content-wrapper">
+              <div class="header-text-wrapper contact-header-text-wrapper">
+                <h1 class="header-text">Questions frequentes</h1>
+                <div class="primary-text">Tout ce qu'il faut savoir avant de reserver votre transport prive au Mexique.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="content-wrapper">
+        <div class="about-steps-grid">
+          {faqItems.map((item) => (
+            <article class="about-step-card">
+              <h2 class="title-small">{item.question}</h2>
+              <p class="primary-text grey-color metric-text">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

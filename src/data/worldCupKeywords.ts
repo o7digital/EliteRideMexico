@@ -44,6 +44,47 @@ export const worldCupKeywordsEs = [
 	'Traslados seguros México 2026'
 ] as const;
 
+const coreKeywordsEn = [
+	'private chauffeur Mexico',
+	'premium SUV rental Mexico',
+	'airport transfer Mexico',
+	'executive transportation Mexico',
+	'armored vehicle rental Mexico',
+	'private driver Mexico City',
+	'private driver Cancun',
+	'private driver Guadalajara',
+	'private driver Monterrey',
+	'private transfer Puerto Vallarta',
+	'VIP transport Mexico',
+	'bilingual driver Mexico',
+	'corporate transport Mexico',
+	'luxury SUV with driver',
+	'Mexico City airport transfer',
+	'Cancun airport private transfer'
+] as const;
+
+const coreKeywordsEs = [
+	'chofer privado en México',
+	'renta de SUV premium en México',
+	'traslado aeropuerto México',
+	'transporte ejecutivo México',
+	'vehículos blindados en México',
+	'chofer privado CDMX',
+	'chofer privado Cancún',
+	'chofer privado Guadalajara',
+	'chofer privado Monterrey',
+	'traslado privado Puerto Vallarta',
+	'transporte VIP México',
+	'chofer bilingüe México',
+	'transporte corporativo México',
+	'SUV de lujo con chofer',
+	'traslado aeropuerto Ciudad de México',
+	'traslado aeropuerto Cancún'
+] as const;
+
+export const footerKeywordsEn = Array.from(new Set([...coreKeywordsEn, ...worldCupKeywordsEn])) as readonly string[];
+export const footerKeywordsEs = Array.from(new Set([...coreKeywordsEs, ...worldCupKeywordsEs])) as readonly string[];
+
 export const getWorldCupKeywordLines = (lang: 'en' | 'es') => {
 	const keywords = lang === 'es' ? worldCupKeywordsEs : worldCupKeywordsEn;
 	return [keywords.slice(0, 7), keywords.slice(7, 14), keywords.slice(14)].map((group) =>
