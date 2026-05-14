@@ -1,0 +1,138 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqItems = [
+  {
+    question: '¿Qué servicios ofrece Elite Ride Mexico?',
+    answer:
+      'Ofrecemos traslados privados al aeropuerto, chofer privado por horas o por día, transporte ejecutivo, viajes interurbanos y opciones de vehículos blindados en rutas seleccionadas.'
+  },
+  {
+    question: '¿En qué ciudades operan?',
+    answer:
+      'Operamos en destinos clave de México como Ciudad de México, Cancún, Guadalajara, Monterrey, Puerto Vallarta, Los Cabos, Veracruz y Acapulco, además de rutas especiales bajo solicitud.'
+  },
+  {
+    question: '¿Cómo reservo un servicio?',
+    answer:
+      'Puedes reservar por WhatsApp o mediante el formulario de contacto. Comparte fecha, horario, ciudad, número de pasajeros y tipo de servicio; te confirmamos disponibilidad y tarifa.'
+  },
+  {
+    question: '¿Con cuánta anticipación debo reservar?',
+    answer:
+      'Recomendamos reservar con 24 a 72 horas de anticipación. Para temporadas altas, eventos o servicios ejecutivos, conviene reservar lo antes posible.'
+  },
+  {
+    question: '¿Los traslados son compartidos?',
+    answer:
+      'No. Nuestro servicio es privado: el vehículo es exclusivo para ti y tus acompañantes durante el trayecto reservado.'
+  },
+  {
+    question: '¿Monitorean vuelos para traslados al aeropuerto?',
+    answer:
+      'Sí. Damos seguimiento al vuelo en tiempo real para ajustar la operación en caso de demoras y mantener una recepción puntual.'
+  },
+  {
+    question: '¿Qué tipo de vehículos tienen?',
+    answer:
+      'Contamos con SUVs premium, vans ejecutivas y unidades para distintos niveles de servicio. La asignación depende de pasajeros, equipaje y tipo de traslado.'
+  },
+  {
+    question: '¿Ofrecen facturación para empresas?',
+    answer:
+      'Sí, atendemos clientes corporativos y podemos coordinar la información necesaria para procesos administrativos y de facturación.'
+  },
+  {
+    question: '¿Puedo contratar chofer privado por todo el día?',
+    answer:
+      'Sí. Ofrecemos disponibilidad por horas, bloques y jornadas completas para agendas ejecutivas, visitas de negocio, eventos o turismo.'
+  },
+  {
+    question: '¿También atienden eventos y grupos?',
+    answer:
+      'Sí. Coordinamos logística para eventos corporativos, bodas, convenciones y grupos, con planeación de rutas, horarios y puntos de encuentro.'
+  },
+  {
+    question: '¿Cómo se define el precio del servicio?',
+    answer:
+      'La tarifa se calcula por ciudad, distancia, duración, tipo de vehículo, horario y nivel de servicio solicitado. Compartimos cotización clara antes de confirmar.'
+  },
+  {
+    question: '¿Cuál es su horario de atención?',
+    answer:
+      'Nuestro equipo atiende solicitudes todos los días y opera servicios 24/7 según disponibilidad y coordinación previa.'
+  }
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer
+    }
+  }))
+});
+---
+
+<Layout
+  title="Preguntas Frecuentes | Elite Ride Mexico"
+  description="Resuelve tus dudas sobre traslados privados, chofer ejecutivo, cobertura en ciudades de México, reservas, tarifas y logística con Elite Ride Mexico."
+  canonicalURL="https://eliteridemexico.com/es/preguntas-frecuentes"
+  lang="es"
+  preloadImages={['/contact/cdmx-timeout.webp']}
+  alternateHref="https://eliteridemexico.com/contact"
+  alternateLang="en"
+>
+  <script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+  <div class="page-wrapper">
+    <section>
+      <div class="header-section contact-header-section">
+        <div class="navbar w-nav">
+          <div class="content-wrapper">
+            <div class="navbar-wrapper">
+              <a href="/es" class="brand w-nav-brand"><span class="brand-logo-text">ELITE RIDE MEXICO</span></a>
+              <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+                <ul role="list" class="nav-menu w-list-unstyled">
+                  <li class="nav-list-item"><a href="/es" class="nav-link">Inicio</a></li>
+                  <li class="nav-list-item"><a href="/es/about" class="nav-link">Nosotros</a></li>
+                  <li class="nav-list-item"><a href="/es/our-fleet" class="nav-link">Nuestra Flota</a></li>
+                  <li class="nav-list-item"><a href="/es/preguntas-frecuentes" aria-current="page" class="nav-link w--current">Preguntas Frecuentes</a></li>
+                  <li class="nav-list-item"><a href="/es/contact" class="nav-link">Contacto</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-wrapper">
+          <div class="header-section-wrapper">
+            <div class="header-content-wrapper">
+              <div class="header-text-wrapper contact-header-text-wrapper">
+                <h1 class="header-text">Preguntas Frecuentes</h1>
+                <div class="primary-text">Todo lo que necesitas saber antes de reservar tu transporte privado en México con Elite Ride Mexico.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="content-wrapper">
+        <div class="about-steps-grid">
+          {faqItems.map((item) => (
+            <article class="about-step-card">
+              <h2 class="title-small">{item.question}</h2>
+              <p class="primary-text grey-color metric-text">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
