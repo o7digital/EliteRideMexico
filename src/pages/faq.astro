@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqItems = [
+  {
+    question: 'What services does Elite Ride Mexico provide?',
+    answer:
+      'We provide private airport transfers, hourly or full-day chauffeur service, executive transportation, intercity trips, and armored vehicle options on selected routes.'
+  },
+  {
+    question: 'Which cities do you serve?',
+    answer:
+      'We operate in key destinations including Mexico City, Cancun, Guadalajara, Monterrey, Puerto Vallarta, Los Cabos, Veracruz, and Acapulco, plus custom routes on request.'
+  },
+  {
+    question: 'How do I book a service?',
+    answer:
+      'Book via WhatsApp or the contact form. Share your date, time, city, number of passengers, and service type, and we will confirm availability and pricing quickly.'
+  },
+  {
+    question: 'How far in advance should I reserve?',
+    answer:
+      'We recommend booking 24 to 72 hours in advance. During peak seasons, major events, or corporate periods, earlier booking is strongly recommended.'
+  },
+  {
+    question: 'Are your rides shared?',
+    answer:
+      'No. Our service is fully private. The vehicle is reserved exclusively for you and your group.'
+  },
+  {
+    question: 'Do you track flights for airport pickups?',
+    answer:
+      'Yes. We monitor flight status in real time and adjust pickup coordination in case of delays to keep the service punctual.'
+  },
+  {
+    question: 'What type of vehicles are available?',
+    answer:
+      'We offer premium SUVs, executive vans, and dedicated options based on passenger count, luggage, and service level requirements.'
+  },
+  {
+    question: 'Do you provide invoicing for companies?',
+    answer:
+      'Yes. We support corporate clients and can coordinate required administrative and invoicing details with your team.'
+  },
+  {
+    question: 'Can I hire a private driver for a full day?',
+    answer:
+      'Yes. We offer hourly, half-day, and full-day chauffeur availability for business agendas, tourism, and special logistics.'
+  },
+  {
+    question: 'Do you support events and group transportation?',
+    answer:
+      'Yes. We coordinate transportation for corporate events, weddings, conventions, and groups with route and schedule planning.'
+  },
+  {
+    question: 'How is pricing calculated?',
+    answer:
+      'Rates depend on city, route distance, service duration, vehicle category, schedule, and required service level. We provide a clear quote before confirmation.'
+  },
+  {
+    question: 'What are your operating hours?',
+    answer:
+      'Our team receives requests every day and operates 24/7 services subject to availability and prior coordination.'
+  }
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer
+    }
+  }))
+});
+---
+
+<Layout
+  title="FAQ | Elite Ride Mexico"
+  description="Frequently asked questions about private transportation in Mexico: airport transfers, chauffeur service, cities covered, pricing, and booking process."
+  canonicalURL="https://eliteridemexico.com/faq"
+  preloadImages={['/contact/cdmx-timeout.webp']}
+  alternateHref="https://eliteridemexico.com/es/preguntas-frecuentes"
+  alternateLang="es"
+>
+  <script type="application/ld+json" slot="head" set:html={faqSchema} />
+
+  <div class="page-wrapper">
+    <section>
+      <div class="header-section contact-header-section">
+        <div class="navbar w-nav">
+          <div class="content-wrapper">
+            <div class="navbar-wrapper">
+              <a href="/" class="brand w-nav-brand"><span class="brand-logo-text">ELITE RIDE MEXICO</span></a>
+              <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+                <ul role="list" class="nav-menu w-list-unstyled">
+                  <li class="nav-list-item"><a href="/" class="nav-link">Home</a></li>
+                  <li class="nav-list-item"><a href="/about" class="nav-link">About</a></li>
+                  <li class="nav-list-item"><a href="/our-fleet" class="nav-link">Our Fleet</a></li>
+                  <li class="nav-list-item"><a href="/faq" aria-current="page" class="nav-link w--current">FAQ</a></li>
+                  <li class="nav-list-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-wrapper">
+          <div class="header-section-wrapper">
+            <div class="header-content-wrapper">
+              <div class="header-text-wrapper contact-header-text-wrapper">
+                <h1 class="header-text">Frequently Asked Questions</h1>
+                <div class="primary-text">Everything you need to know before booking your private transportation service in Mexico.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="content-wrapper">
+        <div class="about-steps-grid">
+          {faqItems.map((item) => (
+            <article class="about-step-card">
+              <h2 class="title-small">{item.question}</h2>
+              <p class="primary-text grey-color metric-text">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
