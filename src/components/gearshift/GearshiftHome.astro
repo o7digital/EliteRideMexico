@@ -412,8 +412,10 @@ const metrics = [
 											</a>
 										</li>
 										<li class="nav-list-item">
-											<a href="/our-fleet" class="nav-link">
-												Our Fleet
+											
+										<li class="nav-list-item">
+											<a href="/es/preguntas-frecuentes" class="nav-link">
+												FAQ
 											</a>
 										</li>
 										<li class="nav-list-item">
@@ -514,14 +516,20 @@ const metrics = [
 									<div key={item.key} class="car-collection-item">
 										<article class="car-card">
 											<a href={item.href} class="car-image-wrapper w-inline-block">
-												<img
-													src={item.image}
-													loading="lazy"
-													alt={item.name}
-													width={600}
-													height={400}
-													class="listing-car-image"
-												/>
+												<picture>
+													<source
+														srcset={item.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+														type="image/webp"
+													/>
+													<img
+														src={item.image}
+														loading="lazy"
+														alt={item.name}
+														width={600}
+														height={400}
+														class="listing-car-image"
+													/>
+												</picture>
 												{item.year ? <div class="car-listing-year">{item.year}</div> : null}
 											</a>
 											<div class="car-details-wrapper">
@@ -553,14 +561,20 @@ const metrics = [
 												target={item.href === whatsappLink ? '_blank' : undefined}
 												rel={item.href === whatsappLink ? 'noreferrer' : undefined}
 											>
-												<img
-													src={item.image}
-													loading="lazy"
-													alt=""
-													width={600}
-													height={400}
-													class="listing-car-image"
-												/>
+												<picture>
+													<source
+														srcset={item.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+														type="image/webp"
+													/>
+													<img
+														src={item.image}
+														loading="lazy"
+														alt=""
+														width={600}
+														height={400}
+														class="listing-car-image"
+													/>
+												</picture>
 												{item.year ? <div class="car-listing-year">{item.year}</div> : null}
 											</a>
 											<div class="car-details-wrapper">
