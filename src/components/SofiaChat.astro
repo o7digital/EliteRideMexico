@@ -254,13 +254,13 @@ const siteCode = 'eliteridemexico';
 
     const copy = {
       es: {
-        title: 'Sofia',
+        title: 'Olivia',
         status: 'Asistente Elite Ride Mexico',
         online: 'En linea',
         teaser: 'Necesitas transporte?',
         open: 'Abrir chat',
         close: 'Cerrar chat',
-        welcome: 'Hola, soy Sofia. En que puedo ayudarte con tu transporte privado?',
+        welcome: 'Hola, soy Olivia. En que puedo ayudarte con tu transporte privado?',
         leadIntro: 'Deja tus datos para que un asesor de Elite Ride Mexico pueda contactarte.',
         firstName: 'Nombre',
         lastName: 'Apellido',
@@ -273,13 +273,13 @@ const siteCode = 'eliteridemexico';
         error: 'No pude enviar el mensaje. Intenta de nuevo o contacta directamente a Elite Ride Mexico.',
       },
       en: {
-        title: 'Sofia',
+        title: 'Olivia',
         status: 'Elite Ride Mexico Assistant',
         online: 'Online',
         teaser: 'Need a ride?',
         open: 'Open chat',
         close: 'Close chat',
-        welcome: 'Hello, I am Sofia. How can I help with your private transportation?',
+        welcome: 'Hello, I am Olivia. How can I help with your private transportation?',
         leadIntro: 'Leave your details so an Elite Ride Mexico advisor can contact you.',
         firstName: 'First name',
         lastName: 'Last name',
@@ -292,13 +292,13 @@ const siteCode = 'eliteridemexico';
         error: 'I could not send the message. Please try again or contact Elite Ride Mexico directly.',
       },
       fr: {
-        title: 'Sofia',
+        title: 'Olivia',
         status: 'Assistante Elite Ride Mexico',
         online: 'En ligne',
         teaser: 'Besoin de transport ?',
         open: 'Ouvrir le chat',
         close: 'Fermer le chat',
-        welcome: 'Bonjour, je suis Sofia. Comment puis-je vous aider pour votre transport prive ?',
+        welcome: 'Bonjour, je suis Olivia. Comment puis-je vous aider pour votre transport prive ?',
         leadIntro: "Laissez vos coordonnees pour qu'un conseiller Elite Ride Mexico puisse vous contacter.",
         firstName: 'Prenom',
         lastName: 'Nom',
@@ -378,11 +378,11 @@ const siteCode = 'eliteridemexico';
         <div class="sofia-closed">
           ${isOpen ? '' : `
             <button type="button" class="sofia-teaser">
-              <span class="sofia-avatar">S</span>
+              <span class="sofia-avatar">O</span>
               <span>${escapeHtml(t.teaser)}</span>
             </button>
           `}
-          <button type="button" class="sofia-toggle" aria-label="${escapeHtml(isOpen ? t.close : t.open)}">${isOpen ? 'x' : 'Sofia'}</button>
+          <button type="button" class="sofia-toggle" aria-label="${escapeHtml(isOpen ? t.close : t.open)}">${isOpen ? 'x' : 'Olivia'}</button>
         </div>
       `;
       bindEvents();
@@ -418,10 +418,10 @@ const siteCode = 'eliteridemexico';
             lastName: lead.lastName.trim(),
             email: lead.email.trim(),
             phone: lead.phone.trim(),
-            source: 'Chat Sofia Elite Ride Mexico',
+            source: 'Chat Olivia Elite Ride Mexico',
             language: lang,
             siteCode,
-            message: `Lead Chat Sofia Elite Ride Mexico (${lang}, ${siteCode})\n\n${transcript()}`,
+            message: `Lead Chat Olivia Elite Ride Mexico (${lang}, ${siteCode})\n\n${transcript()}`,
           }),
         });
         if (!response.ok) throw new Error('Lead delivery failed');
