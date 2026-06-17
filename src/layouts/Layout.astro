@@ -2,6 +2,7 @@
 import '../styles/clone-overrides.css';
 import FooterKeywordBar from '../components/FooterKeywordBar.astro';
 import SofiaChat from '../components/SofiaChat.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 
 interface BreadcrumbItem {
 	name: string;
@@ -214,6 +215,7 @@ const jsonLd = JSON.stringify({
 		<body class="body">
 			<slot />
 			{showFooterKeywordBar && <FooterKeywordBar lang={resolvedLang} />}
+			{!Astro.url.pathname.startsWith('/dashboard') && <WhatsAppButton />}
 			{!Astro.url.pathname.startsWith('/dashboard') && <SofiaChat />}
 			<script is:inline>
 				(() => {
