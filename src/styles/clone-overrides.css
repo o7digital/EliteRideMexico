@@ -317,30 +317,36 @@ html[lang='es'] .body {
 	background: #f68026;
 }
 
-.whatsapp-footer-button {
-	position: fixed;
-	right: 24px;
-	bottom: 24px;
-	z-index: 1000;
+.footer-contact-heading {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.footer-contact-heading .heading {
+	margin-bottom: 0;
+}
+
+.footer-contact-whatsapp {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 58px;
-	height: 58px;
-	background: #25d366;
+	width: 38px;
+	height: 38px;
+	background: #f68026;
 	border-radius: 999px;
-	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.whatsapp-footer-button:hover {
+.footer-contact-whatsapp:hover,
+.footer-contact-whatsapp:focus-visible {
+	background: #25d366;
 	transform: translateY(-2px);
-	box-shadow: 0 14px 26px rgba(0, 0, 0, 0.26);
 }
 
-.whatsapp-footer-icon {
-	width: 28px;
-	height: 28px;
+.footer-contact-whatsapp-icon {
+	width: 20px;
+	height: 20px;
 	display: block;
 }
 
@@ -466,18 +472,6 @@ html[lang='es'] .body {
 	.brand-logo-text {
 		font-size: 20px;
 		letter-spacing: 1px;
-	}
-
-	.whatsapp-footer-button {
-		right: 16px;
-		bottom: 16px;
-		width: 52px;
-		height: 52px;
-	}
-
-	.whatsapp-footer-icon {
-		width: 24px;
-		height: 24px;
 	}
 }
 
@@ -687,28 +681,18 @@ html[lang='es'] .body {
 .seo-footer-keywords {
 	background: #050505;
 	border-top: 1px solid rgba(255, 255, 255, 0.08);
-	padding: 18px 24px 26px;
+	padding: 16px 24px 18px;
 }
 
-.seo-footer-keywords__inner {
-	max-width: 1280px;
+.seo-footer-keywords__text {
+	max-width: 1680px;
 	margin: 0 auto;
-	display: grid;
-	gap: 6px;
-}
-
-.seo-footer-keywords__inner::-webkit-scrollbar {
-	display: none;
-}
-
-.seo-footer-keywords__line {
-	margin: 0;
-	color: rgba(255, 255, 255, 0.68);
-	font-size: 0.83rem;
-	line-height: 1.65;
+	padding: 0;
+	color: rgba(255, 255, 255, 0.46);
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 1.6;
 	text-align: center;
-	white-space: normal;
-	display: block;
 }
 
 .location-listing-image-wrapper--static {
@@ -767,13 +751,13 @@ html[lang='es'] .body {
 
 @media screen and (max-width: 767px) {
 	.seo-content-keywords__line,
-	.seo-footer-keywords__line {
-		font-size: 0.8rem;
-		line-height: 1.75;
+	.seo-footer-keywords__text {
+		font-size: 10px;
+		line-height: 1.55;
 	}
 
 	.seo-footer-keywords {
-		padding: 16px 16px 22px;
+		padding: 14px 16px 16px;
 	}
 }
 

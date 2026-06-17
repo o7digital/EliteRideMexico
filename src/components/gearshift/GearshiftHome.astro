@@ -249,6 +249,8 @@ const steps: Step[] = [
 ];
 
 const whatsappLink = 'https://wa.me/525644166523';
+const whatsappIcon =
+	'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png';
 
 const featuredCarouselItems: FeaturedCarouselItem[] = [
 	...cars.map((car) => ({
@@ -376,7 +378,7 @@ const socialLinks = [
 	{
 		label: 'WhatsApp',
 		href: whatsappLink,
-		icon: 'https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png',
+		icon: whatsappIcon,
 		alt: 'WhatsApp Icon'
 	}
 ];
@@ -742,7 +744,18 @@ const metrics = [
 									</a>
 								</div>
 								<div class="footer-links-wrapper">
-									<h2 class="heading">Get In Touch</h2>
+									<div class="footer-contact-heading">
+										<h2 class="heading">Get In Touch</h2>
+										<a
+											href={whatsappLink}
+											target="_blank"
+											rel="noreferrer"
+											class="footer-contact-whatsapp w-inline-block"
+											aria-label="WhatsApp"
+										>
+											<img src={whatsappIcon} loading="lazy" alt="WhatsApp Icon" class="footer-contact-whatsapp-icon" />
+										</a>
+									</div>
 									<a href="tel:+525644166523" class="footer-nav-link">
 										+52 5644166523
 									</a>
@@ -774,18 +787,4 @@ const metrics = [
 					</div>
 				</div>
 			</section>
-			<a
-				href={whatsappLink}
-				target="_blank"
-				rel="noreferrer"
-				class="whatsapp-footer-button"
-				aria-label="WhatsApp"
-			>
-				<img
-					src="https://cdn.prod.website-files.com/6677ef5c2f59c6148debf7e0/6677ef5c2f59c6148debf814_whatsapp.png"
-					loading="lazy"
-					alt="WhatsApp Icon"
-					class="whatsapp-footer-icon"
-				/>
-			</a>
 		</div>

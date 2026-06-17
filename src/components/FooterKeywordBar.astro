@@ -7,11 +7,7 @@ interface Props {
 
 const { lang = 'en' } = Astro.props;
 const keywords = lang === 'es' ? footerKeywordsEs : footerKeywordsEn;
-const chunkSize = 8;
-const keywordLines: string[] = [];
-for (let i = 0; i < keywords.length; i += chunkSize) {
-	keywordLines.push(keywords.slice(i, i + chunkSize).join(' · '));
-}
+const keywordText = keywords.join(' · ');
 const ariaLabel =
 	lang === 'es'
 		? 'Palabras clave de transporte privado en México'
@@ -21,9 +17,5 @@ const ariaLabel =
 ---
 
 <section class="seo-footer-keywords" aria-label={ariaLabel}>
-	<div class="seo-footer-keywords__inner">
-		{keywordLines.map((line) => (
-			<p class="seo-footer-keywords__line">{line}</p>
-		))}
-	</div>
+	<p class="seo-footer-keywords__text">{keywordText}</p>
 </section>
