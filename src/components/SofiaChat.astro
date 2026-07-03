@@ -251,6 +251,10 @@ const siteCode = 'eliteridemexico';
     const siteCode = root.dataset.siteCode || 'eliteridemexico';
     const leadEndpoint = 'https://www.o7digital.com/api/o7-lead';
     const chatEndpoint = 'https://www.o7digital.com/api/o7-chat';
+    const channelEndpoint = 'https://olivia-ai.o7digital.com/api/widget/conversations';
+    const visitorStorageKey = `oliviaVisitorId:${siteCode}`;
+    const visitorId = window.localStorage.getItem(visitorStorageKey) || window.crypto.randomUUID();
+    window.localStorage.setItem(visitorStorageKey, visitorId);
 
     const copy = {
       es: {
@@ -335,6 +339,7 @@ const siteCode = 'eliteridemexico';
     let leadSent = false;
     let messages = [{ role: 'assistant', content: t.welcome }];
     let lead = { firstName: '', lastName: '', email: '', phone: '' };
+    const receivedOperatorMessages = new Set();
 
     const escapeHtml = (value) => String(value)
       .replace(/&/g, '&amp;')
@@ -344,6 +349,38 @@ const siteCode = 'eliteridemexico';
       .replace(/'/g, '&#039;');
 
     const transcript = () => messages.map((message) => `${message.role}: ${message.content}`).join('\n');
+
+    const storeChannelMessage = async (content, metadata = {}) => {
+      const response = await fetch(channelEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          clientCode: siteCode,
+          visitorId,
+          content,
+          visitorName: `${lead.firstName} ${lead.lastName}`.trim(),
+          email: lead.email,
+          phone: lead.phone,
+          source: 'website',
+          language: lang,
+          metadata: {
+            pageUrl: window.location.href,
+            pageTitle: document.title,
+            ...metadata,
+          },
+        }),
+      });
+      if (!response.ok) throw new Error('Channel Manager delivery failed');
+      return response.json();
+    };
+
+    const storeAssistantMessage = async (content, model) => {
+      await fetch(channelEndpoint, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ clientCode: siteCode, visitorId, content, model }),
+      });
+    };
 
     const renderMessages = () => messages.map((message) => (
       `<div class="sofia-message ${message.role}">${escapeHtml(message.content)}</div>`
@@ -425,6 +462,10 @@ const siteCode = 'eliteridemexico';
           }),
         });
         if (!response.ok) throw new Error('Lead delivery failed');
+        await storeChannelMessage(
+          `Lead: ${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone}`,
+          { type: 'lead', ...lead },
+        );
         leadSent = true;
         messages.push({ role: 'assistant', content: t.leadThanks });
       } catch (_error) {
@@ -445,13 +486,18 @@ const siteCode = 'eliteridemexico';
       isLoading = true;
       render();
       try {
+        const stored = await storeChannelMessage(message);
+        if (stored?.conversation?.status === 'manual') return;
+
         const response = await fetch(chatEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message, language: messageLanguage, siteCode }),
         });
         const data = await response.json();
-        messages.push({ role: 'assistant', content: data.reply || t.error });
+        const assistantContent = data.reply || t.error;
+        messages.push({ role: 'assistant', content: assistantContent });
+        await storeAssistantMessage(assistantContent, data.model);
       } catch (_error) {
         messages.push({ role: 'assistant', content: t.error });
       } finally {
@@ -459,6 +505,31 @@ const siteCode = 'eliteridemexico';
         render();
       }
     };
+
+    const pollChannelManager = async () => {
+      if (!leadSent) return;
+      try {
+        const params = new URLSearchParams({ clientCode: siteCode, visitorId });
+        const response = await fetch(`${channelEndpoint}?${params}`);
+        if (!response.ok) return;
+        const data = await response.json();
+        const operatorMessages = (data.messages || []).filter(
+          (message) => message.role === 'operator' && !receivedOperatorMessages.has(message.id),
+        );
+        operatorMessages.forEach((message) => receivedOperatorMessages.add(message.id));
+        if (operatorMessages.length) {
+          messages.push(...operatorMessages.map((message) => ({
+            role: 'assistant',
+            content: message.content,
+          })));
+          render();
+        }
+      } catch (_error) {
+        // The public chat remains available if the Channel Manager is temporarily unavailable.
+      }
+    };
+
+    window.setInterval(pollChannelManager, 4000);
 
     const bindEvents = () => {
       root.querySelector('.sofia-toggle')?.addEventListener('click', () => {
