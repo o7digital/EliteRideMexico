@@ -249,6 +249,7 @@ const siteCode = 'eliteridemexico';
     root.dataset.ready = 'true';
 
     const siteCode = root.dataset.siteCode || 'eliteridemexico';
+    const offline = true;
     const leadEndpoint = 'https://www.o7digital.com/api/o7-lead';
     const chatEndpoint = 'https://www.o7digital.com/api/o7-chat';
     const channelEndpoint = 'https://olivia-ai.o7digital.com/api/widget/conversations';
@@ -337,7 +338,9 @@ const siteCode = 'eliteridemexico';
     let isOpen = false;
     let isLoading = false;
     let leadSent = false;
-    let messages = [{ role: 'assistant', content: t.welcome }];
+    let messages = offline
+      ? [{ role: 'assistant', content: 'Offline' }, { role: 'assistant', content: 'Add more credit' }]
+      : [{ role: 'assistant', content: t.welcome }];
     let lead = { firstName: '', lastName: '', email: '', phone: '' };
     const receivedOperatorMessages = new Set();
 
@@ -396,12 +399,12 @@ const siteCode = 'eliteridemexico';
           <header class="sofia-header">
             <div>
               <p class="sofia-title">${escapeHtml(t.title)}</p>
-              <p class="sofia-status">${escapeHtml(t.status)} · ${escapeHtml(t.online)}</p>
+              <p class="sofia-status">${offline ? 'Offline · Add more credit' : `${escapeHtml(t.status)} · ${escapeHtml(t.online)}`}</p>
             </div>
             <button type="button" class="sofia-close" aria-label="${escapeHtml(t.close)}">x</button>
           </header>
           <div class="sofia-messages">${renderMessages()}</div>
-          ${leadSent ? '' : `
+          ${offline || leadSent ? '' : `
             <form class="sofia-lead">
               <p>${escapeHtml(t.leadIntro)}</p>
               <input required name="firstName" placeholder="${escapeHtml(t.firstName)}" value="${escapeHtml(lead.firstName)}" />
@@ -412,15 +415,15 @@ const siteCode = 'eliteridemexico';
             </form>
           `}
           <div class="sofia-composer">
-            <input class="sofia-input" value="" ${!leadSent || isLoading ? 'disabled' : ''} placeholder="${escapeHtml(t.placeholder)}" />
-            <button type="button" class="sofia-send" ${!leadSent || isLoading ? 'disabled' : ''} aria-label="${escapeHtml(t.send)}">&gt;</button>
+            <input class="sofia-input" value="" ${offline || !leadSent || isLoading ? 'disabled' : ''} placeholder="${offline ? 'Offline — Add more credit' : escapeHtml(t.placeholder)}" />
+            <button type="button" class="sofia-send" ${offline || !leadSent || isLoading ? 'disabled' : ''} aria-label="${escapeHtml(t.send)}">&gt;</button>
           </div>
         </section>
         <div class="sofia-closed">
           ${isOpen ? '' : `
             <button type="button" class="sofia-teaser">
               <span class="sofia-avatar">O</span>
-              <span>${escapeHtml(t.teaser)}</span>
+              <span>${offline ? 'Offline — Add more credit' : escapeHtml(t.teaser)}</span>
             </button>
           `}
           <button type="button" class="sofia-toggle" aria-label="${escapeHtml(isOpen ? t.close : t.open)}">${isOpen ? 'x' : 'Olivia'}</button>
@@ -444,7 +447,7 @@ const siteCode = 'eliteridemexico';
 
     const submitLead = async (event) => {
       event.preventDefault();
-      if (isLoading) return;
+      if (offline || isLoading) return;
       saveLeadFields();
       if (!lead.firstName.trim() || !lead.lastName.trim() || !lead.email.trim() || !lead.phone.trim()) return;
 
@@ -481,6 +484,7 @@ const siteCode = 'eliteridemexico';
     };
 
     const sendMessage = async () => {
+      if (offline) return;
       const input = root.querySelector('.sofia-input');
       const message = input?.value?.trim() || '';
       if (!message || isLoading || !leadSent) return;
@@ -511,7 +515,7 @@ const siteCode = 'eliteridemexico';
     };
 
     const pollChannelManager = async () => {
-      if (!leadSent) return;
+      if (offline || !leadSent) return;
       try {
         const params = new URLSearchParams({ clientCode: siteCode, visitorId });
         const response = await fetch(`${channelEndpoint}?${params}`);
