@@ -339,7 +339,7 @@ const siteCode = 'eliteridemexico';
     let isLoading = false;
     let leadSent = false;
     let messages = offline
-      ? [{ role: 'assistant', content: 'Offline' }, { role: 'assistant', content: 'Add more credit' }]
+      ? [{ role: 'assistant', content: 'Offline' }]
       : [{ role: 'assistant', content: t.welcome }];
     let lead = { firstName: '', lastName: '', email: '', phone: '' };
     const receivedOperatorMessages = new Set();
@@ -399,7 +399,7 @@ const siteCode = 'eliteridemexico';
           <header class="sofia-header">
             <div>
               <p class="sofia-title">${escapeHtml(t.title)}</p>
-              <p class="sofia-status">${offline ? 'Offline · Add more credit' : `${escapeHtml(t.status)} · ${escapeHtml(t.online)}`}</p>
+              <p class="sofia-status">${offline ? 'Offline' : `${escapeHtml(t.status)} · ${escapeHtml(t.online)}`}</p>
             </div>
             <button type="button" class="sofia-close" aria-label="${escapeHtml(t.close)}">x</button>
           </header>
@@ -415,7 +415,7 @@ const siteCode = 'eliteridemexico';
             </form>
           `}
           <div class="sofia-composer">
-            <input class="sofia-input" value="" ${offline || !leadSent || isLoading ? 'disabled' : ''} placeholder="${offline ? 'Offline — Add more credit' : escapeHtml(t.placeholder)}" />
+            <input class="sofia-input" value="" ${offline || !leadSent || isLoading ? 'disabled' : ''} placeholder="${offline ? 'Offline' : escapeHtml(t.placeholder)}" />
             <button type="button" class="sofia-send" ${offline || !leadSent || isLoading ? 'disabled' : ''} aria-label="${escapeHtml(t.send)}">&gt;</button>
           </div>
         </section>
@@ -423,7 +423,7 @@ const siteCode = 'eliteridemexico';
           ${isOpen ? '' : `
             <button type="button" class="sofia-teaser">
               <span class="sofia-avatar">O</span>
-              <span>${offline ? 'Offline — Add more credit' : escapeHtml(t.teaser)}</span>
+              <span>${offline ? 'Offline' : escapeHtml(t.teaser)}</span>
             </button>
           `}
           <button type="button" class="sofia-toggle" aria-label="${escapeHtml(isOpen ? t.close : t.open)}">${isOpen ? 'x' : 'Olivia'}</button>
