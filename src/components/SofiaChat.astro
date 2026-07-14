@@ -249,9 +249,9 @@ const siteCode = 'eliteridemexico';
     root.dataset.ready = 'true';
 
     const siteCode = root.dataset.siteCode || 'eliteridemexico';
-    const offline = true;
+    const offline = false;
     const leadEndpoint = 'https://www.o7digital.com/api/o7-lead';
-    const chatEndpoint = 'https://www.o7digital.com/api/o7-chat';
+    const chatEndpoint = 'https://olivia-ai.o7digital.com/api/olivia/chat';
     const channelEndpoint = 'https://olivia-ai.o7digital.com/api/widget/conversations';
     const visitorStorageKey = `oliviaVisitorId:${siteCode}`;
     const visitorId = window.localStorage.getItem(visitorStorageKey) || window.crypto.randomUUID();
@@ -500,7 +500,21 @@ const siteCode = 'eliteridemexico';
         const response = await fetch(chatEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message, language: messageLanguage, siteCode }),
+          body: JSON.stringify({
+            message,
+            language: messageLanguage,
+            clientCode: siteCode,
+            clientId: siteCode,
+            siteCode,
+            visitorId,
+            pageUrl: window.location.href,
+            metadata: {
+              source: 'Chat Olivia Elite Ride Mexico',
+              pageTitle: document.title,
+              lead,
+              transcript: transcript(),
+            },
+          }),
         });
         const data = await response.json();
         const assistantContent = data.reply || t.error;
