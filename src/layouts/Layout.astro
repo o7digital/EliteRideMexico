@@ -1,7 +1,7 @@
 ---
 import '../styles/clone-overrides.css';
 import FooterKeywordBar from '../components/FooterKeywordBar.astro';
-import OliviaChat from '../components/OliviaChat.astro';
+import SofiaChat from '../components/SofiaChat.astro';
 
 interface BreadcrumbItem {
 	name: string;
@@ -214,7 +214,7 @@ const jsonLd = JSON.stringify({
 		<body class="body">
 			<slot />
 			{showFooterKeywordBar && <FooterKeywordBar lang={resolvedLang} />}
-			{!Astro.url.pathname.startsWith('/dashboard') && <OliviaChat />}
+			{!Astro.url.pathname.startsWith('/dashboard') && <SofiaChat />}
 			<script is:inline>
 				(() => {
 					const initGearshiftUI = () => {
