@@ -353,6 +353,132 @@ const siteCode = 'eliteridemexico';
 
     const transcript = () => messages.map((message) => `${message.role}: ${message.content}`).join('\n');
 
+    const normalizeFormValue = (value) => String(value || '').trim();
+
+    const buildFormspreeVisitorId = (formData) => {
+      const email = normalizeFormValue(formData.get('email')).toLowerCase();
+      const phone = normalizeFormValue(formData.get('phone')).replace(/\D/g, '');
+      const name = normalizeFormValue(formData.get('full_name')).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      return `formspree-${siteCode}-${email || phone || name || 'lead'}-${Date.now()}`;
+    };
+
+    const mirrorFormspreeLeadToChannel = async (form, { preferBeacon = true } = {}) => {
+      const formData = new FormData(form);
+      const fullName = normalizeFormValue(formData.get('full_name'));
+      const parts = fullName.split(/\s+/).filter(Boolean);
+      const firstName = parts.shift() || '';
+      const lastName = parts.join(' ');
+      const email = normalizeFormValue(formData.get('email'));
+      const phone = normalizeFormValue(formData.get('phone'));
+      const country = normalizeFormValue(formData.get('country'));
+      const travelDates = normalizeFormValue(formData.get('travel_dates'));
+      const serviceType = normalizeFormValue(formData.get('service_type'));
+      const formMessage = normalizeFormValue(formData.get('message'));
+      const content = [
+        'New Formspree lead - Elite Ride Mexico',
+        '',
+        `Name: ${fullName}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Country: ${country}`,
+        `Travel dates: ${travelDates}`,
+        `Service type: ${serviceType}`,
+        `Message: ${formMessage}`,
+      ].join('\n');
+      const payload = {
+        clientCode: siteCode,
+        visitorId: buildFormspreeVisitorId(formData),
+        content,
+        visitorName: fullName,
+        email,
+        phone,
+        source: 'formspree',
+        language: lang,
+        metadata: {
+          type: 'lead',
+          originalSource: 'Formspree',
+          name: fullName,
+          firstName,
+          lastName,
+          email,
+          phone,
+          country,
+          travelDates,
+          serviceType,
+          message: formMessage,
+          submittedAt: new Date().toISOString(),
+          pageUrl: window.location.href,
+          pageTitle: document.title,
+        },
+      };
+      const body = JSON.stringify(payload);
+      if (preferBeacon && navigator.sendBeacon) {
+        const blob = new Blob([body], { type: 'application/json' });
+        if (navigator.sendBeacon(channelEndpoint, blob)) return;
+      }
+      return fetch(channelEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body,
+        keepalive: true,
+      });
+    };
+
+    const submitMirroredFormspree = async (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const submitButton = form.querySelector('[type="submit"]');
+      const originalLabel = submitButton?.value || submitButton?.textContent || '';
+      const formData = new FormData(form);
+      if (submitButton) {
+        submitButton.disabled = true;
+        if ('value' in submitButton) submitButton.value = lang === 'es' ? 'Enviando...' : lang === 'fr' ? 'Envoi...' : 'Sending...';
+        else submitButton.textContent = lang === 'es' ? 'Enviando...' : lang === 'fr' ? 'Envoi...' : 'Sending...';
+      }
+
+      const channelPromise = mirrorFormspreeLeadToChannel(form, { preferBeacon: false });
+      const formspreePromise = fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+
+      const [, formspreeResult] = await Promise.allSettled([channelPromise, formspreePromise]);
+      const sentToFormspree = formspreeResult.status === 'fulfilled' && formspreeResult.value.ok;
+      if (sentToFormspree) {
+        form.reset();
+        const success = document.createElement('div');
+        success.className = 'w-form-done';
+        success.style.display = 'block';
+        success.textContent = lang === 'es'
+          ? 'Gracias. Recibimos tu solicitud y te contactaremos pronto.'
+          : lang === 'fr'
+            ? 'Merci. Nous avons reçu votre demande et nous vous contacterons rapidement.'
+            : 'Thank you. We received your request and will contact you shortly.';
+        form.replaceWith(success);
+        return;
+      }
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        if ('value' in submitButton) submitButton.value = originalLabel;
+        else submitButton.textContent = originalLabel;
+      }
+      window.alert(lang === 'es'
+        ? 'No pudimos enviar la solicitud. Intenta de nuevo o contáctanos por WhatsApp.'
+        : lang === 'fr'
+          ? "Nous n'avons pas pu envoyer la demande. Réessayez ou contactez-nous sur WhatsApp."
+          : 'We could not send the request. Please try again or contact us on WhatsApp.');
+    };
+
+    const bindFormspreeMirroring = () => {
+      document.querySelectorAll('form[action*="formspree.io"]').forEach((form) => {
+        if (form.dataset.oliviaChannelMirror === 'true') return;
+        form.dataset.oliviaChannelMirror = 'true';
+        form.addEventListener('submit', submitMirroredFormspree);
+      });
+    };
+
     const storeChannelMessage = async (content, metadata = {}) => {
       const response = await fetch(channelEndpoint, {
         method: 'POST',
@@ -578,5 +704,6 @@ const siteCode = 'eliteridemexico';
     };
 
     render();
+    bindFormspreeMirroring();
   })();
 </script>
