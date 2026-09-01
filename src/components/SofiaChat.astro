@@ -3,7 +3,7 @@ const siteCode = 'eliteridemexico';
 ---
 
 <div id="sofia-chat" data-site-code={siteCode}></div>
-<script is:inline src="https://olivia-ai.o7digital.com/olivia-floating-theme.js" defer></script>
+<script is:inline src="https://olivia-ai.o7digital.com/olivia-floating-theme.js?v=20260831-2" defer></script>
 
 <style is:inline>
   #sofia-chat {
@@ -800,6 +800,11 @@ const siteCode = 'eliteridemexico';
         saveLeadFields();
         render();
       });
+      root.querySelector('.sofia-consent a')?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        window.open(event.currentTarget.href, '_blank', 'noopener,noreferrer');
+      }, true);
       root.querySelector('.sofia-send')?.addEventListener('click', sendMessage);
       root.querySelector('.sofia-input')?.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') sendMessage();
