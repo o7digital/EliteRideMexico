@@ -3,6 +3,7 @@ const siteCode = 'eliteridemexico';
 ---
 
 <div id="sofia-chat" data-site-code={siteCode}></div>
+<script is:inline src="https://olivia-ai.o7digital.com/olivia-floating-theme.js" defer></script>
 
 <style is:inline>
   #sofia-chat {
@@ -53,6 +54,18 @@ const siteCode = 'eliteridemexico';
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+  }
+
+  .sofia-title b {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 6px;
+    padding: 2px 7px;
+    border: 1px solid rgba(214, 178, 100, 0.55);
+    border-radius: 999px;
+    color: #f1d993;
+    font-size: 10px;
+    vertical-align: middle;
   }
 
   .sofia-status {
@@ -142,8 +155,9 @@ const siteCode = 'eliteridemexico';
     line-height: 1.4;
   }
 
-  .sofia-consent input {
+  .sofia-composer .sofia-consent input {
     width: 16px;
+    min-width: 16px;
     height: 16px;
     flex: 0 0 auto;
     margin: 0;
@@ -154,6 +168,17 @@ const siteCode = 'eliteridemexico';
     color: #e4c77f;
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+
+  #sofia-chat .sofia-lead {
+    display: grid !important;
+  }
+
+  .sofia-composer.is-disabled .sofia-input,
+  .sofia-composer.is-disabled .sofia-send {
+    opacity: 0.58 !important;
+    pointer-events: none !important;
+    cursor: not-allowed !important;
   }
 
   .sofia-lead input,
@@ -580,7 +605,7 @@ const siteCode = 'eliteridemexico';
         <section class="sofia-panel ${isOpen ? 'is-open' : ''}" aria-label="${escapeHtml(t.status)}">
           <header class="sofia-header">
             <div>
-              <p class="sofia-title">${escapeHtml(t.title)}</p>
+              <p class="sofia-title">${escapeHtml(t.title)} <b>v2</b></p>
               <p class="sofia-status">${offline ? 'Offline' : `${escapeHtml(t.status)} · ${escapeHtml(t.online)}`}</p>
             </div>
             <button type="button" class="sofia-close" aria-label="${escapeHtml(t.close)}">x</button>
@@ -596,7 +621,7 @@ const siteCode = 'eliteridemexico';
               <button type="submit" ${isLoading || !hasConsent || !widgetIdentity ? 'disabled' : ''}>${escapeHtml(t.submitLead)}</button>
             </form>
           `}
-          <div class="sofia-composer">
+          <div class="sofia-composer ${offline || !hasConsent || !widgetIdentity || isLoading ? 'is-disabled' : ''}">
             ${hasConsent ? '' : `
               <label class="sofia-consent">
                 <input type="checkbox" class="sofia-consent-input" />
