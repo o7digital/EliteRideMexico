@@ -622,12 +622,10 @@ const siteCode = 'eliteridemexico';
             </form>
           `}
           <div class="sofia-composer ${offline || !hasConsent || !widgetIdentity || isLoading ? 'is-disabled' : ''}">
-            ${hasConsent ? '' : `
-              <label class="sofia-consent">
-                <input type="checkbox" class="sofia-consent-input" />
-                <span>${escapeHtml(t.consent)} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacy)}</a></span>
-              </label>
-            `}
+            <label class="sofia-consent">
+              <input type="checkbox" class="sofia-consent-input" ${hasConsent ? 'checked' : ''} />
+              <span>${escapeHtml(t.consent)} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacy)}</a></span>
+            </label>
             <input class="sofia-input" value="" ${offline || !hasConsent || !widgetIdentity || isLoading ? 'disabled' : ''} placeholder="${offline ? 'Offline' : escapeHtml(t.placeholder)}" />
             <button type="button" class="sofia-send" ${offline || !hasConsent || !widgetIdentity || isLoading ? 'disabled' : ''} aria-label="${escapeHtml(t.send)}">&gt;</button>
           </div>
