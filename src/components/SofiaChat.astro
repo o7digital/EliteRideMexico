@@ -133,6 +133,30 @@ const siteCode = 'eliteridemexico';
     line-height: 1.4;
   }
 
+  .sofia-consent {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .sofia-consent input {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+    margin: 0;
+    accent-color: #d6b264;
+  }
+
+  .sofia-consent a {
+    color: #e4c77f;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
   .sofia-lead input,
   .sofia-composer input {
     width: 100%;
@@ -252,11 +276,14 @@ const siteCode = 'eliteridemexico';
     const siteCode = root.dataset.siteCode || 'eliteridemexico';
     const offline = false;
     const leadEndpoint = 'https://www.o7digital.com/api/o7-lead';
+    const identityEndpoint = 'https://olivia-ai.o7digital.com/api/widget/identity';
     const chatEndpoint = 'https://olivia-ai.o7digital.com/api/olivia/chat';
     const channelEndpoint = 'https://olivia-ai.o7digital.com/api/widget/conversations';
     const visitorStorageKey = `oliviaVisitorId:${siteCode}`;
     const visitorId = window.localStorage.getItem(visitorStorageKey) || window.crypto.randomUUID();
     window.localStorage.setItem(visitorStorageKey, visitorId);
+    const consentStorageKey = `oliviaConsent:${siteCode}`;
+    const consentDateStorageKey = `oliviaConsentAt:${siteCode}`;
 
     const copy = {
       es: {
@@ -267,6 +294,8 @@ const siteCode = 'eliteridemexico';
         open: 'Abrir chat',
         close: 'Cerrar chat',
         welcome: 'Hola, soy Olivia. En que puedo ayudarte con tu transporte privado?',
+        consent: 'He leido el Aviso de Privacidad y estoy de acuerdo en compartir mis datos.',
+        privacy: 'Ver Aviso de Privacidad',
         leadIntro: 'Deja tus datos para que un asesor de Elite Ride Mexico pueda contactarte.',
         firstName: 'Nombre',
         lastName: 'Apellido',
@@ -286,6 +315,8 @@ const siteCode = 'eliteridemexico';
         open: 'Open chat',
         close: 'Close chat',
         welcome: 'Hello, I am Olivia. How can I help with your private transportation?',
+        consent: 'I have read the Privacy Notice and agree to share my personal data.',
+        privacy: 'View Privacy Notice',
         leadIntro: 'Leave your details so an Elite Ride Mexico advisor can contact you.',
         firstName: 'First name',
         lastName: 'Last name',
@@ -305,6 +336,8 @@ const siteCode = 'eliteridemexico';
         open: 'Ouvrir le chat',
         close: 'Fermer le chat',
         welcome: 'Bonjour, je suis Olivia. Comment puis-je vous aider pour votre transport prive ?',
+        consent: "J'ai lu l'Avis de confidentialite et j'accepte de partager mes donnees.",
+        privacy: "Voir l'Avis de confidentialite",
         leadIntro: "Laissez vos coordonnees pour qu'un conseiller Elite Ride Mexico puisse vous contacter.",
         firstName: 'Prenom',
         lastName: 'Nom',
@@ -339,11 +372,31 @@ const siteCode = 'eliteridemexico';
     let isOpen = false;
     let isLoading = false;
     let leadSent = false;
+    let widgetIdentity = '';
+    let hasConsent = window.localStorage.getItem(consentStorageKey) === 'accepted';
+    let consentAt = window.localStorage.getItem(consentDateStorageKey) || '';
     let messages = offline
       ? [{ role: 'assistant', content: 'Offline' }]
       : [{ role: 'assistant', content: t.welcome }];
     let lead = { firstName: '', lastName: '', email: '', phone: '' };
     const receivedOperatorMessages = new Set();
+    const privacyHref = lang === 'es' ? '/es/aviso-de-privacidad' : '/privacy-notice';
+
+    const identityPromise = fetch(`${identityEndpoint}?clientCode=${encodeURIComponent(siteCode)}`)
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Widget identity unavailable');
+        const data = await response.json();
+        widgetIdentity = data.identity || '';
+        render();
+        return widgetIdentity;
+      })
+      .catch(() => '');
+
+    const secureHeaders = async () => {
+      const identity = widgetIdentity || await identityPromise;
+      if (!identity) throw new Error('Widget identity unavailable');
+      return { 'Content-Type': 'application/json', 'X-Olivia-Widget-Identity': identity };
+    };
 
     const escapeHtml = (value) => String(value)
       .replace(/&/g, '&amp;')
@@ -413,13 +466,10 @@ const siteCode = 'eliteridemexico';
         },
       };
       const body = JSON.stringify(payload);
-      if (preferBeacon && navigator.sendBeacon) {
-        const blob = new Blob([body], { type: 'application/json' });
-        if (navigator.sendBeacon(channelEndpoint, blob)) return;
-      }
+      const headers = await secureHeaders();
       return fetch(channelEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body,
         keepalive: true,
       });
@@ -481,9 +531,10 @@ const siteCode = 'eliteridemexico';
     };
 
     const storeChannelMessage = async (content, metadata = {}) => {
+      const headers = await secureHeaders();
       const response = await fetch(channelEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           clientCode: siteCode,
           visitorId,
@@ -496,6 +547,9 @@ const siteCode = 'eliteridemexico';
           metadata: {
             pageUrl: window.location.href,
             pageTitle: document.title,
+            dataConsent: hasConsent,
+            dataConsentAt: consentAt || undefined,
+            consentVersion: 'eliteridemexico-privacy-chat-2026-08-31',
             ...metadata,
           },
         }),
@@ -505,9 +559,10 @@ const siteCode = 'eliteridemexico';
     };
 
     const storeAssistantMessage = async (content, model) => {
+      const headers = await secureHeaders();
       await fetch(channelEndpoint, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({ clientCode: siteCode, visitorId, content, model }),
       });
     };
@@ -538,7 +593,11 @@ const siteCode = 'eliteridemexico';
               <input required name="lastName" placeholder="${escapeHtml(t.lastName)}" value="${escapeHtml(lead.lastName)}" />
               <input required type="email" name="email" placeholder="${escapeHtml(t.email)}" value="${escapeHtml(lead.email)}" />
               <input required type="tel" name="phone" placeholder="${escapeHtml(t.phone)}" value="${escapeHtml(lead.phone)}" />
-              <button type="submit" ${isLoading ? 'disabled' : ''}>${escapeHtml(t.submitLead)}</button>
+              <label class="sofia-consent">
+                <input type="checkbox" class="sofia-consent-input" ${hasConsent ? 'checked' : ''} />
+                <span>${escapeHtml(t.consent)} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacy)}</a></span>
+              </label>
+              <button type="submit" ${isLoading || !hasConsent || !widgetIdentity ? 'disabled' : ''}>${escapeHtml(t.submitLead)}</button>
             </form>
           `}
           <div class="sofia-composer">
@@ -574,7 +633,7 @@ const siteCode = 'eliteridemexico';
 
     const submitLead = async (event) => {
       event.preventDefault();
-      if (offline || isLoading) return;
+      if (offline || isLoading || !hasConsent || !widgetIdentity) return;
       saveLeadFields();
       if (!lead.firstName.trim() || !lead.lastName.trim() || !lead.email.trim() || !lead.phone.trim()) return;
 
@@ -592,7 +651,10 @@ const siteCode = 'eliteridemexico';
             source: 'Chat Olivia Elite Ride Mexico',
             language: lang,
             siteCode,
-            message: `Lead Chat Olivia Elite Ride Mexico (${lang}, ${siteCode})\n\n${transcript()}`,
+            privacyConsent: 'accepted',
+            privacyConsentAt: consentAt,
+            privacyConsentVersion: 'eliteridemexico-privacy-chat-2026-08-31',
+            message: `Lead Chat Olivia Elite Ride Mexico (${lang}, ${siteCode})\nConsent accepted: ${consentAt}\n\n${transcript()}`,
           }),
         });
         if (!response.ok) throw new Error('Lead delivery failed');
@@ -626,7 +688,7 @@ const siteCode = 'eliteridemexico';
 
         const response = await fetch(chatEndpoint, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: await secureHeaders(),
           body: JSON.stringify({
             message,
             language: messageLanguage,
@@ -659,7 +721,7 @@ const siteCode = 'eliteridemexico';
       if (offline || !leadSent) return;
       try {
         const params = new URLSearchParams({ clientCode: siteCode, visitorId });
-        const response = await fetch(`${channelEndpoint}?${params}`);
+        const response = await fetch(`${channelEndpoint}?${params}`, { headers: await secureHeaders() });
         if (!response.ok) return;
         const data = await response.json();
         const operatorMessages = (data.messages || []).filter(
@@ -697,6 +759,19 @@ const siteCode = 'eliteridemexico';
       root.querySelector('.sofia-lead')?.addEventListener('submit', submitLead);
       root.querySelectorAll('.sofia-lead input').forEach((input) => {
         input.addEventListener('input', saveLeadFields);
+      });
+      root.querySelector('.sofia-consent-input')?.addEventListener('change', (event) => {
+        hasConsent = event.target.checked;
+        consentAt = hasConsent ? new Date().toISOString() : '';
+        if (hasConsent) {
+          window.localStorage.setItem(consentStorageKey, 'accepted');
+          window.localStorage.setItem(consentDateStorageKey, consentAt);
+        } else {
+          window.localStorage.removeItem(consentStorageKey);
+          window.localStorage.removeItem(consentDateStorageKey);
+        }
+        saveLeadFields();
+        render();
       });
       root.querySelector('.sofia-send')?.addEventListener('click', sendMessage);
       root.querySelector('.sofia-input')?.addEventListener('keydown', (event) => {
