@@ -3,7 +3,6 @@ const siteCode = 'eliteridemexico';
 ---
 
 <div id="sofia-chat" data-site-code={siteCode}></div>
-<script is:inline src="https://olivia-ai.o7digital.com/olivia-floating-theme.js" defer></script>
 
 <style is:inline>
   #sofia-chat {
@@ -576,6 +575,7 @@ const siteCode = 'eliteridemexico';
     )).join('') + (isLoading ? '<div class="sofia-message assistant">...</div>' : '');
 
     const render = () => {
+      const userTurns = messages.filter((message) => message.role === 'user').length;
       root.innerHTML = `
         <section class="sofia-panel ${isOpen ? 'is-open' : ''}" aria-label="${escapeHtml(t.status)}">
           <header class="sofia-header">
@@ -586,23 +586,25 @@ const siteCode = 'eliteridemexico';
             <button type="button" class="sofia-close" aria-label="${escapeHtml(t.close)}">x</button>
           </header>
           <div class="sofia-messages">${renderMessages()}</div>
-          ${offline || leadSent ? '' : `
+          ${offline || leadSent || userTurns < 2 ? '' : `
             <form class="sofia-lead">
               <p>${escapeHtml(t.leadIntro)}</p>
               <input required name="firstName" placeholder="${escapeHtml(t.firstName)}" value="${escapeHtml(lead.firstName)}" />
               <input required name="lastName" placeholder="${escapeHtml(t.lastName)}" value="${escapeHtml(lead.lastName)}" />
               <input required type="email" name="email" placeholder="${escapeHtml(t.email)}" value="${escapeHtml(lead.email)}" />
               <input required type="tel" name="phone" placeholder="${escapeHtml(t.phone)}" value="${escapeHtml(lead.phone)}" />
-              <label class="sofia-consent">
-                <input type="checkbox" class="sofia-consent-input" ${hasConsent ? 'checked' : ''} />
-                <span>${escapeHtml(t.consent)} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacy)}</a></span>
-              </label>
               <button type="submit" ${isLoading || !hasConsent || !widgetIdentity ? 'disabled' : ''}>${escapeHtml(t.submitLead)}</button>
             </form>
           `}
           <div class="sofia-composer">
-            <input class="sofia-input" value="" ${offline || !leadSent || isLoading ? 'disabled' : ''} placeholder="${offline ? 'Offline' : escapeHtml(t.placeholder)}" />
-            <button type="button" class="sofia-send" ${offline || !leadSent || isLoading ? 'disabled' : ''} aria-label="${escapeHtml(t.send)}">&gt;</button>
+            ${hasConsent ? '' : `
+              <label class="sofia-consent">
+                <input type="checkbox" class="sofia-consent-input" />
+                <span>${escapeHtml(t.consent)} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacy)}</a></span>
+              </label>
+            `}
+            <input class="sofia-input" value="" ${offline || !hasConsent || !widgetIdentity || isLoading ? 'disabled' : ''} placeholder="${offline ? 'Offline' : escapeHtml(t.placeholder)}" />
+            <button type="button" class="sofia-send" ${offline || !hasConsent || !widgetIdentity || isLoading ? 'disabled' : ''} aria-label="${escapeHtml(t.send)}">&gt;</button>
           </div>
         </section>
         <div class="sofia-closed">
@@ -676,7 +678,7 @@ const siteCode = 'eliteridemexico';
       if (offline) return;
       const input = root.querySelector('.sofia-input');
       const message = input?.value?.trim() || '';
-      if (!message || isLoading || !leadSent) return;
+      if (!message || isLoading || !hasConsent || !widgetIdentity) return;
       const messageLanguage = detectMessageLanguage(message, lang);
 
       messages.push({ role: 'user', content: message });
