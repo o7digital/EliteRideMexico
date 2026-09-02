@@ -405,6 +405,7 @@ const siteCode = 'eliteridemexico';
     let isOpen = false;
     let isLoading = false;
     let leadSent = false;
+    let leadVisible = false;
     let widgetIdentity = '';
     let hasConsent = window.localStorage.getItem(consentStorageKey) === 'accepted';
     let consentAt = window.localStorage.getItem(consentDateStorageKey) || '';
@@ -620,7 +621,7 @@ const siteCode = 'eliteridemexico';
             <button type="button" class="sofia-close" aria-label="${escapeHtml(t.close)}">x</button>
           </header>
           <div class="sofia-messages">${renderMessages()}</div>
-          ${offline || leadSent || userTurns < 2 ? '' : `
+          ${offline || leadSent || !leadVisible ? '' : `
             <form class="sofia-lead">
               <p>${escapeHtml(t.leadIntro)}</p>
               <input required name="firstName" placeholder="${escapeHtml(t.firstName)}" value="${escapeHtml(lead.firstName)}" />
@@ -714,6 +715,7 @@ const siteCode = 'eliteridemexico';
       const message = input?.value?.trim() || '';
       if (!message || isLoading || !hasConsent || !widgetIdentity) return;
       const messageLanguage = detectMessageLanguage(message, lang);
+      const history = messages.map((item) => ({ role: item.role, content: item.content }));
 
       messages.push({ role: 'user', content: message });
       isLoading = true;
@@ -732,6 +734,7 @@ const siteCode = 'eliteridemexico';
             clientId: siteCode,
             siteCode,
             visitorId,
+            history,
             pageUrl: window.location.href,
             metadata: {
               source: 'Chat Olivia Elite Ride Mexico',
@@ -744,6 +747,7 @@ const siteCode = 'eliteridemexico';
         const data = await response.json();
         const assistantContent = data.reply || t.error;
         messages.push({ role: 'assistant', content: assistantContent });
+        if (data.action === 'show_lead_form' || data.leadForm) leadVisible = true;
         await storeAssistantMessage(assistantContent, data.model);
       } catch (_error) {
         messages.push({ role: 'assistant', content: t.error });
