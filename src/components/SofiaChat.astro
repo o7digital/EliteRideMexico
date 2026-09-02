@@ -138,6 +138,12 @@ const siteCode = 'eliteridemexico';
     grid-column: 1 / -1;
   }
 
+  .sofia-lead textarea {
+    grid-column: 1 / -1;
+    min-height: 72px;
+    resize: vertical;
+  }
+
   .sofia-lead p {
     margin: 0;
     color: rgba(255, 255, 255, 0.72);
@@ -325,6 +331,7 @@ const siteCode = 'eliteridemexico';
         lastName: 'Apellido',
         email: 'Email',
         phone: 'Telefono',
+        message: 'Describe el servicio, fecha, ciudad, pasajeros y trayecto',
         submitLead: 'Enviar datos',
         leadThanks: 'Gracias. Tus datos fueron enviados y un asesor te contactara pronto.',
         placeholder: 'Escribe tu pregunta...',
@@ -346,6 +353,7 @@ const siteCode = 'eliteridemexico';
         lastName: 'Last name',
         email: 'Email',
         phone: 'Phone',
+        message: 'Describe the service, date, city, passengers and route',
         submitLead: 'Send details',
         leadThanks: 'Thanks. Your details were sent and an advisor will contact you soon.',
         placeholder: 'Write your question...',
@@ -367,6 +375,7 @@ const siteCode = 'eliteridemexico';
         lastName: 'Nom',
         email: 'Email',
         phone: 'Telephone',
+        message: 'Décrivez le service, la date, la ville, les passagers et le trajet',
         submitLead: 'Envoyer',
         leadThanks: 'Merci. Vos coordonnees ont ete envoyees et un conseiller vous contactera rapidement.',
         placeholder: 'Ecrivez votre question...',
@@ -402,7 +411,7 @@ const siteCode = 'eliteridemexico';
     let messages = offline
       ? [{ role: 'assistant', content: 'Offline' }]
       : [{ role: 'assistant', content: t.welcome }];
-    let lead = { firstName: '', lastName: '', email: '', phone: '' };
+    let lead = { firstName: '', lastName: '', email: '', phone: '', message: '' };
     const receivedOperatorMessages = new Set();
     const privacyHref = lang === 'es' ? '/es/aviso-de-privacidad' : '/privacy-notice';
 
@@ -618,6 +627,7 @@ const siteCode = 'eliteridemexico';
               <input required name="lastName" placeholder="${escapeHtml(t.lastName)}" value="${escapeHtml(lead.lastName)}" />
               <input required type="email" name="email" placeholder="${escapeHtml(t.email)}" value="${escapeHtml(lead.email)}" />
               <input required type="tel" name="phone" placeholder="${escapeHtml(t.phone)}" value="${escapeHtml(lead.phone)}" />
+              <textarea required name="message" placeholder="${escapeHtml(t.message)}">${escapeHtml(lead.message)}</textarea>
               <button type="submit" ${isLoading || !hasConsent || !widgetIdentity ? 'disabled' : ''}>${escapeHtml(t.submitLead)}</button>
             </form>
           `}
@@ -653,6 +663,7 @@ const siteCode = 'eliteridemexico';
         lastName: form.lastName?.value || lead.lastName,
         email: form.email?.value || lead.email,
         phone: form.phone?.value || lead.phone,
+        message: form.message?.value || lead.message,
       };
     };
 
@@ -660,7 +671,7 @@ const siteCode = 'eliteridemexico';
       event.preventDefault();
       if (offline || isLoading || !hasConsent || !widgetIdentity) return;
       saveLeadFields();
-      if (!lead.firstName.trim() || !lead.lastName.trim() || !lead.email.trim() || !lead.phone.trim()) return;
+      if (!lead.firstName.trim() || !lead.lastName.trim() || !lead.email.trim() || !lead.phone.trim() || !lead.message.trim()) return;
 
       isLoading = true;
       render();
@@ -679,12 +690,12 @@ const siteCode = 'eliteridemexico';
             privacyConsent: 'accepted',
             privacyConsentAt: consentAt,
             privacyConsentVersion: 'eliteridemexico-privacy-chat-2026-08-31',
-            message: `Lead Chat Olivia Elite Ride Mexico (${lang}, ${siteCode})\nConsent accepted: ${consentAt}\n\n${transcript()}`,
+            message: `Lead Chat Olivia Elite Ride Mexico (${lang}, ${siteCode})\nConsent accepted: ${consentAt}\nRequest: ${lead.message.trim()}\n\n${transcript()}`,
           }),
         });
         if (!response.ok) throw new Error('Lead delivery failed');
         await storeChannelMessage(
-          `Lead: ${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone}`,
+          `Lead: ${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone}\nRequest: ${lead.message}`,
           { type: 'lead', ...lead },
         );
         leadSent = true;
@@ -782,7 +793,7 @@ const siteCode = 'eliteridemexico';
         render();
       });
       root.querySelector('.sofia-lead')?.addEventListener('submit', submitLead);
-      root.querySelectorAll('.sofia-lead input').forEach((input) => {
+      root.querySelectorAll('.sofia-lead input, .sofia-lead textarea').forEach((input) => {
         input.addEventListener('input', saveLeadFields);
       });
       root.querySelector('.sofia-consent-input')?.addEventListener('change', (event) => {
